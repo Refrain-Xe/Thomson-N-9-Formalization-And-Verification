@@ -1,0 +1,12 @@
+__pycache__/
+*.pyc
+.DS_Store
+.zcode/
+
+# Large intermediate SDPA-GMP solver workdirs and raw solution dumps (regenerable)
+numerics/bounds/results/hp_work/
+numerics/bounds/results/typed_ladder_work/
+numerics/bounds/results/strip_work/
+numerics/bounds/results/anchor_work/
+numerics/bounds/results/hermite_work/
+numerics/bounds/results/*_sol_*.json
