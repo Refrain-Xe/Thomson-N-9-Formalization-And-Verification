@@ -1,0 +1,336 @@
+{
+ "kind": "thomson-n9/bounds/m10-campaign/1",
+ "schema": 1,
+ "script": "numerics/bounds/m10_campaign.py",
+ "seed": 20261009,
+ "E_star": {
+  "value": "25759986531/1000000000",
+  "float": 25.759986531
+ },
+ "engine_assignment": {
+  "rule": "D27 裁决 1：L0 洞余两片按 M9 逐片最优引擎 M10 重解（D19 裁决 2 引擎分派沿用）",
+  "rows": {
+   "m079-m765": "lukacs",
+   "m765-m748": "a5-hermite"
+  }
+ },
+ "m8_baselines": {
+  "m082-m079": {
+   "engine": "lukacs",
+   "certified": "25.759782985769",
+   "certified_float": 25.759782985769,
+   "source": "GAP-REPORT.md:1313（Round 7 账面 best_certified_attempt，无存档证书）"
+  },
+  "m079-m765": {
+   "engine": "lukacs",
+   "certified": "25.759535741156",
+   "certified_float": 25.759535741156,
+   "source": "GAP-REPORT.md:1314（Round 7 账面 best_certified_attempt，无存档证书）"
+  },
+  "m765-m748": {
+   "engine": "a5-hermite",
+   "certified": "7250644412926184559/281474976710656000",
+   "certified_float": 25.759463585921285,
+   "source": "results/hermite_strips.json（M8 行，精确分数）"
+  },
+  "m0748": {
+   "engine": "typed",
+   "certified": "93712774192614269082019881043884635719865006109330352046526968479156494140625/3637978812512164763811573465387274966467532527973356366318401998010742048629",
+   "certified_float": 25.759571185600716,
+   "source": "results/typed_ladder.json（m0748 M8 行，精确分数）"
+  }
+ },
+ "m9_baselines": {
+  "m079-m765": {
+   "engine": "lukacs",
+   "certified": "24329500291136464800016384000000000000000000000000000000/944473839020334693729733187430580455001288339461833281",
+   "certified_float": 25.759845626187477,
+   "source": "results/m9_campaign.json（m079-m765 行 best_certified_attempt，精确分数；status=blocked）"
+  },
+  "m765-m748": {
+   "engine": "a5-hermite",
+   "certified": "725074535887477029/28147497671065600",
+   "certified_float": 25.759822217973642,
+   "source": "results/m9_campaign.json（m765-m748 行 certified，精确分数；status=blocked）；交叉核对 results/hermite_strips.json M9 行相等"
+  }
+ },
+ "slope_retention": {
+  "rule": "certified(M10) > E* ⇔ lift(M9→M10) ≥ E* − baseline_M9（精确 Fraction；斜率保持阈＝对 M8→M9 实测 lift 的保持比）",
+  "m079-m765": {
+   "required_lift": {
+    "value": "133080909219145573553062435451018345039212184181107127538211/944473839020334693729733187430580455001288339461833281000000000",
+    "float": 0.00014090481252205476
+   },
+   "measured_lift": {
+    "value": "788228604744948247857666988932710401254005269242620672682728251630402174703616000000000000000000000000000000/5575194417598740918998664146731911803728374353923963445001501998555261703580888653232360044972347426834958428281",
+    "float": 0.00014138136640702865
+   },
+   "met": true,
+   "note": "met=None ⇒ 未跑/无数据；met 布尔＝lift 实测 ≥ 阈（精确 Fraction 比较）"
+  },
+  "m765-m748": {
+   "required_lift": {
+    "value": "361328166148079487/2199023255552000000000",
+    "float": 0.00016431302635650332
+   },
+   "measured_lift": {
+    "value": "36449793864633/281474976710656000",
+    "float": 0.00012949568125234024
+   },
+   "met": false,
+   "note": "met=None ⇒ 未跑/无数据；met 布尔＝lift 实测 ≥ 阈（精确 Fraction 比较）"
+  }
+ },
+ "rows": [
+  {
+   "piece": "m079-m765",
+   "kind": "strip",
+   "engine": "lukacs",
+   "lo": "-79/100",
+   "hi": "-153/200",
+   "M": 10,
+   "K": 6,
+   "assertion": "certified>E*（exclusion 片；违反＝blocked 行带 best_certified_attempt＋lift 实测）",
+   "cmd": "numerics/.venv/bin/python numerics/bounds/strips_final.py --strip=\"-0.79:-0.765\" --M 10 --ks 48 56 64",
+   "status": "certified",
+   "e_raw": 25.760011263538935,
+   "certified": "152060258133670143773900800000000000000000000000000000000000/5902963308524955309028900129512648637307845623943222995001",
+   "certified_float": 25.759987007553885,
+   "round_bits": 48,
+   "minorant_k": null,
+   "certificate": "certificates/n9-stage-a4-strip-m079-m765_M10.json",
+   "solution": "numerics/bounds/results/strip_sol_m079-m765_M10.json",
+   "solve_s": 121039.7,
+   "sdpa": {
+    "phase_value": "pdOPT",
+    "iteration": 110,
+    "stalled_point": null,
+    "mu": 2.5067929681891298e-25,
+    "relative_gap": 1.2141460051521161e-79,
+    "p_feas_error": "3.5532223535004356e-31",
+    "d_feas_error": "3.4811178948286791e-37",
+    "reused": false,
+    "solve_s": 121039.7
+   },
+   "provenance": {
+    "seed": 20261009,
+    "code_version": "bd15f27-dirty",
+    "ks": [
+     48,
+     56,
+     64
+    ]
+   },
+   "margin_vs_E_star": {
+    "value": "2813080097535939389974010015508814392626595284540044759668469/5902963308524955309028900129512648637307845623943222995001000000000",
+    "float": 4.765538849738976e-07
+   },
+   "lift": {
+    "value": "788228604744948247857666988932710401254005269242620672682728251630402174703616000000000000000000000000000000/5575194417598740918998664146731911803728374353923963445001501998555261703580888653232360044972347426834958428281",
+    "float": 0.00014138136640702865
+   },
+   "margin_vs_m9_best": {
+    "value": "788228604744948247857666988932710401254005269242620672682728251630402174703616000000000000000000000000000000/5575194417598740918998664146731911803728374353923963445001501998555261703580888653232360044972347426834958428281",
+    "float": 0.00014138136640702865
+   }
+  },
+  {
+   "piece": "m765-m748",
+   "kind": "strip",
+   "engine": "a5-hermite",
+   "lo": "-153/200",
+   "hi": "-187/250",
+   "M": 10,
+   "K": 6,
+   "assertion": "certified>E*（exclusion 片；违反＝blocked 行带 best_certified_attempt＋lift 实测）",
+   "cmd": "python3 numerics/bounds/hermite_ladder.py --strip=\"-0.765:-0.748\" --M 10 --ks 48 56 64 --k-minor 48",
+   "status": "blocked",
+   "e_raw": 25.75995301392191,
+   "certified": "7250781808668634923/281474976710656000",
+   "certified_float": 25.759951713654896,
+   "round_bits": 48,
+   "minorant_k": 48,
+   "certificate": null,
+   "solution": "numerics/bounds/results/hermite_strip_sol_m765-m748_M10.json",
+   "solve_s": 64025.9,
+   "sdpa": {
+    "phase_value": "noINFO",
+    "iteration": 56,
+    "stalled_point": true,
+    "mu": 3.6243641315718414e-09,
+    "relative_gap": 3.571078985619315e-07,
+    "p_feas_error": "3.1950632033791858e-24",
+    "d_feas_error": "4.2557860995852913e-23",
+    "reused": false,
+    "solve_s": 64025.9
+   },
+   "provenance": {
+    "seed": 20261009,
+    "code_version": "bd15f27-dirty",
+    "ks": [
+     48,
+     56,
+     64
+    ]
+   },
+   "best_certified_attempt": "7250781808668634923/281474976710656000",
+   "best_certified_attempt_float": 25.759951713654896,
+   "margin_vs_E_star": {
+    "value": "-153128303161268349/4398046511104000000000",
+    "float": -3.4817345104163076e-05
+   },
+   "lift": {
+    "value": "36449793864633/281474976710656000",
+    "float": 0.00012949568125234024
+   },
+   "margin_vs_m9_best": {
+    "value": "36449793864633/281474976710656000",
+    "float": 0.00012949568125234024
+   }
+  }
+ ],
+ "slope_table": {
+  "m079-m765": {
+   "engine": "lukacs",
+   "M8": "25.759535741156",
+   "M8_float": 25.759535741156,
+   "M9": "24329500291136464800016384000000000000000000000000000000/944473839020334693729733187430580455001288339461833281",
+   "M9_float": 25.759845626187477,
+   "M10": "152060258133670143773900800000000000000000000000000000000000/5902963308524955309028900129512648637307845623943222995001",
+   "M10_float": null,
+   "lift_M8_M9": {
+    "value": "73169576333728053965287941568108944775066901540977935289446791/236118459755083673432433296857645113750322084865458320250000000000",
+    "float": 0.00030988503147794523
+   },
+   "lift_M9_M10": {
+    "value": "788228604744948247857666988932710401254005269242620672682728251630402174703616000000000000000000000000000000/5575194417598740918998664146731911803728374353923963445001501998555261703580888653232360044972347426834958428281",
+    "float": 0.00014138136640702865
+   },
+   "required_lift_M9_M10": {
+    "value": "133080909219145573553062435451018345039212184181107127538211/944473839020334693729733187430580455001288339461833281000000000",
+    "float": 0.00014090481252205476
+   },
+   "required_retention_ratio": 0.45470028626433684,
+   "retention_ratio": 0.456238127194249,
+   "sources": {
+    "M8": "GAP-REPORT.md:1314（Round 7 账面 best_certified_attempt，无存档证书）",
+    "M9": "results/m9_campaign.json（m079-m765 行 best_certified_attempt，精确分数；status=blocked）",
+    "M10": "row certified（证书口径）"
+   },
+   "verdict": "certified"
+  },
+  "m765-m748": {
+   "engine": "a5-hermite",
+   "M8": "7250644412926184559/281474976710656000",
+   "M8_float": 25.759463585921285,
+   "M9": "725074535887477029/28147497671065600",
+   "M9_float": 25.759822217973642,
+   "M10": "7250781808668634923/281474976710656000",
+   "M10_float": null,
+   "lift_M8_M9": {
+    "value": "100945948585731/281474976710656000",
+    "float": 0.0003586320523600186
+   },
+   "lift_M9_M10": {
+    "value": "36449793864633/281474976710656000",
+    "float": 0.00012949568125234024
+   },
+   "required_lift_M9_M10": {
+    "value": "361328166148079487/2199023255552000000000",
+    "float": 0.00016431302635650332
+   },
+   "required_retention_ratio": 0.45816603751734664,
+   "retention_ratio": 0.3610822858698193,
+   "sources": {
+    "M8": "results/hermite_strips.json（M8 行，精确分数）",
+    "M9": "results/m9_campaign.json（m765-m748 行 certified，精确分数；status=blocked）；交叉核对 results/hermite_strips.json M9 行相等",
+    "M10": "row certified（证书口径）"
+   },
+   "verdict": "blocked"
+  }
+ },
+ "record_prospective": {
+  "note": "provisional——正式 assembledRecord 由 endgame_chain.py（R7C 收口）按证书口径重判；本字段只做战役侧前瞻，口径＝11 原子区域取 min、洞片以 M10 证书替换 HP 兜底（两片全翻时）",
+  "both_strips_flipped": false,
+  "value": "47517790735835014335570/1844674407417822803119",
+  "float": 25.759445973097478,
+  "margin_vs_E_star": -0.0005405579025207914,
+  "bottleneck": "两片未全翻正 ⇒ 维持 HP m∈[−9/10,1]（兜底，条带受阻/未落盘）（1 片并列全局最弱）",
+  "unchanged_from_round8": true
+ },
+ "budget": {
+  "unit": "(8,6)-当量 = 10800s SDPA-GMP 求解墙钟（M8 实测 10044–11793s）",
+  "EQUIV_UNIT_S": 10800.0,
+  "per_piece": {
+   "m079-m765": {
+    "solve_s": 121039.7,
+    "equivalents": 11.207
+   },
+   "m765-m748": {
+    "solve_s": 64025.9,
+    "equivalents": 5.928
+   }
+  },
+  "total_solve_s": 185065.6,
+  "total_equivalents": 17.136,
+  "cap_equivalents": 19.0,
+  "within_cap": true,
+  "round_budget": "R7A M10 双片 ≤ 19 当量（任务书 gate ⑦；D27 外推 10.3+7.7≈18 当量）"
+ },
+ "solver_events": {
+  "m079-m765": [
+   {
+    "piece": "m079-m765",
+    "event": "launched",
+    "ts": "2026-10-07T14:47:54+08:00",
+    "runner": "nohup numerics/.venv/bin/python numerics/bounds/strips_final.py --strip=\"-0.79:-0.765\" --M 10 --ks 48 56 64（后台 pid 78904，日志 /tmp/r7a_s2_m079_m10.log）",
+    "sdpa_param": "默认 PARAM_SDPA（maxIter 500／betaStar 0.1／betaBar 0.3／precision 200）",
+    "detail": "export m=4104 entries=486546 blocks=43 n_lp=195；片 2（Lukács 引擎，等号形式 D21 裁决 2）；与片 3 并行，连同 R7B cap M9（pid 78833）全局恰 3 并发 SDPA＝D27 裁决 2 上限"
+   },
+   {
+    "piece": "m079-m765",
+    "event": "rss_poll",
+    "ts": "2026-10-07T15:00:00+08:00",
+    "detail": "双解并行健康：s2 sdpa_gmp（pid 78914）RSS≈1.2GB、s3 sdpa_gmp（pid 78919）RSS≈1.4-1.6GB、R7B cap M9（pid 78833）RSS≈0.94GB——全 <6GB 护栏，维持 3 并发（D27 裁决 2 轮询条款未触发回落）"
+   },
+   {
+    "piece": "m079-m765",
+    "event": "rss_poll",
+    "ts": "2026-10-08T09:10:00+08:00",
+    "detail": "s3 完成后 s2（pid 78914）独跑，RSS≈1.4GB <6GB 护栏；全程监控 /tmp/r7a_rss_samples.log 零 GUARD 记录（5 分钟采样）"
+   },
+   {
+    "piece": "m079-m765",
+    "event": "solved_certified",
+    "ts": "2026-10-09T02:09:00+08:00",
+    "detail": "pdOPT iter=110 solve_s=121039.7（33.6h）；e_raw=25.760011263538935；certified(2^-48)=152060258133670143773900800000000000000000000000000000000000/5902963308524955309028900129512648637307845623943222995001=25.759987007553885 > E*（正裕度 +4.7655e-7——窄但精确为正）⇒ 翻正！证书 certificates/n9-stage-a4-strip-m079-m765_M10.json（回读重算逐位一致＋42 PSD 块 LDLᵀ ✓）；lift vs M9=+1.41381e-4 ≥ 需 +1.40905e-4（斜率保持比 45.624% ≥ 45.470%，勉强过阈）；认证链 4821s；行已由引擎自动落 strips.json strips[]"
+   },
+   {
+    "piece": "m079-m765",
+    "event": "rss_summary",
+    "ts": "2026-10-09T02:20:00+08:00",
+    "detail": "全程 RSS 采样收口：s2 sdpa 峰值 1.46GB、s3 峰值 1.47GB、R7B cap M9 峰值 0.89GB——零 GUARD 记录，D27 裁决 2 的 6GB 回落条款全程未触发，3 并发维持到底；战役总求解 121039.7+64025.9=185065.6s=17.136 当量 ≤19（gate ⑦）"
+   }
+  ],
+  "m765-m748": [
+   {
+    "piece": "m765-m748",
+    "event": "launched",
+    "ts": "2026-10-07T14:47:58+08:00",
+    "runner": "nohup python3 numerics/bounds/hermite_ladder.py --strip=\"-0.765:-0.748\" --M 10 --ks 48 56 64 --k-minor 48（后台 pid 78906，日志 /tmp/r7a_s3_m765_m10.log）",
+    "sdpa_param": "默认 PARAM_SDPA（maxIter 500／betaStar 0.1／betaBar 0.3／precision 200）",
+    "detail": "export m=3990 entries=481248 blocks=29 n_lp=81；片 3（a5 Hermite 固定 minorant 引擎，k_minor=48）；开工前置已按 D27 裁决 6 放宽 hermite_ladder 条带内部超时 43200→172800（a5 M9 实测 30227.0s×2.74≈23h 超旧 12h 上限）"
+   },
+   {
+    "piece": "m765-m748",
+    "event": "solved_blocked",
+    "ts": "2026-10-08T09:07:00+08:00",
+    "detail": "sdpa_gmp 64025.9s 后 noINFO@56 停滞（mu=3.62e-09 relgap=3.57e-07），停滞点认证通过（回读恒等式残差 R1≈1.3e-21 ≪ STALLED_R1_TOL，pdOPT 未达但解可行）；e_raw=25.759953013921908；certified(2^-48)=7250781808668634923/281474976710656000=25.759951713654896 ≤ E* ⇒ blocked（lift vs M9=+1.29496e-4 < 需 +1.643130e-4，斜率保持比 36.11% < 45.82%——M8→M9 斜率未保持）；blocked 行已由引擎自动落 hermite_strips.json"
+   }
+  ]
+ },
+ "assertions": {
+  "strip": "certified>E*（exclusion 片；违反＝blocked 行带 best_certified_attempt＋lift 实测）",
+  "iron": "全部 TTP-covering 下界 ≤ E*+1e-6（精确 Fraction）"
+ }
+}

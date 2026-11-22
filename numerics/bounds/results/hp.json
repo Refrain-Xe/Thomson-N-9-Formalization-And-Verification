@@ -1,0 +1,132 @@
+{
+  "kind": "hp_solve",
+  "script": "hp_solve.py",
+  "seed": 20261003,
+  "code_version": "1a70f07-dirty",
+  "timestamp": "2026-10-04T14:04:06+00:00",
+  "target": {
+    "N": 9,
+    "a": "-9/10",
+    "M": 8,
+    "K": 6,
+    "E_star": 25.759986531,
+    "round2_record": 25.752410818
+  },
+  "method": "路线 a：SDPA-GMP 扩展精度求解（同一 midlarge (8,6) m=−9/10 三点 SDP；精确有理系数导出 .dat-s，GMP 200 位精度，解按 66 位十进制回读，残差以纯 Fraction 重算；Clarabel 双精度停滞解作对照）",
+  "provenance": {
+    "route_decision": "三选一里取 a（扩展精度 SDP）：b（迭代精化）需在停滞的Clarabel 点上做 KKT/最小二乘修正，PSD 亏损与恒等式残差在双精度里互相顶住（测得 Clarabel 停滞后恒等式残差 8.6e-5 量级压不下去）；c（重标度）不改变双精度信息量。a 把同一 SDP 原样重解到 200 位精度，pdOPT 后恒等式残差1e-38——R1/R2 由求解器残差主导变为纯舍入主导。",
+    "build": "SDPA-GMP 7.1.3 源码构建（GMP 6.3.0 --enable-cxx + netlib spooles 2.2 + 两处补丁：spooles clang 旗、P_FORMAT 66 位输出精度；完整配方 numerics/bounds/sdpa_build.sh，2026-10-03 本机实测）",
+    "export": "build_rows 以 ExactMaps 的精确有理系数（a=−9/10、1/3 等）按 40 位十进制写 .dat-s；代入 Clarabel 停滞解逐条校验：b−A(X) 与 Clarabel 自报恒等式残差一致、目标值逐位相等（solve.export_validation）",
+    "certify": "sdp_certify.py 认证路径（--solution 换新解数据）：exact 有理数dyadic 舍入（整数运算，任意尺度精确）→ 2^-40 地板起步的精确LDLᵀ PSD 修复 → 纯 Fraction 残差 R1/R2 → certified = (e − 36·R1)/(1+R2)；断言 certified > 25.752410818（Round 2 纪录）且 ≤ E*+1e-6，负对照（--min-bound 25.7599）实测 sys.exit(1)",
+    "residual_comparison": "见 residual_comparison（Clarabel vs SDPA-GMP）",
+    "reproduce": "python3 numerics/bounds/hp_solve.py --skip-solve --k 64（--sdpa-bin 指向 sdpa_gmp；解数据 results/hp_solution_midlarge_m090.json，workdir 已有 pdOPT 结果时确定性复用不重解）——certified 逐位复现 25.759445973097478（round_bits=64）。注意 sdp_certify 取首个通过断言的粒度：若显式传 --k 48 56 64，会在 k=48 提前通过得 25.759445614952（低 3.58e-07，同样有效但与存档不同）"
+  },
+  "solve": {
+    "skipped": true
+  },
+  "solution": {
+    "path": "numerics/bounds/results/hp_solution_midlarge_m090.json",
+    "sha256_16": "1becc7f7c429ada6"
+  },
+  "exact_residuals": {
+    "R1_exact": "22539608128583909258557695615012147302798024124630824991973284583166250997408261683657510509628384694664317/2250000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+    "R2_exact": "11601685877952941431859388789743984185141702783674142603/100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+    "resid_slack_linf": 2.003512497986437e-39,
+    "resid_slack_l1": 1.0017603612703959e-38,
+    "resid_minor_linf": 1.5247721232269495e-41,
+    "resid_minor_l1": 1.1899165003028658e-40
+  },
+  "min_eig": {
+    "F0": -2.2956946427870025e-16,
+    "F1": -5.662783371858261e-17,
+    "F2": -9.033162955268762e-17,
+    "F3": -3.8541476717974886e-18,
+    "F4": -1.0365327515417588e-17,
+    "F5": -2.148146893798674e-19,
+    "B_1": -1.7078946084107158e-15,
+    "B_u-a": -1.431056646393217e-15,
+    "B_v-a": -1.3135477761495666e-15,
+    "B_t-a": -1.6407187192766564e-15,
+    "B_1-u": -1.0776941386708179e-15,
+    "B_1-v": -1.6895580046670935e-15,
+    "B_1-t": -1.1629447437836513e-15,
+    "B_detG": -1.1630624208537256e-15,
+    "sig0": -0.07926135747451342,
+    "sig1": -1.0667040885419639,
+    "sig2": -0.0336858243568547,
+    "sig3": -0.14831385088267904
+  },
+  "min_eig_note": "float64 eigvalsh 的噪声地板 ~1e-16·‖块‖：σ 块尺度 ~1.5e15，故其 float λmin（~−1e0）只是噪声，不是真实亏损；PSD 判定的权威路径是认证里的精确 LDLᵀ（18 块全部以 δ=2^-40 一次通过）",
+  "numeric_check": {
+    "identity_residual_slack": 6.217248937900877e-15,
+    "identity_residual_minorant": 1.9240505429916084,
+    "identity_l1_slack": 1.96636977534137e-13,
+    "min_eig": {
+      "B_1": -1.7078946084107158e-15,
+      "B_u-a": -1.431056646393217e-15,
+      "B_v-a": -1.3135477761495666e-15,
+      "B_t-a": -1.6407187192766564e-15,
+      "B_1-u": -1.0776941386708179e-15,
+      "B_1-v": -1.6895580046670935e-15,
+      "B_1-t": -1.1629447437836513e-15,
+      "B_detG": -1.1630624208537256e-15,
+      "F0": -2.2956946427870025e-16,
+      "F1": -5.662783371858261e-17,
+      "F2": -9.033162955268762e-17,
+      "F3": -3.8541476717974886e-18,
+      "F4": -1.0365327515417588e-17,
+      "F5": -2.148146893798674e-19,
+      "sig0": -0.07926135747451342,
+      "sig1": -1.0667040885419639,
+      "sig2": -0.0336858243568547,
+      "sig3": -0.14831385088267904
+    },
+    "slack_min_random": 3.049701123546809e-07,
+    "slack_min_boundary": 0.0005097240914539516,
+    "minorant_max_violation": 0.0,
+    "n_gram_points": 137210,
+    "viol_fine": 4.509121826872493e-10,
+    "psd_deficit_sos": 1.9371650620162774e-12,
+    "psd_deficit_F": 1.2272783560339316e-12,
+    "deflation": 1.6309743112904505e-08,
+    "e_safe": 25.759446386373018,
+    "accepted": false
+  },
+  "numeric_check_note": "sdp_bound.verify 的数值复核：slack 逐点/折减正常（deflation=1.6e-8 → e_safe=25.759446386），其 accepted=False 仅因 min_eig 门限按 float64 λmin 判定，被 σ 块（~1.5e15）的噪声地板触发；精确 R2=1.2e-40 与 精确 LDLᵀ 才是权威判据（数值复核不作为出界依据，见 sdp_bound.py 头注）",
+  "residual_comparison": {
+    "clarabel": {
+      "e": 25.759381941996825,
+      "identity_l1_slack": 8.582557239850633e-05,
+      "identity_residual_slack": 2.8468651804836043e-06,
+      "identity_residual_minorant": 5.200023238671747e-06,
+      "min_eig_min": -1.0483523844192026e-07,
+      "status": "optimal_inaccurate"
+    },
+    "sdpa_gmp": {
+      "e": 25.759446402682762,
+      "resid_slack_linf": 2.003512497986437e-39,
+      "resid_slack_l1": 1.0017603612703959e-38,
+      "resid_minor_linf": 1.5247721232269495e-41,
+      "resid_minor_l1": 1.1899165003028658e-40,
+      "min_eig_min": -1.0667040885419639,
+      "status": "pdOPT"
+    },
+    "improvement_factor": {
+      "slack_l1": 8.56747538799254e+33,
+      "minorant_l1": 1.4556878228402742e+35
+    }
+  },
+  "residual_comparison_note": "Clarabel 双精度 IPM 停滞（insufficient progress@33，与 Round 1 存档逐位一致）vs SDPA-GMP（pdOPT，恒等式残差降 ~34 个数量级，e 高 6.4e-5——即 Round 1/2 折减的主要来源确实是求解器残差）",
+  "certified": {
+    "claimed_bound": "47517790735835014335570/1844674407417822803119",
+    "value": 25.759445973097478,
+    "certificate": "certificates/n9-stage-a2-sdp-hp.json",
+    "round_bits": 64,
+    "R1": 1.1914744781213907e-08,
+    "R2": 2.5406999377085813e-11,
+    "rounding_loss": 4.295852823514932e-07,
+    "improvement_over_round2": 0.007035155097479208,
+    "gap_to_E_star": 0.0005405579025199239
+  },
+  "runtime_s": 29.1
+}

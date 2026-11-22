@@ -1,0 +1,44 @@
+{
+ "kind": "thomson-n9/bounds/r8c3-engine-solver-events/1",
+ "note": "R8B engine-v2-strip 战役求解操作日志（执行员手工维护的运行事实：后台启动/轮询采样/完成/失败/护栏）。只记事实，不参与任何界值计算；时间戳＝本机真实本地时间 +08:00。",
+ "events": [
+  {
+   "piece": "m765-m748",
+   "event": "phase0_complete",
+   "ts": "2026-10-09T15:55:00+08:00",
+   "detail": "相位 0（0 当量）完成：contact 区间算术证书 PASS（7 区域：[−1,ν₁]…[ν₆,1] 全定理分支，Π=(t+1)^5∏(t−ν)²≥0 因子逐区判定）＋W=17/562949953421312=3.02e-14（k=48）＋strip gap_ub=4.43e-14（vs M_old 6.96e-10，收紧 ~1.6e4×）＋稠密 1e6 点（min +2.9e-14）＋逐节点区间局部极小全 ≥−4e-14（float 见证）＋占优检查 FAIL（min −1.04e-14，二分 4M 节点 1 区不定号——如实记，SDP 单调改进无先验保证）；triple 区间证书 FAIL（三处 dip 区组合界 −3.502e-9 < 0；精确格点实测 dip −6.80e-10 ≫ W=3.20e-14——奇次幂余项符号交替致严格 dyadic minorant 需 W≥3.5e-9 即 k≲31，摧毁紧度，判死）。探针整体未判死（contact 过）⇒ 相位 1/2 启动。修复 2 个历史 bug：contact_minus1 行缺 (j)_m(−1)^{j−m} 项（R6-1 起未触发分支）、orders≥2 行 b 向量缺 (2m−1)!! 前置因子；plain 12 条路径与 HEAD 位一致（k=48/56 验证）。烟测：contact@M9 m=2907 entries=258016 blocks=29 n_lp=73 行泛函 2907 行精确一致＋与 R7 存档结构逐项相等；contact@M10/triple@M10 m=3990 entries=481248 n_lp=81 同；RSS 复核＝结构相同⇒期望不变，存档峰值（a5 M10 片 1.47GB、cap M9 0.89GB）≪6GB 护栏。选型（预登记规则）：M9=contact（唯一合法），M10=contact（唯一证书通过）。产出 results/hermite_v2_probe_{contact,triple}.json＋hermite_v2_smoke.json"
+  },
+  {
+   "piece": "m765-m748",
+   "event": "launched",
+   "ts": "2026-10-09T16:48:04+08:00",
+   "runner": "nohup bash /tmp/r8b_phase1.sh 1 9 contact 36000（后台，日志 /tmp/r8b_p1_hermite.log＋RSS 采样 /tmp/r8b_p1_rss.log）",
+   "sdpa_param": "默认 PARAM_SDPA（maxIter 500／betaStar 0.1／betaBar 0.3／precision 200）＋hermite_ladder 条带内部超时 172800；外部看门狗 kill 36000s（仅当 sdpa_gmp 存活时执行）＋RSS>6GB GUARD（5 分钟采样）",
+   "detail": "相位 1：hermite_ladder.py --strip -0.765:-0.748 --M 9 --variant contact --ks 48 56 64 --k-minor 48 --out-strips results/hermite_v2_strips.json；export m=2907 entries=258016 blocks=29 n_lp=73（烟测口径）；单 SDPA 并发（本会话唯一求解线）；kill 上限 36000s=3.33 当量 ≤ 相位 1 预算"
+  },
+  {
+   "piece": "m765-m748",
+   "event": "rss_poll",
+   "ts": "2026-10-09T18:30:00+08:00",
+   "detail": "相位 1 进行中（elapsed≈5700s≈1.6h）：sdpa_gmp（pid 56941）RSS 稳定 776.8–910.7MB（采样峰 910.7MB @elapsed 300s，此后稳态 ~777MB）≪6GB 护栏；watchdog 5 分钟采样 /tmp/r8b_p1_rss.log 全程零 GUARD；单 SDPA 并发维持"
+  },
+  {
+   "piece": "m765-m748",
+   "event": "solved_blocked",
+   "ts": "2026-10-10T01:22:00+08:00",
+   "detail": "相位 1 收口：sdpa_gmp 30542.1s 后 pdOPT@iter91（mu=7.75e-25 relgap=7.17e-79 p.feas=2.34e-31 d.feas=4.44e-47）；e_raw=25.759826236242741；R1 回读 {A:9.1e-40, B:5.3e-39, G:4.2e-39}；certified(2^-48)=1812686546235572279/70368744177664000=25.759825152755017 ≤ E*_dec=25.759986531（margin −1.6138e-4，R1@2^-48≈1.28e-8 defl=1.083e-6）⇒ blocked；X9:=attempt−certified_a5(M9)=413033759413/140737488355328000=+2.934781374e-06 ≥0（v2 contact 单调正向抬升，但 18× 低于触发阈 5.3e-5）；blocked 行已由引擎自动落 results/hermite_v2_strips.json（variant=contact）"
+  },
+  {
+   "piece": "m765-m748",
+   "event": "phase2_not_triggered",
+   "ts": "2026-10-10T01:25:00+08:00",
+   "detail": "相位 2 触发三合一复核（十进制口径精确 Fraction）：①X9=2.934781374e-06 ≥ 5.3e-5？否（差 18.1×）；②相位 1 实耗 30542.1s ≤ 32400s？是；③30542.1+68000=98542.1 ≤ 100400s？是——三合一不满足 ⇒ 相位 2 不启动（D29 裁决 2 规则如实执行，M10 不求解）；预算终账 30542.1s=2.828 当量 ≤ 9.30"
+  },
+  {
+   "piece": "m765-m748",
+   "event": "rss_summary",
+   "ts": "2026-10-10T01:26:00+08:00",
+   "detail": "相位 1 全程 RSS 采样收口（/tmp/r8b_p1_rss.log，5 分钟×看门狗）：sdpa_gmp（pid 56941）峰值 910944KB=910.9MB（watchdog 日志实测，elapsed 300s 早期），此后稳态 762.5–795.5MB；python 主进程 ≤270MB——零 GUARD 记录，6GB 回落条款全程未触发；单 SDPA 并发维持全程（本会话唯一求解线）；外部 kill 36000s 未触及（实耗 30542.1s 自行完成 pdOPT＋认证链 208s）；watchdog 总墙钟 30905s rc=0"
+  }
+ ]
+}

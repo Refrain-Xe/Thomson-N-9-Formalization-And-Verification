@@ -1,0 +1,86 @@
+{
+ "kind": "n9-r15-b6-ledger",
+ "task": "r15a-tableb-b6",
+ "seed": 20261017,
+ "heavy_solves": 0,
+ "files": {
+  "formal/lean/ThomsonN9/TableB6Data.lean": "ee33f0494fec5d0eca7dd69f73c225227996415a51dda1ca16f48b544924dc62",
+  "formal/lean/ThomsonN9/TableB6.lean": "ecc09650015457b85bdf2ed058204f3a6c7046d3c68d54cd34209f6e39964bd9",
+  "numerics/bounds/r15_b6_data.py": "4421d5d32959ea6214ade231473855ccd1f2f7ab3e7f31ce79f0a9b59c0237b0",
+  "numerics/bounds/r15_b6_gate.py": "f61fc26d50ee317aa8cb00f38f67dbdfdd8e29bad4f0aa7bf23c6c87213c3fdd",
+  "thomson-n9/numerics/bounds/r15_b6_gate.py": "fc1e67bf35a0db1ad1cd496931e87a888fc72412f68a5c12b5392f19f04c751a",
+  "numerics/bounds/results/r15_b6_data.json": "ecb1e7d1ff73374240cf8bcb8cffa580f953381b4cb00ee351173b2002b6c060",
+  "notes/tableb-lean.md": "2f7eba11679905068efb6b6b155908a08bcbb10846c9189933805c2de6352e5f",
+  "numerics/bounds/results/r15_b6_ledger.json": "self"
+ },
+ "files_note": "锚定时点＝提交前终版（发射器确定性重跑后逐件 sha256；TableB6Data.lean 重跑字节一致由发射器自检内验）",
+ "data": {
+  "json": "numerics/bounds/results/r15_b6_data.json",
+  "lean_defs": 28,
+  "lean_theorems_data": 45,
+  "lean_theorems_main": 8,
+  "lean_theorems_total": 53,
+  "theorem_note": "D61 预计 Data 件 norm_num1 逐件定理；实际 Data 45（链 12＋锚 2＋记录下侧 12＋HP 字面等 1＋铁律 2＋epsIron 正性 1＋分片语义 12＋抽查 3）＋Main 8（覆盖 ℚ/ℝ 双版＋链聚合＋记录下侧聚合＋口径① min＋取到＋铁律 ε 版＋分片语义聚合）＝53，账本记锚",
+  "spot_checks": {
+   "points": 3,
+   "per_point_theorems": 1,
+   "scheme_seed": 20261017,
+   "grid": "2⁻²⁰（x∈[−1,1]）",
+   "locator": "最小命中指数法 j=min{j: x≤e_j}、片 i=j−1（j=0 时 i=0）——与主件 Nat.find 覆盖机器同规则"
+  },
+  "inputs": {
+   "endgame_json": "numerics/bounds/results/endgame.json（只读；唯一记录源；sha256=86863a09…69f 不变锚——发射器与门 G5(a) 双锚定）"
+  }
+ },
+ "lean": {
+  "files": [
+   "formal/lean/ThomsonN9/TableB6Data.lean",
+   "formal/lean/ThomsonN9/TableB6.lean"
+  ],
+  "elaboration_wall_s": {
+   "TableB6Data.lean": "13.8–53.4s（首编译＋门内五跑带内：41.3/43.2/53.4/31.1s；≤600s 界 1/11–1/43 量级）",
+   "TableB6.lean": "8.1–31.3s（同上带内：25.5/22.6/19.8/8.1s；≤600s 界 1/19–1/74 量级）",
+   "dedicated_note": "门内 G2 每跑重测；全部 ≤600s 界的 1/11 以下；r15b 姊妹会话并行在途（G1 家族放行层亲见），墙钟含核争用如实记"
+  },
+  "elaboration_limit_s_per_file": 600,
+  "theorem_count": 53,
+  "axiom_policy": "⊆ {propext, Classical.choice, Quot.sound}；零 sorryAx/ofReduceBool/ofReduceNat/trustCompiler",
+  "proof_methods": "Data：show 展开＋norm_num1（链/记录下侧/铁律/分片语义——勿 decide 于 ℚ 大比较，D61-2 v1 教训）＋rfl 字面锚；Main：覆盖 Nat.find 最小命中指数法（hpred 存在性→Nat.find_spec/Nat.find_min；j=0 支路 subst 收口）、口径① min 零 Finset API、铁律 ε 版 linarith、分片语义 12 case match"
+ },
+ "gate": {
+  "script": "numerics/bounds/r15_b6_gate.py",
+  "wrapper": "thomson-n9/numerics/bounds/r15_b6_gate.py",
+  "steps": [
+   "G0 账本",
+   "G1 所有权＋endgame.json/certificates 双只读守卫＋PARALLEL_FAMILY r15 放行层（D53-4/D57-5）",
+   "G2 逐文件 elaboration ≤600s（依赖序，-o 出 olean）",
+   "G3 公理全 53 定理",
+   "G4 语句锚＋抽查形状＋主件零数据值字面量（剥注释）＋非交叠守卫（含 TableB5*）",
+   "G5 不变锚/三方逐位/端点链无缝/certs 值一双射/记录/铁律三式/分片语义/抽查 seed 复放/四面交叉",
+   "NC1 sorry 注入→sorryAx",
+   "NC2 篡 b0 分子→G5 分区 bound 对账拦（防假拦截预断言）",
+   "NC3 篡端点乱序（交换 e5/e6）→G5 端点命题首错拦（交换后 e5>e6 亲算预断言）"
+  ],
+  "selfrun_exit": 0,
+  "selfrun_log": "/tmp/r15_b6_gate_selfrun.log",
+  "selfrun_note": "终版门五跑（gate.py sha 60125867…e0cd 时点）全 PASS exit 0：selfrun2 133.5s＋selfrun3 155.9s＋路由 A 167.5s／B 112.8s／C 185.6s＋终版预提交 130.8s（G1 自跑放行 notes/decisions.md〔D61 设计师留痕，R14A D57 预提交口径先例；后 D61/D62 由 R15C 9d40343 收编〕＋r15b/r15c 在途件走 PARALLEL_FAMILY 家族层〔D53-4/D57-5〕——r15b 会话本轮实际并行在途，家族层实战放行亲见）；回填两轮扩面后终版门（gate.py sha 见 files 锚）再跑见 routes_verified.post_commit",
+  "routes_verified": {
+   "repo_root_real": "python3 numerics/bounds/r15_b6_gate.py（CWD=thomson-n9）→ PASS exit 0（167.5s，/tmp/r15_routeA.log）",
+   "repo_root_wrapper": "python3 thomson-n9/numerics/bounds/r15_b6_gate.py（CWD=thomson-n9，runpy 重定向真实门）→ PASS exit 0（112.8s，/tmp/r15_routeB.log）",
+   "campaign_root": "python3 thomson-n9/numerics/bounds/r15_b6_gate.py（CWD=八电子在球面的分布，直接命中真实门）→ PASS exit 0（185.6s，/tmp/r15_routeC.log）",
+   "post_commit": "提交 0cba187 后零环境变量复跑四跑全 PASS exit 0：①即时跑 191.7s（/tmp/r15_b6_gate_postcommit.log，r15b 七件在途走家族层）；②净树窗口亲见（dirty=0，r15b 4dc34e0 已落）但启动即被 r15d 开工竞速——endgame_gate.py（r15d campaign-10 扩展面，D61-5）字面拦如实记录；③家族层补齐该面后 122.2s（postcommit2.log）＋④终版门三跑 159.3/182.7s（final_postcommit.log/final3.log；第四跑时 r15d 正追加 decisions.md——轮次文档三件套第三面补齐后过）。严格性等价说明：各跑时点自有八件全部已提交零 diff（git diff HEAD 仅 r15 家族在途件），G1 与字面严格版差异恰为 D53-4/D57-5 设计放行面；字面净树复跑窗口由 r15d 收口后接管"
+  },
+  "negative_controls": {
+   "NC1": "e0_val 证明注入 sorry（单行 rfl 锚定理整体替换）→ 编译 sorry 警告＋公理集含 sorryAx（G3 判定逻辑必 FAIL）；五跑全检出",
+   "NC2": "b0 分子＋1 → G5(c) 分区 bound 逐件对账首错『源码 b0 ≠ json partition[0].bound』（预断言篡值≠json 记录值）；原文件 sanity PASS",
+   "NC3": "交换 e5/e6 字面量 → G5(c) 端点命题首错（13 端点无缝对账先拦；交换后 e5=−22/25>e6=−9/10 Fraction 亲算预断言——防假拦截）；原文件 sanity PASS"
+  },
+  "dev_incident": "开发中真实缺陷捕获实录（发射器 2＋主件 2＋门 5，共 9 处编译器/自检/门把关实证）：①发射器 doc dict 一处括号重复闭合（IndentationError）＋②抽查回读正则行尾锚漏 ' := by' 后缀——发射器自跑两轮拦下修正；③主件 ℝ 版 j=0 支路 rw [hxeq] 因 hpred 依赖 x 致 motive 不类型正确，改 subst hxeq（执行探针拦下）；④push_cast at hchain 无操作警告删除——编译面零输出；⑤门 G5 首版 chain_json 逐区双 append 成 24 端点（应无缝 13）自跑首拦；⑥NC1 首版行内追加 sorry 残留 show 致『No goals』伪错（B6 全 norm_num1 定理为多行 show 形状），改单行 rfl 锚定理整体替换；⑦NC2/NC3 预期检出消息『对账失守』与真实失守字面撞车致预期检出被误当真实失守 re-raise，改『对账失配』用词＋flag 变量式捕获；⑧PARALLEL_FAMILY 首版漏 r15b 的 formal/lean TableB1* 面（路由二跑亲见 r15b 在途 TableB1.lean 被字面拦后补齐）；⑨同款第二例：净树复跑窗口被 r15d 开工竞速（endgame_gate.py 字面拦），按 D61 裁决 5 补齐 r15d 扩展面——家族层三轮实战校准（⑧r15b TableB1* 面＋⑨r15d endgame_gate.py 面＋⑩r15d decisions.md 轮次文档三件套补全——均为真实在途件触发，字面拦截面亲验有牙）"
+ },
+ "provenance": {
+  "endgame_json": "results/endgame.json（12 分区/E*/AR/citedCertificates 唯一记录源；只读；sha256=86863a09bf84e950e85fc5f902bc2b4046a87f06703bd782e5148fc119afd69f 不变锚——发射器与门双锚定）",
+  "generator": "numerics/bounds/r15_b6_data.py（json＋TableB6Data.lean 确定性生成——重跑字节一致发射器自检内验；独立第二实现重导＋发射＋回读自检）",
+  "no_new_numerics": "零新数值证书、零 dyadic 舍入面（endgame.json 分区常数已是精确 Fraction）、endgame.json 零改动"
+ },
+ "scope_note": "B6 算术层（拼接端点/记录锚件）：覆盖/记录 min/铁律/分片语义；『区域 i 上 E≥b_i』证书语义＝数值层职责（typed_ladder/hermite/hp 各证书 verifyCmd）不在件内（docstring 双侧如实）"
+}

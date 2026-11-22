@@ -1,0 +1,167 @@
+{
+ "kind": "n9-r12-tablea-lean",
+ "task": "r12b-tablea-lean",
+ "round": "R12",
+ "timestamp": "2026-10-10T08:42:58+00:00",
+ "authored_against": "0006d3e",
+ "seed": 20261014,
+ "heavy_solves": 0,
+ "files": {
+  "formal/lean/ThomsonN9/TableA.lean": {
+   "sha256": "75453d6458c7f20777aac77f049153e65a64f4e77c5a8ac52bf4bc73f6ddd2a9",
+   "bytes": 7208
+  },
+  "numerics/bounds/r12_tablea_gate.py": {
+   "sha256": "1b112e88101cd8a1c88ced857609d3b83fb3f33e489113121900978e78baa6bb",
+   "bytes": 22550
+  },
+  "notes/tablea-lean.md": {
+   "sha256": "95f8cc7bfabeb4b969483de083d9fa480e07171c555372b3011f9c65dc2750bc",
+   "bytes": 10966
+  },
+  "numerics/bounds/results/r12_tablea_ledger.json": {
+   "note": "本件自身（自指不做 sha256，见 git 提交历史）"
+  },
+  "thomson-n9/numerics/bounds/r12_tablea_gate.py": {
+   "sha256": "494b45803ba0bf0163e8680899cfc208a7acb38c7bf8a6ef2ea3663e6999fddb",
+   "bytes": 1488,
+   "note": "CWD 兼容包装器（runpy→真实门，exit code 原样传播；沿 R10A 0087eab 先例）"
+  }
+ },
+ "lean": {
+  "toolchain": "leanprover/lean4:v4.34.1",
+  "mathlib_rev": "d13f23b723b8a846827a245b89c10fc7d3f11612",
+  "single_file_elaboration": {
+   "cmd": "lake env lean ThomsonN9/TableA.lean（CWD=formal/lean）",
+   "exit": 0,
+   "wall_s": 3.6
+  },
+  "olean_build": {
+   "cmd": "lake env lean -o .lake/build/lib/lean/ThomsonN9/TableA.olean ThomsonN9/TableA.lean",
+   "exit": 0,
+   "wall_s": 3.9
+  },
+  "axioms": {
+   "ThomsonN9.TableA.l2_eps_forcing_identity": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+   ],
+   "ThomsonN9.TableA.hasDerivAt_phiDeriv": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+   ],
+   "ThomsonN9.TableA.phiDeriv_pos": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+   ]
+  },
+  "forbidden_axioms_absent": [
+   "sorryAx",
+   "ofReduceBool",
+   "ofReduceNat",
+   "trustCompiler"
+  ],
+  "imports": [
+   "Mathlib"
+  ]
+ },
+ "tablea": {
+  "A5_l2_eps_forcing_identity": {
+   "statement": "(1 + R2max)·(E* − certified) = ε_forcing（ℚ 精确）",
+   "constants_from": {
+    "E_star": "numerics/bounds/results/l2_rigorous.json :: E_star.value",
+    "certified": "… :: certificate_rebuild.certified_recomputed（bitwise_equal_to_claimed=true）",
+    "R2max": "… :: certificate_rebuild.R2max_exact",
+    "eps_forcing": "… :: eps_forcing.exact"
+   },
+   "fractions_exact": {
+    "E_star": "25759986531/1000000000",
+    "certified": "22879340185047884591327492399406419521507688973060989923169472604058682918548583984375/888178445822492388747275390557723859303211430452579251742723511769167625620708441526",
+    "R2max": "13061183578204185028042533804651605715226289625871361755884583812810354220763/444089209850062616169452667236328125000000000000000000000000000000000000000000000000",
+    "eps": "62308232016279826168812154155836080188260221347417966571668186047549261057992006380543153/444089209850062616169452667236328125000000000000000000000000000000000000000000000000000000000"
+   },
+   "python_side_first_proof": "l2_rigorous.json :: eps_forcing.identity_check.holds == true",
+   "lean_proof": "norm_num",
+   "gate_g5_recomputed_identity": true,
+   "gate_g5_literals_match_json": true
+  },
+  "A2_lemma41_positivity_core": {
+   "defs": {
+    "dfactorialOdd": "ℕ → ℚ；0 → 1；m+1 → (2m+1)·dfactorialOdd m",
+    "phiDeriv": "fun m t => (dfactorialOdd m : ℝ) / Real.sqrt ((2−2t)^(2m+1))"
+   },
+   "lemmas": [
+    "phiDeriv_pos (m) (t) (ht : t < 1) : 0 < phiDeriv m t",
+    "hasDerivAt_phiDeriv (m) (t) (ht : t < 1) : HasDerivAt (phiDeriv m) (phiDeriv (m+1) t) t"
+   ],
+   "proof_method": "幂/根/商求导链直接计算（HasDerivAt.pow/.sqrt/.div＋congr_deriv；非对 m 归纳——差异留痕 notes/tablea-lean.md §2）",
+   "xi_existence_in_this_file": false,
+   "gate_g5_squared_criterion": {
+    "formula": "(phiDeriv m t)² == df²·(2−2t)^(−(2m+1))",
+    "m_range": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8
+    ],
+    "t": "-7/4",
+    "u": "11/2",
+    "df_values": [
+     1,
+     1,
+     3,
+     15,
+     105,
+     945,
+     10395,
+     135135,
+     2027025
+    ],
+    "lhs_source_literals_vs_rhs_independent": "逐 m 全等"
+   }
+  },
+  "remaining": [
+   "A1",
+   "A3",
+   "A4",
+   "A6"
+  ]
+ },
+ "gate": {
+  "script": "numerics/bounds/r12_tablea_gate.py",
+  "seed": 20261014,
+  "steps": {
+   "G0_ledger": true,
+   "G1_ownership": true,
+   "G2_elaboration": true,
+   "G3_axioms": true,
+   "G4_statement_regex": true,
+   "G5_offline_exact": true,
+   "NC1_sorry_injection_caught": true,
+   "NC2_literal_tamper_caught": true
+  },
+  "wall_s": 17.0,
+  "self_run_note": "官方自跑 2026-10-10：R12B_G1_ALLOW_FOREIGN 放行 r12c 并行在途件 endgame_gate.py(M)/r12c_closure_gate.py(??)（自跑时点未提交，非本任务产物，逐项打印）；验收运行不设该变量（提交后树净 ⇒ G1 字面严格恒过）。NC2(a)(b) 检出行见门日志。",
+  "official_self_run_log": "/tmp/r12_tablea_gate_selfrun.log（终版工件官方自跑 PASS exit 0、17.0s；另净 HEAD worktree 严格模式（无放行变量）全门 PASS exit 0、20.2s，log /tmp/r12_tablea_gate_worktree.log）",
+  "routes_verified": {
+   "repo_root_via_wrapper": "python3 thomson-n9/numerics/bounds/r12_tablea_gate.py（CWD=仓库根，验收命令原样）",
+   "repo_root_canonical": "python3 numerics/bounds/r12_tablea_gate.py（CWD=仓库根）",
+   "campaign_root": "python3 thomson-n9/numerics/bounds/r12_tablea_gate.py（CWD=campaign 根，直接命中真实门）"
+  },
+  "router_fix_note": "初验失败实录（如实入档，沿 R10A 0087eab 先例）：工作流以 CWD=仓库根运行验收命令 python3 thomson-n9/numerics/bounds/r12_tablea_gate.py，相对路径解析成 thomson-n9/thomson-n9/… 不存在 → exit 2；补仓内嵌套 CWD 兼容包装器 thomson-n9/numerics/bounds/r12_tablea_gate.py（runpy 按真实门路径执行、exit code 原样传播）后三路由亲跑 exit 0。门内容（G0–G5＋NC1/NC2）零改动。"
+ },
+ "provenance": {
+  "design": "D49（commit 0006d3e）：r12b 表 A5/A2′ 并行件，文件面与 r12a 零交叠",
+  "non_interference": "TableA.lean 仅 import Mathlib；Solution.lean/ThomsonN9.lean/lakefile.toml/scripts/check.sh 零 TableA 引用（门 G4 机器化核验）",
+  "decisions": "notes/tablea-lean.md §4（D-r12b-1…5；留痕于本任务自有件，不进 decisions.md——D49 零交叠约束）",
+  "no_solver": "heavySolves=0：无 LP/SDP/重求解调用；本轮 0.037 当量预算全额留作储备（D49 裁决）"
+ }
+}

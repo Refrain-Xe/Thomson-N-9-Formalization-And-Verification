@@ -1,0 +1,55 @@
+{
+ "strips": [
+  {
+   "status": "blocked",
+   "tag": "m765-m748",
+   "lo": "-153/200",
+   "hi": "-187/250",
+   "cover": "[-0.765,-0.748]",
+   "M": 9,
+   "K": 6,
+   "variant": "contact",
+   "minorant_variant": "contact",
+   "e_raw": 25.75982623624274,
+   "certified": "1812686546235572279/70368744177664000",
+   "certified_float": 25.759825152755017,
+   "margin_over_E_star": -0.00016137824498188992,
+   "margin_over_E_star_dec": -0.00016137824498275739,
+   "margin_over_E_star_dec_exact": "-177437256828625681/1099511627776000000000",
+   "flips_decimal_E_star": false,
+   "margin_over_wouldBe": 0.0002539671543012426,
+   "round_bits": 48,
+   "minorant_k": 48,
+   "R1": {
+    "A": 1.2778852510259801e-08,
+    "B": 1.2901320491920386e-08,
+    "G": 1.2919436920912274e-08
+   },
+   "deflation": 1.0834877204644045e-06,
+   "certificate": "certificates/n9-stage-a5v2-strip-m765-m748_M9.json",
+   "solution": "numerics/bounds/results/hermite_strip_sol_m765-m748_M9_v2-contact.json",
+   "sdpa": {
+    "route": "SDPA-GMP 7.1.3 (GMP 200)",
+    "reused": false,
+    "stalled_point": false,
+    "solve_s": 30542.1,
+    "lp_penalty": "1/100000000000",
+    "phase_value": "pdOPT",
+    "iteration": 91,
+    "mu": 7.754307879703744e-25,
+    "relative_gap": 7.173413321517485e-79,
+    "p_feas_error": "2.3417023743779183e-31",
+    "d_feas_error": "4.4374299398740691e-47",
+    "obj_primal": "2.5759826236214256e+01",
+    "obj_dual": null
+   },
+   "code_version": "659203e-dirty"
+  }
+ ],
+ "kind": "hermite-strips",
+ "script": "hermite_ladder.py",
+ "code_version": "659203e-dirty",
+ "E_star": 25.759986531,
+ "wouldBe_reference": 25.759571185600716,
+ "updated": "2026-10-09T17:23:21+00:00"
+}

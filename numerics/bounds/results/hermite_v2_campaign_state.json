@@ -1,0 +1,61 @@
+{
+ "kind": "hermite-v2-campaign-state",
+ "note": "R8B engine-v2-strip 战役里程碑事实（执行员随相位推进手工更新；装配器 r8c3_engine_gate.py::assemble_campaign 只读此文件，不引入任何时钟）。",
+ "campaign": "dwfrun-41fdc169 第 4 轮（R8B engine-v2-strip）",
+ "seed": 20261010,
+ "E_star_decimal": "25.759986531",
+ "EQUIV_UNIT_S": 10800,
+ "budget_cap_equiv": 9.3,
+ "phase0": {
+  "death_verdict": false,
+  "death_rule": "两变体区间证书皆败 ⇒ 判死（D29 回滚点）",
+  "death_basis": "contact 区间算术证书 PASS（7 区域全定理分支）⇒ 未判死",
+  "selection_rule_predeclared": "预登记选型规则（相位 0，先于结果宣布）：①区间证书通过为前提；②合法变体（ncond ≤ d_H+1 且 M ≥ min_M）中取 strip exact_grid_max_gap_ub 最小者；③平手取 hull exact_grid_max_gap_ub 最小者。M9 档 contact 为唯一合法变体。",
+  "probe_files": {
+   "contact": "results/hermite_v2_probe_contact.json",
+   "triple": "results/hermite_v2_probe_triple.json"
+  },
+  "smoke_file": "results/hermite_v2_smoke.json",
+  "selection": {
+   "M9": {
+    "selected": "contact",
+    "reason": "唯一合法且证书通过的变体（triple 18 系数 > d_H+1=17 不容于 M9）"
+   },
+   "M10": {
+    "selected": "contact",
+    "reason": "唯一证书通过的变体（triple 区间证书 FAIL：三处 dip 组合界 −3.502e-9 < 0）"
+   }
+  },
+  "zero_solve_declaration": null
+ },
+ "phase1": {
+  "variant": "contact",
+  "M": 9,
+  "cmd": "python3 numerics/bounds/hermite_ladder.py --strip=-0.765:-0.748 --M 9 --K 6 --variant contact --ks 48 56 64 --k-minor 48 --out-strips results/hermite_v2_strips.json",
+  "launched_ts": "2026-10-09T16:50:43+08:00",
+  "kill_s": 36000,
+  "watchdog": "bash /tmp/r8b_phase1.sh 1 9 contact 36000（RSS 5 分钟采样 /tmp/r8b_p1_rss.log；GUARD=6GB）",
+  "outcome": "blocked",
+  "solve_s": 30542.1,
+  "certified": "1812686546235572279/70368744177664000",
+  "status": "blocked",
+  "note": "pdOPT iter=91 solve_s=30542.1s（≤kill 36000s）；certified(2^-48)=25.759825152755017 ≤ E*_dec（margin −1.6138e-4）⇒ blocked；X9=+2.934781374e-06（v2 对 a5 M9 正向抬升但 ≪ 5.3e-5 触发阈）"
+ },
+ "phase2": {
+  "trigger_threshold_X9": "5.3e-5",
+  "trigger_rule": "X9 = attempt_v2(M9) − certified_a5(M9) ≥ Fraction('5.3e-5')（十进制精确）且 相位1实耗 solve_s ≤ 32400 且 solve_s+68000 ≤ 100400",
+  "kill_s": 68000,
+  "launched": false,
+  "variant": null,
+  "outcome": "not_triggered",
+  "solve_s": null,
+  "certified": null,
+  "trigger_eval": {
+   "X9_ge_threshold": false,
+   "phase1_actual_le_32400": true,
+   "budget_headroom": true,
+   "all": false,
+   "solve_s_actual": "305421/10"
+  }
+ }
+}

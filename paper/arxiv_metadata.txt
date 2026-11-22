@@ -1,0 +1,30 @@
+========================================================================
+ARXIV SUBMISSION METADATA (COPY-PASTE READY)
+========================================================================
+
+Title:
+The Tricapped Trigonal Prism Is the Unique Minimizer of the Coulomb Energy of Nine Points on the Sphere
+
+Authors:
+Yang Li
+
+Primary Category:
+math.MG (Metric Geometry)
+
+Cross-List Categories:
+math.OC (Optimization and Control)
+cs.LO (Logic in Computer Science)
+math-ph (Mathematical Physics)
+
+MSC-class (2020):
+52A40, 31C20 (Primary); 90C22, 68V20, 52C17 (Secondary)
+
+Comments:
+17 pages, 3 figures, 3 tables. Complete Lean 4 formalization (Lean v4.34.1, Mathlib d13f23b7; 45 project modules, 20,327 lines, zero sorry, standard axioms only) and independent 50-digit certificate verification suite available at https://github.com/Refrain-Xe/Thomson_N-9_Campaign_Scheduling.
+
+Abstract (plain text / arXiv MathJax compatible, strictly <= 1,920 char limit):
+We prove that among all configurations of nine distinct points on the unit sphere $S^2 \subset \mathbb{R}^3$, the Coulomb energy $E(x) = \sum_{1 \le i < j \le 9} \|x_i - x_j\|^{-1}$ is globally minimized by the $D_{3h}$ tricapped trigonal prism $X_{\mathrm{TTP}}(z^*)$ with optimal half-height $z^* \approx 0.70364839580413177578$ and minimum energy $E(X_{\mathrm{TTP}}(z^*)) \approx 25.75998653126983156408$, and that every minimizer is obtained from $X_{\mathrm{TTP}}(z^*)$ by an orthogonal transformation of $\mathbb{R}^3$ and a relabeling.
+
+Our computer-assisted proof splits into two cases at $m = \min_{i<j}\langle x_i, x_j\rangle = -9/10$. For $m \le -9/10$, a single $(2,7)$-typed degree-10 three-point SDP certificate ($M=6, K=6$) excludes all configurations by margin $> 5.5 \times 10^{-3}$. For $m \ge -9/10$, an $S_3$-equivariant degree-18 three-point SDP certificate ($M=10, K=10$) incorporating higher azimuthal harmonics beyond $K = 6$ gives a certified lower bound within $1.2 \times 10^{-17}$ of $E(X_{\mathrm{TTP}}(z^*))$ ($1.48 \times 10^{-16}$ below our rational upper bound $E_{\mathrm{ttp,hi}}$); combined with a 7-piece degree-37 Bernstein certificate, it confines every inner product within $10^{-4}$ of the six levels of $X_{\mathrm{TTP}}(z^*)$. Interval-arithmetic 3- and 4-point Gram masks plus a 28-leaf symmetry-broken DFS prove combinatorial rigidity to the $S_9$ orbit of $X_{\mathrm{TTP}}(z^*)$, a Procrustes bound enters a Frobenius ball of radius $1/500$, and rotational gauge fixing, Bregman-Young bounds, and a $27 \times 27$ integer-Cholesky Hessian analysis prove strict local minimality with coercivity constant $1/30$.
+
+Every step is formally verified in the Lean 4 kernel over Mathlib (Lean v4.34.1) via binary bit-tries and 19 parallel 2D-Kronecker slices, with zero sorrys, no native_decide, and only Lean's three standard axioms (propext, Classical.choice, Quot.sound).

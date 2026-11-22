@@ -1,0 +1,103 @@
+{
+ "kind": "r12_m1_ledger",
+ "task": "r12a-m1-lean-e2e",
+ "timestamp_utc": "2026-10-10T11:40:00Z",
+ "heavySolves": 0,
+ "provenance": {
+  "lean_toolchain": "leanprover/lean4:v4.34.1",
+  "mathlib_rev": "d13f23b723b8a846827a245b89c10fc7d3f11612",
+  "gate": "numerics/bounds/r12_m1_gate.py",
+  "seed": 20261014,
+  "code_version": "5237fe5-dirty",
+  "data_script": "numerics/bounds/m1_lean_data.py",
+  "data_seed": 20261014,
+  "source_artifact": "results/lp_m1_light.json (frozen, git diff HEAD empty)",
+  "E_star_source": "../thomson-workflow/data/energies.json energies/9/value=25.759986531",
+  "proof_route": "LP minorant f + Lukacs half-line SOS (p Q-irreducible, design change) + reproducing kernel LDL^T + exact rational assembly"
+ },
+ "sorry_counts": {
+  "challenge": 4,
+  "challenge_decl_lines": [
+   158,
+   166,
+   172,
+   179
+  ],
+  "challenge_sorry_lines": [
+   160,
+   168,
+   175,
+   183
+  ],
+  "solution": 0,
+  "m1data": 0
+ },
+ "axioms": {
+  "ThomsonN9.thomson_nine_M1": [
+   "Classical.choice",
+   "Quot.sound",
+   "propext"
+  ],
+  "ThomsonN9.thomson_nine_M0": [
+   "Classical.choice",
+   "Quot.sound",
+   "propext"
+  ]
+ },
+ "statement_compare": {
+  "status": "OK",
+  "compared": 34,
+  "defs_with_values": 5,
+  "skipped_print": [
+   "ThomsonN9.thomson_nine",
+   "ThomsonN9.thomson_nine_M1",
+   "ThomsonN9.thomson_nine_unique"
+  ],
+  "sha256_compared_challenge_text": "0dec4f4082e1cd0b9c8d767f1e20608f65b7bbfa70b23825293cfd6154bfc5b4"
+ },
+ "data_recheck": {
+  "status": "OK",
+  "B": "177567771280032412133279075693790634492367328186325109022061215219444183526842753089173633586857842699720395947794219816261649745688401136704461870450018089625099147787823208376548125465806146592379627421053525932410634131491941964580485245662687732026318436899966657452847528872252862795401716957411241402701236766897477903615249381971255704377432314301714028613350370923153125975908021006031014349454553/6901668773168007034839604491232562499543851822810115539975098178115588325711285867127720483864973146141698491981419074268888422070416549751276250346723665546966568061626246882593150166624668759449227712959762721056377839722874604609429570741029639981258669015635955192907397362398308753154735685017630445373350651472748778019143933806597939521359422329287925546274312300176407857078210970856389401903104",
+  "B_decimal": "25.728237201",
+  "bound_exact_bitwise_equal_lp_m1_light": true,
+  "E_star": "25759986531/1000000000",
+  "ineq": "189/8 < B <= E*+1e-6 (exact)",
+  "lp_m1_light_sha256": "295d459c4929e1b04ba2149653534a3736ea5870b596bb266e9efe12969291bf",
+  "implementation": "gate G7 stdlib-only second implementation (Fractions only)"
+ },
+ "frozen_guard": {
+  "references_tree_sha256": "4237b5e51868063874a9f8adccee02f50856d8f88d3632ebb225e93c0bac1e5c",
+  "references_files": 48,
+  "frozen_repo_paths": [
+   "formal/lean/ComparatorChallenges/ThomsonN9.lean",
+   "formal/lean/lakefile.toml",
+   "formal/lean/lake-manifest.json",
+   "formal/lean/lean-toolchain",
+   "numerics/bounds/results/lp_m1_light.json",
+   "numerics/bounds/results/lp.json"
+  ]
+ },
+ "files": {
+  "ThomsonN9/Solution.lean": "b6d19ccbb1dc0226053c5203434037252c12f2d92d10b29409134bac6496f941",
+  "ThomsonN9/M1Data.lean": "4d5e0de6a5244a02662822a33ea219298868723394103b94a23c517d597e72ed",
+  "scripts/CheckAxioms.lean": "82009eaca7b475dea4331896c64fd535b955b1fcf69baa29749cef5608b32237",
+  "numerics/bounds/m1_lean_data.py": "b25c7e579b507514bcaf6e10e53d80679f4545c9108343dd18986474e6eeff5e",
+  "numerics/bounds/results/m1_lean_data.json": "c8ce997d9511bb48d39018a5f703e1e89d3c9be2ddc406c6baad627065d99687",
+  "numerics/bounds/r12_m1_gate.py": "2a84dce4dd68ce2e2bae4d109613890e41a6919d2b93a196d4645188603247df",
+  "notes/m1-lean-data.md": "87188f1b8cdf1c6d30c4e46dc1b8f8d207063520043ea362143c42f7ef73f9ae"
+ },
+ "negative_control": {
+  "status": "ALL_DETECTED",
+  "nc1": "detected",
+  "nc2": "detected:ThomsonN9.thomson_nine_M1",
+  "nc3": "detected"
+ },
+ "wallclock_seconds": {
+  "gate_full_run_s": 45.9,
+  "gate_full_run_build_step_s": 25.0,
+  "m1data_elaborate_s": 12.3,
+  "solution_elaborate_s": 6.0,
+  "check_sh_s": 19.3
+ },
+ "budget_note": "heavySolves=0 (Lean build + exact linear algebra; non-re-solving); 0.037 equivalents fully reserved (D49)"
+}

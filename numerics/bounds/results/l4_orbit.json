@@ -1,0 +1,416 @@
+{
+ "kind": "n9-l4-orbit",
+ "schema": "thomson-n9/bounds/l4-orbit/1",
+ "script": "bounds/l4_orbit.py",
+ "script_sha256": "97dd7e5f3f841c599e008e390884bd3955288e66b5fa50a576eafbd0e4736851",
+ "seed": 20261007,
+ "dps": 50,
+ "lemma": {
+  "statement": "9 个单位向量、所有两两内积 ∈ TTP 节点集 {ν_1..ν_6}（ν 由 D3h 族闭式从 z* 隔离区间重算）⇒ 边染色 ≅ TTP 染色",
+  "form": "unconditional",
+  "proofSkeleton": [
+   "P1 实现⊆过滤集：PSD rank≤3 ⇒ 3×3 主子式≥0 且 4×4 主子式=0",
+   "P2 过滤集枚举：float scout（z_mid，容差 1e-3）＋4×4 det 按色模式（K4 边规范型 2451 类）缓存剪枝；完备性＝sup|det′|·半宽 ≪ 容差",
+   "P3 幸存者精确复验：4×4 det ∈ Z[z,r]/(r²+z²−1) 恒等零 ⇒ 恒满足；否则 z* 箱区间（宽度覆盖传播）排零 ⇒ 排除；骑墙 ⇒ undecided 记录",
+   "P4 canonical iso 归类（backtracking＋顶点轮廓剪枝）",
+   "P5 TTP 类构造实现证书：族坐标(×2) ∈ Q(√3)[z,r]，Gram 逐项多项式恒等（√3 部分≡0、非对角≡4·节点曲线、对角≡4）⇒ PSD rank≤3 实现",
+   "P6 过滤集={TTP 单类}＋P1＋P5 ⇒ 引理"
+  ],
+  "honestScope": "离散染色层；构型层回复（Gram→坐标）属 L5（Procrustes，另件 l4_procrustes.py）；「过滤⇒可实现」方向不主张"
+ },
+ "inputs": {
+  "zBox": [
+   "0.7036483764648437944089209850062616169452667236328125",
+   "0.70364913940429685279553950749686919152736663818359375"
+  ],
+  "zBoxSource": "results/local_min.json zStarIntervalMpmath（严格隔离区间）",
+  "zBoxWidth": 7.629394530583866e-07,
+  "E_star": "25759986531/1000000000",
+  "E_star_source": "thomson-workflow/data/energies.json energies.9.value",
+  "tube_nodes": [
+   -0.7475605326,
+   -0.7105483339,
+   -0.5,
+   0.0097578696,
+   0.2426815978,
+   0.355274167
+  ],
+  "tube_mults": [
+   6,
+   6,
+   3,
+   3,
+   6,
+   12
+  ]
+ },
+ "nodes": {
+  "curves_x2": [
+   "-1z^2 + -1",
+   "-2r",
+   "-1",
+   "-4z^2 + 2",
+   "3z^2 + -1",
+   "r"
+  ],
+  "intervals": [
+   [
+    "-0.74756105569220376861",
+    "-0.74756051885080532227"
+   ],
+   [
+    "-0.71054835324444276523",
+    "-0.71054759771291353676"
+   ],
+   [
+    "-0.5",
+    "-0.5"
+   ],
+   [
+    "0.0097557772311848284241",
+    "0.009757924596778924306"
+   ],
+   [
+    "0.24268155655241580027",
+    "0.24268316707661138909"
+   ],
+   [
+    "0.35527379885645676838",
+    "0.35527417662222138262"
+   ]
+  ],
+  "widths": [
+   5.368413985238141e-07,
+   7.555315292569198e-07,
+   0.0,
+   2.1473655940952564e-06,
+   1.6105241955714424e-06,
+   3.777657646284599e-07
+  ],
+  "tube_10digit_contained": [
+   true,
+   true,
+   true,
+   true,
+   true,
+   true
+  ],
+  "parametrization": "6 棱顶（上三角3 z=+z*＋下三角3 z=−z*，半径 ρ=√(1−z²)，角 2πk/3）＋3 帽顶（z=0 半径 1，角 π/3+2πk/3）；源 numerics/family.py:39 tri_cap_prism 与 full_local_min.py:282/291 angles_exact/geometry_dual"
+ },
+ "scout": {
+  "tol3": -0.001,
+  "tol4": 0.001,
+  "zmid": 0.7036487579345703,
+  "supDetPrime4_on_box": 395.3013107380292,
+  "supDetPrime3_on_box": 57.77405058622949,
+  "completenessBound4": 0.00015079548290386767,
+  "completenessBound3": 2.2039051277612744e-05,
+  "completenessNote": "任何在真节点值处 4×4 det=0（或 3×3≥0）的染色，在 z_mid 处偏移 ≤ sup|det′|·|z_mid−z*| ≤ 上列 bound < 容差 ⇒ 必过 scout（无假阴性）",
+  "canonicalQuadClasses": 2451,
+  "triPatterns": 56,
+  "labeledSurvivors": 30240
+ },
+ "exactLayer": {
+  "quadDecisions": {
+   "identically-zero": 16,
+   "nonzero-on-box": 2435
+  },
+  "triDecisions": {
+   "identically-zero": 3,
+   "negative-on-box": 11,
+   "nonneg-on-box": 42
+  },
+  "quadClassesUsedBySurvivors": {
+   "[0, 0, 1, 4, 5, 5]": 181440,
+   "[0, 0, 3, 4, 4, 4]": 181440,
+   "[0, 0, 4, 4, 0, 3]": 181440,
+   "[0, 0, 5, 4, 1, 5]": 362880,
+   "[0, 1, 3, 5, 4, 1]": 362880,
+   "[0, 1, 4, 5, 3, 5]": 362880,
+   "[0, 1, 5, 5, 1, 2]": 181440,
+   "[0, 1, 5, 5, 5, 2]": 362880,
+   "[0, 3, 4, 4, 3, 0]": 90720,
+   "[0, 3, 5, 4, 5, 5]": 362880,
+   "[1, 1, 2, 3, 5, 5]": 181440,
+   "[1, 2, 2, 5, 5, 2]": 181440,
+   "[1, 2, 5, 5, 4, 1]": 181440,
+   "[1, 2, 5, 5, 4, 5]": 362880,
+   "[1, 4, 4, 5, 5, 4]": 181440,
+   "[2, 5, 5, 5, 5, 3]": 90720
+  },
+  "triPatternsUsedBySurvivors": {
+   "[0, 0, 4]": 181440,
+   "[0, 1, 5]": 362880,
+   "[0, 3, 4]": 362880,
+   "[0, 5, 5]": 181440,
+   "[1, 1, 3]": 90720,
+   "[1, 2, 5]": 362880,
+   "[1, 4, 5]": 362880,
+   "[2, 2, 2]": 30240,
+   "[2, 5, 5]": 181440,
+   "[3, 5, 5]": 181440,
+   "[4, 4, 4]": 60480,
+   "[4, 5, 5]": 181440
+  },
+  "accepted": 30240,
+  "rejected": 0,
+  "undecidedSurvivors": 0,
+  "undecidedBranches": []
+ },
+ "survivorSet": {
+  "nonEmpty": true,
+  "labeledTotal": 30240,
+  "isoClasses": 1,
+  "representative": [
+   0,
+   0,
+   1,
+   3,
+   4,
+   4,
+   5,
+   5,
+   4,
+   5,
+   4,
+   0,
+   3,
+   1,
+   5,
+   5,
+   4,
+   3,
+   0,
+   5,
+   1,
+   1,
+   5,
+   5,
+   2,
+   2,
+   0,
+   0,
+   5,
+   5,
+   4,
+   5,
+   1,
+   1,
+   5,
+   2
+  ],
+  "classes": [
+   {
+    "index": 0,
+    "members": 30240,
+    "representative": [
+     0,
+     0,
+     1,
+     3,
+     4,
+     4,
+     5,
+     5,
+     4,
+     5,
+     4,
+     0,
+     3,
+     1,
+     5,
+     5,
+     4,
+     3,
+     0,
+     5,
+     1,
+     1,
+     5,
+     5,
+     2,
+     2,
+     0,
+     0,
+     5,
+     5,
+     4,
+     5,
+     1,
+     1,
+     5,
+     2
+    ],
+    "histogram": [
+     6,
+     6,
+     3,
+     3,
+     6,
+     12
+    ],
+    "isoToTTP": true,
+    "disposition": "congruent-to-TTP",
+    "realizationCertificate": [
+     "sqrt3-part-identically-zero-36-pairs",
+     "offdiag-equals-4x-node-curve-36-pairs",
+     "diagonal-identically-4-unit-norm-9-vertices"
+    ]
+   }
+  ]
+ },
+ "energyTable": {
+  "E_star": "25759986531/1000000000",
+  "classes": [
+   {
+    "index": 0,
+    "histogram": [
+     6,
+     6,
+     3,
+     3,
+     6,
+     12
+    ],
+    "members": 30240,
+    "E_interval": [
+     "25.7599806309835806",
+     "25.7599924315679374"
+    ],
+    "vs_Estar": "undecided-at-zbox"
+   }
+  ]
+ },
+ "orbitBalance": {
+  "structure": "6 棱顶（上3+下3）＋3 帽顶（D12 勘误 6+3 证实）",
+  "categories": {
+   "cap-cap": {
+    "count": 3,
+    "node": 2
+   },
+   "cap-prism-r0": {
+    "count": 6,
+    "node": 5
+   },
+   "cap-prism-r1": {
+    "count": 6,
+    "node": 1
+   },
+   "cap-prism-r2": {
+    "count": 6,
+    "node": 5
+   },
+   "cross-misaligned": {
+    "count": 6,
+    "node": 0
+   },
+   "triangle-internal": {
+    "count": 6,
+    "node": 4
+   },
+   "vertical-edge": {
+    "count": 3,
+    "node": 3
+   }
+  },
+  "prismVertexProfile": [
+   2,
+   1,
+   0,
+   1,
+   2,
+   2
+  ],
+  "capVertexProfile": [
+   0,
+   2,
+   2,
+   0,
+   0,
+   4
+  ],
+  "perNodeSums_Sigma_y": [
+   12,
+   12,
+   6,
+   6,
+   12,
+   24
+  ],
+  "twoTimesMult": [
+   12,
+   12,
+   6,
+   6,
+   12,
+   24
+  ],
+  "tubeMults": [
+   6,
+   6,
+   3,
+   3,
+   6,
+   12
+  ],
+  "balanced": true,
+  "erratum": "任务书/D12「帽-棱 12 边 ν₆＋6 边 ν₅」后半应为 ν₂（ν₅ 的 6 边在上下三角内部）；本表由参数化组合推导＋reference_config.json 数值复算双重证实，配平不受影响"
+ },
+ "stability": {
+  "vandermonde": {
+   "definition": "V[i][k] = ν_k^i, i=0..5, k=1..6",
+   "inverseMethod": "区间 Gauss-Jordan（部分主元），V·V⁻¹ ∋ I 逐项验证",
+   "normInvInf": [
+    "320.143638344643307",
+    "413.322200967262575"
+   ],
+   "normInvFro": [
+    "283.254300958018632",
+    "350.92536031916211"
+   ],
+   "sigmaMinLower_cV": "0.00116334792701378552",
+   "cV_method": "σ(V) ≥ 1/‖V⁻¹‖₂ ≥ 1/(√6·‖V⁻¹‖_F 上界)"
+  },
+  "countingThreshold": {
+   "deltaFormula": "δ_i(ρ) = 8·i·(1+ρ)^{i−1}·ρ（每顶点 8 邻居、|ν|+ρ ≤ 1+ρ）；‖V⁻¹‖_∞·(δ_∞(ρ)+Δ) < 1/2 ⇒ 邻型计数向量＝轨道向量（整数向量 ℓ∞ 距离<1 相等）",
+   "rhoMax_deltaOnly": 3.0239092239498154e-05,
+   "deltaPerI_at_1em3": [
+    0.0,
+    0.008,
+    0.016016,
+    0.02404802399999999,
+    0.03209609603199999,
+    0.040160240160039974
+   ]
+  },
+  "antipodalSeparation": {
+   "minNuaNuB_lower": "0.0195115544623696568",
+   "arg": [
+    3,
+    3
+   ],
+   "selfPair2nu4": "min 自对 |ν₄+ν₄| = 2ν₄（命题 5.1(i) 口径）",
+   "rhoThreshold": "0.00975577723118482842",
+   "statement": "ρ < ν_4 下界 ⇒ 管内任两节点值之和 |α+β| ≥ 2ν₄−2ρ > 0（对径分离管阈值）"
+  },
+  "chainComparison": {
+   "rhoSpecAtForcing": 0.6447258330000001,
+   "rhoSpecAtFloor": 0.04655635318160481,
+   "verdict": "前提未由现行 ε-链满足（L3 已另行裁定 blocked）；本层交付常数与阈值"
+  }
+ },
+ "gaps": [
+  "E_ttp 与 E* 的区间比较在存档 z* 箱宽度（7.63e-7）下 undecided：E′(z*)=0 但箱不以 z* 为中心，一阶传播 1.18e-5 ≫ |E_ttp−E*|≈2.7e-10；对引理无影响（该分支只涉及 TTP 自身类，非排除用途）；如需判定可另行收紧 z* 隔离（本任务遵守「宽度覆盖 z* 区间传播」口径未做）",
+  "稳定层计数阈值 ρ_max≈3.0e-5 与当前 ε-链的 ρ_spec（tube.json: 0.6447@ε_forcing、0.0466@地板）相差 3–4 个数量级：ρ-近似计数引理的前提未由现行 L3 满足（L3 已另行裁定 blocked）；本层交付常数与阈值，不交付链闭合",
+  "「3×3≥0 ∧ 4×4=0 ⇒ PSD∧rank≤3」的充分性方向未主张未使用；引理只用实现⊆过滤（平凡）＋过滤集枚举＝单类＋构造性实现证书（非空）"
+ ],
+ "provenance": {
+  "commands": [
+   "python3 numerics/bounds/l4_orbit.py --dps 50"
+  ],
+  "deps": [
+   "mpmath 1.3.0（区间算术）；其余 stdlib"
+  ],
+  "determinism": "DFS 固定迭代序、无随机性（seed 仅声明）；输出无时间戳/运行时 ⇒ 幂等重算逐位一致"
+ }
+}

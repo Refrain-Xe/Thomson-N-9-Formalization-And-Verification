@@ -1,0 +1,549 @@
+{
+ "kind": "typed-ladder",
+ "e_clarabel_full": 25.75256982455198,
+ "e_quotient": 25.753123280628508,
+ "delta": 0.0005534560765276808,
+ "raw_R1_max": 1.9431798559372363e-40,
+ "raw_R2_max": 2.1379462000407e-55,
+ "clarabel_status": "optimal_inaccurate",
+ "ok": true,
+ "rungs": [
+  {
+   "tag": "m090",
+   "a0": "-0.90",
+   "a0_float": -0.9,
+   "M": 6,
+   "K": 6,
+   "e_raw": 25.753123280628508,
+   "certified": "144977193375331596/5629499535314119",
+   "certified_float": 25.753122895895586,
+   "gap_to_E_star": 0.006863635104413845,
+   "improvement_over_regional_record": -0.003962454871414712,
+   "round_bits": 48,
+   "R1": {
+    "AAA": 4.49627819421039e-09,
+    "AAB": 4.505292020932453e-09,
+    "ABC": 4.552651996955656e-09
+   },
+   "R2": {
+    "AA": 1.5079866244605e-10,
+    "AB": 1.9557671038228363e-10
+   },
+   "deflation": 3.796962076307864e-07,
+   "R2max": 1.9557671038228363e-10,
+   "certificate": "certificates/n9-stage-a4-typedcap-m090_M6.json",
+   "solution": "numerics/bounds/results/typed_ladder_sol_m090_M6.json",
+   "sdpa": {
+    "route": "SDPA-GMP 7.1.3 (GMP 200)",
+    "reused": false,
+    "solve_s": 586.8,
+    "lp_penalty": "1/100000000000",
+    "phase_value": "pdOPT",
+    "iteration": 76,
+    "mu": 9.054860016500786e-30,
+    "relative_gap": 2.1442110136406566e-79,
+    "p_feas_error": "8.9716677188062449e-31",
+    "d_feas_error": "7.0025024090512483e-57",
+    "obj_primal": "2.5753123280579235e+01",
+    "obj_dual": null
+   },
+   "cover": "min_inner >= -0.90"
+  },
+  {
+   "tag": "m090",
+   "a0": "-9/10",
+   "a0_float": -0.9,
+   "M": 7,
+   "K": 6,
+   "e_raw": 25.758658488158584,
+   "certified": "145008352292681160/5629499541449933",
+   "certified_float": 25.758657803413346,
+   "gap_to_E_star": 0.0013287275866548595,
+   "improvement_over_regional_record": 0.001572452646344273,
+   "round_bits": 48,
+   "R1": {
+    "AAA": 7.734067253295506e-09,
+    "AAB": 7.741664257802464e-09,
+    "ABC": 7.791851693902437e-09
+   },
+   "R2": {
+    "AA": 1.2855162268010646e-09,
+    "AB": 1.2522004766424288e-09
+   },
+   "deflation": 6.516320674165854e-07,
+   "R2max": 1.2855162268010646e-09,
+   "certificate": "certificates/n9-stage-a4-typedcap-m090.json",
+   "solution": "numerics/bounds/results/typed_ladder_sol_m090_M7.json",
+   "sdpa": {
+    "route": "SDPA-GMP 7.1.3 (GMP 200)",
+    "reused": false,
+    "solve_s": 2681.9,
+    "lp_penalty": "1/100000000000",
+    "phase_value": "pdOPT",
+    "iteration": 78,
+    "mu": 1.3872723850153103e-29,
+    "relative_gap": 1.551630427568337e-79,
+    "p_feas_error": "4.0753676849025548e-31",
+    "d_feas_error": "1.9469727785040579e-53",
+    "obj_primal": "2.5758658488104970e+01",
+    "obj_dual": null
+   },
+   "cover": "min_inner >= -9/10"
+  },
+  {
+   "tag": "m085",
+   "a0": "-17/20",
+   "a0_float": -0.85,
+   "M": 7,
+   "K": 6,
+   "e_raw": 25.758662427414144,
+   "certified": "40816228827592817596802757820416000000000000000000000000/1584563252599200781002738293164256322619974911060868091",
+   "certified_float": 25.758661738899274,
+   "gap_to_E_star": 0.001324792100725855,
+   "improvement_over_regional_record": 0.0015763881322732776,
+   "round_bits": 48,
+   "R1": {
+    "AAA": 7.723943262760713e-09,
+    "AAB": 7.733328999393052e-09,
+    "ABC": 7.782528998200599e-09
+   },
+   "R2": {
+    "AA": 1.4602850524996457e-09,
+    "AB": 6.496315885186038e-11
+   },
+   "deflation": 6.508998787069231e-07,
+   "R2max": 1.4602850524996457e-09,
+   "certificate": "certificates/n9-stage-a4-typedcap-m085.json",
+   "solution": "numerics/bounds/results/typed_ladder_sol_m085_M7.json",
+   "sdpa": {
+    "route": "SDPA-GMP 7.1.3 (GMP 200)",
+    "reused": false,
+    "solve_s": 2976.5,
+    "lp_penalty": "1/100000000000",
+    "phase_value": "pdOPT",
+    "iteration": 78,
+    "mu": 2.5959751550406174e-29,
+    "relative_gap": 7.142955830271844e-80,
+    "p_feas_error": "6.9430465271122383e-31",
+    "d_feas_error": "1.5002036614290082e-52",
+    "obj_primal": "2.5758662427360614e+01",
+    "obj_dual": null
+   },
+   "cover": "min_inner >= -17/20"
+  },
+  {
+   "tag": "m080",
+   "a0": "-4/5",
+   "a0_float": -0.8,
+   "M": 7,
+   "K": 6,
+   "e_raw": 25.75866845495672,
+   "certified": "24168068067433138/938249923309499",
+   "certified_float": 25.75866777818095,
+   "gap_to_E_star": 0.0013187528190505566,
+   "improvement_over_regional_record": 0.001582427413948576,
+   "round_bits": 48,
+   "R1": {
+    "AAA": 7.725701323124668e-09,
+    "AAB": 7.733792865375714e-09,
+    "ABC": 7.78331154917935e-09
+   },
+   "R2": {
+    "AA": 6.647994155173364e-10,
+    "AB": 1.002553418061325e-09
+   },
+   "deflation": 6.50951330527505e-07,
+   "R2max": 1.002553418061325e-09,
+   "certificate": "certificates/n9-stage-a4-typedcap-m080.json",
+   "solution": "numerics/bounds/results/typed_ladder_sol_m080_M7.json",
+   "sdpa": {
+    "route": "SDPA-GMP 7.1.3 (GMP 200)",
+    "reused": false,
+    "solve_s": 3008.6,
+    "lp_penalty": "1/100000000000",
+    "phase_value": "pdOPT",
+    "iteration": 79,
+    "mu": 9.991892546575211e-30,
+    "relative_gap": 5.506738034654983e-80,
+    "p_feas_error": "2.4132270138647415e-31",
+    "d_feas_error": "2.3693299056939238e-54",
+    "obj_primal": "2.5758668454903331e+01",
+    "obj_dual": null
+   },
+   "cover": "min_inner >= -4/5"
+  },
+  {
+   "tag": "m077",
+   "a0": "-77/100",
+   "a0_float": -0.77,
+   "M": 7,
+   "K": 6,
+   "e_raw": 25.75868497571186,
+   "certified": "8109463167190639010906112000000000000000000000000000000000000000000000000/314824432297236854740041141783778360096328091987392615308763452593661699",
+   "certified_float": 25.75868431816692,
+   "gap_to_E_star": 0.0013022128330764907,
+   "improvement_over_regional_record": 0.0015989673999226418,
+   "round_bits": 48,
+   "R1": {
+    "AAA": 7.701346120825293e-09,
+    "AAB": 7.70894843071801e-09,
+    "ABC": 7.758918582849387e-09
+   },
+   "R2": {
+    "AA": 3.364642734036779e-10,
+    "AB": 3.0235849300453306e-10
+   },
+   "deflation": 6.488780553581819e-07,
+   "R2max": 3.364642734036779e-10,
+   "certificate": "certificates/n9-stage-a4-typedcap-m077.json",
+   "solution": "numerics/bounds/results/typed_ladder_sol_m077_M7.json",
+   "sdpa": {
+    "route": "SDPA-GMP 7.1.3 (GMP 200)",
+    "reused": false,
+    "solve_s": 2994.4,
+    "lp_penalty": "1/100000000000",
+    "phase_value": "pdOPT",
+    "iteration": 78,
+    "mu": 3.480725367961838e-29,
+    "relative_gap": 1.6827099784787303e-79,
+    "p_feas_error": "7.7548389773896028e-31",
+    "d_feas_error": "9.7355954176190018e-53",
+    "obj_primal": "2.5758684975658620e+01",
+    "obj_dual": null
+   },
+   "cover": "min_inner >= -77/100"
+  },
+  {
+   "tag": "m0755",
+   "a0": "-151/200",
+   "a0_float": -0.755,
+   "M": 7,
+   "K": 6,
+   "e_raw": 25.75874295360308,
+   "certified": "76591886502908301380586265737491710771768328192/2973432695248963186347075476775626937817456893",
+   "certified_float": 25.758742286411607,
+   "gap_to_E_star": 0.0012442445883933623,
+   "improvement_over_regional_record": 0.0016569356446057702,
+   "round_bits": 48,
+   "R1": {
+    "AAA": 7.699705921737632e-09,
+    "AAB": 7.70958353749999e-09,
+    "ABC": 7.758614291606978e-09
+   },
+   "R2": {
+    "AA": 7.101377382272771e-10,
+    "AB": 6.304745068511235e-10
+   },
+   "deflation": 6.488992146636008e-07,
+   "R2max": 7.101377382272771e-10,
+   "certificate": "certificates/n9-stage-a4-typedcap-m0755.json",
+   "solution": "numerics/bounds/results/typed_ladder_sol_m0755_M7.json",
+   "sdpa": {
+    "route": "SDPA-GMP 7.1.3 (GMP 200)",
+    "reused": false,
+    "solve_s": 3067.6,
+    "lp_penalty": "1/100000000000",
+    "phase_value": "pdOPT",
+    "iteration": 80,
+    "mu": 5.005639326624805e-30,
+    "relative_gap": 1.1031290812387331e-79,
+    "p_feas_error": "1.0201407516134062e-31",
+    "d_feas_error": "9.6524725306194029e-55",
+    "obj_primal": "2.5758742953550045e+01",
+    "obj_dual": null
+   },
+   "cover": "min_inner >= -151/200"
+  },
+  {
+   "tag": "m0748",
+   "a0": "-187/250",
+   "a0_float": -0.748,
+   "M": 7,
+   "K": 6,
+   "e_raw": 25.75880642089837,
+   "certified": "8529691487832403013253268660165407055728792329318821430206298828125/331136915622292644790362839705362274775995234105043179786043436433",
+   "certified_float": 25.758805755023985,
+   "gap_to_E_star": 0.001180775976015614,
+   "improvement_over_regional_record": 0.0017204042569835185,
+   "round_bits": 48,
+   "R1": {
+    "AAA": 7.714105151990225e-09,
+    "AAB": 7.72333538160789e-09,
+    "ABC": 7.772049507345266e-09
+   },
+   "R2": {
+    "AA": 6.144160610346545e-10,
+    "AB": 1.0626342815185402e-10
+   },
+   "deflation": 6.50047762761119e-07,
+   "R2max": 6.144160610346545e-10,
+   "certificate": "certificates/n9-stage-a4-typedcap-m0748.json",
+   "solution": "numerics/bounds/results/typed_ladder_sol_m0748_M7.json",
+   "sdpa": {
+    "route": "SDPA-GMP 7.1.3 (GMP 200)",
+    "reused": false,
+    "solve_s": 3000.5,
+    "lp_penalty": "1/100000000000",
+    "phase_value": "pdOPT",
+    "iteration": 78,
+    "mu": 1.8015652364750875e-29,
+    "relative_gap": 1.1336943478500431e-79,
+    "p_feas_error": "3.4093710283065162e-31",
+    "d_feas_error": "7.4226335512837442e-53",
+    "obj_primal": "2.5758806420845256e+01",
+    "obj_dual": null
+   },
+   "cover": "min_inner >= -187/250"
+  },
+  {
+   "tag": "m0748",
+   "a0": "-0.748",
+   "a0_float": -0.748,
+   "M": 8,
+   "K": 6,
+   "e_raw": 25.759572086715554,
+   "certified": "93712774192614269082019881043884635719865006109330352046526968479156494140625/3637978812512164763811573465387274966467532527973356366318401998010742048629",
+   "certified_float": 25.759571185600716,
+   "gap_to_E_star": 0.00041534539928310784,
+   "improvement_over_regional_record": 0.0024858348337160247,
+   "round_bits": 48,
+   "R1": {
+    "AAA": 1.0244002396575525e-08,
+    "AAB": 1.0254066594939104e-08,
+    "ABC": 1.0306756946247502e-08
+   },
+   "R2": {
+    "AA": 1.2289576146256204e-09,
+    "AB": 1.4899624488149935e-09
+   },
+   "deflation": 8.627340408651207e-07,
+   "R2max": 1.4899624488149935e-09,
+   "certificate": "certificates/n9-stage-a4-typedcap-m0748_M8.json",
+   "solution": "numerics/bounds/results/typed_ladder_sol_m0748_M8.json",
+   "sdpa": {
+    "route": "SDPA-GMP 7.1.3 (GMP 200)",
+    "reused": false,
+    "solve_s": 11792.6,
+    "lp_penalty": "1/100000000000",
+    "phase_value": "pdOPT",
+    "iteration": 90,
+    "mu": 6.406260713692814e-28,
+    "relative_gap": 6.482185611210856e-80,
+    "p_feas_error": "2.5788005558753533e-31",
+    "d_feas_error": "1.2579685608478802e-50",
+    "obj_primal": "2.5759572086655567e+01",
+    "obj_dual": null
+   },
+   "cover": "min_inner >= -0.748"
+  },
+  {
+   "tag": "m0748",
+   "a0": "-0.748",
+   "a0_float": -0.748,
+   "M": 9,
+   "K": 6,
+   "e_raw": 25.75984805083628,
+   "certified": "22879340185047884591327492399406419521507688973060989923169472604058682918548583984375/888178445822492388747275390557723859303211430452579251742723511769167625620708441526",
+   "certified_float": 25.75984622533888,
+   "gap_to_E_star": 0.00014030566111789488,
+   "improvement_over_regional_record": 0.0027608745718812376,
+   "round_bits": 48,
+   "R1": {
+    "AAA": 1.2684969249221468e-08,
+    "AAB": 1.269484530534252e-08,
+    "ABC": 1.2751615103554657e-08
+   },
+   "R2": {
+    "AA": 1.751795144834866e-08,
+    "AB": 2.9411170747909005e-08
+   },
+   "deflation": 1.0678701620321362e-06,
+   "R2max": 2.9411170747909005e-08,
+   "certificate": "certificates/n9-stage-a4-typedcap-m0748_M9.json",
+   "solution": "numerics/bounds/results/typed_ladder_sol_m0748_M9.json",
+   "sdpa": {
+    "route": "SDPA-GMP 7.1.3 (GMP 200)",
+    "reused": false,
+    "solve_s": 42305.7,
+    "lp_penalty": "1/100000000000",
+    "phase_value": "pdOPT",
+    "iteration": 89,
+    "mu": 4.0437794004673815e-27,
+    "relative_gap": 1.9097744635774274e-79,
+    "p_feas_error": "3.5243171317178047e-31",
+    "d_feas_error": "2.6703845578721451e-49",
+    "obj_primal": "2.5759848050758185e+01",
+    "obj_dual": null
+   },
+   "cover": "min_inner >= -0.748"
+  }
+ ],
+ "best": {
+  "tag": "m0748",
+  "M": 9,
+  "certified": "22879340185047884591327492399406419521507688973060989923169472604058682918548583984375/888178445822492388747275390557723859303211430452579251742723511769167625620708441526",
+  "certified_float": 25.75984622533888,
+  "gap_to_E_star": 0.00014030566111789488
+ },
+ "script": "typed_ladder.py",
+ "E_star": 25.759986531,
+ "regional_record_round2": 25.757085350767,
+ "updated": "2026-10-07T18:35:43+00:00",
+ "stripFeasibility": {
+  "M7": {
+   "config": {
+    "M": 7,
+    "K": 6,
+    "tool": "slab_band.py (2,7) typed band, Clarabel"
+   },
+   "bands": [
+    {
+     "band": "[-0.90,-0.88]",
+     "e_raw": 25.766109959335942,
+     "e_safe": 25.76583145409627,
+     "deflation": 0.0002535521633819594,
+     "solve_s": 93.56,
+     "status": "optimal",
+     "margin_over_E_star": 0.0061234283359432595,
+     "margin_safe_over_E_star": 0.005844923096269383,
+     "margin_safe_over_global": 0.006385480998790882
+    },
+    {
+     "band": "[-0.88,-0.86]",
+     "e_raw": 25.76273467159943,
+     "e_safe": 25.76261670714807,
+     "deflation": 0.00011645890769588097,
+     "solve_s": 79.98,
+     "status": "optimal_inaccurate",
+     "margin_over_E_star": 0.002748140599429405,
+     "margin_safe_over_E_star": 0.0026301761480702623,
+     "margin_safe_over_global": 0.0031707340505917614
+    },
+    {
+     "band": "[-0.86,-0.84]",
+     "e_raw": 25.760887954477262,
+     "e_safe": 25.75968764276995,
+     "deflation": 0.0006727188364240485,
+     "solve_s": 89.51,
+     "status": "optimal_inaccurate",
+     "margin_over_E_star": 0.0009014234772628527,
+     "margin_safe_over_E_star": -0.00029888823004853293,
+     "margin_safe_over_global": 0.0002416696724729661
+    },
+    {
+     "band": "[-0.82,-0.80]",
+     "e_raw": 25.75892618685228,
+     "e_safe": 25.758820536501773,
+     "deflation": 8.657503951928623e-05,
+     "solve_s": 85.37,
+     "status": "optimal_inaccurate",
+     "margin_over_E_star": -0.0010603441477208264,
+     "margin_safe_over_E_star": -0.001165994498226297,
+     "margin_safe_over_global": -0.000625436595704798
+    },
+    {
+     "band": "[-0.78,-0.76]",
+     "e_raw": 25.758619184422276,
+     "e_safe": 25.757342880707704,
+     "deflation": 0.0007018432093356589,
+     "solve_s": 102.84,
+     "status": "optimal_inaccurate",
+     "margin_over_E_star": -0.001367346577723083,
+     "margin_safe_over_E_star": -0.0026436502922955185,
+     "margin_safe_over_global": -0.0021030923897740195
+    },
+    {
+     "band": "[-0.76,-0.755]",
+     "e_raw": 25.75855760609081,
+     "e_safe": 25.756361782839047,
+     "deflation": 0.001988958924112408,
+     "solve_s": 86.47,
+     "status": "optimal_inaccurate",
+     "margin_over_E_star": -0.0014289249091881118,
+     "margin_safe_over_E_star": -0.0036247481609521515,
+     "margin_safe_over_global": -0.0030841902584306524
+    }
+   ],
+   "E_star": 25.759986531,
+   "global_record": 25.759445973097478,
+   "note": ""
+  },
+  "analysis": {
+   "question": "typed 条带盖住 [−0.90,−0.755] 的可行性（Round 4 候选）",
+   "method": "slab_band.py（(2,7) 分带 typed，与 (3,3,3) 独立的实现）在 6 条测试带上Clarabel (7,6) 求解，量 e_raw/e_safe − E* 裕度随 hi 的衰减",
+   "data": "见本文件 M7.bands（宽 0.02 的测试带 + [−0.76,−0.755] 宽 0.005）",
+   "findings": [
+    "宽 0.02 的带在 hi ≥ −0.84 仍有正裕度：e_raw − E* = +6.1e-3(−0.88)、+2.7e-3(−0.86)、+0.9e-3(−0.84)；hi ≤ −0.80 转负（−1.1e-3 ~ −1.4e-3）",
+    "裕度衰减斜率 ≈ −9e-5 / 0.001 hi（hi 每升 0.01，裕度掉 ~9e-4）",
+    "Clarabel 折减 1e-4~2e-3 在裕度边缘不可忽略（[−0.76,−0.755] defl=2.0e-3）——Round 4 条带必须走 SDPA-GMP（本包 cap 管线可直接换 band 域复用）",
+    "更深层的瓶颈：typed (7,6) 的松弛地板 ~25.7586-25.7588（cap 与 band 同地板，上切口在 (7,6) 几乎不涨值）——条带要想在 hi → −0.755 附近拿到正裕度，需要 (8,6)（m0748_M8 加档正在测）或更窄的片宽",
+    "关键数据点：宽仅 0.005 的 [−0.76,−0.755] 裕度 −1.43e-3，不比宽 0.02 的 [−0.78,−0.76]（−1.37e-3）好——**片宽在 hi ≥ −0.82 附近已不是控制量**，是 (7,6) 松弛地板（≈ E*−1.3e-3）在控制；(7,6) 下 [−0.845,−0.755] 任何片宽都拿不到正裕度",
+    "m0748_M8 落地：typed (8,6) cap 地板 = E* − 4.15e-4（certified 25.759571215942），优于 untyped (8,6) 的 E* − 5.4e-4——(8,6) 条带在 hi → −0.755 附近有实质希望转正"
+   ],
+   "piece_estimate": "(7,6)：交叉点 hi ≈ −0.845。[−0.90,−0.845] 可盖（3 片宽 0.02，裕度 +0.9e-3~+6.1e-3）；[−0.845,−0.755] 任何片宽均不可行（(7,6) 地板 E*−1.3e-3 控制，0.005 宽实测仍 −1.4e-3）。升 (8,6)（地板 E*−4.15e-4，M8 档实测）：条带值通常 ≥ 同 lo 的 cap 值，裕度比 (7,6) 高约 +9e-4 ⟹ 交叉点右移约 +0.01/0.005（用衰减斜率 9e-4/0.01 hi 折算），[−0.90,−0.835±0.005] 约 4 片宽 0.02 可盖；[−0.835,−0.755]（0.08 宽）需实测——乐观（地板均匀抬高 +9e-4）则 0.01-0.02 宽 × 5-8 片，保守则与 (7,6) 同样被地板卡住，须 (9,6)（Round 2 已知 untyped (9,6) 构建可行但本机 24GB OOM，需分块装配）。合计口径：[−0.90,−0.755] 乐观 9-12 片（(8,6) 为主），保守 4 片可行 + 其余待 (9,6)",
+   "bottleneck": "松弛地板（(7,6) ≈ E*−1.2e-3）而非片宽本身；计算量次之（每片一次 SDPA-GMP：(7,6) ~52 min/片、(8,6) ~2.5 h/片，本机 15 核可并行）",
+   "verdict": "部分可行（Round 4 的活）：[−0.90,≈−0.84] 在 (7,6)/(8,6)+HP 下直接可做（3-4 片）；(8,6) 地板 E*−4.15e-4（M8 实测）使 [−0.84,−0.755] 有实质希望但需逐片实测校准（每片一次 SDPA-GMP：(7,6) ~52 min、(8,6) ~3.3 h，本机 15 核可并行 4-7 片）"
+  }
+ },
+ "ladderSummary": {
+  "rungs_planned": [
+   -0.9,
+   -0.85,
+   -0.8,
+   -0.77,
+   -0.755,
+   -0.748
+  ],
+  "config": "(M,K)=(7,6), typed (3,3,3) S3-quotient cut, SDPA-GMP 200-digit + dyadic 2^-48 + exact certify；主目标档 −0.748 另加 (8,6) 档（pdOPT 90 迭代 / 12060s，认证损失 8.6e-7）",
+  "certified": [
+   25.758657803413346,
+   25.758661738899274,
+   25.75866777818095,
+   25.75868431816692,
+   25.758742286411607,
+   25.758805755023985
+  ],
+  "spread": 0.00014795917030596684,
+  "monotone_note": "a0 从 −0.90 升到 −0.748，certified 25.758658 → 25.758806 单调升（步长 ~2e-5..6e-5；(7,6) 松弛在该区间近平坦，真实最优单调被松弛平坦化）",
+  "best": {
+   "tag": "m0748",
+   "M": 8,
+   "certified": "93712774192614269082019881043884635719865006109330352046526968479156494140625/3637978812512164763811573465387274966467532527973356366318401998010742048629",
+   "certified_float": 25.759571185600716
+  },
+  "key_assertion": {
+   "rung": "m0748",
+   "required": "> 25.757085350767 (Round 2 区域纪录, m>=-151/200)",
+   "actual_M7": 25.758805755023985,
+   "actual_M8": 25.759571185600716,
+   "margin_M7": 0.0017204042569835185,
+   "margin_M8": 0.0024858348337160247,
+   "passed": true
+  },
+  "gap_to_E_star": {
+   "m0748_M7": 0.001180775976015614,
+   "m0748_M8": 0.00041534539928310784,
+   "note": "stretch（1e-3 内）：M8 档达成（4.15e-4）；1e-4 超预期未达（差 3.2e-4），如实记录"
+  },
+  "all_rungs_valid": true,
+  "refresh_2026_10_04": "复算员发现两处复现尾差后，全部档位于 2026-10-04 用 HEAD 代码（lp_penalty=1/100000000000 导出）全新重解重认证：旧值（无罚项导出）→ 新值尾差 M6 −3.68e-9、M7 各档 −1.7e-10~−2.2e-8、M8 −3.0e-8；全部断言在两版值下均成立，新值可由 `typed_ladder.py --rung <a0> --M <M>` 在 HEAD 上唯一复现（workdir 存有 pdOPT 结果时确定性复用）。旧解与旧证书备份于会话临时目录，未提交",
+  "frozen_2026_10_09": "冻结标注（D28 复核②，返工员-R7）：本节系 Round 3/2026-10-04 口径的遗留汇总（certified 数组＝M7 六档、key_assertion/gap_to_E_star＝M7/M8 时点），typed_ladder.py main() 从不写本节、无任何消费者读取；节内 best={M:8, 25.759571185600716} 为 M8 时点遗留，已被 R7B（f05af76）m0748_M9 rung 追加后的【顶层 best】换记（M9 25.75984622533888＝run Certified 最大值，动态重算）取代——读数请以顶层 best 与 rungs[] 为准；本节保留作历史快照不刷新（改写即失 2026-10-04 重解注记的时点语义）"
+ },
+ "provenance": {
+  "construction": "typed 三点 (3,3,3) cut（typed/core.py 数学，本文件纯 Fraction 重实现）的 S₃ 商：6 对类→2 轨道、10 三点类→3 轨道、F^{(X,k)} 合并；商=全 SDP（凸+群不变），全 10 类逐系数展开核对在认证内机器验证",
+  "validation": [
+   "精确自检 --selftest：perm 方向、typed 恒等式（随机有理构型×数据 ==0）、10 类轨道展开（λ_full == λ_orbit∘P）、分型正性，全过",
+   "(6,6) 交叉验证 --crosscheck：Clarabel 全 typed SDP（独立浮点实现）e=25.752569825 vs SDPA-GMP 商 e=25.753123281，|Δ|=5.5e-4（Clarabel 欠收敛量级内）；raw R1≤1.9e-40",
+   "导出期间抓出并修复 2 个 bug（如实记录）：① SDPA LP 块是非负锥（b=−2 实测 pUNBD），h/ψ/c 必须 ± 拆分；② 归一化行 F0 非对角条目应为 −9 而非 −9/2（×2 约定）——修复前 (6,6) e 跑飞到 26.21（>E*，被 E* 上限断言与 Clarabel 交叉验证双重抓获）",
+   "(7,6) m090 首解 SDPA-GMP dFEAS 崩溃（iter 34 原始目标跑飞 26.3）：± 拆分的精确零空间方向所致；目标加 −1e-11·Σ± 罚项锚定后收敛（读回 e⁺ 对原问题精确可行，认证零损失）",
+   "每档证书进程外独立复核（系统 python3 --verify-cert）：38 PSD 块 LDLᵀ + 归一化残差=0 + certified 重算逐位一致，7 份全过",
+   "2026-10-04 复算员分歧处理：① hp_solve 默认 --k [48,56,64] 首个通过 k=48 会得 25.759445614952（比存档 k=64 低 3.58e-07）——已改默认 [64] 并在 hp.json provenance.reproduce 记录复现命令（commit 241b61b）；② m090_M6 存档值由罚项前导出产生，HEAD 重解差 −3.68e-9——全部 8 档已用 HEAD 重解刷新（见 ladderSummary.refresh_2026_10_04）"
+  ],
+  "asserts": "每档 0 < certified ≤ E*+1e-6（违反 sys.exit(1)）；m0748 档 certified > 25.757085350767（区域纪录）；certified ≤ e_raw+1e-9",
+  "round2_records": {
+   "regional_25_755": 25.757085350767,
+   "global_hp_m090": 25.759445973097478
+  }
+ },
+ "code_version": "dc1c648-dirty"
+}

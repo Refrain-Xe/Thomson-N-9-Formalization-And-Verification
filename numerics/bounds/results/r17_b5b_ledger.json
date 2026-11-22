@@ -1,0 +1,52 @@
+{
+ "kind": "n9-r17-b5b-ledger",
+ "task": "r17a-tableb-b5b",
+ "seed": 20261017,
+ "heavy_solves": 0,
+ "files": {
+  "formal/lean/ThomsonN9/TableB5Trace.lean": "e97b29dc160295d9d45c3588855881a7673f22acdecca78b8c2297339d2a778a",
+  "numerics/bounds/r17_b5b_gate.py": "e40f0ff6ece7ef90a804d932e58b5f9e86621f295a7ecdffa72ba6c633e0fc62",
+  "thomson-n9/numerics/bounds/r17_b5b_gate.py": "95df0686d35b3b6bc1f273ef529ca802620d93cd6997e53ff14d66b37451ad8d",
+  "notes/tableb-lean.md": "715b9c88f20c528556c0779caba061e8abc710d32e003e1a3dff9c2553ee4e83",
+  "notes/decisions.md": "ce2887d7b35f9b171cb317217e49449f40c7d64735144864d768e04ec6eb771c",
+  "numerics/bounds/results/r17_b5b_ledger.json": "self"
+ },
+ "files_note": "锚定时点＝提交前终版（D73 六件；无 Data 件——本件零数值数据字面量；decisions.md 含 D72 设计节随本主件收编＋D73 执行节）",
+ "axiom_policy": [
+  "Classical.choice",
+  "Quot.sound",
+  "propext"
+ ],
+ "data": {
+  "lean_theorems_trace": 44,
+  "theorem_count": 44,
+  "theorem_note": "vecNorm 层 7（vecNorm_nonneg/vecNorm_sq/dotProduct_self_eq/vecNorm_smul/sum_mul_sq_le_sum_sq_mul_sum_sq/abs_dotProduct_le＋vecNorm def 另计）＋Frobenius↔trace 桥层 13（frob_sq_eq_trace/frob_sq_eq_trace'/frob_transpose_eq/frob_sq_mul_transpose/trace_mul_transpose_eq_inner/frob_inner_le/frob_neg/frob_add_le/frob_sub_frob_le_add/frob_mul_le/frob_mul_le_of_vecNorm/frob_sq_add_of_trace/frob_sq_add_of_mul）＋PSD trace 族 5（trace_mul_nonneg/trace_ge_smul/trace_le_smul/posSemidef_of_lo/posSemidef_transpose_mul_self）＋步骤 3 层 7（P0_mul_X/P0_transpose/XT_mul_P0/P0_mul_self/P0_mul_D/mixed_block/step3_bound）＋步骤 4 层 9（XT_D_eq/B_eq_factor/XTEX_eq_SBS/B_eq_inv/vecNorm_inv_mulVec_le/vecNorm_transpose_mulVec_le/frob_XTEX_le/frob_inv_mul_inv_le/step4_bound）＋TTP 层 4（ttpX_quadform_lo/ttpX_quadform_hi/ttpX_step3/ttpX_step4）；任务书预期 ≥12",
+  "defs": [
+   "vecNorm"
+  ],
+  "zero_numeric_literals": true,
+  "probes": {
+   "p1": "/tmp/r17a_probe1_frobtrace.log（exit 0 35s，现成——15 行闭）",
+   "p2a": "/tmp/r17a_probe2_frob_opnorm.log（exit 0 55s，路线 (a) 采用）",
+   "p2b": "/tmp/r17a_probe2b_mathlibroute.log（exit 0 57s，路线 (b) 备选留档）",
+   "p2c": "/tmp/r17a_probe2c_names.log（exit 1 按设计——四候选名 unknownIdentifier 实证缺位；路线 (c) 未跑如实）",
+   "p3": "/tmp/r17a_probe3_trace_step34.log（exit 0 29s，T1/T2 照搬重编＋步骤 3/4 骨架）",
+   "r15c_ondisk": "/tmp/r15c_probe3_trace.lean（在盘复核不重跑，D69-4 口径）",
+   "notes_section": "notes/tableb-lean.md §5"
+  },
+  "g5_second_impl": {
+   "engine": "stdlib Fraction＋独立 Gauss-Jordan S⁻¹（零仓 import）",
+   "instances": 3,
+   "row_scheme": "有理单位球参数化 (t,s)↦((1−t²−s²),2t,2s)/(1+t²+s²)",
+   "checks": [
+    "T1/T2 PSD 构造 A:=CᵀC（＋t•1 平移）",
+    "frob²==tr(MMᵀ) 三面（X/Y/E）",
+    "块分解恒等式 81 元",
+    "Frobenius-Pythagoras（XᵀD_⊥=0 面）",
+    "B 三恒等式 9 元×3",
+    "压缩双面平方化（‖S⁻¹v‖²≤‖v‖²/λ₃²＋frob(S⁻¹MS⁻¹)²≤frob M²/λ₃⁴；S:=λ₃•1+CᵀC 夹逼由构造）"
+   ]
+  }
+ },
+ "gate": "numerics/bounds/r17_b5b_gate.py（G0–G5＋NC1/NC2/NC3；本会话自跑墙钟见 GAP-REPORT Round 17 节）"
+}

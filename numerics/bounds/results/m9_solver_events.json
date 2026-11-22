@@ -1,0 +1,54 @@
+{
+ "kind": "thomson-n9/bounds/m9-solver-events/1",
+ "note": "R8-1 M9 战役求解操作日志（执行员手工维护的运行事实：后台启动/参数重试/完成/失败）。只记事实，不参与任何界值计算；m9_campaign.py 原样并入 campaignsolver_events 字段。",
+ "events": [
+  {
+   "piece": "m082-m079",
+   "event": "launched",
+   "ts": "2026-10-06T04:26:00Z",
+   "runner": "nohup numerics/.venv/bin/python numerics/bounds/strips_final.py --strip=\"-0.82:-0.79\" --M 9 --ks 48 56 64（后台 exec id a63726f3，日志 /tmp/r81_canary_m082_m9.log）",
+   "sdpa_param": "默认 PARAM_SDPA（maxIter 500／betaStar 0.1／betaBar 0.3／precision 200）",
+   "detail": "export m=3009 entries=262280 blocks=43；canary 片（lift₁ 决定后续三解去留）"
+  },
+  {
+   "piece": "m082-m079",
+   "event": "solved",
+   "ts": "2026-10-06T13:15:00Z",
+   "detail": "pdOPT iter=92 solve_s=31536.3；e_raw=25.760180142817564；certified(k=48 首过)=25.76016968915279；lift1=+3.8670338379e-4 ≥ +1e-4 ⇒ continue"
+  },
+  {
+   "piece": "m079-m765",
+   "event": "launched",
+   "ts": "2026-10-06T13:16:00Z",
+   "runner": "nohup numerics/.venv/bin/python numerics/bounds/strips_final.py --strip=\"-0.79:-0.765\" --M 9 --ks 48 56 64（后台，日志 /tmp/r81_s2_m079_m9.log）",
+   "sdpa_param": "默认 PARAM_SDPA",
+   "detail": "canary 通过后的片 2（Lukács 引擎）"
+  },
+  {
+   "piece": "m079-m765",
+   "event": "solved_blocked",
+   "ts": "2026-10-07T01:25:00Z",
+   "detail": "pdOPT iter=93 solve_s=40742.4；e_raw=25.759861533891630；certified 尝试 k48/56/64=25.759845622520/…626183/…626187 全 ≤ E* ⇒ blocked（lift vs M8 best≈+3.10e-4，翻正需 +4.51e-4——阶梯斜率此片不足）"
+  },
+  {
+   "piece": "m765-m748",
+   "event": "launched",
+   "ts": "2026-10-07T01:26:00Z",
+   "runner": "nohup python3 numerics/bounds/hermite_ladder.py --strip=\"-0.765:-0.748\" --M 9 --ks 48 56 64 --k-minor 48（后台，日志 /tmp/r81_s3_m765_m9.log）",
+   "sdpa_param": "默认 PARAM_SDPA",
+   "detail": "片 3（a5 Hermite 固定 minorant 引擎）；片 2 blocked 不豁免本片（任务书②链仅 canary 门控；本片为 a5 引擎独立数据点＋若翻正仍为有效证书）"
+  },
+  {
+   "piece": "m765-m748",
+   "event": "solved_blocked",
+   "ts": "2026-10-07T15:15:00Z",
+   "detail": "pdOPT iter=90 solve_s=30227.0（无停滞，比 M8 的 noINFO@49 更干净）；e_raw=25.759823300625257；certified(k=48)=25.759822217974 ≤ E* ⇒ blocked（lift vs M8 a5 best=+3.5863e-4，翻正需 +5.2295e-4——斜率仍不足）"
+  },
+  {
+   "piece": "m0748",
+   "event": "skipped_by_clause",
+   "ts": "2026-10-07T15:16:00Z",
+   "detail": "条带未全翻正（片2/片3 blocked）⇒ 按 D19 裁决 2 条款 cap M9 不解：洞仍由 HP 兜底（25.759445973 为拼合瓶颈），cap 抬升不改变 assembledRecord min，省 ~9h/~3 当量"
+  }
+ ]
+}

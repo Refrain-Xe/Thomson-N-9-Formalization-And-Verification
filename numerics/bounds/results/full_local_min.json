@@ -1,0 +1,113 @@
+{
+  "zStarInterval": "[0.703648376463, 0.703649139406]",
+  "zStarIntervalWidthDecimal": 7.62943e-07,
+  "EprimeAtLo": "[-0.000000828940886659158634653566704451548221514589745, -0.000000828940886659158634653566704451548221514589403]",
+  "EprimeAtHi": "[0.0000318700873096433527394404837240290387984820282, 0.0000318700873096433527394404837240290387984820286]",
+  "EppOnIsolationInterval": "[42.858891433094046760958745097316973828888218, 42.8592505419867985330105610945241649291211028]",
+  "uniqueCriticalZStar": true,
+  "adSelftest": {
+    "checkedEntries": [
+      "Q[0][0]",
+      "Q[1][1]",
+      "Q[0][1]",
+      "Q[7][8]",
+      "Q[13][16]",
+      "Q[17][17]",
+      "lambda_0/4/7",
+      "C_R[1][0]",
+      "C_R[1][2]",
+      "C_R[13][1]"
+    ],
+    "fdStep": 1e-06,
+    "toleranceRelative": 0.0001
+  },
+  "advisoryNumeric": {
+    "note": "float64 数值对照，非证明；区间证书独立于本块",
+    "quotientDim": 15,
+    "quotientLambdaMin": 0.14393375701835034,
+    "tangentGeneralizedEigenvalues": [
+      -9.145032653543979e-07,
+      4.606053966002059e-07,
+      4.60605397374537e-07,
+      0.1439337570183513,
+      0.1439337570183519,
+      0.8259802515097917,
+      0.8259802515097939,
+      1.432119409872571,
+      2.5128533306783263,
+      3.3053651044034726,
+      3.5569815741659814,
+      3.562420434420945,
+      3.562420434420947,
+      3.6064348925979166,
+      4.43146533550282,
+      4.431465335502827,
+      5.203722088202627,
+      5.203722088202631
+    ],
+    "gapReportReference": 0.143935
+  },
+  "lambdaCertifiedLowerBound": "0.14378982",
+  "lambdaLadderAnchoredAt": "0.14393375701835034",
+  "quotientDim": 15,
+  "tangentDim": 18,
+  "rotationDim": 3,
+  "consistencyChecks": {
+    "L3_tangentialGradientMaxAbs": "1.509e-5",
+    "kernelConsistencyMaxAbs": "8.425e-5",
+    "L2_f1f3Nontangent": [
+      "[0.71054759771122692746318601486402320408046332682530823, 0.71054835324626868605871128820061869906233224484555695]",
+      "[1.0, 1.0]"
+    ]
+  },
+  "gradDotVfamEnclosure": "[-0.000056146057265718640015936831328600193941860020423929186, 0.00008718725641381044450940362840566057455445031816877779]",
+  "qFamDirectionEnclosure": "[42.858472013778551952503287288740392233688867749284704, 42.859626701033217396264721209139085018577207746619451]",
+  "eStarReference": {
+    "source": "../thomson-workflow/data/energies.json",
+    "highPrecision": 25.75998653127,
+    "config": "triaugmented triangular prism, D3h（Wikipedia 行描述）"
+  },
+  "absEzStarMinusEstar": "0.0",
+  "selftest": {
+    "saddleIntervalControl": {
+      "interval": [
+        "0.45",
+        "0.45001"
+      ],
+      "numericLambdaMinThere": -1.058713,
+      "ladderUsed": "[0]",
+      "triggered": true,
+      "message": "could not certify positive definiteness M - lambda*Ghat for any lambda on the ladder (0.0)"
+    },
+    "tamperedShiftControl": {
+      "shift": "M - 0.4*Ghat",
+      "triggered": true,
+      "message": "tampered M - 0.4*Ghat: pivot 7 not positive definite, interval [-10.690616117010765401662855142055131598667592462892284, -10.550729165675431321872040505620751282470607084077054]"
+    }
+  },
+  "schema": "thomson-n9/bounds/full-local-min/1",
+  "verified": true,
+  "claim": "TTP X(z*) 是 E|_(S^2)^9 的临界点（D3h 对称约化 + E'(z*)=0，L1–L3），其 Riemannian Hessian 在 15 维商切空间（18 维切空间模 3 维 SO(3) 轨道方向）上严格正定：q_z*(v,v) ≥ 0.14378982·‖v‖² 对一切 v ∈ S_A(z*)（L4–L7），核恰为旋转轨道方向（L5/L6 精确恒等式 + L7 排除其余核）⇒ 模 SO(3) 的非退化严格局部极小（L8，二阶充分条件）",
+  "manifold": "(S^2)^9 subset R^27; tangent 18-dim (27 coords minus 9 unit-sphere constraints); SO(3) orbit directions 3-dim; quotient 15-dim",
+  "method": "mpmath.iv interval arithmetic (dps=50) over the whole z* isolation interval I; reduced coordinates in the pointwise-orthogonal tangent basis {e_theta, e_m} (Gram exactly diag(1, 1/rho^2) on triangles, 1 on caps); Riemannian Hessian assembled pair-by-pair (36 pairs + 9 second-fundamental-form corrections, q_z(v,v) = v^T H_amb v - sum_i (grad_i E . x_i)|v_i|^2); criticality of X(z*) by D3h symmetry reduction (fixed ambient subspace F_amb intersect tangent = span{family direction}, grad E . v_fam = E'(z*) = 0 from R1); rotation kernel q(w,w)=0 and vanishing cross terms are exact SO(3)-invariance identities at the critical point (numerically cross-checked ~1e-6 ~ |E'| scale); the 15-dim quotient subspace is built at the interval midpoint (rotation-orthogonalized pivoted Gram-Schmidt, fixed coefficient matrix A0), transversality T = S_A (+) R certified on all of I via interval Cholesky of the G-metric Gram; the certificate M(z) - lambda*Ghat(z) ≻ 0 uses the MEAN-VALUE FORM M(z) ⊆ M(z_mid) + [A0^T Q'(I) A0](z - z_mid) with the z-derivative Q' obtained by dual interval automatic differentiation (cross-checked against central differences), keeping entry widths ~1e-5 (the true variation of M over I); final certification uses a preconditioned congruence: the midpoint matrix is factored by a high-precision concrete Cholesky R and the interval Cholesky runs on R^{-1}(M - lambda*Ghat)R^{-T} ~ I + small, which avoids the quadratic degradation of plain interval Cholesky (certified lambda within ~1e-4 of the numeric lambda_min instead of ~7e-3)",
+  "kernelDescription": "18 维切空间上 ker(q) = R = span{w^x, w^y, w^z}（SO(3) 轨道切场 w^a_i = e_a×x_i），恰 3 维：q(w,w)=0 与交叉项 sᵀHw = 0 是临界点处 SO(3) 不变性的精确恒等式（L5/L6；区间复核 |C_RᵀQ_redC_R|、|Q_redC_R| ≤ 1e-3，实测 ~1e-6 = |E'| 量级，随 z→z* 收敛到 0）；15 维商切空间上核为空（区间 Cholesky 证书 M(z) − λ·Ĝ(z) ≻ 0 排除一切非旋转核方向）。D3h 点群不产生额外零方向：族方向 v_fam（A1' 不可约；在 z_mid 处 ⊥R 故含于 S_A(z_mid) 的构造中，z* 处经 T = S_A⊕R 分解被证书覆盖）的曲率由两路独立确认——q(v_fam,v_fam) 区间与 E″(I) 区间相交（共同值 E″(z*)≈42.859，E″ 来自 local_min.py 的独立闭式自动微分）",
+  "lemmaChain": {
+    "L1_isolation": "E' sign change on I + E''>0 on I: unique z* with E'(z*)=0 (re-verified here via local_min.E_dual; R1 artifact interval re-derived and matched)",
+    "L2_fixedSubspace": "F_amb ∩ T = span{v_fam}, v_fam = -(z/rho)*f1 + f2 exactly; f1, f3 non-tangent (dot enclosures bounded away from 0)",
+    "L3_criticality": "grad E in F_amb (D3h equivariance of ∇E) and grad E . v_fam = E'(z*) = 0 ⇒ X(z*) critical on (S^2)^9; numeric: tangential-gradient basis dots contain 0, max ~ |E'| scale",
+    "L4_riemannianHessian": "q_z(v,v) = v^T H_amb v - sum_i (grad_i E . x_i)|v_i|^2 (geodesic acceleration of unit spheres); at a critical point this is the Riemannian Hessian",
+    "L5_kernelOnRotations": "q(w,w) = 0 exactly at z* (SO(3) invariance); numeric |C_R^T Q_red C_R| ~ 1e-6 ~ |E'|",
+    "L6_crossTerms": "s^T H w = 0 exactly at z*; numeric |Q_red C_R| ~ 1e-6",
+    "L7_intervalCertificate": "basis tangency; dim R = 3 (C_R^T G C_R PD); midpoint-built A0 (18x15) with Gram_G([A0|C_R]) PD on all of I ⇒ T = S_A ⊕ R; mean-value form + dual-AD derivative certifies M(z) - λGhat(z) PD by interval Cholesky ⇒ q_z ≥ λ||·||² on S_A(z) for ALL z ∈ I",
+    "L8_conclusion": "at z*: u = s + r ⇒ q(u) = q(s) ≥ λ||s||² ≥ λ·dist(u,R)² ⇒ ker Hess = R exactly; quotient lambda_min ≥ λ > 0 ⇒ nondegenerate strict local minimum modulo SO(3) (second-order sufficient condition)"
+  },
+  "tolerances": {
+    "ivDps": 50,
+    "eStarDistance": "1e-8",
+    "tangencyEpsilon": "1e-4",
+    "kernelConsistencyEpsilon": "1e-3",
+    "adSelftestRelativeTolerance": 0.0001
+  },
+  "forTubeLine": "lambdaMinQuotientLowerBound = 0.14378982（管状线 tubeRadius 的输入；把 λ 转成管半径还需 Taylor 三阶余项界与能量下界拼接，下游管状线处理，本脚本交付 λ 的严格区间下界）",
+  "timestamp": "2026-10-04T14:40:09+00:00"
+}

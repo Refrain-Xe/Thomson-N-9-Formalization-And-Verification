@@ -1,0 +1,113 @@
+{
+ "kind": "n9-r13-a6-ledger",
+ "task": "r13b-tablea-a6",
+ "seed": 20261015,
+ "heavy_solves": 0,
+ "files": {
+  "numerics/bounds/r13_a6_data.py": "a5d6fe8e2de3cb0062d2bc80fb52943f2375112a67d42643e40458092bb9e222",
+  "numerics/bounds/results/r13_a6_data.json": "b6361e86d273cfea9cdd4b39138f4c51b8f4b407b448225d9c97a903a6b8f539",
+  "formal/lean/ThomsonN9/TableA6.lean": "bbb97a397ed50bc0e46327e49ed1c7908b2d5dd60de34ad686cdebcf60c49fe5",
+  "formal/lean/ThomsonN9/TableA6/Gen.lean": "82626dde8e6cf73da7ad65d9245dbb81303746680a7e01c67ba0f3b702566d7d",
+  "numerics/bounds/r13_a6_gate.py": "bb6eed25e0036d10cf76cd9775902c00f76e3fda3af3f05545299dc384808380",
+  "thomson-n9/numerics/bounds/r13_a6_gate.py": "8f02d57f763c2390101863a58108a031d7935cffc27246de2c816f9ed7ea5e52",
+  "numerics/bounds/results/r13_a6_ledger.json": "self",
+  "notes/tablea-lean.md": "3e5dd58faf3cd5ea521e8c26760169efa5ae0c8530e9cfcdcb9b232607341177",
+  "formal/lean/ThomsonN9/TableA6/AA0.lean": "3c33b306000c31b89461b5e2ace948e396d96ceed5277c021609cb1b8d02f877",
+  "formal/lean/ThomsonN9/TableA6/AA1.lean": "4846c99e04655fb8e77656434e039fcc97834d9fd6c649b1e32e3fd0a95ccab4",
+  "formal/lean/ThomsonN9/TableA6/AA2.lean": "b3ec8bb57be4ca527aa2df241dba90ed6fb7a1244c05343f7e11203fd25517cb",
+  "formal/lean/ThomsonN9/TableA6/AA3.lean": "e11bd258aa56ab0cbd58f023137613102939e6c013c97ad72df70bd19b5cb213",
+  "formal/lean/ThomsonN9/TableA6/AB0.lean": "1a4864b581ed895486997d96021c36ddd8621dd20a68c3b8fc0938380c88c481",
+  "formal/lean/ThomsonN9/TableA6/AB1.lean": "fd59a17c6121755b8095871d527060156b7b4e516e4707ccc73ac71a9cf322e7",
+  "formal/lean/ThomsonN9/TableA6/AB2.lean": "24d54d39946a64235b8301d5ecf879370b09e26ed58eb0cf52c94163ea2de608",
+  "formal/lean/ThomsonN9/TableA6/AB3.lean": "0e8419a59a72fe4a2b9a5c84360116ad8dfded37c6beeef58197f4014d1bcd93"
+ },
+ "files_anchor_erratum": "复算 D3 勘误（返工员-R13）：原 files 面门脚本锚 c2d738e0… 经逐提交 git show＋shasum 穷尽亲测从未对应任何提交版本（157172b 版=c66940b67451e1e9…、4b11b68 起至勘误时点=bb6eed25e0036d10c…）——系账本生成时工作树中间态未入档；原 wrapper 锚 893fc999…（=157172b 版）与 tablea-lean 锚 b3964ebf…（=7ac3111 版）系生成时点锚定非失真。本勘误提交将 files 面三锚统一重锚至勘误时点现版（原值以上存证），与 a1/a3a4 账本『末次更新提交时点逐件锚定』口径对齐。门检查面零依赖：G0 只查在场、G1 冻结锚仅 M9 证书＋r9 json（frozen_sha256 不变）。",
+ "frozen_sha256": {
+  "certificates/n9-stage-a4-typedcap-m0748_M9.json": "e75422d688f16ec38d03c80eb78f61ee37eca729fac23ead6620713498300dc6",
+  "numerics/bounds/results/r9_s3_rederive.json": "0482bd93fa3715818c0d931dae649a3dee3f5473ad508e94191f06569a6cdbd3"
+ },
+ "frozen_note": "证书与 r9 对账件不在 git 追踪面 ⇒ 以本账本 sha256 锚定只读（G1）",
+ "theorems": {
+  "gen": [
+   "quad_of_recon",
+   "entries_of_sumsq2"
+  ],
+  "blocks": [
+   "AA0: stepsq_AA0/step1_AA0/step2_AA0/recon_AA0/sigAA0/sigAA0_quad/dAA0_pos",
+   "AA1: stepsq_AA1/step1_AA1/step2_AA1/recon_AA1/sigAA1/sigAA1_quad/dAA1_pos",
+   "AA2: stepsq_AA2/step1_AA2/step2_AA2/recon_AA2/sigAA2/sigAA2_quad/dAA2_pos",
+   "AA3: stepsq_AA3/step1_AA3/step2_AA3/recon_AA3/sigAA3/sigAA3_quad/dAA3_pos",
+   "AB0: stepsq_AB0/step1_AB0/step2_AB0/recon_AB0/sigAB0/sigAB0_quad/dAB0_pos",
+   "AB1: stepsq_AB1/step1_AB1/step2_AB1/recon_AB1/sigAB1/sigAB1_quad/dAB1_pos",
+   "AB2: stepsq_AB2/step1_AB2/step2_AB2/recon_AB2/sigAB2/sigAB2_quad/dAB2_pos",
+   "AB3: stepsq_AB3/step1_AB3/step2_AB3/recon_AB3/sigAB3/sigAB3_quad/dAB3_pos"
+  ],
+  "umbrella": [
+   "pAA_sos",
+   "pAA_nonneg",
+   "pAB_sos",
+   "pAB_nonneg",
+   "r2_reduction_AA",
+   "r2_reduction_AB",
+   "lhs_spot_AA_1",
+   "lhs_spot_AA_2",
+   "lhs_spot_AA_3",
+   "lhs_spot_AB_1",
+   "lhs_spot_AB_2",
+   "lhs_spot_AB_3"
+  ],
+  "axioms_expected": [
+   "propext",
+   "Classical.choice",
+   "Quot.sound"
+  ],
+  "n_axiom_checked": 54
+ },
+ "proof_scheme": {
+  "(i)": "stepsq_{b}: Σ_{k,l}[(L_kl·d_l−M_kl)²+(M_k⬝ᵥL_l−S_kl)²]==0 单次 norm_num（D50-2 平坦形范式·平方和折叠）＋entries_of_sumsq2 逐项提取 ⇒ step1/step2 ⇒ recon",
+  "(ii)": "quad_of_recon（Gen）：矩阵代数链 dotProduct/mulVec/vecMul/transpose/diagonal，无数据展开",
+  "(iii)": "p_cls = σ0+yσ1+(b²−y²)σ2+y(b²−y²)σ3；p_sos 重写＋Finset.sum_nonneg＋d_j>0 字面量＋sq_nonneg＋乘子域非负（√b 无理化：y·y≤437/500）",
+  "(iv)": "r2_reduction_{cls}: Σ_j sgn_j·(rhs_j−lhs_j)·(117/125)^j == R2_cls（ℚ norm_num）＋lhs_spot 3 点/类抽查（seed 20261015）"
+ },
+ "data": {
+  "certificate": "certificates/n9-stage-a4-typedcap-m0748_M9.json（只读）",
+  "reconcile": "numerics/bounds/results/r9_s3_rederive.json R2_exact 逐位（AA/AB 双 match）",
+  "data_file": "numerics/bounds/results/r13_a6_data.json",
+  "b2": "437/500",
+  "w_hat": "117/125",
+  "R2_AA": "3889766608444458344585635619432645189566839438469782653261404345780899796831/222044604925031308084726333618164062500000000000000000000000000000000000000000000000",
+  "R2_AB": "13061183578204185028042533804651605715226289625871361755884583812810354220763/444089209850062616169452667236328125000000000000000000000000000000000000000000000000",
+  "spot_points": [
+   "2/5",
+   "17/40",
+   "4/5"
+  ]
+ },
+ "elab_walls_measured": {
+  "Gen.lean": 44.1,
+  "blocks_parallel_8_max": 124.2,
+  "TableA6.lean": 82.2,
+  "note": "分块拆文件（任务书 G2 超限口径）：每子命令 ≤10 min 实测全过；块并行编译；门全墙钟 383.3s"
+ },
+ "gate": {
+  "script": "numerics/bounds/r13_a6_gate.py",
+  "wrapper": "thomson-n9/numerics/bounds/r13_a6_gate.py",
+  "checks": [
+   "G0 ledger",
+   "G1 ownership+frozen sha",
+   "G2 split elaboration (Gen→8 blocks parallel→umbrella)",
+   "G3 axioms 56 theorems ⊆ 3 standard",
+   "G4 anchors+non-overlap",
+   "G5 offline Fraction recheck (LDLt/pivots/identity replay/json↔source literals)",
+   "NC1 sorry injection",
+   "NC2 D-pivot sign flip",
+   "NC3 residual coefficient tamper"
+  ],
+  "wall_s": 339.9,
+  "selfrun_note": "四路由自跑 PASS exit 0：仓内真实门 383.3s（gate10）＋campaign 根验收命令原样 450.2s（gateA）＋仓库根包装器 384.1s（gateW）＋家族放行层补强后 campaign 根终验 348.4s（gateF，G2 Gen 33.8s＋块并行最长 112.3s＋总成 65.2s）；G3 46 定理公理恰三标准；G5 Fraction 第三实现全过；NC1–3 全检出＋G1 家族外探针必拦（zz_r13b_foreign_probe.py CAUGHT 亲验）；wall_s 记最终态（348.4s，与 cbe1844 墙钟对齐先例同口径）；r13d 在途态（六件家族放行响亮打印）campaign 根复跑 PASS exit 0（313.2s，gatePC2）；包装器返工后双路由复跑（真包装器 323.5s＋campaign 根 339.9s）均 exit 0",
+  "g1_family_layer": "D53-4 对齐：PARALLEL_FAMILY pattern 放行 r13 姊妹线在途件（TableA[0-9]*/r13* 门数据账本包装器〔r13d 无下划线名含〕/notes/tablea*/notes/decisions.md/GAP-REPORT/PROGRESS/endgame_gate.py〔r13d 按 R12C 先例增补面〕），家族外（TableA.lean 冻结面/certificates/references/endgame.json）仍字面拦截；12 例 pattern 单测＋家族外探针 CAUGHT 亲验；r13d 在途态实测放行六件响亮打印后全门 PASS",
+  "wrapper_rework": "首验 exit 1 实录：嵌套 CWD 包装器首版误用 parents[2]（解析回自身 ⇒ runpy 无限递归）；且首发自测『包装器路由』实跑 CWD 在 campaign 根命中真实门，包装器从未真正执行——验证盲区（D-r13b-7）。修复＝parents[3]（r12b 5237fe5 先例口径）＋逐级上溯自指守卫（解析等于本文件即跳过）＋解析单测（REAL_GATE 无 /thomson-n9/thomson-n9/ 自指）；修复后 CWD=仓库根实命中包装器本体路由亲验 PASS exit 0（323.5s，gateW2）＋campaign 根验收命令原样复跑 PASS exit 0（339.9s，gateA2）"
+ },
+ "boundaries": "H≤φ 逐点优越性与一般 Lukács 存在定理不在本件（goal/docstring 明示）；lhs↔p_cls 系数级全恒等式由门 G5 Fraction 重放承担，Lean 侧为 3 点/类抽查求值定理",
+ "timestamp": "2026-10-11T05:30:00+00:00"
+}

@@ -1,0 +1,694 @@
+{
+  "kind": "sdp",
+  "script": "sdp_bound.py",
+  "timestamp": "2026-10-02T18:05:37+00:00",
+  "seed": 20261003,
+  "target": {
+    "N": 9,
+    "E_star": 25.759986531,
+    "source": "/Users/cissie/Desktop/八电子在球面的分布/thomson-workflow/data/energies.json"
+  },
+  "solver": {
+    "primary": "CLARABEL",
+    "max_iter": 1000,
+    "tol_gap_abs": 1e-08,
+    "tol_gap_rel": 1e-08,
+    "tol_feas": 1e-08,
+    "time_limit": 420.0,
+    "fallback": "SCS",
+    "eps": 1e-09,
+    "max_iters": 30000,
+    "time_limit_secs": 420.0
+  },
+  "method": "Bachoc–Vallentin / Cohn–Woo 三点 SDP，自 N=7 PAPER.md §4–5.1 移植（核 Q_k、S_k=Sym(u^a v^b Q_k)、三点恒等式 (1)(2)、8 块 SOS 模（1/cut×3/cap×3/detG）、Lukács 型 minorant (4)）；N=7 包不含 SDP 数值代码，本脚本按论文公式重建",
+  "selftests": {
+    "N7_M6": {
+      "kernel": {
+        "Q_identity_max_err": 1.9284704041999667e-15,
+        "positivity_sum": 2917.299625622554,
+        "positivity_relative": 1.0,
+        "positivity_ok": true
+      },
+      "identity": {
+        "lhs": 559.8661087407254,
+        "rhs": 559.866108740729,
+        "abs_err": 3.637978807091713e-12,
+        "rel_err": 6.4979443304299766e-15,
+        "ok": true
+      }
+    },
+    "N9_M8": {
+      "kernel": {
+        "Q_identity_max_err": 2.988675942707344e-14,
+        "positivity_sum": 4858.883182284399,
+        "positivity_relative": 1.0,
+        "positivity_ok": true
+      },
+      "identity": {
+        "lhs": 394.2782555420854,
+        "rhs": 394.2782555421891,
+        "abs_err": 1.0368239600211382e-10,
+        "rel_err": 2.629675731407903e-13,
+        "ok": true
+      }
+    },
+    "N9_M6": {
+      "kernel": {
+        "Q_identity_max_err": 3.68075456723925e-15,
+        "positivity_sum": 2678.765368931403,
+        "positivity_relative": 1.0,
+        "positivity_ok": true
+      },
+      "identity": {
+        "lhs": 28.343626023459365,
+        "rhs": 28.34362602345517,
+        "abs_err": 4.195754854663392e-12,
+        "rel_err": 1.4803168977714014e-13,
+        "ok": true
+      }
+    }
+  },
+  "cases": [
+    {
+      "m": -0.9,
+      "config": "midlarge",
+      "M": 8,
+      "K": 6,
+      "e": 25.759381941996825,
+      "info": {
+        "solver": "CLARABEL",
+        "status": "optimal_inaccurate",
+        "build_s": 0.03,
+        "solve_s": 224.65,
+        "objective": 25.759381941996825,
+        "n": 9,
+        "a": -0.9,
+        "M": 8,
+        "K": 6,
+        "d_H": 14,
+        "D": 14,
+        "nmon_slack": 680,
+        "F_sizes": [
+          8,
+          7,
+          6,
+          5,
+          4,
+          3
+        ],
+        "sos_block_sizes": [
+          [
+            "1",
+            120
+          ],
+          [
+            "u-a",
+            84
+          ],
+          [
+            "v-a",
+            84
+          ],
+          [
+            "t-a",
+            84
+          ],
+          [
+            "1-u",
+            84
+          ],
+          [
+            "1-v",
+            84
+          ],
+          [
+            "1-t",
+            84
+          ],
+          [
+            "detG",
+            56
+          ]
+        ],
+        "sig_sizes": [
+          15,
+          15,
+          14,
+          14
+        ],
+        "n_scalar_vars": 60929,
+        "n_eq_rows": 710
+      },
+      "check": {
+        "identity_residual_slack": 2.8468651804836043e-06,
+        "identity_residual_minorant": 5.200023238671747e-06,
+        "identity_l1_slack": 8.582557239850633e-05,
+        "min_eig": {
+          "B_1": -1.0483523844192026e-07,
+          "B_u-a": -5.370630427174432e-08,
+          "B_v-a": -6.336868692336054e-08,
+          "B_t-a": -4.493634162423512e-08,
+          "B_1-u": -5.1053312334410025e-08,
+          "B_1-v": -1.028372843969405e-07,
+          "B_1-t": -7.056375758316543e-08,
+          "B_detG": -7.970083078407798e-08,
+          "F0": -6.4474950389480386e-09,
+          "F1": 2.646833028149609e-06,
+          "F2": 4.238470868440918e-08,
+          "F3": 8.209396942333752e-09,
+          "F4": 2.1471779936770345e-09,
+          "F5": 3.8022155942006277e-10,
+          "sig0": -1.073491192720223e-08,
+          "sig1": -1.8926281733019568e-09,
+          "sig2": -4.204104521578009e-08,
+          "sig3": -3.349958511115551e-08
+        },
+        "slack_min_random": 4.970737851994035e-07,
+        "slack_min_boundary": 0.00033592236507146557,
+        "minorant_max_violation": 1.944598160275035e-08,
+        "n_gram_points": 137210,
+        "viol_fine": 1.956016713587062e-08,
+        "psd_deficit_sos": 9.901318571236539e-05,
+        "psd_deficit_F": 3.446830847821621e-05,
+        "deflation": 0.006657361480042431,
+        "e_safe": 25.752724580516784,
+        "accepted": false
+      },
+      "ttp": {
+        "z_star": 0.7036483959983358,
+        "E_ttp": 25.75998653126983,
+        "sumH_at_ttp": 25.759964508176534,
+        "min_inner": -0.7475605325955157,
+        "E_minus_e": 0.007261950753047586,
+        "sumH_minus_e": 0.007239927659750123,
+        "E_matches_star": true
+      },
+      "run": {
+        "timestamp": "2026-10-02T18:09:26+00:00",
+        "argv": [],
+        "solver_opts": {
+          "max_iter": 1000,
+          "tol_gap_abs": 1e-08,
+          "tol_gap_rel": 1e-08,
+          "tol_feas": 1e-08,
+          "time_limit": 420.0
+        },
+        "repro": "numerics/.venv/bin/python numerics/bounds/sdp_bound.py --only m090 --config midlarge"
+      }
+    },
+    {
+      "m": -0.9,
+      "config": "small",
+      "M": 6,
+      "K": 4,
+      "e": 25.748363121741782,
+      "info": {
+        "solver": "CLARABEL",
+        "status": "optimal",
+        "build_s": 0.01,
+        "solve_s": 6.05,
+        "objective": 25.748363121741782,
+        "n": 9,
+        "a": -0.9,
+        "M": 6,
+        "K": 4,
+        "d_H": 10,
+        "D": 10,
+        "nmon_slack": 286,
+        "F_sizes": [
+          6,
+          5,
+          4,
+          3
+        ],
+        "sos_block_sizes": [
+          [
+            "1",
+            56
+          ],
+          [
+            "u-a",
+            35
+          ],
+          [
+            "v-a",
+            35
+          ],
+          [
+            "t-a",
+            35
+          ],
+          [
+            "1-u",
+            35
+          ],
+          [
+            "1-v",
+            35
+          ],
+          [
+            "1-t",
+            35
+          ],
+          [
+            "detG",
+            20
+          ]
+        ],
+        "sig_sizes": [
+          11,
+          11,
+          10,
+          10
+        ],
+        "n_scalar_vars": 11426,
+        "n_eq_rows": 308
+      },
+      "check": {
+        "identity_residual_slack": 1.028145591719376e-07,
+        "identity_residual_minorant": 1.2070842103639734e-08,
+        "identity_l1_slack": 2.9610882144850713e-06,
+        "min_eig": {
+          "B_1": -9.739210764392942e-09,
+          "B_u-a": 5.868465570406248e-10,
+          "B_v-a": -2.1611874714762574e-09,
+          "B_t-a": -8.265656045402752e-10,
+          "B_1-u": -2.464583841919647e-09,
+          "B_1-v": -6.910668194997968e-09,
+          "B_1-t": -7.552312502167682e-09,
+          "B_detG": 7.0947009154390935e-09,
+          "F0": -1.9406273456212257e-09,
+          "F1": 9.360621243549579e-05,
+          "F2": 7.885007464211644e-07,
+          "F3": 5.3929046412299356e-08,
+          "sig0": -1.749136820714458e-09,
+          "sig1": -1.0957955686543353e-09,
+          "sig2": -1.3974728692981014e-09,
+          "sig3": -2.7723896963913707e-08
+        },
+        "slack_min_random": 3.0556510811987704e-06,
+        "slack_min_boundary": 0.008430419693073038,
+        "minorant_max_violation": -1.3057568915009199e-08,
+        "n_gram_points": 137210,
+        "viol_fine": -1.2970132883897989e-08,
+        "psd_deficit_sos": 2.4848638386691374e-06,
+        "psd_deficit_F": 5.658869339831494e-06,
+        "deflation": 0.0001959915540825763,
+        "e_safe": 25.7481671301877,
+        "accepted": true
+      },
+      "ttp": {
+        "z_star": 0.7036483959983358,
+        "E_ttp": 25.75998653126983,
+        "sumH_at_ttp": 25.759770477345228,
+        "min_inner": -0.7475605325955157,
+        "E_minus_e": 0.011819401082131975,
+        "sumH_minus_e": 0.011603347157528532,
+        "E_matches_star": true
+      },
+      "run": {
+        "timestamp": "2026-10-02T18:09:33+00:00",
+        "argv": [],
+        "solver_opts": {
+          "max_iter": 1000,
+          "tol_gap_abs": 1e-08,
+          "tol_gap_rel": 1e-08,
+          "tol_feas": 1e-08,
+          "time_limit": 420.0
+        },
+        "repro": "numerics/.venv/bin/python numerics/bounds/sdp_bound.py --only m090 --config small"
+      }
+    },
+    {
+      "m": -0.95,
+      "config": "midlarge",
+      "M": 8,
+      "K": 6,
+      "e": 25.759371847078697,
+      "info": {
+        "solver": "CLARABEL",
+        "status": "optimal_inaccurate",
+        "build_s": 0.04,
+        "solve_s": 239.8,
+        "objective": 25.759371847078697,
+        "n": 9,
+        "a": -0.95,
+        "M": 8,
+        "K": 6,
+        "d_H": 14,
+        "D": 14,
+        "nmon_slack": 680,
+        "F_sizes": [
+          8,
+          7,
+          6,
+          5,
+          4,
+          3
+        ],
+        "sos_block_sizes": [
+          [
+            "1",
+            120
+          ],
+          [
+            "u-a",
+            84
+          ],
+          [
+            "v-a",
+            84
+          ],
+          [
+            "t-a",
+            84
+          ],
+          [
+            "1-u",
+            84
+          ],
+          [
+            "1-v",
+            84
+          ],
+          [
+            "1-t",
+            84
+          ],
+          [
+            "detG",
+            56
+          ]
+        ],
+        "sig_sizes": [
+          15,
+          15,
+          14,
+          14
+        ],
+        "n_scalar_vars": 60929,
+        "n_eq_rows": 710
+      },
+      "check": {
+        "identity_residual_slack": 6.518167194879965e-06,
+        "identity_residual_minorant": 3.0482655120067648e-06,
+        "identity_l1_slack": 0.00013222420930938575,
+        "min_eig": {
+          "B_1": -7.506097091793947e-08,
+          "B_u-a": -7.791695078950738e-08,
+          "B_v-a": -8.820463189429418e-08,
+          "B_t-a": -1.2892217597229914e-07,
+          "B_1-u": -1.4554160708716308e-07,
+          "B_1-v": -5.106211992443183e-08,
+          "B_1-t": -1.3150219087859563e-07,
+          "B_detG": -2.8287538989610625e-08,
+          "F0": 1.2657965970633619e-09,
+          "F1": 6.950803835204375e-06,
+          "F2": 8.061821497558997e-08,
+          "F3": 1.4471814807691464e-08,
+          "F4": 3.349841288155006e-09,
+          "F5": 5.604261903498086e-10,
+          "sig0": -2.6343458105919857e-09,
+          "sig1": -3.250675138885487e-09,
+          "sig2": -1.5715252846496805e-08,
+          "sig3": -3.298544139722051e-08
+        },
+        "slack_min_random": 3.3267588525751706e-07,
+        "slack_min_boundary": 0.017525205318334843,
+        "minorant_max_violation": 4.6529330388622725e-09,
+        "n_gram_points": 148261,
+        "viol_fine": 4.773793505517551e-09,
+        "psd_deficit_sos": 0.0001258719830469188,
+        "psd_deficit_F": 0.0,
+        "deflation": 0.009291634781393164,
+        "e_safe": 25.750080212297302,
+        "accepted": false
+      },
+      "ttp": {
+        "z_star": 0.7036483959983358,
+        "E_ttp": 25.75998653126983,
+        "sumH_at_ttp": 25.759955794346908,
+        "min_inner": -0.7475605325955157,
+        "E_minus_e": 0.009906318972529249,
+        "sumH_minus_e": 0.009875582049605924,
+        "E_matches_star": true
+      },
+      "run": {
+        "timestamp": "2026-10-02T18:13:33+00:00",
+        "argv": [],
+        "solver_opts": {
+          "max_iter": 1000,
+          "tol_gap_abs": 1e-08,
+          "tol_gap_rel": 1e-08,
+          "tol_feas": 1e-08,
+          "time_limit": 420.0
+        },
+        "repro": "numerics/.venv/bin/python numerics/bounds/sdp_bound.py --only m095 --config midlarge"
+      }
+    },
+    {
+      "m": -0.95,
+      "config": "small",
+      "M": 6,
+      "K": 4,
+      "e": 25.74825308204555,
+      "info": {
+        "solver": "CLARABEL",
+        "status": "optimal",
+        "build_s": 0.01,
+        "solve_s": 5.55,
+        "objective": 25.74825308204555,
+        "n": 9,
+        "a": -0.95,
+        "M": 6,
+        "K": 4,
+        "d_H": 10,
+        "D": 10,
+        "nmon_slack": 286,
+        "F_sizes": [
+          6,
+          5,
+          4,
+          3
+        ],
+        "sos_block_sizes": [
+          [
+            "1",
+            56
+          ],
+          [
+            "u-a",
+            35
+          ],
+          [
+            "v-a",
+            35
+          ],
+          [
+            "t-a",
+            35
+          ],
+          [
+            "1-u",
+            35
+          ],
+          [
+            "1-v",
+            35
+          ],
+          [
+            "1-t",
+            35
+          ],
+          [
+            "detG",
+            20
+          ]
+        ],
+        "sig_sizes": [
+          11,
+          11,
+          10,
+          10
+        ],
+        "n_scalar_vars": 11426,
+        "n_eq_rows": 308
+      },
+      "check": {
+        "identity_residual_slack": 6.98686887304345e-08,
+        "identity_residual_minorant": 2.633385065564653e-09,
+        "identity_l1_slack": 1.4996145593370024e-06,
+        "min_eig": {
+          "B_1": -9.32801236103655e-10,
+          "B_u-a": -7.435970859515537e-09,
+          "B_v-a": -2.896386326146544e-09,
+          "B_t-a": 8.883421784612238e-10,
+          "B_1-u": -3.766040074250601e-09,
+          "B_1-v": -5.8125650471498235e-09,
+          "B_1-t": -7.714038460767285e-09,
+          "B_detG": 1.0017796867318938e-08,
+          "F0": -3.5166136139106234e-09,
+          "F1": 0.00014011417027059135,
+          "F2": 1.2119306364996043e-06,
+          "F3": 7.32375466399332e-08,
+          "sig0": -2.8373091489856186e-09,
+          "sig1": -1.779639523049283e-09,
+          "sig2": 9.409387324634524e-10,
+          "sig3": 5.048376359967188e-10
+        },
+        "slack_min_random": 3.1272934479341305e-06,
+        "slack_min_boundary": 0.03933603192619873,
+        "minorant_max_violation": -3.0549460183770805e-08,
+        "n_gram_points": 148261,
+        "viol_fine": -3.046287752781353e-08,
+        "psd_deficit_sos": 2.0382237921916947e-06,
+        "psd_deficit_F": 1.0254445298163376e-05,
+        "deflation": 0.00012699797744247204,
+        "e_safe": 25.748126084068108,
+        "accepted": true
+      },
+      "ttp": {
+        "z_star": 0.7036483959983358,
+        "E_ttp": 25.75998653126983,
+        "sumH_at_ttp": 25.759755325997705,
+        "min_inner": -0.7475605325955157,
+        "E_minus_e": 0.01186044720172319,
+        "sumH_minus_e": 0.011629241929597356,
+        "E_matches_star": true
+      },
+      "run": {
+        "timestamp": "2026-10-02T18:13:38+00:00",
+        "argv": [],
+        "solver_opts": {
+          "max_iter": 1000,
+          "tol_gap_abs": 1e-08,
+          "tol_gap_rel": 1e-08,
+          "tol_feas": 1e-08,
+          "time_limit": 420.0
+        },
+        "repro": "numerics/.venv/bin/python numerics/bounds/sdp_bound.py --only m095 --config small"
+      }
+    }
+  ],
+  "calibration": {
+    "N": 7,
+    "a": -0.9,
+    "M": 6,
+    "K": 4,
+    "e": 14.454503851458822,
+    "expect": 14.4533,
+    "absdiff": 0.0012038514588219584,
+    "tol": 0.005,
+    "ok": true,
+    "info": {
+      "solver": "CLARABEL",
+      "status": "optimal",
+      "build_s": 0.01,
+      "solve_s": 4.96,
+      "objective": 14.454503851458822,
+      "n": 7,
+      "a": -0.9,
+      "M": 6,
+      "K": 4,
+      "d_H": 10,
+      "D": 10,
+      "nmon_slack": 286,
+      "F_sizes": [
+        6,
+        5,
+        4,
+        3
+      ],
+      "sos_block_sizes": [
+        [
+          "1",
+          56
+        ],
+        [
+          "u-a",
+          35
+        ],
+        [
+          "v-a",
+          35
+        ],
+        [
+          "t-a",
+          35
+        ],
+        [
+          "1-u",
+          35
+        ],
+        [
+          "1-v",
+          35
+        ],
+        [
+          "1-t",
+          35
+        ],
+        [
+          "detG",
+          20
+        ]
+      ],
+      "sig_sizes": [
+        11,
+        11,
+        10,
+        10
+      ],
+      "n_scalar_vars": 11426,
+      "n_eq_rows": 308
+    },
+    "check": {
+      "identity_residual_slack": 6.398703032359232e-08,
+      "identity_residual_minorant": 2.2042101477381948e-08,
+      "identity_l1_slack": 1.05044593032442e-06,
+      "min_eig": {
+        "B_1": -2.321284853092468e-09,
+        "B_u-a": -5.696852111326391e-09,
+        "B_v-a": -5.180243130023708e-10,
+        "B_t-a": -2.557032405212733e-09,
+        "B_1-u": -8.44661647216155e-09,
+        "B_1-v": -1.1068585585661072e-08,
+        "B_1-t": -3.5265256964076304e-09,
+        "B_detG": 6.016663015678539e-09,
+        "F0": -4.402348269006884e-09,
+        "F1": 2.932536165476277e-07,
+        "F2": 8.675806160517538e-08,
+        "F3": 2.5126417435720753e-08,
+        "sig0": -4.2820771340839975e-09,
+        "sig1": -3.6113986862844556e-09,
+        "sig2": 5.901001218273943e-09,
+        "sig3": 1.162801134186882e-09
+      },
+      "slack_min_random": 4.609533096993895e-06,
+      "slack_min_boundary": 0.04122537060553736,
+      "minorant_max_violation": -4.491468752476635e-09,
+      "n_gram_points": 137210,
+      "viol_fine": -4.4369953106485355e-09,
+      "psd_deficit_sos": 2.4869384644103786e-06,
+      "psd_deficit_F": 7.765742346528144e-06,
+      "deflation": 7.496846962255996e-05,
+      "e_safe": 14.4544288829892,
+      "accepted": true
+    }
+  },
+  "ttp_check_primary": {
+    "z_star": 0.7036483959983358,
+    "E_ttp": 25.75998653126983,
+    "sumH_at_ttp": 25.759964508176534,
+    "min_inner": -0.7475605325955157,
+    "E_minus_e": 0.007261950753047586,
+    "sumH_minus_e": 0.007239927659750123,
+    "E_matches_star": true
+  },
+  "bound": 25.752724580516784,
+  "bound_raw_sdp_value": 25.759381941996825,
+  "bound_deflation": 0.006657361480042431,
+  "bound_m": -0.9,
+  "bound_config": "midlarge",
+  "gap_to_E_star": 0.007261950483215429
+}

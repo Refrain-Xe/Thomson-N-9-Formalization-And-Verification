@@ -1,0 +1,125 @@
+{
+ "kind": "n9-r13-a1-ledger",
+ "task": "r13c-tablea-a1",
+ "seed": 20261015,
+ "heavy_solves": 0,
+ "files": {
+  "numerics/bounds/r13_a1_data.py": "37600d52bb6c4d864a2f7c76df0af4282862567cc5b3a732fb3caafa338b00c0",
+  "numerics/bounds/results/r13_a1_data.json": "7d3233dd00610800f0aa2e976ff167d285be7b44079815a349aa7d807bdd9f5c",
+  "formal/lean/ThomsonN9/TableA1Data.lean": "3d873e90b9570980fdbce8f13445a98cd788fd76b24f975f45f5a387f9e108d5",
+  "formal/lean/ThomsonN9/TableA1.lean": "7e6939713652f252d2cee7f625091a53368c85440ba260713c07783b45177fc5",
+  "numerics/bounds/r13_a1_gate.py": "f0a84f7073206bad21bff89f7485f766b76fcc23846c03586fcd9d1b9236eda9",
+  "thomson-n9/numerics/bounds/r13_a1_gate.py": "78fffc80c8b5bd793aa4b4ea15b21c8b51d60f5add19b32be6e3f42900a5837a",
+  "numerics/bounds/results/r13_a1_ledger.json": "self",
+  "notes/tablea-lean.md": "3e5dd58faf3cd5ea521e8c26760169efa5ae0c8530e9cfcdcb9b232607341177"
+ },
+ "files_anchor_erratum": "复算 D2 勘误（返工员-R13）：λ 三轨道表『449 非零 dyadic ℚ』措辞过强——Fraction 分母奇部亲算 44/1347 非 dyadic（λ_AAB 10 个奇部 3、λ_ABC 33 个奇部 3＋1 个奇部 27，源于 share_lp 的 /6、/3 除法），数值自身无恙（恒等式 diff==0／抽查／对账独立复核过）；docstring 与 TableA1Data.lean 头注措辞降格为『3-smooth ℚ（分母 2^a·3^b）』并同步 tablea-lean.md §9 与 GAP-REPORT ③。files 面三件（本生成器/TableA1Data.lean/tablea-lean.md）据此重锚至勘误时点现版（原值：r13_a1_data.py=2ef62f3483f12340…、TableA1Data.lean=b6f29d3494fe6dfd…、tablea-lean.md=b3964ebf2f37d8d2…）；数值/定理/门检查面零改动。",
+ "data": {
+  "json": "numerics/bounds/results/r13_a1_data.json",
+  "tables": {
+   "lam_AAA": 449,
+   "lam_AAB": 449,
+   "lam_ABC": 449,
+   "s": 271,
+   "h_AA": 17,
+   "h_AB": 17
+  },
+  "identity_points": {
+   "lam": 4,
+   "s": 5,
+   "h": 2
+  },
+  "counts": {
+   "lam": [
+    3,
+    27,
+    27,
+    27
+   ],
+   "s": [
+    162,
+    162,
+    162,
+    162,
+    81
+   ],
+   "h": [
+    9,
+    27
+   ]
+  },
+  "reference_values": {
+   "sum_lam": "4416585812995339/281474976710656",
+   "sum_all": "1003797937752669/70368744177664",
+   "sum_H": "7841265097092597/140737488355328",
+   "e": "7250752630179179/281474976710656",
+   "diff": "0"
+  },
+  "spot_checks": {
+   "tables": 6,
+   "per_table": 3,
+   "total": 18
+  }
+ },
+ "lean": {
+  "files": [
+   "formal/lean/ThomsonN9/TableA1Data.lean",
+   "formal/lean/ThomsonN9/TableA1.lean"
+  ],
+  "elaboration_wall_s": {
+   "TableA1Data.lean": 588.3,
+   "TableA1.lean": 326.3,
+   "dedicated_note": "独占轮实测 108.4/123.6/131.8s（Data）与 11.7/12.1/12.8s（Main）；588.3/326.3 为 r13b 并行编译重度争用轮（仍 ≤600s 界内）"
+  },
+  "elaboration_limit_s_per_file": 600,
+  "theorem_count": 55,
+  "axiom_policy": "⊆ {propext, Classical.choice, Quot.sound}；decide 件可为空",
+  "proof_methods": "表分块 def ≤64/块＋simp only＋norm_num（D50-2）；计数/完备/Gram 对账 decide；求值/折叠/恒等式 norm_num"
+ },
+ "gate": {
+  "script": "numerics/bounds/r13_a1_gate.py",
+  "wrapper": "thomson-n9/numerics/bounds/r13_a1_gate.py",
+  "steps": [
+   "G0 账本",
+   "G1 所有权＋M9 证书/r9_s3_rederive.json 只读守卫",
+   "G2 逐文件 elaboration ≤600s（依赖序，-o 出 olean）",
+   "G3 公理全 55 定理",
+   "G4 语句锚 36＋18 抽查定理＋非交叠守卫",
+   "G5 三方逐位/重放==0/抽查对账/计数复算",
+   "NC1 sorry 注入→sorryAx",
+   "NC2 篡 λ 系数→G5 双路拦",
+   "NC3 篡构型→G5+G2 双路拦"
+  ],
+  "wall_s": 1048.6,
+  "selfrun_exit": 0,
+  "selfrun_log": "/tmp/r13_a1_gate_final.log",
+  "selfrun_note": "净自跑两次 PASS：281.9s（独占）＋469.4s（终版门，与 r13b 并行编译CPU 争用；user 354s）；G1 自跑放行 r13a/r13b 在途件两枚（R13C_G1_ALLOW_FOREIGN，r12b 先例；验收不设即字面严格）",
+  "negative_controls": {
+   "NC1": "lamAAA_at_111 注入 sorry → 编译 sorry 警告＋公理集含 sorryAx（G3 判定逻辑必 FAIL）",
+   "NC2": "lamAAA_0 首项分子＋1 → G5(a) 证书逐位比对检出（抽查求值兜底同在）；原文件双路 sanity PASS",
+   "NC3": "gX 字面量 1→2 → G5(b) 构型结构检查＋G2 篡改源 elaboration 首错即 G 引理 decide 反证（首错命题断言防假拦截；--root 假拦截返工实录见 tablea-lean.md §9.2 D-r13c-4）"
+  },
+  "dev_incident": "开发中真实缺陷捕获实录：生成器 selfcheck 对 dict 误用 list 版 eval1 → json hAA/hAB 抽查期望值错、Lean 定理对——被门 G5(c) 三方对账拦下后修复（tablea-lean.md §9.2 D-r13c-5；抽查机制有牙实证）",
+  "routes_verified": {
+   "repo_root_wrapper_noenv_final": "python3 thomson-n9/numerics/bounds/r13_a1_gate.py（验收命令原样，无环境变量，r13b 在途件在场）→ PASS exit 0（1048.6s，/tmp/r13_a1_gate_final2.log）",
+   "repo_root_wrapper_env": "同命令＋R13C_G1_ALLOW_FOREIGN（首版机制期）→ PASS exit 0（875.5s，/tmp/r13_a1_gate_route_wrap2.log）",
+   "repo_real_gate": "python3 numerics/bounds/r13_a1_gate.py → PASS exit 0 ×2（281.9s /tmp/r13_a1_gate_selfrun4.log；469.4s /tmp/r13_a1_gate_final.log）",
+   "campaign_root": "同命令直接命中真实门（CWD 无关机制；未另跑全门——真实门与包装器执行同一文件，二路由已实测）"
+  },
+  "wall_note": "全门墙钟谱：281.9s（独占）→469.4s→875.5s→1048.6s（r13b 并行 Lean 编译重度争用轮；user 时间 386s）。G2 逐文件 ≤600s 门内强制（争用极端轮 Data 588.3s 仍界内；独占口径 108–137s）。单命令 ≤10 min 铁律以独占口径满足，争用轮谱如实记——若验收与 r13b 编译峰值重叠致 G2 超界，属环境争用非工件缺陷，待并行会话静默后复跑即过",
+  "rework_v2": {
+   "first_acceptance_exit_1": "工作流首验（验收命令、不设环境变量）G1 拦 r13b 在途件 TableA6.lean——首版环境变量放行机制（R13C_G1_ALLOW_FOREIGN，r12b 先例）对不设环境变量的验收命令结构性无效",
+   "fix": "G1 升三层放行（D-r13c-8，对齐 r13a 18f586b 的 D53-4 PARALLEL_FAMILY 裁决）：①OWNED 八件②环境变量逐件③pattern 家族〔r13_a3a4*/r13_a6*/r13d* 门/数据/账本/包装器/工作目录、TableA[0-9]*.lean 含分块子目录、notes/tablea* 笔记族、GAP-REPORT/PROGRESS〕；家族外字面拦截、只读输入件守卫独立",
+   "probe_evidence": "三面探针（直调 gate1_ownership）：家族内在途件（真实 r13b 5 件）放行 PASS＋家族外探针 numerics/bounds/zz_a1_foreign_probe.py EXPECTED-FAIL 必拦＋移除回 PASS",
+   "post_fix_acceptance_route": "验收命令原样（仓库根经包装器、无环境变量、r13b 在途件在场）PASS exit 0（1048.6s wall/386s user——重度并行争用轮；log /tmp/r13_a1_gate_final2.log）"
+  }
+ },
+ "provenance": {
+  "certificate": "certificates/n9-stage-a4-typedcap-m0748_M9.json",
+  "certificate_role": "只读消费（λ/s/h/e 唯一数据源；G1 只读守卫）",
+  "assembly": "r9_s3_rederive.S3Assembly（独立第二实现，stdlib only）",
+  "generator": "numerics/bounds/r13_a1_data.py（json＋两 Lean 文件确定性生成；发射后回读自检逐位对账）",
+  "generic_config_evidence": "results/r9_s3_rederive.json 3 trial（seed 20261011）＋设计师第 4 trial（/tmp/r13_probe_gen.py）"
+ },
+ "scope_note": "对称块构型精确实例＋每表 3 随机点抽查；随机构型全恒等式（≈23.5 万项）超 elaboration 预算（D52 裁决 2，goal/Lean 件内明示）"
+}

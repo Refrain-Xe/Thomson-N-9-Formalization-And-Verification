@@ -1,0 +1,148 @@
+{
+ "kind": "n9-r15-b6-data",
+ "task": "r15a-tableb-b6",
+ "script": "bounds/r15_b6_data.py",
+ "code_version": "51b0215-dirty",
+ "timestamp": "2026-10-11T02:55:33+00:00",
+ "seed": 20261017,
+ "heavy_solves": 0,
+ "inputs": {
+  "endgame_json": {
+   "path": "numerics/bounds/results/endgame.json",
+   "sha256": "86863a09bf84e950e85fc5f902bc2b4046a87f06703bd782e5148fc119afd69f",
+   "role": "只读（12 分区/E*/AR/citedCertificates 唯一记录源；不变锚 86863a09…69f）"
+  }
+ },
+ "partition": {
+  "n_regions": 12,
+  "endpoints": [
+   "-1/1",
+   "-99/100",
+   "-97/100",
+   "-19/20",
+   "-91/100",
+   "-9/10",
+   "-22/25",
+   "-17/20",
+   "-41/50",
+   "-79/100",
+   "-153/200",
+   "-187/250",
+   "1/1"
+  ],
+  "endpoints_note": "13 端点链单调无缝（相邻区域共享端点逐位）；e0=−1、e12=1",
+  "bounds": [
+   "1419245723139071/54975685305550",
+   "2837059739445683/109951417862103",
+   "95148034377368417075200000000000000000000000000000000000000000000000000/3689382200954663007811329305754478005508846420999294048885656184293211",
+   "5667139148427148/219902686859665",
+   "56294773645464181900024414062500000000000000000000000000/2184534926853278057997272238274297001333566701245806813",
+   "181313976026497009/7036874433292040",
+   "3601778876706306785345077514648437500000000000000000000000/139810133547249324624022947987425049230287605836864081701",
+   "816392769637139312746570369204224000000000000000000000000000/31691265490905997064799249668440887530527325545844277393403",
+   "24566821136999558261408693748961695746402256190776824951171875/953674662606910821016338272521529882970680171880635603760352",
+   "152060258133670143773900800000000000000000000000000000000000/5902963308524955309028900129512648637307845623943222995001",
+   "47517790735835014335570/1844674407417822803119",
+   "22879340185047884591327492399406419521507688973060989923169472604058682918548583984375/888178445822492388747275390557723859303211430452579251742723511769167625620708441526"
+  ],
+  "pieces": [
+   "exclusion",
+   "exclusion",
+   "exclusion",
+   "exclusion",
+   "exclusion",
+   "exclusion",
+   "exclusion",
+   "exclusion",
+   "exclusion",
+   "exclusion",
+   "covering",
+   "covering"
+  ],
+  "bounds_match_cited_certificates": "12/12 值一双射对账（certs claimed_bound ↔ 分区 bound）"
+ },
+ "record": {
+  "aR": "47517790735835014335570/1844674407417822803119",
+  "estar": "25759986531/1000000000",
+  "estar_float": 25.759986531,
+  "aR_float": 25.759445973097478,
+  "aR_is_min_of_bounds": true,
+  "hp_piece_index10_literal_eq": true,
+  "iron_rule_ar_le_estar": true,
+  "margin_exact": "997153328507562120104790189/1844674407417822803119000000000",
+  "margin_float": 0.0005405579025207914,
+  "iron_rule_eps": true
+ },
+ "piece_semantics": {
+  "exclusion_indices": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6,
+   7,
+   8,
+   9
+  ],
+  "covering_indices": [
+   10,
+   11
+  ],
+  "exclusion_gt_estar": "10/10 片 E* < bᵢ",
+  "covering_le_iron": "2/2 片 bᵢ ≤ E*+1e-6（指标 10 HP＋指标 11 cap [−187/250,1]）"
+ },
+ "spot_checks": {
+  "scheme": "seed 20261017；k=0,1,2 依次 i=rng.randint(−2²⁰,2²⁰)、x=i/2²⁰（2⁻²⁰ 网格）；最小命中指数法 j=min{j: x≤e_j}、片 i=j−1（j=0 时 i=0），与主件 Nat.find 覆盖机器同规则；定理 cover_spot0..2",
+  "points": [
+   {
+    "x": "127893/1048576",
+    "interval": 11,
+    "lo": "-187/250",
+    "hi": "1/1"
+   },
+   {
+    "x": "-921351/1048576",
+    "interval": 6,
+    "lo": "-22/25",
+    "hi": "-17/20"
+   },
+   {
+    "x": "196977/262144",
+    "interval": 11,
+    "lo": "-187/250",
+    "hi": "1/1"
+   }
+  ]
+ },
+ "lean": {
+  "data_file": "formal/lean/ThomsonN9/TableB6Data.lean（本发射器确定性生成；仅 import Mathlib；重跑字节一致）",
+  "main_file": "formal/lean/ThomsonN9/TableB6.lean（手写主件；仅 import Mathlib＋ThomsonN9.TableB6Data；零数据值字面量——数值面全部锚定 Data 件）",
+  "theorem_counts": {
+   "data": 45,
+   "main": 8
+  }
+ },
+ "rederive_checks": {
+  "eg_sha256_anchored": true,
+  "chain_monotone": true,
+  "chain_seamless": true,
+  "endpoints_anchored": true,
+  "ar_le_all_bounds": true,
+  "ar_is_min": true,
+  "b10_eq_ar": true,
+  "iron_rule_ar_le_estar": true,
+  "margin_pos": true,
+  "iron_rule_eps": true,
+  "exclusion_pieces_gt_estar": true,
+  "covering_pieces_le_iron": true,
+  "piece_counts": {
+   "exclusion": 10,
+   "covering": 2
+  },
+  "certs_bijection_12_of_12": true
+ },
+ "scope_note": "B6 算术层（拼接端点/记录锚件）：覆盖/记录 min/铁律/分片语义；『区域 i 上 E≥b_i』证书语义＝数值层职责（typed_ladder/hermite/hp 各证书 verifyCmd）不在件内（docstring 双侧如实）",
+ "wall_s": 0.1
+}

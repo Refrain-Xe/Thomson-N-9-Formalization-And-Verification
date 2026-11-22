@@ -1,0 +1,145 @@
+{
+  "kind": "construction-selftest",
+  "script": "construction_selftest.py",
+  "timestamp": "2026-10-03T07:32:21+00:00",
+  "method": "BV/CW 三点构造（sdp_bound.py 的 assemble_maps/build_sdp/solve_case）在 N∈{2,3,4,6,12} 普适最优构型上的紧合自检：a=构型最小内积（−1e-09 余量），e 应恰等于 E_true（两点 LP 界紧合 ⊆ 三点 SDP）",
+  "tolerances": {
+    "validity_e_le_E_true_plus": 5e-06,
+    "tightness_abs": 0.0001,
+    "min_ip_check": 1e-12,
+    "a_shave": 1e-09
+  },
+  "n2_policy": "N=2 三点恒等式退化（n−2=0 ⇒ 0=0），degenerate-by-theory 行不计入通过判定；紧合性由 lp_bound 两点自检表覆盖",
+  "rows": [
+    {
+      "N": 2,
+      "config_desc": "对径点对",
+      "E_true": 0.5,
+      "E_true_desc": "对径点对：1/2",
+      "min_ip": -1.0,
+      "min_ip_expected": -1,
+      "a_used": -1.000000001,
+      "attempts": [],
+      "degenerate_run": {
+        "error": "ZeroDivisionError: float division by zero"
+      },
+      "status": "degenerate-by-theory",
+      "ok": true,
+      "note": "三点方法在 n=2 退化（见上）；紧合性由两点 LP 自检表覆盖（lp_bound.py SELFTEST，bounds/README.md 表）"
+    },
+    {
+      "N": 3,
+      "config_desc": "大圆正三角形",
+      "E_true": 1.7320508075688772,
+      "E_true_desc": "大圆正三角形：√3",
+      "min_ip": -0.5000000000000004,
+      "min_ip_expected": -0.5,
+      "a_used": -0.500000001,
+      "attempts": [
+        {
+          "config": "small",
+          "M": 6,
+          "K": 4,
+          "e": 1.7320508275584228,
+          "status": "optimal",
+          "solver": "CLARABEL",
+          "solve_s": 2.25,
+          "selftests": {
+            "kernel_ok": true,
+            "identity_ok": true
+          },
+          "E_minus_e": -1.99895455743615e-08,
+          "verdict": "TIGHT"
+        }
+      ],
+      "ok": true,
+      "status": "tight"
+    },
+    {
+      "N": 4,
+      "config_desc": "正四面体",
+      "E_true": 3.6742346141747673,
+      "E_true_desc": "正四面体：3√6/2",
+      "min_ip": -0.3333333333333334,
+      "min_ip_expected": -0.3333333333333333,
+      "a_used": -0.33333333433333334,
+      "attempts": [
+        {
+          "config": "small",
+          "M": 6,
+          "K": 4,
+          "e": 3.674234652584185,
+          "status": "optimal",
+          "solver": "CLARABEL",
+          "solve_s": 2.44,
+          "selftests": {
+            "kernel_ok": true,
+            "identity_ok": true
+          },
+          "E_minus_e": -3.840941786847907e-08,
+          "verdict": "TIGHT"
+        }
+      ],
+      "ok": true,
+      "status": "tight"
+    },
+    {
+      "N": 6,
+      "config_desc": "正八面体",
+      "E_true": 9.98528137423857,
+      "E_true_desc": "正八面体：6√2+3/2",
+      "min_ip": -1.0,
+      "min_ip_expected": -1,
+      "a_used": -1.000000001,
+      "attempts": [
+        {
+          "config": "small",
+          "M": 6,
+          "K": 4,
+          "e": 9.98528160140342,
+          "status": "optimal",
+          "solver": "CLARABEL",
+          "solve_s": 2.98,
+          "selftests": {
+            "kernel_ok": true,
+            "identity_ok": true
+          },
+          "E_minus_e": -2.2716485048590584e-07,
+          "verdict": "TIGHT"
+        }
+      ],
+      "ok": true,
+      "status": "tight"
+    },
+    {
+      "N": 12,
+      "config_desc": "正二十面体",
+      "E_true": 49.1652530576288,
+      "E_true_desc": "正二十面体（精确构造）",
+      "min_ip": -1.0,
+      "min_ip_expected": -1,
+      "a_used": -1.000000001,
+      "attempts": [
+        {
+          "config": "small",
+          "M": 6,
+          "K": 4,
+          "e": 49.16525434142682,
+          "status": "optimal",
+          "solver": "CLARABEL",
+          "solve_s": 3.71,
+          "selftests": {
+            "kernel_ok": true,
+            "identity_ok": true
+          },
+          "E_minus_e": -1.2837980136737315e-06,
+          "verdict": "TIGHT"
+        }
+      ],
+      "ok": true,
+      "status": "tight"
+    }
+  ],
+  "all_pass": true,
+  "runtime_s": 14.0
+}

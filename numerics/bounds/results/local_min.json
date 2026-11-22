@@ -1,0 +1,60 @@
+{
+  "zStarInterval": "[0.703648376463, 0.703649139406]",
+  "zStarIntervalWidthDecimal": 7.62943e-07,
+  "zStarIntervalMpmath": "[0.703648376464843794408920985006261616945266724, 0.703649139404296852795539507496869191527366638]",
+  "zStarMidpoint": "0.70364875793457",
+  "isolationWidthUpper": "7.62939e-7",
+  "bracketInitial": [
+    "0.6",
+    "0.8"
+  ],
+  "bisectionIterations": 18,
+  "EprimeAtLo": "[-0.000000828861865447833056574314814640702664405580435, -0.000000828861865447833056574314814640702664405580435]",
+  "EprimeAtHi": "[0.0000318700143151025817801931527828429580040392466, 0.0000318700143151025817801931527828429580040392466]",
+  "absEprimeLowerBoundLo": "8.2886187e-7",
+  "absEprimeLowerBoundHi": "3.1870014e-5",
+  "EppOnIsolationInterval": "[42.8588914339488553650880930945277214050292969, 42.8592505411721305108585511334240436553955078]",
+  "uniqueCriticalPoint": true,
+  "strictLocalMinInFamily": true,
+  "energyInterval": "[25.7599806309835805961938604013994336128234863, 25.7599924315679409403401223244145512580871582]",
+  "eStarReference": {
+    "source": "../thomson-workflow/data/energies.json",
+    "value": 25.759986531,
+    "highPrecision": 25.75998653127,
+    "config": "triaugmented triangular prism, D3h（Wikipedia 行描述）",
+    "status": "confirmed"
+  },
+  "absEzStarMinusEstar": "0.0",
+  "selftest": {
+    "wrongIntervalControl": {
+      "interval": [
+        "0.5",
+        "0.6"
+      ],
+      "triggered": true,
+      "message": "E'(0.6) must be strictly positive for a sign-change bracket, got [-3.45614293095525182408778164244722574949264526, -3.45614293095525182408778164244722574949264526]"
+    },
+    "corruptedEStarControl": {
+      "offset": "+1e-3",
+      "triggered": true,
+      "message": "E(z*) enclosure [25.7599806309835805961938604013994336128234863, 25.7599924315679409403401223244145512580871582] and E* = 25.7609865312699994888134824578 differ by 0.0009941 > 1e-08"
+    }
+  },
+  "schema": "thomson-n9/bounds/local-min/1",
+  "verified": true,
+  "family": "triCapPrism (D3h tricapped trigonal prism), z in (0,1)",
+  "closedFormE": "12/sqrt(2-rho) + 6/sqrt(2+2*rho) + 6/sqrt(3*(1-z^2)) + 3/(2*z) + sqrt(3) + 6/sqrt(3+z^2),  rho = sqrt(1-z^2)",
+  "method": "mpmath.iv interval arithmetic (dps=40); E'/E'' by second-order forward automatic differentiation over intervals (exact algebraic chain rules, no hand-derived formulas); bisection on strict sign change of E'; E''>0 on the isolation interval gives uniqueness of the critical point and strict local minimality; cross-checks: closed form vs direct 36-pair configuration sum (interval intersection), MVT difference quotient vs endpoint E' enclosures, second divided difference vs E''/2; E(z*) vs energies.json E*",
+  "crossChecks": {
+    "closedVsDirectConfigurationSum": "interval enclosures intersect on 4 test intervals",
+    "mvtDifferenceQuotient": "strictly between endpoint E' enclosures",
+    "secondDividedDifference": "inside E''/2 enclosure (+/- 1e-15)"
+  },
+  "tolerances": {
+    "isolationWidthRequired": "1e-4",
+    "isolationWidthTarget": "1e-6",
+    "eStarDistance": 1e-08,
+    "ivDps": 40
+  },
+  "timestamp": "2026-10-02T18:05:59+00:00"
+}

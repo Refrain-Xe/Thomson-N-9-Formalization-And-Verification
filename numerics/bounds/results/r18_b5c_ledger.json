@@ -1,0 +1,46 @@
+{
+ "kind": "n9-r18-b5c-ledger",
+ "task": "r18a-b5c-polar-lean",
+ "seed": 20261018,
+ "heavy_solves": 0,
+ "files": {
+  "formal/lean/ThomsonN9/TableB5Polar.lean": "d8c58f7d2c56c39fbe1ae62d634fc6ea5bd585fa9f1c0b9c2e2fc909d4338516",
+  "numerics/bounds/r18_b5c_gate.py": "2add94295ba5472de07ae837d6cb8ad985be4cd20ca7168ad83417302a9c26b0",
+  "thomson-n9/numerics/bounds/r18_b5c_gate.py": "34701ee87e079ac257f4ada8a909e7a64c9a24084c4b24f06367d5e13a468ebc",
+  "notes/tableb-lean.md": "44ad0422050ad088fcb1059526feaa0f2fa8a8c93ccef3bbbfa8f132ed2896af",
+  "notes/decisions.md": "1746e59575df9f53a925a2bab55dd427a9cd3ffc291db2068908549c066ce005",
+  "numerics/bounds/results/r18_b5c_ledger.json": "self"
+ },
+ "files_note": "锚定时点＝提交前终版（六件；无 Data 件——本件零数值数据字面量；decisions.md 含 D77 设计节〔设计师在途随本件首提交收编〕＋D78 执行节）。R18C 收口补记（D80 裁决 6）：G5(h) 对共享家族件（notes/decisions.md、notes/tableb-lean.md——G1 PARALLEL_FAMILY 明文允许后续轮次追加）改 git 溯源 append-only 验证——本表所记 decisions.md 哈希 1746e595… 仍为 R18A 锚定时点真值（D79/D80 追加由字节前缀面放行）；门件哈希因该补丁由 62a71de3… 改记 2add9429…（补丁仅动 G5(h) 检查面，G0–G4/G5(a)-(g)/NC1–NC3 语义零变化）",
+ "axiom_policy": [
+  "Classical.choice",
+  "Quot.sound",
+  "propext"
+ ],
+ "data": {
+  "lean_theorems_polar": 42,
+  "theorem_count": 42,
+  "theorem_note": "层 1 桥 3（quadform_nonneg_of_posSemidef/abs_quadform_le_frob/quadform_one_add_lo）＋层 2 W 构造 13（sqrt_quadform_lo〔D78-1〕/B_symm/one_add_B_eq/one_add_B_posSemidef/one_add_B_symm/W_symm/W_posSemidef/W_mul_W/W_quadform_nonneg/one_add_B_quadform_lo/W_quadform_lo/W_isUnit/W_quadform_ge_half）＋层 3 R 正交 6（W_mul_R/WW_eq_one_add_A_AT/R_mul_RT/R_mem_orthogonalGroup/R_eq_pair/Rinv_mem_orthogonalGroup）＋层 4 frob 右乘不变 1＋层 5 W−I 界 9（le_of_sq_le_sq/Wp1_sq_quadform/Wp1_sq_symm/Wp1_sq_posSemidef/Wm1_Wp1/Wm1_Wp1'/B_eq_WW_sub_one/B_sq_trace/Wm1_sq_posSemidef/frob_Wm1_le 头条）＋层 6 步骤 5 头条 4（vecNorm_X_mulVec_le/frob_X_one_sub_W_le/YQ_eq/step5_bound）＋层 7 步骤 6 条件装配 3（smul_beta_le_half/dperp_le/step6_final）＋层 8 TTP 实例化 2（ttpX_step5/ttpX_step6_final）",
+  "heavy_solves": 0,
+  "gates": [
+   "G0 ledger",
+   "G1 ownership+frozen(表B全系+TableB1*/TableB6*+挑战件+references/+四账本+endgame.json sha256)",
+   "G2 elaborate x5 ≤600s",
+   "G3 axioms 42 ⊆ 三标准零 sorryAx",
+   "G4 36 语句锚+零≥15位字面量+零ℚ def+非交叠",
+   "G5 Fraction 第二实现(极分解构造+C链+账本 sha256)+notes §6 锚",
+   "NC1 sorry 注入",
+   "NC2 双棱",
+   "NC3 双棱"
+  ]
+ },
+ "frozen_readonly_anchored": {
+  "endgame_json_sha256": "86863a09bf84e950e85fc5f902bc2b4046a87f06703bd782e5148fc119afd69f",
+  "ledgers": [
+   "m9_campaign.json",
+   "m10_campaign.json",
+   "hermite_v2_campaign.json",
+   "typed_ladder.json"
+  ]
+ }
+}

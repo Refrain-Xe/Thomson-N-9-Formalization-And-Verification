@@ -1,0 +1,95 @@
+{
+ "variant": "contact+triple",
+ "structure": {
+  "contact@M9": {
+   "m": 2907,
+   "entries": 258016,
+   "blocks": 29,
+   "n_lp": 73,
+   "row_check": {
+    "rows_checked": 2907,
+    "ok": true
+   },
+   "archived_m": 2907,
+   "archived_entries": 258016,
+   "structure_matches_archive": true
+  },
+  "contact@M10": {
+   "m": 3990,
+   "entries": 481248,
+   "blocks": 29,
+   "n_lp": 81,
+   "row_check": {
+    "rows_checked": 3990,
+    "ok": true
+   },
+   "archived_m": 3990,
+   "archived_entries": 481248,
+   "structure_matches_archive": true
+  },
+  "triple@M10": {
+   "m": 3990,
+   "entries": 481248,
+   "blocks": 29,
+   "n_lp": 81,
+   "row_check": {
+    "rows_checked": 3990,
+    "ok": true
+   },
+   "archived_m": 3990,
+   "archived_entries": 481248,
+   "structure_matches_archive": true
+  }
+ },
+ "rss_recheck": {
+  "guard_gb": 6,
+  "basis": "结构（m/entries/blocks）与 R7/R8 a5 实测档逐项相等 ⇒ RSS 期望不变；存档峰值（M10 a5 片 1.47GB、cap M9 0.89GB）≪ 6GB 护栏",
+  "archived": {
+   "m10": {
+    "file": "numerics/bounds/results/m10_solver_events.json",
+    "peak_citations": [
+     "全程 RSS 采样收口：s2 sdpa 峰值 1.46GB、s3 峰值 1.47GB、R7B cap M9 峰值 0.89GB——零 GUARD 记录，D27 裁决 2 的 6GB 回落条款全程未触发，3 并发维持到底；战役总求解 121039.7+64025.9=185065.6s=17.136 当量 ≤19（gate ⑦）"
+    ]
+   },
+   "m9": {
+    "file": "numerics/bounds/results/m9_solver_events.json",
+    "peak_citations": []
+   }
+  }
+ },
+ "smoke_s": 106.8,
+ "fits_contact": {
+  "M9": {
+   "d_H": 16,
+   "slots": 17,
+   "coeffs": 17,
+   "fits": true,
+   "legal": true
+  },
+  "M10": {
+   "d_H": 18,
+   "slots": 19,
+   "coeffs": 17,
+   "fits": true,
+   "legal": true
+  }
+ },
+ "fits_triple": {
+  "M9": {
+   "d_H": 16,
+   "slots": 17,
+   "coeffs": 18,
+   "fits": false,
+   "legal": false
+  },
+  "M10": {
+   "d_H": 18,
+   "slots": 19,
+   "coeffs": 18,
+   "fits": true,
+   "legal": true
+  }
+ },
+ "code_version": "32bdcda-dirty",
+ "generated": "2026-10-09T08:47:35+00:00"
+}

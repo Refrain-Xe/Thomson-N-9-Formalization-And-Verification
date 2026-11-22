@@ -1,0 +1,494 @@
+{
+ "artifact_class": "audit",
+ "automorphismGroup": {
+  "definition": "Aut(ttp_ref) = {σ∈S₉ : ttp_ref[(min(σi,σj),max(σi,σj))] == nodeOfN(i,j) ∀36 对}（F2 桥面下即Stab(ttp_ref)）",
+  "elements": [
+   [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8
+   ],
+   [
+    0,
+    2,
+    1,
+    3,
+    5,
+    4,
+    8,
+    7,
+    6
+   ],
+   [
+    1,
+    0,
+    2,
+    4,
+    3,
+    5,
+    6,
+    8,
+    7
+   ],
+   [
+    1,
+    2,
+    0,
+    4,
+    5,
+    3,
+    7,
+    8,
+    6
+   ],
+   [
+    2,
+    0,
+    1,
+    5,
+    3,
+    4,
+    8,
+    6,
+    7
+   ],
+   [
+    2,
+    1,
+    0,
+    5,
+    4,
+    3,
+    7,
+    6,
+    8
+   ],
+   [
+    3,
+    4,
+    5,
+    0,
+    1,
+    2,
+    6,
+    7,
+    8
+   ],
+   [
+    3,
+    5,
+    4,
+    0,
+    2,
+    1,
+    8,
+    7,
+    6
+   ],
+   [
+    4,
+    3,
+    5,
+    1,
+    0,
+    2,
+    6,
+    8,
+    7
+   ],
+   [
+    4,
+    5,
+    3,
+    1,
+    2,
+    0,
+    7,
+    8,
+    6
+   ],
+   [
+    5,
+    3,
+    4,
+    2,
+    0,
+    1,
+    8,
+    6,
+    7
+   ],
+   [
+    5,
+    4,
+    3,
+    2,
+    1,
+    0,
+    7,
+    6,
+    8
+   ]
+  ],
+  "facet": "F3 自同构群面（全 S₉ 扫描）",
+  "generators": {
+   "g1": {
+    "cycles": "(012)(345)(678)",
+    "perm": [
+     1,
+     2,
+     0,
+     4,
+     5,
+     3,
+     7,
+     8,
+     6
+    ]
+   },
+   "h": {
+    "cycles": "(03)(14)(25)",
+    "perm": [
+     3,
+     4,
+     5,
+     0,
+     1,
+     2,
+     6,
+     7,
+     8
+    ]
+   },
+   "k": {
+    "cycles": "(01)(34)(78)",
+    "perm": [
+     1,
+     0,
+     2,
+     4,
+     3,
+     5,
+     6,
+     8,
+     7
+    ]
+   }
+  },
+  "order": 12,
+  "orderDistributionLexScan": [
+   1,
+   2,
+   2,
+   3,
+   3,
+   2,
+   2,
+   2,
+   2,
+   6,
+   6,
+   2
+  ],
+  "orderMultiset": {
+   "1": 1,
+   "2": 7,
+   "3": 2,
+   "6": 2
+  },
+  "spanEqualsGroup": true,
+  "structure": "≅ D₃×C₂（D3h 型 12 阶；l4_orbit.json orbitBalance erratum『D12 勘误』的群论面）"
+ },
+ "bridge": {
+  "certificate": "l4_orbit.ttp_reference_coloring()（族坐标(×2)∈Q(√3)[z,r] Gram 逐项多项式恒等——l4_orbit (P5)）",
+  "classifiers": {
+   "independentPort": "r22_pattern_numeric.node_of_n_port（本文件独立移植第二实现）",
+   "ruleImport": "r15_b1_data.nodeOfN_rule（Lean nodeOfN 同构规则）"
+  },
+  "facet": "F2 桥面（构造性多项式恒等证书 vs 算术分类 nodeOfN 双实现对账）",
+  "mismatches": {
+   "certificate_vs_independentPort": 0,
+   "certificate_vs_ruleImport": 0,
+   "ruleImport_vs_independentPort": 0
+  },
+  "pairsChecked": 36,
+  "realizationCertificateChecks": [
+   "sqrt3-part-identically-zero-36-pairs",
+   "offdiag-equals-4x-node-curve-36-pairs",
+   "diagonal-identically-4-unit-norm-9-vertices"
+  ]
+ },
+ "enumeration": {
+  "archivedLabeledTotal": 30240,
+  "distinctAccepted": 30240,
+  "dps": 50,
+  "exactAccepted": 30240,
+  "facet": "F1 枚举重建（importlib 复用 l4_orbit.py：compute_context(50)＋build_tables＋run_scout＋verify_coloring 全枚举；l4_orbit_gate 同源先例）",
+  "fullSetInJson": false,
+  "fullSetNote": "幸存集/轨道全集不入 json（体积）；全集逐位集合相等由门 G2 活体 9! 全扫描执行（禁采样）",
+  "rejected": 0,
+  "scout": 30240,
+  "survivorSetSha256": "9dcf8b47ba64ac76ad55457ec683a665d6cbec70807082d476f63da8c9fc42d8",
+  "undecided": 0
+ },
+ "feedContract": {
+  "canonicalRep": [
+   0,
+   0,
+   1,
+   3,
+   4,
+   4,
+   5,
+   5,
+   4,
+   5,
+   4,
+   0,
+   3,
+   1,
+   5,
+   5,
+   4,
+   3,
+   0,
+   5,
+   1,
+   1,
+   5,
+   5,
+   2,
+   2,
+   0,
+   0,
+   5,
+   5,
+   4,
+   5,
+   1,
+   1,
+   5,
+   2
+  ],
+  "canonicalRepSha256": "e69c0253f3325aaacec6be147db0dde31abe1a0251273b386c63e91a9808f225",
+  "canonicalRepSource": "l4_orbit.json survivorSet.classes[0].representative（single iso class 30240 元）",
+  "consumer": "formal/lean/ThomsonN9/TableB5Chain.lean:281–288 PatternCons def ＋ :313 pattern_ident_lift 定理（D92 裁决 2(δ) 预留插入点自此供数）",
+  "cosetConsistency": "witnesses == {σ₀∘s : s∈Aut}（Aut 左陪集；组合约定 (s∘t)(i)=s(t(i))）",
+  "facet": "F5 σ₀ 实例化面（pattern_ident_lift 桥插入点数据层）",
+  "pairIndexConvention": "元组 index k ↔ 第 k 个 (i,j) i<j lex 对（l4_orbit.coloring_from_tuple 同约定）",
+  "patternConsStatement": "PatternCons Y z ρ σ₀ := ∀ hT i j (i≠j), |Y (σ₀ i) ⬝ᵥ Y (σ₀ j) − ν_{nodeOfN i j}| ≤ ρ——σ₀ 为 Y 侧实现与 nodeOfN 算术分类的对齐置换；Y 侧几何前提（Gram 节点管）由 l4_orbit (P1)–(P4)/L6 供给，本件只交付数据层",
+  "sigma0LexMin": [
+   0,
+   5,
+   6,
+   4,
+   2,
+   1,
+   7,
+   3,
+   8
+  ],
+  "witnessCount": 12,
+  "witnessDefinition": "σ 满足 rep[σ(i),σ(j)]==nodeOfN(i,j) ∀36 对（即 φ_σ(rep)==nodeOfN tuple）",
+  "witnesses": [
+   [
+    0,
+    5,
+    6,
+    4,
+    2,
+    1,
+    7,
+    3,
+    8
+   ],
+   [
+    0,
+    6,
+    5,
+    4,
+    1,
+    2,
+    8,
+    3,
+    7
+   ],
+   [
+    1,
+    2,
+    4,
+    6,
+    5,
+    0,
+    3,
+    7,
+    8
+   ],
+   [
+    1,
+    4,
+    2,
+    6,
+    0,
+    5,
+    8,
+    7,
+    3
+   ],
+   [
+    2,
+    1,
+    4,
+    5,
+    6,
+    0,
+    3,
+    8,
+    7
+   ],
+   [
+    2,
+    4,
+    1,
+    5,
+    0,
+    6,
+    7,
+    8,
+    3
+   ],
+   [
+    4,
+    1,
+    2,
+    0,
+    6,
+    5,
+    8,
+    3,
+    7
+   ],
+   [
+    4,
+    2,
+    1,
+    0,
+    5,
+    6,
+    7,
+    3,
+    8
+   ],
+   [
+    5,
+    0,
+    6,
+    2,
+    4,
+    1,
+    7,
+    8,
+    3
+   ],
+   [
+    5,
+    6,
+    0,
+    2,
+    1,
+    4,
+    3,
+    8,
+    7
+   ],
+   [
+    6,
+    0,
+    5,
+    1,
+    4,
+    2,
+    8,
+    7,
+    3
+   ],
+   [
+    6,
+    5,
+    0,
+    1,
+    2,
+    4,
+    3,
+    7,
+    8
+   ]
+  ]
+ },
+ "gaps": [],
+ "heavy_solves": 0,
+ "inputs": {
+  "l4_orbit_json": {
+   "inner_script_sha256": "97dd7e5f3f841c599e008e390884bd3955288e66b5fa50a576eafbd0e4736851",
+   "path": "numerics/bounds/results/l4_orbit.json",
+   "role": "模块 import 源＋存档 labeledTotal/canonical rep 读取源（只读）",
+   "sha256": "ef91484186fa02c11ba88ec736745d7f46257f4c5f93fe875b2cfd25706a2dc1"
+  },
+  "local_min_json_sha256": "e9cfb04b3b88b392e5778f930118398d843cce06ed0c0f6724ea6cc4ab82a70d",
+  "r15_b1_data_py": {
+   "path": "numerics/bounds/r15_b1_data.py",
+   "role": "nodeOfN_rule import（Lean TableB1.lean:823 同构规则）",
+   "sha256": "9336ccbe1f231fad3668f1e133ca4beaeff0f8f003602f343647f07c95b54679"
+  },
+  "tube_json_sha256": "8bb7c040a4cbabf3834e5d4d16abcc97c2daacf07736993ebdefc4a7d326b0ea",
+  "zBox": [
+   "0.7036483764648437944089209850062616169452667236328125",
+   "0.70364913940429685279553950749686919152736663818359375"
+  ]
+ },
+ "isolation": {
+  "declaration": "本件不入 endgame.json/citedCertificates/12 分区、不作 endgame_chain.py 输入（路由禁令；R11C–R21 先例）；活体 grep＋endgame.json sha256 冻结锚归门 G0",
+  "endgameJsonSha256": "86863a09bf84e950e85fc5f902bc2b4046a87f06703bd782e5148fc119afd69f",
+  "endgameJsonSha256AnchorMatch": true,
+  "facet": "F6 孤立面",
+  "read_only": true
+ },
+ "kind": "n9-r22-pattern-numeric",
+ "orbitStabilizer": {
+  "action": "(σ·C)[i,j] = C[σ(i),σ(j)]（拉回作用；36 元组 lex 对约定）",
+  "archivedLabeledTotal": 30240,
+  "facet": "F4 轨道-稳定子面",
+  "identity": "9!/30240 == 12 == |Stab(ttp_ref)|（精确）",
+  "index": 12,
+  "orbitEqualsSurvivorSet": true,
+  "orbitSha256": "9dcf8b47ba64ac76ad55457ec683a665d6cbec70807082d476f63da8c9fc42d8",
+  "orbitSize": 30240,
+  "sampling": "none-full-set（9!=362880 全扫描，禁采样）",
+  "stabOrder": 12
+ },
+ "provenance": {
+  "acceptanceGate": "numerics/bounds/r22_pattern_gate.py（G0–G3＋NC，seed 20261022）",
+  "commands": [
+   "python3 numerics/bounds/r22_pattern_numeric.py"
+  ],
+  "deps": [
+   "mpmath（经 l4_orbit.py 间接：区间算术）＋其余 stdlib"
+  ],
+  "determinism": "seed 20261022 仅声明——流程本身无随机性（l4_orbit.py 先例）；DFS 固定迭代序、S₉ 扫描 itertools.lex 序；输出 sort_keys+indent、无时间戳/code_version ⇒ 幂等重跑逐位一致",
+  "frozen_anchors": {
+   "endgame_json_sha256": "86863a09bf84e950e85fc5f902bc2b4046a87f06703bd782e5148fc119afd69f"
+  },
+  "read_only": true
+ },
+ "schema": "thomson-n9/bounds/r22-pattern-numeric/1",
+ "script": "bounds/r22_pattern_numeric.py",
+ "script_sha256": "1216154d9b092b423bc993669df3bf762eb26364f266c3f6d70fe919d000bd5d",
+ "seed": 20261022,
+ "task": "r22a-pattern-numeric"
+}

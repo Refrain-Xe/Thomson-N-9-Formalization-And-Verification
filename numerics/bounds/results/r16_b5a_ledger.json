@@ -1,0 +1,52 @@
+{
+ "kind": "n9-r16-b5a-ledger",
+ "task": "r16a-tableb-b5a",
+ "seed": 20261017,
+ "heavy_solves": 0,
+ "files": {
+  "formal/lean/ThomsonN9/TableB5Core.lean": "7c70d8ff0583b00df39e0fcde45f4faa45565be24b1fb5e5a94212063e9b9530",
+  "numerics/bounds/r16_b5a_gate.py": "06132a71889ae75e7bc1fffedca16e0bcf1626c9c90cf2ce83efb689b42e2501",
+  "thomson-n9/numerics/bounds/r16_b5a_gate.py": "3efbef3d4e5a6623609094eb6a8c2eaa82a8f8ce4cd0c163e0f3758015ecdf9b",
+  "notes/tableb-lean.md": "3bd4363dc384f1d57b2d65b7344bc58e85c6e0ab1b5c97043feda79b57fecc48",
+  "notes/decisions.md": "902c18ac23c583196fa9eb21907a513191cffa5cf8794776097a732dbfe45642",
+  "numerics/bounds/results/r16_b5a_ledger.json": "self"
+ },
+ "files_note": "锚定时点＝提交前终版（D68 六件；无 Data 件——本件零数值数据字面量）",
+ "axiom_policy": [
+  "Classical.choice",
+  "Quot.sound",
+  "propext"
+ ],
+ "data": {
+  "lean_theorems_core": 16,
+  "theorem_count": 16,
+  "theorem_note": "步骤 1（E_decomp/E_diag_zero/frob_le_of_off_diag/eta_le_sqrt72＋frob_nonneg/gramDiff_entry/gramDiff_transpose/gram_transpose）＋步骤 2（proj_orth/P0_mul_self/P0_transpose/sandwich_isUnit）＋TTP 层（rowDot/quadsum_eq/ttpX_quadform/ttpX_isUnit）；任务书预期 ≥12",
+  "defs": [
+   "frob",
+   "ttpRow",
+   "ttpX"
+  ],
+  "zero_numeric_literals": true,
+  "probes": {
+   "p1": "/tmp/r16a_probe1_posdef.log（exit 0，现成）",
+   "p2": "/tmp/r16a_probe2_bridge.log（exit 0，桥消解）",
+   "p5": "/tmp/r16a_probe5_orth.log（六名 unknown＋正对照，缺位）＋/tmp/r16a_probe5_grep.log",
+   "names": "/tmp/r16a_probe6_names.log＋probe7_names2＋probe8_fin9（施工选名）",
+   "notes_section": "notes/tableb-lean.md §4"
+  },
+  "g5_second_impl": {
+   "engine": "stdlib Fraction＋独立 Gauss-Jordan S⁻¹（零仓 import）",
+   "instances": 3,
+   "row_scheme": "有理单位球参数化 (t,s)↦((1−t²−s²),2t,2s)/(1+t²+s²)",
+   "checks": [
+    "E 三交叉分解 81 元",
+    "E 对角恒 0",
+    "XᵀD_⊥==0",
+    "P₀ 幂等＋对称",
+    "η²≤72δ²",
+    "72==81−9"
+   ]
+  }
+ },
+ "gate": "numerics/bounds/r16_b5a_gate.py（G0–G5＋NC1/NC2/NC3；post_commit 复跑墙钟见 GAP-REPORT Round 16 节）"
+}

@@ -1,0 +1,49 @@
+{
+  "round": "r11a-m0-lean",
+  "task": "冻结挑战四定理首件真证明：ThomsonN9/Solution.lean 逐字节复述冻结前缀（挑战件 26–149 行）后给出 thomson_nine_M0（∀ x ∈ SphereConfig 9, 36/2 ≤ coulombEnergy x）的 Lean 内核真证明（单位球三角不等式 ⇒ 逐对 ≥ 1/2，C(9,2)=36 计数），无任何内核旁路",
+  "gate_seed": 20261013,
+  "provenance": {
+    "lean_toolchain": "leanprover/lean4:v4.34.1",
+    "lean_version": "Lean (version 4.34.1, arm64-apple-darwin24.6.0, commit 5045d0056413266e57c625dcd7c365b10e377c52, Release)",
+    "lake_version": "Lake version 5.0.0-src+5045d00 (Lean version 4.34.1)",
+    "elan_version": "elan 4.2.4 (227caca13 2026-08-25)",
+    "mathlib_rev": "d13f23b723b8a846827a245b89c10fc7d3f11612",
+    "mathlib_rev_source": "formal/lean/lakefile.toml [[require]] rev（与 lake-manifest.json 钉扎一致；lake exe cache get 报 8908 files 已解压在盘）"
+  },
+  "wallclock_seconds": {
+    "check_sh_full": 39.1,
+    "check_sh_build_step": 20.85,
+    "negative_control_sh": 8.62,
+    "solution_standalone_lean_compile": 5.9
+  },
+  "sorry_counts": {
+    "challenge": 4,
+    "challenge_decl_lines": [158, 166, 172, 179],
+    "solution": 0
+  },
+  "axioms": {
+    "ThomsonN9.thomson_nine_M0": ["Classical.choice", "Quot.sound", "propext"]
+  },
+  "statement_compare": {
+    "status": "OK",
+    "compared": 33,
+    "defs_with_values": 5,
+    "skipped_not_attempted": [
+      "ThomsonN9.thomson_nine",
+      "ThomsonN9.thomson_nine_M1",
+      "ThomsonN9.thomson_nine_unique"
+    ],
+    "sha256_compared_challenge_text": "568bce3d5e6e98e7a981abd9ded583dfa6094014ffb925a239841f8a61bb9569",
+    "note": "SKIP 系 presence-only（三定理未尝试可暂不重声明；凡重声明者必须与挑战件 elaborated 全等——负对照 NC2 验证有牙）"
+  },
+  "negative_control": {
+    "status": "OK",
+    "detected": "ThomsonN9.thomson_nine"
+  },
+  "frozen_guard": {
+    "references_tree_sha256": "4237b5e51868063874a9f8adccee02f50856d8f88d3632ebb225e93c0bac1e5c",
+    "references_files": 48,
+    "note": "references/ 非 git 仓库（thomson-n7-lean 内嵌 .git 且 diff HEAD 干净另行核验）；树哈希排除 .git/.lake，纯相对路径排序逐文件内容哈希链（r11_m0_gate.references_tree_sha256 同口径）"
+  },
+  "heavySolves": 0
+}

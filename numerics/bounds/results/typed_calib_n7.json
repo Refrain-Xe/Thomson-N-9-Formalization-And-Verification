@@ -1,0 +1,181 @@
+{
+  "kind": "typed-calibration-n7",
+  "script": "typed/calibrate_n7.py",
+  "timestamp": "2026-10-03T13:38:12+00:00",
+  "reference": "references/thomson-n7-lean/paper/PAPER.md §2（E(P)）、§6.4（域）、§6.5（分型证书表：cap/slab 的 e−E(P)）；论文档 (M,K,d_H)=(6,6,10)",
+  "E_P": {
+    "value": "14.45297741422134293504449153060292879048",
+    "float": 14.452977414221342,
+    "desc": "E(P) = 1/2+5√2+5/(2sin(π/5))+5/(2sin(2π/5))"
+  },
+  "config": {
+    "types": [
+      2,
+      5
+    ],
+    "mode": "band",
+    "M": 6,
+    "K": 6,
+    "d_H": 10,
+    "note": "类型 0=极对 {0,1}（band 载体），类型 1=环——论文 §6.1 同款"
+  },
+  "tolerances": {
+    "cap_two_sided": 2e-05,
+    "slab_margin_tol": 1e-05,
+    "slab_dev_tol": 0.005
+  },
+  "rows": [
+    {
+      "cell": "cap",
+      "lo": -1.0,
+      "hi": -0.99,
+      "e": 14.45297966293664,
+      "e_minus_EP": 2.248715297525905e-06,
+      "e_paper": 14.452977414221342,
+      "margin_paper": -2.2737e-16,
+      "e_minus_e_paper": 2.248715297525905e-06,
+      "status": "optimal",
+      "solver": "CLARABEL",
+      "solve_s": 18.01,
+      "selftests_ok": true,
+      "identity_selftest_rel": 7.175532744497445e-14,
+      "cap_two_sided_ok": true,
+      "ok": true,
+      "reason": "cap 两侧锚：|e−E(P)| = 2.249e-06（阈 2e-05）；有效性方向 e ≤ E(P)+2e-05",
+      "check": {
+        "resid_slack": 1.780012874143994e-07,
+        "resid_minor": 2.5685290339083622e-08,
+        "slack_min": -3.086371542685524e-08,
+        "viol": 1.65974920474099e-08,
+        "deflation": 6.084592598793651e-05,
+        "e_safe": 14.452918817010652
+      }
+    },
+    {
+      "cell": "slab1",
+      "lo": -0.99,
+      "hi": -0.98,
+      "e": 14.453886994200627,
+      "e_minus_EP": 0.000909579979284203,
+      "e_paper": 14.452980000000043,
+      "margin_paper": 2.5857787e-06,
+      "e_minus_e_paper": 0.0009069942005837106,
+      "status": "optimal",
+      "solver": "CLARABEL",
+      "solve_s": 19.58,
+      "selftests_ok": true,
+      "identity_selftest_rel": 1.5858782168121412e-13,
+      "ok": true,
+      "reason": "e − e_paper = +9.070e-04（需 ≥ −1e-05 且 |·| ≤ 5e-03；上界=该档真最小能量，论文只给下侧可行值）",
+      "check": {
+        "resid_slack": 9.573899708259206e-07,
+        "resid_minor": 1.9816351937151921e-07,
+        "slack_min": 4.4460842469563926e-07,
+        "viol": -1.149389483590113e-08,
+        "deflation": 6.935406332371265e-05,
+        "e_safe": 14.453817640137302
+      }
+    },
+    {
+      "cell": "slab2",
+      "lo": -0.98,
+      "hi": -0.96,
+      "e": 14.45377811263502,
+      "e_minus_EP": 0.0008006984136770257,
+      "e_paper": 14.452980000000043,
+      "margin_paper": 2.5857787e-06,
+      "e_minus_e_paper": 0.0007981126349765333,
+      "status": "optimal",
+      "solver": "CLARABEL",
+      "solve_s": 20.42,
+      "selftests_ok": true,
+      "identity_selftest_rel": 2.80137001081175e-14,
+      "ok": true,
+      "reason": "e − e_paper = +7.981e-04（需 ≥ −1e-05 且 |·| ≤ 5e-03；上界=该档真最小能量，论文只给下侧可行值）",
+      "check": {
+        "resid_slack": 9.992542297048858e-07,
+        "resid_minor": 5.2523176918839454e-08,
+        "slack_min": 2.1172049352609603e-06,
+        "viol": -6.100020710775311e-09,
+        "deflation": 0.00010149693092972123,
+        "e_safe": 14.45367661570409
+      }
+    },
+    {
+      "cell": "slab3",
+      "lo": -0.96,
+      "hi": -0.94,
+      "e": 14.453647459956409,
+      "e_minus_EP": 0.0006700457350667932,
+      "e_paper": 14.452980000000043,
+      "margin_paper": 2.5857787e-06,
+      "e_minus_e_paper": 0.0006674599563663008,
+      "status": "optimal",
+      "solver": "CLARABEL",
+      "solve_s": 24.64,
+      "selftests_ok": true,
+      "identity_selftest_rel": 1.0300641219875474e-13,
+      "ok": true,
+      "reason": "e − e_paper = +6.675e-04（需 ≥ −1e-05 且 |·| ≤ 5e-03；上界=该档真最小能量，论文只给下侧可行值）",
+      "check": {
+        "resid_slack": 1.5887285805124486e-05,
+        "resid_minor": 1.5740239405204193e-06,
+        "slack_min": 2.075928874853807e-06,
+        "viol": 7.399957768772225e-08,
+        "deflation": 0.0006778653699531825,
+        "e_safe": 14.452969594586456
+      }
+    },
+    {
+      "cell": "slab4",
+      "lo": -0.94,
+      "hi": -0.93,
+      "e": 14.453625709295315,
+      "e_minus_EP": 0.0006482950739723492,
+      "e_paper": 14.452980000000043,
+      "margin_paper": 2.5857787e-06,
+      "e_minus_e_paper": 0.0006457092952718568,
+      "status": "optimal",
+      "solver": "CLARABEL",
+      "solve_s": 20.71,
+      "selftests_ok": true,
+      "identity_selftest_rel": 2.971916539990542e-14,
+      "ok": true,
+      "reason": "e − e_paper = +6.457e-04（需 ≥ −1e-05 且 |·| ≤ 5e-03；上界=该档真最小能量，论文只给下侧可行值）",
+      "check": {
+        "resid_slack": 1.9841377537506603e-06,
+        "resid_minor": 1.2452773034965503e-08,
+        "slack_min": 1.4378684737741988e-06,
+        "viol": -2.5098018108238307e-09,
+        "deflation": 8.687511074427505e-05,
+        "e_safe": 14.45353883418457
+      }
+    },
+    {
+      "cell": "slab5",
+      "lo": -0.93,
+      "hi": -0.9,
+      "e": 14.453148750944594,
+      "e_minus_EP": 0.00017133672325186922,
+      "e_paper": 14.452980000000043,
+      "margin_paper": 2.5857787e-06,
+      "e_minus_e_paper": 0.00016875094455137685,
+      "status": "optimal",
+      "solver": "CLARABEL",
+      "solve_s": 19.72,
+      "selftests_ok": true,
+      "identity_selftest_rel": 5.26099308328071e-14,
+      "ok": true,
+      "reason": "e − e_paper = +1.688e-04（需 ≥ −1e-05 且 |·| ≤ 5e-03；上界=该档真最小能量，论文只给下侧可行值）",
+      "check": {
+        "resid_slack": 6.685571185230186e-07,
+        "resid_minor": 4.448055079819824e-08,
+        "slack_min": 3.904215475183735e-06,
+        "viol": -7.983616212570155e-09,
+        "deflation": 7.092298823126197e-05,
+        "e_safe": 14.453077827956363
+      }
+    }
+  ],
+  "all_ok": true
+}

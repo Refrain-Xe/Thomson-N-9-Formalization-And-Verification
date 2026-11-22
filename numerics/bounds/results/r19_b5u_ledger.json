@@ -1,0 +1,60 @@
+{
+  "kind": "n9-r19-b5u-ledger",
+  "task": "r19a-b5u-uncond-lean",
+  "seed": 20261019,
+  "heavy_solves": 0,
+  "files": {
+    "formal/lean/ThomsonN9/TableB5Uncond.lean": "c79fc6231d1e13b8ffd7873d1338901602ed3b70b3f057ed4eec4eb757e36d5e",
+    "numerics/bounds/r19_b5u_gate.py": "5c7dc5912b80fc3870cb1471ff9585d186d2aaa9c2963dd790a07bb3c0c79c67",
+    "thomson-n9/numerics/bounds/r19_b5u_gate.py": "391deada8a19b12a29f06b7a73efd764031a45fdf1f26fcdfdfac506ec235917",
+    "notes/tableb-lean.md": "49067de384813346049805d5436f8a7fa9b8a00f3bae58af12a1dea31c02ae01",
+    "notes/decisions.md": "0cc26f38282508ae96a693facc72fd8600eb5516cacc4eb09fda54e1741250f6",
+    "numerics/bounds/results/r19_b5u_ledger.json": "self"
+  },
+  "files_note": "锚定时点＝提交前终版（六件；无 Data 件——本件零数值数据字面量，常数一律以 TableB5Data 既有 def 表达）。共享家族件（notes/decisions.md、notes/tableb-lean.md）按 D82 裁决 5 自始采用 git 溯源 append-only 验证（D80-6 口径内置）：锚定哈希＝本账本首提交时点版本，后续轮次追加由字节前缀面放行，非追加篡改仍必拦。decisions.md 含 D82 设计节〔设计师在途随本件首提交收编〕＋D83 执行节。",
+  "axiom_policy": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+  ],
+  "data": {
+    "lean_theorems_uncond": 24,
+    "theorem_count": 24,
+    "theorem_note": "层 1 共享面 10（E_mul_one_sub_P0_of/one_sub_P0_E_one_sub_P0_of/block_id1/block_id2/vecNorm_one_sub_P0_le/frob_E_one_sub_P0_le/frob_YDperpT_le/abs_trace_le_sqrt_card_frob〔trace-CS √card 口径 D83-①〕/dperp_sq_le_hoelder/dperp_le_sqrt3）＋层 2 路线 B 2（step6_uncond_hoelder 头条/step6_hoelder_Cform 推论〔β≤1/2 内部导出 D83-④〕）＋层 3 路线 A 10（quad_id_transpose/quadform_lo_transpose/frob_B_prime_eq〔A2〕/quadform_one_add_A_lo〔A4〕/vecNorm_mulVec_le_frob〔A6〕/vecNorm_sub_le/assembly_Y_lower〔A7〕/lamY_dperp_sq_le〔A9〕/dperp_le_linear〔A10 闭环消歧〕/step6_uncond_linear〔A11 头条〕）＋层 4 TTP 2（ttpX_step6_hoelder/ttpX_step6_linear）",
+    "heavy_solves": 0,
+    "routes": {
+      "B_global_hoelder": {
+        "form": "d_P ≤ √λ₁·β + √(3η) → C_B·√δ",
+        "C_B_float": 7.128,
+        "domain": "δ ≤ δ_max（记录域全体）"
+      },
+      "A_narrow_linear": {
+        "form": "d_P ≤ (√λ₁λ₁/λ₃² + 2√2/√λ₃)·η",
+        "C_A_float": 18.957,
+        "delta_A_float": 0.014588,
+        "domain": "η ≤ λ₃/24（c_lo := √(λ₃/2) 包络 D79-5）"
+      }
+    },
+    "gates": [
+      "G0 ledger(seed=20261019, heavy=0, theorem_count=24, axiom_policy 三标准)",
+      "G1 ownership+family(r19 层)+frozen(表B前六件含 TableB5Polar sha256==d8c58f7d…+挑战件+references/+四账本+endgame.json sha256)",
+      "G2 elaborate x6 ≤600s",
+      "G3 axioms 24 ⊆ 三标准零 sorryAx",
+      "G4 26 语句锚+无 hdpar 机器锚(四头条陈述跨度零命中+正向牙)+零≥15位字面量+零ℚ def+非交叠",
+      "G5 Fraction 第二实现(块恒等式81×2+op≤1+tr==tr+(3η)²−tr²≥0+‖Y·D⊥ᵀ‖²≤η²+闭环39点+P2-NC+常数链源直读)+账本 sha256(git 溯源 append-only)+notes §7 锚",
+      "NC1 sorry 注入",
+      "NC2 三棱(√(3*→√(4*/2√2→3√2/hdpar 注入)",
+      "NC3 双棱(未投影 M/常数篡 3→4)"
+    ]
+  },
+  "frozen_readonly_anchored": {
+    "endgame_json_sha256": "86863a09bf84e950e85fc5f902bc2b4046a87f06703bd782e5148fc119afd69f",
+    "tableb5polar_sha256": "d8c58f7d2c56c39fbe1ae62d634fc6ea5bd585fa9f1c0b9c2e2fc909d4338516",
+    "ledgers": [
+      "m9_campaign.json",
+      "m10_campaign.json",
+      "hermite_v2_campaign.json",
+      "typed_ladder.json"
+    ]
+  }
+}

@@ -1,0 +1,799 @@
+{
+ "binding_constraint": {
+  "binding_layer": "L3（供给面：slack 零集几何）",
+  "identification": "三口径（Lean √δ／Lean 窄域线性／数值线性）× 三需求半径（r_eff／0.07601／R_MAX）全组合不闭合：最深 SDP 点对认证 r_eff 差 ~72.9×（数值档；Lean 窄域 ~92.9×／√δ 档 ~161.9×），对证书拒绝半径 R_MAX 亦差 ~4.56×——阻断层=L3 供给（ρ_spec 阶梯地板 0.0466 由伪近零几何决定，ε 压缩 4 个数量级仅13.8× 收益），非 L5 常数层亦非 L6 认证球；如实落账不硬凑",
+  "quantified": {
+   "deepest_sdp_point": "ε=1.5e-8，ρ_spec=0.0466（float_advisory 输入）",
+   "lean_route_A_vs_r_eff": 92.91544591177367,
+   "lean_route_B_vs_r_eff": 161.91604054652583,
+   "numerical_caliber_vs_R_MAX": 4.556634037018334,
+   "numerical_caliber_vs_r_eff": 72.92582034825186,
+   "numerical_caliber_vs_r_tube": 9.113268074036668
+  },
+  "tier": "float_advisory"
+ },
+ "demand": {
+  "R_MAX": {
+   "exact": "7601/50000",
+   "float": 0.15202,
+   "note": "加倍半径 0.15202（证书拒绝口径：doubleRadiusControl triggered=true，μ 上端 -14151.328 ≤ 0）",
+   "tier": "rejection_certified_numeric"
+  },
+  "competitor_exclusion_radius": {
+   "hi": 5.4900707157762704e-08,
+   "interval_str": "[3.8518939318240654e-8, 5.4900707157762702e-8]",
+   "lo": 3.8518939318240654e-08,
+   "note": "排除半径 ≪ r_eff（E(Y)≤Ē ⟹ d(Y)≤2γ/μ 在 r* 球内）——排除面不构成缝瓶颈，注记入账",
+   "tier": "interval_certified_numeric"
+  },
+  "delta_orbit_archive": {
+   "exact_hi": "12817427038057373/5000000000000000000000",
+   "float_hi": 2.5634854076114746e-06,
+   "interval_str": "[2.5634854076114746e-6, 2.5634854076114746e-6]",
+   "note": "轨道中心偏移（L6 中心与 R1 存档 TTP 轨道 Hausdorff 上界）——三角入账",
+   "tier": "interval_certified_numeric"
+  },
+  "exclusion_vs_r_eff": {
+   "exact": "27450353578881351/500000000000000000000000",
+   "float": 5.4900707157762704e-08,
+   "note": "排除半径上端（≪ r_eff，对照记注）",
+   "tier": "interval_certified_numeric"
+  },
+  "layer_note": "interval_certified_numeric＝l6_intube.json 区间证书（数值层非 Lean）；rejection_certified_numeric＝证书拒绝面（加倍半径μ 上端 ≤0）；float_advisory＝未认证公式值，如实标注",
+  "mu_at_r_star": {
+   "hi": 0.009278368599494378,
+   "interval_str": "[0.0065098053478471418, 0.0092783685994943786]",
+   "lo": 0.006509805347847142,
+   "note": "μ(r*) 认证区间（>0）",
+   "tier": "interval_certified_numeric"
+  },
+  "r_eff": {
+   "exact": "47493432572961942627/5000000000000000000000",
+   "float": 0.009498686514592389,
+   "note": "r_eff := r* − delta_orbit_hi（中心偏移入账后的有效需求半径；d(Y,X)≤r_eff ⟹ d(Y,center)≤r*，安全向）——缝阈值主口径",
+   "tier": "interval_certified_numeric"
+  },
+  "r_star": {
+   "exact": "7601/800000",
+   "float": 0.00950125,
+   "note": "L6 认证二次增长球半径（l6_intube /quadraticGrowth/rigorousRadius 精确十进制 0.00950125）",
+   "tier": "interval_certified_numeric"
+  },
+  "r_tube": {
+   "exact": "7601/100000",
+   "float": 0.07601,
+   "note": "目标半径 0.07601（√(2ΔE/λ_ref) 公式值；l6_intube reconciliation.rTargetFormula.certifiedHere==『否…』——未认证口径如实标注）",
+   "tier": "float_advisory"
+  }
+ },
+ "heavy_solves": 0,
+ "kind": "n9-r20-l5l6-seam",
+ "l3_reconciliation": {
+  "archived_ratios": {
+   "ratio_at_floor": 2.5157302087868065,
+   "ratio_at_forcing": 34.83855894246029,
+   "ratio_at_ttp_level": 13.771098395648329
+  },
+  "eps_forcing_m9": {
+   "exact": "62308232016279826168812154155836080188260221347417966571668186047549261057992006380543153/444089209850062616169452667236328125000000000000000000000000000000000000000000000000000000000",
+   "float": 0.00014030566524531613,
+   "note": "l2_rigorous /eps_forcing 精确 Fraction（M9 口径，主口径十进制 E*）；落在存档阶梯 1e-4（0.2548）与 3e-4（0.6447）两点之间",
+   "tier": "written_proof_fraction"
+  },
+  "eps_forcing_m9_bracket": {
+   "hi": {
+    "eps": "0.0003",
+    "rho_spec": 0.6447258330000001
+   },
+   "lo": {
+    "eps": "0.0001",
+    "rho_spec": 0.2548493150684932
+   },
+   "monotone_ladder_verified": true,
+   "note": "阶梯非降（存档点列逐对验证）⟹ ρ_spec(M9 ε_forcing) ∈ [0.2548, 0.6447]；存档不定值如实；两端对数值档缝阈值均 ≥399×——缝判定对平台歧义稳健",
+   "tier": "float_advisory"
+  },
+  "layer_note": "tube.json /verdict 阶梯与 l2_rigorous eps_forcing 均系数值层输入（float_advisory 如实标注）；eps_forcing 精确 Fraction 系 l2_rigorous 严格层产物（written_proof_fraction）",
+  "need_l3_spectral_tube": {
+   "float": 0.01850609934999997,
+   "note": "L3 谱管需求 min_gap/2（tube.json verdict.need）；内部比值 ratio_at_floor=2.5157×",
+   "tier": "float_advisory"
+  },
+  "rho_spec_at_floor": {
+   "float": 0.04655635318160481,
+   "note": "最深 SDP 点 ε=1.5e-8（伪近零 (0.1961,0.1961,0.1961) 深度 9.4e-9 级——可能是 SOS 族真零点）",
+   "tier": "float_advisory"
+  },
+  "rho_spec_at_forcing": {
+   "float": 0.6447258330000001,
+   "note": "tube 自身 ε_forcing=4.1531e-4 档（cap m0748_M8 ΔE 口径）；存档 verdict.rho_spec_at_forcing",
+   "tier": "float_advisory"
+  },
+  "rho_spec_at_ttp_level": {
+   "float": 0.2548493150684932,
+   "note": "TTP slack 平台（ε 5.3e-6–1e-4）",
+   "tier": "float_advisory"
+  },
+  "seam_identity_delta_equals_rho": {
+   "convention": [
+    "δ=ρ 缝认同定＝簿记口径：L5 前提为固定标号 |⟨y_i,y_j⟩−⟨x_i,x_j⟩| ≤ δ (∀i<j)，S₉ 重排竞争者须对匹配重排应用前提（前提对某重排成立时对该重排应用——l4.json metric 注记）；ρ_spec 系谱管（类和特征坐标）口径与逐对内积偏差口径为不同量——本审计以口径同定作簿记（非证书）"
+   ],
+   "tier": "float_advisory"
+  },
+  "supply_rows": [
+   {
+    "bound_at_floor": {
+     "float": 1.5379897108354794,
+     "note": "ρ_spec(floor)=0.0466 数值层输入（tube.json verdict）→ 定向包络上界",
+     "tier": "float_advisory"
+    },
+    "route": "B_global_hoelder",
+    "shortfall_ratio": {
+     "direction": "ceil（报大不低于真 shortfall）",
+     "float": 161.91604054652583,
+     "safe_display_exact": "170/1",
+     "safe_display_float": 170.0,
+     "tier": "float_advisory"
+    },
+    "target": "r_eff"
+   },
+   {
+    "bound_at_floor": {
+     "float": 1.5379897108354794,
+     "note": "ρ_spec(floor)=0.0466 数值层输入（tube.json verdict）→ 定向包络上界",
+     "tier": "float_advisory"
+    },
+    "route": "B_global_hoelder",
+    "shortfall_ratio": {
+     "direction": "ceil（报大不低于真 shortfall）",
+     "float": 20.234044347263247,
+     "safe_display_exact": "21/1",
+     "safe_display_float": 21.0,
+     "tier": "float_advisory"
+    },
+    "target": "r_tube"
+   },
+   {
+    "bound_at_floor": {
+     "float": 1.5379897108354794,
+     "note": "ρ_spec(floor)=0.0466 数值层输入（tube.json verdict）→ 定向包络上界",
+     "tier": "float_advisory"
+    },
+    "route": "B_global_hoelder",
+    "shortfall_ratio": {
+     "direction": "ceil（报大不低于真 shortfall）",
+     "float": 10.117022173631623,
+     "safe_display_exact": "11/1",
+     "safe_display_float": 11.0,
+     "tier": "float_advisory"
+    },
+    "target": "R_MAX"
+   },
+   {
+    "bound_at_floor": {
+     "float": 0.8825746930795031,
+     "note": "ρ_spec(floor)=0.0466 数值层输入（tube.json verdict）→ 定向包络上界",
+     "tier": "float_advisory"
+    },
+    "route": "A_narrow_linear",
+    "shortfall_ratio": {
+     "direction": "ceil（报大不低于真 shortfall）",
+     "float": 92.91544591177367,
+     "safe_display_exact": "93/1",
+     "safe_display_float": 93.0,
+     "tier": "float_advisory"
+    },
+    "target": "r_eff"
+   },
+   {
+    "bound_at_floor": {
+     "float": 0.8825746930795031,
+     "note": "ρ_spec(floor)=0.0466 数值层输入（tube.json verdict）→ 定向包络上界",
+     "tier": "float_advisory"
+    },
+    "route": "A_narrow_linear",
+    "shortfall_ratio": {
+     "direction": "ceil（报大不低于真 shortfall）",
+     "float": 11.61129710668995,
+     "safe_display_exact": "12/1",
+     "safe_display_float": 12.0,
+     "tier": "float_advisory"
+    },
+    "target": "r_tube"
+   },
+   {
+    "bound_at_floor": {
+     "float": 0.8825746930795031,
+     "note": "ρ_spec(floor)=0.0466 数值层输入（tube.json verdict）→ 定向包络上界",
+     "tier": "float_advisory"
+    },
+    "route": "A_narrow_linear",
+    "shortfall_ratio": {
+     "direction": "ceil（报大不低于真 shortfall）",
+     "float": 5.805648553344975,
+     "safe_display_exact": "59/10",
+     "safe_display_float": 5.9,
+     "tier": "float_advisory"
+    },
+    "target": "R_MAX"
+   },
+   {
+    "bound_at_floor": {
+     "float": 0.6926995063075271,
+     "note": "ρ_spec(floor)=0.0466 数值层输入（tube.json verdict）→ 定向包络上界",
+     "tier": "float_advisory"
+    },
+    "route": "numerical_linear",
+    "shortfall_ratio": {
+     "direction": "ceil（报大不低于真 shortfall）",
+     "float": 72.92582034825186,
+     "safe_display_exact": "73/1",
+     "safe_display_float": 73.0,
+     "tier": "float_advisory"
+    },
+    "target": "r_eff"
+   },
+   {
+    "bound_at_floor": {
+     "float": 0.6926995063075271,
+     "note": "ρ_spec(floor)=0.0466 数值层输入（tube.json verdict）→ 定向包络上界",
+     "tier": "float_advisory"
+    },
+    "route": "numerical_linear",
+    "shortfall_ratio": {
+     "direction": "ceil（报大不低于真 shortfall）",
+     "float": 9.113268074036668,
+     "safe_display_exact": "46/5",
+     "safe_display_float": 9.2,
+     "tier": "float_advisory"
+    },
+    "target": "r_tube"
+   },
+   {
+    "bound_at_floor": {
+     "float": 0.6926995063075271,
+     "note": "ρ_spec(floor)=0.0466 数值层输入（tube.json verdict）→ 定向包络上界",
+     "tier": "float_advisory"
+    },
+    "route": "numerical_linear",
+    "shortfall_ratio": {
+     "direction": "ceil（报大不低于真 shortfall）",
+     "float": 4.556634037018334,
+     "safe_display_exact": "23/5",
+     "safe_display_float": 4.6,
+     "tier": "float_advisory"
+    },
+    "target": "R_MAX"
+   }
+  ]
+ },
+ "provenance": {
+  "E_star": "25.759986531（thomson-workflow/data/energies.json，只读）",
+  "frozen_anchors": {
+   "endgame_json_sha256": "86863a09bf84e950e85fc5f902bc2b4046a87f06703bd782e5148fc119afd69f",
+   "tableb5polar_sha256": "d8c58f7d2c56c39fbe1ae62d634fc6ea5bd585fa9f1c0b9c2e2fc909d4338516",
+   "tableb5uncond_sha256": "c79fc6231d1e13b8ffd7873d1338901602ed3b70b3f057ed4eec4eb757e36d5e"
+  },
+  "inputs": {
+   "formal/lean/ThomsonN9/TableB5Data.lean": {
+    "role": "Lean ℚ 常数唯一源（def 直读）",
+    "sha256": "76be87430682db5ea8cb6ba1d8616c2bc554d2f12977272e470ebaf1c4f61977"
+   },
+   "formal/lean/ThomsonN9/TableB5Uncond.lean": {
+    "role": "路线 B/A 语句锚（step6_hoelder_Cform/step6_uncond_linear）",
+    "sha256": "c79fc6231d1e13b8ffd7873d1338901602ed3b70b3f057ed4eec4eb757e36d5e"
+   },
+   "numerics/bounds/results/l2_rigorous.json": {
+    "role": "eps_forcing 精确 Fraction（M9 口径）",
+    "sha256": "73fa7a640ea787c38f65531c046c3ab14e9e7035fc9c77c9ddb5b17174a25bf1"
+   },
+   "numerics/bounds/results/l4.json": {
+    "role": "数值层线性常数（C_exact/delta_max_exact 恒等对账）",
+    "sha256": "9f588a3b61c562d8574523d57ac5e868a893b62f4db52509280b9c090300fb96"
+   },
+   "numerics/bounds/results/l6_intube.json": {
+    "role": "L6 需求面（r*/μ/排除半径/中心偏移/R_MAX/负对照）",
+    "sha256": "d203529ae0e9eb8ef144d14a673b4b1a4b7e4223f34941d13eb7dfef666c4e24"
+   },
+   "numerics/bounds/results/r19_b5u_ledger.json": {
+    "role": "r19 路线 float 对账（C_B/C_A/δ_A 包络内命中）",
+    "sha256": "b02358bdcbfccb30b230d5e0d71eaac05c5a6c1fd1c8b9187cc253b5a72c6f54"
+   },
+   "numerics/bounds/results/tube.json": {
+    "role": "L3 供给阶梯（verdict＋spectral_tube.AAA）",
+    "sha256": "8bb7c040a4cbabf3834e5d4d16abcc97c2daacf07736993ebdefc4a7d326b0ea"
+   }
+  },
+  "read_only": true
+ },
+ "round5_correction": {
+  "correction": "δ_max=0.17124 是 L5 常数的适用域上界（必要条件面），非链闭合窗口：闭合需 C·δ ≤ 需求半径；ρ=0.02 处 d_P ≤ CVal·0.02=0.29757 ≫ 0.07601 ≫ r_eff——域窗口对链闭合高估 268.2×（δ_max/δ_need_num(r_eff)）",
+  "d_P_bound_at_0.02": {
+   "numerical_linear": {
+    "exact": "166746669862083129149865044559230343271910443491213163244044791246443617478482036707443690325317534584859721150704842727255152800478882014582429705057415147670438984935166256797367349526418779/560352417120760122620130900412425894088930366427026227489178512843533940836589737810183279006390661979059505483218265909149725630932394063312901282336699904410916400512084468320397720289280000",
+    "float": 0.2975746418992389,
+    "note": "CVal·(1/50)（精确值记录；ρ=0.02 本身系advisory 输入）",
+    "tier": "float_advisory"
+   },
+   "ratios": {
+    "vs_R_MAX": {
+     "float": 1.9574703453442894,
+     "safe_display_exact": "2/1",
+     "tier": "float_advisory"
+    },
+    "vs_r_eff": {
+     "float": 31.32797797275327,
+     "safe_display_exact": "32/1",
+     "tier": "float_advisory"
+    },
+    "vs_r_tube": {
+     "float": 3.914940690688579,
+     "safe_display_exact": "4/1",
+     "tier": "float_advisory"
+    }
+   }
+  },
+  "narrative_claim": "『ρ_spec(4.15e-4)~√ε≈0.02 落入无悔件 L5 的 δ_max=0.17124 覆盖域——L2→L3→L5→L6 链有闭合窗口』",
+  "narrative_source": "notes/architecture-decision.md §2.4（:205–:207；另 §1.3 :131–:134）",
+  "rho_narrative": {
+   "exact": "1/50",
+   "float": 0.02,
+   "note": "Round 5 设计期 √ε 量级估计值（非计算结果——原文自注）",
+   "tier": "float_advisory"
+  },
+  "verdict": "勘正成立：L5 常数域窗口（ρ ≤ δ_max）≠ 链闭合窗口（C·ρ ≤ r）；ρ=0.02 全口径不闭合",
+  "window_overstatement_factor": {
+   "exact": "3732001875299832176343715401616465804500482567998386719125161850561324600720203714593444118097699663029222621842157462303628289275665283203125/13913358925151968234056961885023161148433949376854932757208544985545700522187487644096085730826116584346828101717058624966858280942188888064",
+   "float": 268.231553241488,
+   "note": "δ_max/δ_need_num(r_eff)——『域窗口』若被误读为『闭合窗口』的高估倍数",
+   "tier": "formal_lean"
+  }
+ },
+ "schema": {
+  "artifact_class": "数值面审计件（audit artifact）：不入 endgame.json/citedCertificates/12 分区、不得成为 endgame_chain.py 输入（R11C–R19 先例，D86 裁决 1）",
+  "determinism": "零随机零时间戳零 code_version；sort_keys＋indent=1——G2 重跑逐位一致的充分条件",
+  "rounding_policy": "阈值 floor 向 6 位有效数字（报小仍充分）；shortfall 比值 ceil 向（报大不低于真值）",
+  "tier_semantics": {
+   "float_advisory": "未认证数值输入（如实标注，不入精确断言）",
+   "formal_lean": "TableB5Data/TableB5Uncond 精确 ℚ 常数与定理（Lean）",
+   "interval_certified_numeric": "区间证书数值层（非 Lean）",
+   "rejection_certified_numeric": "证书拒绝面（负对照在档）",
+   "written_proof_fraction": "严格数值层精确 Fraction（书面证明非 Lean）"
+  },
+  "tiers_vocabulary": [
+   "formal_lean",
+   "written_proof_fraction",
+   "interval_certified_numeric",
+   "rejection_certified_numeric",
+   "float_advisory"
+  ]
+ },
+ "seam_table": [
+  {
+   "demand_radius": {
+    "exact": "47493432572961942627/5000000000000000000000",
+    "float": 0.009498686514592389,
+    "tier": "interval_certified_numeric"
+   },
+   "domain_ok": true,
+   "primary": true,
+   "route": "B_global_hoelder",
+   "route_tier": "formal_lean",
+   "statement": "d_P ≤ C_B·√δ（Lean 路线 B；域 δ≤δ_max 全体）",
+   "target": "r_eff",
+   "target_tier": "interval_certified_numeric",
+   "threshold": {
+    "exact": "21683390637552129026242649810261210490617839120245149307060214945313667715138172790746415562876380151500464590257516984501597725404652070950817345915517226371622172021240500837869708356408400677572615211975622894727805001035085494632997589327873734915778943714096945823954021996577499287414011130682995251015066588782621112356944387651230541037873096486084963890167910655409175833677392211246736227721805824/12210346549729120173534234375024655241015395202177425615624648789956639113616570079448984254988517097307768591130528535475382449826077463046500750992985540176497810647366368298916491276231750077815358913427972401339350049974636648143992343196528218837720347357217045345607740821791604638267821920818943411119193720958243162749226688300088705590769736822185521314847698563601123030144890435622073709964752197265625",
+    "float": 1.775821066932221e-06,
+    "tier": "formal_lean"
+   },
+   "threshold_safe_display": {
+    "direction": "floor（报小仍充分）",
+    "exact": "88791/50000000000",
+    "float": 1.77582e-06
+   }
+  },
+  {
+   "demand_radius": {
+    "exact": "47493432572961942627/5000000000000000000000",
+    "float": 0.009498686514592389,
+    "tier": "interval_certified_numeric"
+   },
+   "domain_ok": true,
+   "primary": true,
+   "route": "A_narrow_linear",
+   "route_tier": "formal_lean",
+   "statement": "d_P ≤ C_A_delta·δ（Lean 路线 A；域 δ≤δ_A＋β≤1/2 双检查）",
+   "target": "r_eff",
+   "target_tier": "interval_certified_numeric",
+   "threshold": {
+    "exact": "10152076621864725548254616797310351193727886992457562310040938862790853575909681038714260180115603253384318574071997264560248052684028566492550932157521365392174277211383558569766715202134497709338394624/20261138637116478779625449702392458212087496267840608924139117115775859981448561191255793215915194764182795029554160591360038146762331828997666183144907798115120822777247077498658121009227083873748779296875",
+    "float": 0.0005010615051647239,
+    "tier": "formal_lean"
+   },
+   "threshold_safe_display": {
+    "direction": "floor（报小仍充分）",
+    "exact": "501061/1000000000",
+    "float": 0.000501061
+   }
+  },
+  {
+   "demand_radius": {
+    "exact": "47493432572961942627/5000000000000000000000",
+    "float": 0.009498686514592389,
+    "tier": "interval_certified_numeric"
+   },
+   "domain_ok": true,
+   "primary": true,
+   "route": "numerical_linear",
+   "route_tier": "written_proof_fraction",
+   "statement": "d_P ≤ CVal·δ（l4.json 书面证明口径非 Lean）",
+   "target": "r_eff",
+   "target_tier": "interval_certified_numeric",
+   "threshold": {
+    "exact": "10152076621864725548254616797310351193727886992457562310040938862790853575909681038714260180115603253384318574071997264560248052684028566492550932157521365392174277211383558569766715202134497709338394624/15902201639374077715860847907946619345847172116395298313526610493320810077522472067589158089191201647268268694944843552327647476241958810289614649301282419936221979611889482192742094948427083873748779296875",
+    "float": 0.0006384069861576927,
+    "tier": "written_proof_fraction"
+   },
+   "threshold_safe_display": {
+    "direction": "floor（报小仍充分）",
+    "exact": "319203/500000000",
+    "float": 0.000638406
+   }
+  },
+  {
+   "demand_radius": {
+    "exact": "7601/800000",
+    "float": 0.00950125,
+    "tier": "interval_certified_numeric"
+   },
+   "domain_ok": true,
+   "primary": false,
+   "route": "B_global_hoelder",
+   "route_tier": "formal_lean",
+   "statement": "d_P ≤ C_B·√δ（Lean 路线 B；域 δ≤δ_max 全体）",
+   "target": "r_star_raw",
+   "target_tier": "interval_certified_numeric",
+   "threshold": {
+    "exact": "37271891038906549871004461695775424191799804032602364460269173119274717447699024535662305964843960400366063772759004717299366687613617929035742545422118291185136763253418046338314367010708333857140442355043767743774508278430331805707518253480541520802792540429228048381797231236649460761638668753922594579408601782353352492577707181557865143455799913889557707976391534638490697334784/20977215641565203521673352550851957381534448090346940403432213265739895300423038709970203630237842315389486298256646290824617374038145436698947701101724968183580865818415656149654992906593867480424968663870094686137238025014812013304602485161398720259656009237202895733253705629615642419488882095627705395212647915761681666249413630215706729764531351647125512516792713820613199761337890625",
+    "float": 1.7767797059326759e-06,
+    "tier": "formal_lean"
+   },
+   "threshold_safe_display": {
+    "direction": "floor（报小仍充分）",
+    "exact": "177677/100000000000",
+    "float": 1.77677e-06
+   }
+  },
+  {
+   "demand_radius": {
+    "exact": "7601/800000",
+    "float": 0.00950125,
+    "tier": "interval_certified_numeric"
+   },
+   "domain_ok": true,
+   "primary": false,
+   "route": "A_narrow_linear",
+   "route_tier": "formal_lean",
+   "statement": "d_P ≤ C_A_delta·δ（Lean 路线 A；域 δ≤δ_A＋β≤1/2 双检查）",
+   "target": "r_star_raw",
+   "target_tier": "interval_certified_numeric",
+   "threshold": {
+    "exact": "13310121007921555287611296793858903815531124110036957359828893362886567138434120615922509699148673192821347816181068872423272076627241022735129258272003924916960548625913606386572947099746304/26556679634441311066030669433919842827747323108184042929047623585989735194884258124602793283964364081309673101137229370307429199724323574903821019571693549145451164830593289419041172369214123375",
+    "float": 0.0005011967305829785,
+    "tier": "formal_lean"
+   },
+   "threshold_safe_display": {
+    "direction": "floor（报小仍充分）",
+    "exact": "125299/250000000",
+    "float": 0.000501196
+   }
+  },
+  {
+   "demand_radius": {
+    "exact": "7601/800000",
+    "float": 0.00950125,
+    "tier": "interval_certified_numeric"
+   },
+   "domain_ok": true,
+   "primary": false,
+   "route": "numerical_linear",
+   "route_tier": "written_proof_fraction",
+   "statement": "d_P ≤ CVal·δ（l4.json 书面证明口径非 Lean）",
+   "target": "r_star_raw",
+   "target_tier": "interval_certified_numeric",
+   "threshold": {
+    "exact": "13310121007921555287611296793858903815531124110036957359828893362886567138434120615922509699148673192821347816181068872423272076627241022735129258272003924916960548625913606386572947099746304/20843333732760391143733130569903792908988805436401645405505598905805452184810254588430461290664691823107465143838105340906894100059860251822803713132176893458804873116895782099670918690802347375",
+    "float": 0.0006385792780835941,
+    "tier": "written_proof_fraction"
+   },
+   "threshold_safe_display": {
+    "direction": "floor（报小仍充分）",
+    "exact": "638579/1000000000",
+    "float": 0.000638579
+   }
+  },
+  {
+   "demand_radius": {
+    "exact": "7601/100000",
+    "float": 0.07601,
+    "tier": "float_advisory"
+   },
+   "domain_ok": true,
+   "primary": false,
+   "route": "B_global_hoelder",
+   "route_tier": "formal_lean",
+   "statement": "d_P ≤ C_B·√δ（Lean 路线 B；域 δ≤δ_max 全体）",
+   "target": "r_tube_uncertified",
+   "target_tier": "float_advisory",
+   "threshold": {
+    "exact": "2385401026490019191744285548529627148275187458086551325457227079633581916652737570282387581750013465623428081456576301907159468007271547458287522907015570635848752848218754965652119488685333366856988310722801135601568529819541235565281168222754657331378722587470595096435022799145565488744874800251046053082150514070614559524973259619703369181171194488931693310489058216863404629426176/20977215641565203521673352550851957381534448090346940403432213265739895300423038709970203630237842315389486298256646290824617374038145436698947701101724968183580865818415656149654992906593867480424968663870094686137238025014812013304602485161398720259656009237202895733253705629615642419488882095627705395212647915761681666249413630215706729764531351647125512516792713820613199761337890625",
+    "float": 0.00011371390117969126,
+    "tier": "formal_lean"
+   },
+   "threshold_safe_display": {
+    "direction": "floor（报小仍充分）",
+    "exact": "113713/1000000000",
+    "float": 0.000113713
+   }
+  },
+  {
+   "demand_radius": {
+    "exact": "7601/100000",
+    "float": 0.07601,
+    "tier": "float_advisory"
+   },
+   "domain_ok": true,
+   "primary": false,
+   "route": "A_narrow_linear",
+   "route_tier": "formal_lean",
+   "statement": "d_P ≤ C_A_delta·δ（Lean 路线 A；域 δ≤δ_A＋β≤1/2 双检查）",
+   "target": "r_tube_uncertified",
+   "target_tier": "float_advisory",
+   "threshold": {
+    "exact": "106480968063372442300890374350871230524248992880295658878631146903092537107472964927380077593189385542570782529448550979386176613017928181881034066176031399335684389007308851092583576797970432/26556679634441311066030669433919842827747323108184042929047623585989735194884258124602793283964364081309673101137229370307429199724323574903821019571693549145451164830593289419041172369214123375",
+    "float": 0.004009573844663828,
+    "tier": "formal_lean"
+   },
+   "threshold_safe_display": {
+    "direction": "floor（报小仍充分）",
+    "exact": "400957/100000000",
+    "float": 0.00400957
+   }
+  },
+  {
+   "demand_radius": {
+    "exact": "7601/100000",
+    "float": 0.07601,
+    "tier": "float_advisory"
+   },
+   "domain_ok": true,
+   "primary": false,
+   "route": "numerical_linear",
+   "route_tier": "written_proof_fraction",
+   "statement": "d_P ≤ CVal·δ（l4.json 书面证明口径非 Lean）",
+   "target": "r_tube_uncertified",
+   "target_tier": "float_advisory",
+   "threshold": {
+    "exact": "106480968063372442300890374350871230524248992880295658878631146903092537107472964927380077593189385542570782529448550979386176613017928181881034066176031399335684389007308851092583576797970432/20843333732760391143733130569903792908988805436401645405505598905805452184810254588430461290664691823107465143838105340906894100059860251822803713132176893458804873116895782099670918690802347375",
+    "float": 0.005108634224668753,
+    "tier": "written_proof_fraction"
+   },
+   "threshold_safe_display": {
+    "direction": "floor（报小仍充分）",
+    "exact": "510863/100000000",
+    "float": 0.00510863
+   }
+  },
+  {
+   "demand_radius": {
+    "exact": "7601/50000",
+    "float": 0.15202,
+    "tier": "rejection_certified_numeric"
+   },
+   "domain_ok": true,
+   "primary": false,
+   "route": "B_global_hoelder",
+   "route_tier": "formal_lean",
+   "statement": "d_P ≤ C_B·√δ（Lean 路线 B；域 δ≤δ_max 全体）",
+   "target": "R_MAX_rejection",
+   "target_tier": "rejection_certified_numeric",
+   "threshold": {
+    "exact": "9541604105960076766977142194118508593100749832346205301828908318534327666610950281129550327000053862493712325826305207628637872029086189833150091628062282543395011392875019862608477954741333467427953242891204542406274119278164942261124672891018629325514890349882380385740091196582261954979499201004184212328602056282458238099893038478813476724684777955726773241956232867453618517704704/20977215641565203521673352550851957381534448090346940403432213265739895300423038709970203630237842315389486298256646290824617374038145436698947701101724968183580865818415656149654992906593867480424968663870094686137238025014812013304602485161398720259656009237202895733253705629615642419488882095627705395212647915761681666249413630215706729764531351647125512516792713820613199761337890625",
+    "float": 0.000454855604718765,
+    "tier": "formal_lean"
+   },
+   "threshold_safe_display": {
+    "direction": "floor（报小仍充分）",
+    "exact": "90971/200000000",
+    "float": 0.000454855
+   }
+  },
+  {
+   "demand_radius": {
+    "exact": "7601/50000",
+    "float": 0.15202,
+    "tier": "rejection_certified_numeric"
+   },
+   "domain_ok": true,
+   "primary": false,
+   "route": "A_narrow_linear",
+   "route_tier": "formal_lean",
+   "statement": "d_P ≤ C_A_delta·δ（Lean 路线 A；域 δ≤δ_A＋β≤1/2 双检查）",
+   "target": "R_MAX_rejection",
+   "target_tier": "rejection_certified_numeric",
+   "threshold": {
+    "exact": "212961936126744884601780748701742461048497985760591317757262293806185074214945929854760155186378771085141565058897101958772353226035856363762068132352062798671368778014617702185167153595940864/26556679634441311066030669433919842827747323108184042929047623585989735194884258124602793283964364081309673101137229370307429199724323574903821019571693549145451164830593289419041172369214123375",
+    "float": 0.008019147689327656,
+    "tier": "formal_lean"
+   },
+   "threshold_safe_display": {
+    "direction": "floor（报小仍充分）",
+    "exact": "400957/50000000",
+    "float": 0.00801914
+   }
+  },
+  {
+   "demand_radius": {
+    "exact": "7601/50000",
+    "float": 0.15202,
+    "tier": "rejection_certified_numeric"
+   },
+   "domain_ok": true,
+   "primary": false,
+   "route": "numerical_linear",
+   "route_tier": "written_proof_fraction",
+   "statement": "d_P ≤ CVal·δ（l4.json 书面证明口径非 Lean）",
+   "target": "R_MAX_rejection",
+   "target_tier": "rejection_certified_numeric",
+   "threshold": {
+    "exact": "212961936126744884601780748701742461048497985760591317757262293806185074214945929854760155186378771085141565058897101958772353226035856363762068132352062798671368778014617702185167153595940864/20843333732760391143733130569903792908988805436401645405505598905805452184810254588430461290664691823107465143838105340906894100059860251822803713132176893458804873116895782099670918690802347375",
+    "float": 0.010217268449337506,
+    "tier": "written_proof_fraction"
+   },
+   "threshold_safe_display": {
+    "direction": "floor（报小仍充分）",
+    "exact": "25543/2500000",
+    "float": 0.0102172
+   }
+  }
+ ],
+ "seed": 20261020,
+ "supply": {
+  "CInner": {
+   "exact": "24458047489964980150886173256033670296374362557634227202458660703838696903279927063959595372365084511628313374504763144953058356597/13948326610915637735996567595571314293060317402201205698036149274461380101913294171943574236117163934443259866621339938986341171200",
+   "float": 1.7534753933009195,
+   "note": "内积口径内常数（装配① 已验）",
+   "tier": "formal_lean"
+  },
+  "CVal": {
+   "exact": "166746669862083129149865044559230343271910443491213163244044791246443617478482036707443690325317534584859721150704842727255152800478882014582429705057415147670438984935166256797367349526418779/11207048342415202452402618008248517881778607328540524549783570256870678816731794756203665580127813239581190109664365318182994512618647881266258025646733998088218328010241689366407954405785600",
+   "float": 14.878732094961943,
+   "note": "数值层线性档常数同值（l4.json C_exact 逐位恒等已验；d_P≤CVal·δ 的证明系书面口径非 Lean——tier 在 seam 表内标 written_proof_fraction）",
+   "tier": "formal_lean"
+  },
+  "C_A": {
+   "beta_at_delta_A_exact": "137029/3240792",
+   "delta_A": {
+    "exact": "1553962444163194383235569947504001501803507165009238616029790208/106525948878954417944140214200764717936542905127026613012278234375",
+    "float": 0.014587642358661024,
+    "note": "窄域适用半径 δ_A := (l₃/24)/√72Up（η≤√72Up·δ≤l₃/24）",
+    "tier": "formal_lean"
+   },
+   "delta_caliber": {
+    "exact": "212453437075530488528245355471358742621978584865472343432380988687917881559074064996822346271714912650477384809097834962459433597794588599230568156573548393163609318644746315352329378953712987/11207048342415202452402618008248517881778607328540524549783570256870678816731794756203665580127813239581190109664365318182994512618647881266258025646733998088218328010241689366407954405785600",
+    "float": 18.95712685305908,
+    "note": "δ 口径上包（×√72Up）",
+    "tier": "formal_lean"
+   },
+   "domain": "η ≤ λ₃/24（c_lo := √(λ₃/2) 包络口径，D79-5）⟺ δ ≤ δ_A；另需 β = u₁η/l₃² ≤ 1/2（域端恒等 u₁·√72Up·δ_A == u₁/(24·l₃)≈0.0423 ≤ 1/2 已验——δ≤δ_A 自动满足）",
+   "eta_caliber": {
+    "exact": "31162219057792320885651172913479593460036261208448784913106377174971055930259988776007717323555597372606462745932293658532402490741/13948326610915637735996567595571314293060317402201205698036149274461380101913294171943574236117163934443259866621339938986341171200",
+    "float": 2.2341188249352784,
+    "note": "η 口径上包（√λ₁≤s1Up、2√2≤2·sqrt2Up、√λ₃≥s3Dn）",
+    "tier": "formal_lean"
+   },
+   "form": "d_P ≤ (√λ₁·λ₁/λ₃² + 2√2/√λ₃)·η ≤ C_A_eta·η ≤ C_A_delta·δ（η ≤ √72Up·δ 注入；δ 口径系数 (√λ₁·λ₁/λ₃²+2√2/√λ₃)·√72Up）"
+  },
+  "C_B": {
+   "domain": "δ ≤ deltaMax（记录域全体）",
+   "dominance_grid_19pt": true,
+   "envelope_width_rel": 5.266748826666801e-61,
+   "form": "C_B := k1·√δmax + √(3·√72Up)；d_P ≤ C_B·√δ（全域 δ ≤ δ_max，β≤1/2 前件由 TableB5.delta_max_valid 内部导出）",
+   "hi": {
+    "exact": "46347242438965846640112229167128343942631190184187663190501281085893507198932388708642817819347012690537632164611481084164204980342994379143731823861168077402391763388037580916132171862539581/6502194354682578821117604824908903918828518095641547146869918770254654340737338810094817122247099047970007885715545179831723344347746808557064090923034078262466642935713795520749412043194368",
+    "float": 7.127938648217845,
+    "note": "上包（缝阈值安全向所用；√δmax/√(3√72Up) 200-bit 包外扩）",
+    "tier": "formal_lean"
+   },
+   "lo": {
+    "exact": "11586810609741461660028057291782085985657797546046915797625314168991258433104883001836127157567451875239685109148688993560962979860196786888158588673836189007628611107962535364481936426371397/1625548588670644705279401206227225979707129523910386786717479692563663585184334702523704280561774761992501971428886294957930836086936702139266022730758519565616660733928448880187353010798592",
+    "float": 7.127938648217845,
+    "note": "下包（信息面）",
+    "tier": "formal_lean"
+   }
+  },
+  "deltaMax": {
+   "exact": "139483266109156377359965675955713142930603174022012056980361492744613801019132941719435742361171639344432598666213399389863411712/814544119703411893322670504825810718793792510082327085181744492989783178008739277261702734742719779777526121234514046996445780625",
+   "float": 0.17124089749729504,
+   "note": "适用域半径（l4.json delta_max_exact 逐位恒等已验）",
+   "tier": "formal_lean"
+  },
+  "k1": {
+   "exact": "20363602992585297333066762620645267969844812752058177129543612324744579450218481931542568368567994494438153030862851174911144515625/4046325480881215523634535688543809235344766139669839595566308028316322757013109165926597454753377382880803156576607029515012538368",
+   "float": 5.0326161572525,
+   "note": "k1 := s1Up·u₁·√72Up/l₃²（路线 B）",
+   "tier": "formal_lean"
+  },
+  "l3": {
+   "exact": "1485363/500000",
+   "float": 2.970726,
+   "note": "记录 λ₃ 下界（interval-Sylvester 对角路线）",
+   "tier": "formal_lean"
+  },
+  "layer_note": "三层口径：formal_lean＝TableB5Data/TableB5Uncond 精确 ℚ 常数与定理；written_proof_fraction＝l4.json 严格数值层（Fraction 区间、书面证明非 Lean）；包络＝200-bit 整数 Newton 有理包（独立第二实现，方向性逐点断言）",
+  "r19_ledger_cross": {
+   "C_A_vs_r19_float": {
+    "abs_diff": 0.00012685305907922384,
+    "probe_float": 18.95712685305908,
+    "r19_float": 18.957,
+    "within_rounding": true
+   },
+   "C_B_vs_r19_float": {
+    "abs_diff": 6.135178215505022e-05,
+    "probe_float": 7.127938648217845,
+    "r19_float": 7.128,
+    "within_rounding": true
+   },
+   "delta_A_vs_r19_float": {
+    "abs_diff": 3.5764133897615846e-07,
+    "probe_float": 0.014587642358661024,
+    "r19_float": 0.014588,
+    "within_rounding": true
+   }
+  },
+  "s1Up": {
+   "exact": "1395040197268179252742301125109008203786329128093974951479683/803469022129495137770981046170581301261101496891396417650688",
+   "float": 1.7362712921660601,
+   "note": "σ₁=√λ₁ 有理上包（s1Up²≥u₁ 已验）",
+   "tier": "formal_lean"
+  },
+  "s3Dn": {
+   "exact": "2769685334352913384562410778387095184558311280070715282031075/1606938044258990275541962092341162602522202993782792835301376",
+   "float": 1.7235794150546124,
+   "note": "σ₃=√λ₃ 有理下包（s3Dn²≤l₃ 已验）",
+   "tier": "formal_lean"
+  },
+  "sqrt2Up": {
+   "exact": "2272553576084360916141657902949647315979581976043234410928603/1606938044258990275541962092341162602522202993782792835301376",
+   "float": 1.4142135623730951,
+   "note": "√2 有理上包（路线 A 定向包络件）",
+   "tier": "formal_lean"
+  },
+  "sqrt72Up": {
+   "exact": "6817660728253082748424973708848941947938745928129703232785807/803469022129495137770981046170581301261101496891396417650688",
+   "float": 8.48528137423857,
+   "note": "√72 有理上包",
+   "tier": "formal_lean"
+  },
+  "u1": {
+   "exact": "1507319/500000",
+   "float": 3.014638,
+   "note": "记录 λ₁ 上界",
+   "tier": "formal_lean"
+  },
+  "uncond_statement_anchors": {
+   "route_A_Cform": 944,
+   "route_A_domain24": 746,
+   "route_A_theorem": 935,
+   "route_B_Cform": 408,
+   "route_B_sqrt3face": 409,
+   "route_B_theorem": 398
+  }
+ },
+ "task": "r20a-l5l6-seam-probe",
+ "verdict": {
+  "seam_closed": false,
+  "statement": "L5→L6 缝不闭合（三口径全组合）：最深 SDP 供给 ρ_spec=0.0466 对认证需求 r_eff=0.0094987 差 ~72.9×（数值口径；Lean 窄域线性 ~92.9×／√δ 档 ~161.9×）；δ_need 三口径＝1.7758e-6（B）/5.0106e-4（A）/6.3841e-4（num，均 r_eff 口径）；Round 5『闭合窗口』系域窗口误读（高估 268×）——勘正定量落账；binding=L3 供给"
+ }
+}

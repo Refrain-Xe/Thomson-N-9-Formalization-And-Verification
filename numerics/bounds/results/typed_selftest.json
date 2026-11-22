@@ -1,0 +1,184 @@
+{
+  "kind": "typed-construction-selftest",
+  "script": "typed/typed_selftest.py",
+  "timestamp": "2026-10-03T13:36:03+00:00",
+  "method": "typed（Bachoc–Vallentin 分型）三点构造（typed/core.py 装配 + typed/solve.py 求解）在 N∈{2,3,4,6,12} 普适最优构型上的紧合自检：类型结构 (2, n−2)（极小对为类型 0，N=7 论文 §6 同款分型的普适移植），cut 模式 a=构型最小内积（−1e-9 余量）；typed 是 untyped 的分型松弛，紧合参照同 untyped 表（LP 紧合 ⊆ 三点界，有效性 cap 在真值上）",
+  "tolerances": {
+    "validity_e_le_E_true_plus": 5e-06,
+    "tightness_abs": 0.0001,
+    "min_ip_check": 1e-12,
+    "a_shave": 1e-09
+  },
+  "configs": {
+    "small": [
+      6,
+      4
+    ],
+    "medium": [
+      6,
+      6
+    ],
+    "midlarge": [
+      7,
+      6
+    ]
+  },
+  "n2_policy": "N=2 typed 份额/slack 机制空转（无第三点、无三点类，assemble_typed 显式拒绝），degenerate-by-theory 行不计入通过判定；紧合性由 lp_bound 两点表覆盖",
+  "rows": [
+    {
+      "N": 2,
+      "config_desc": "对径点对",
+      "E_true": 0.5,
+      "E_true_desc": "对径点对：1/2",
+      "min_ip": -1.0,
+      "min_ip_expected": -1,
+      "types": [
+        2,
+        0
+      ],
+      "a_used": -1.000000001,
+      "attempts": [],
+      "status": "degenerate-by-theory",
+      "ok": true,
+      "note": "assemble_typed 按预期拒绝：typed 构造在 n=2 退化：无三点类（份额/slack 机制空转）——N=2 属理论退化行，见 typed_selftest.py 的处理；typed 份额/slack 机制在 n=2 空转；紧合性由两点 LP 自检表覆盖（lp_bound.py SELFTEST）"
+    },
+    {
+      "N": 3,
+      "config_desc": "大圆正三角形",
+      "E_true": 1.7320508075688772,
+      "E_true_desc": "大圆正三角形：√3",
+      "min_ip": -0.5000000000000004,
+      "min_ip_expected": -0.5,
+      "types": [
+        2,
+        1
+      ],
+      "a_used": -0.500000001,
+      "attempts": [
+        {
+          "config": "small",
+          "M": 6,
+          "K": 4,
+          "e": 1.7320508176874492,
+          "status": "optimal",
+          "solver": "CLARABEL",
+          "solve_s": 2.5,
+          "selftests": {
+            "Q_identity_max_err": 2.5873400644194078e-15,
+            "typed_positivity_ok": true,
+            "typed_identity_rel_err": 7.193461114660928e-14,
+            "all_ok": true
+          },
+          "E_minus_e": -1.0118571980299862e-08,
+          "verdict": "TIGHT"
+        }
+      ],
+      "ok": true,
+      "status": "tight"
+    },
+    {
+      "N": 4,
+      "config_desc": "正四面体",
+      "E_true": 3.6742346141747673,
+      "E_true_desc": "正四面体：3√6/2",
+      "min_ip": -0.3333333333333334,
+      "min_ip_expected": -0.3333333333333333,
+      "types": [
+        2,
+        2
+      ],
+      "a_used": -0.33333333433333334,
+      "attempts": [
+        {
+          "config": "small",
+          "M": 6,
+          "K": 4,
+          "e": 3.674234767761424,
+          "status": "optimal",
+          "solver": "CLARABEL",
+          "solve_s": 4.86,
+          "selftests": {
+            "Q_identity_max_err": 2.594278958323315e-15,
+            "typed_positivity_ok": true,
+            "typed_identity_rel_err": 4.969436975125667e-14,
+            "all_ok": true
+          },
+          "E_minus_e": -1.5358665672593474e-07,
+          "verdict": "TIGHT"
+        }
+      ],
+      "ok": true,
+      "status": "tight"
+    },
+    {
+      "N": 6,
+      "config_desc": "正八面体",
+      "E_true": 9.98528137423857,
+      "E_true_desc": "正八面体：6√2+3/2",
+      "min_ip": -1.0,
+      "min_ip_expected": -1,
+      "types": [
+        2,
+        4
+      ],
+      "a_used": -1.000000001,
+      "attempts": [
+        {
+          "config": "small",
+          "M": 6,
+          "K": 4,
+          "e": 9.985281394551073,
+          "status": "optimal",
+          "solver": "CLARABEL",
+          "solve_s": 12.49,
+          "selftests": {
+            "Q_identity_max_err": 2.220446049250313e-15,
+            "typed_positivity_ok": true,
+            "typed_identity_rel_err": 5.0471951454536795e-14,
+            "all_ok": true
+          },
+          "E_minus_e": -2.031250367906523e-08,
+          "verdict": "TIGHT"
+        }
+      ],
+      "ok": true,
+      "status": "tight"
+    },
+    {
+      "N": 12,
+      "config_desc": "正二十面体",
+      "E_true": 49.1652530576288,
+      "E_true_desc": "正二十面体（精确构造）",
+      "min_ip": -1.0,
+      "min_ip_expected": -1,
+      "types": [
+        2,
+        10
+      ],
+      "a_used": -1.000000001,
+      "attempts": [
+        {
+          "config": "small",
+          "M": 6,
+          "K": 4,
+          "e": 49.16525771765454,
+          "status": "optimal",
+          "solver": "CLARABEL",
+          "solve_s": 15.59,
+          "selftests": {
+            "Q_identity_max_err": 2.0348306373207947e-15,
+            "typed_positivity_ok": true,
+            "typed_identity_rel_err": 1.8455555417451797e-13,
+            "all_ok": true
+          },
+          "E_minus_e": -4.660025737734941e-06,
+          "verdict": "TIGHT"
+        }
+      ],
+      "ok": true,
+      "status": "tight"
+    }
+  ],
+  "all_pass": true,
+  "runtime_s": 35.8
+}

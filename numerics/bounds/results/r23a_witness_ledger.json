@@ -1,0 +1,122 @@
+{
+ "axiom_policy": [
+  "Classical.choice",
+  "Quot.sound",
+  "propext"
+ ],
+ "data": {
+  "axiom_check": {
+   "allowed": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+   ],
+   "forbidden_absent": [
+    "ofReduceBool",
+    "ofReduceNat",
+    "sorryAx",
+    "trustCompiler"
+   ],
+   "live_check": "#print axioms 于 TableB1Witness 全部 19 theorem（G3 活体；axcheck 逐定理输出解析）",
+   "note": "D82-4 口径：恰三标准 set 相等、零 sorryAx；本件纯 decide/norm_num/term-mode 构造——|W|=12/W==σ₀∘Aut/lex-min==σ₀ 为无条件组合命题，PatternCons 消费面为显式假设接口（条件性诚实边界在件内 docstring 留痕，D97 可回滚点段口径）"
+  },
+  "bridge": {
+   "headline": "card_witness_eq_12 : Fintype.card {σ : Equiv.Perm (Fin 9) // ∀ i j : Fin 9, i ≠ j → repPair (σ i).val (σ j).val = nodeOfN i.val j.val} = 12（le_antisymm card_le_witness card_ge_witness——card_ge/card_le 同式 TableB1Aut:458）",
+   "coset_direction": "本工具链 Mathlib 的 Equiv.Perm 乘法为函数复合序（Mathlib/Algebra/Group/End.lean:68 instMul：mul f g := Equiv.trans g f，(e₁*e₂) i = e₁ (e₂ i)）——故函数复合 (σ₀∘s)(i)=σ₀(s i) 在 mul 记号下＝sigma0 * s（任务书 (iv) W=={σ₀ * tau n} 与本工具链一致）；设计师预锚 2026-10-24 的 ∘ 形数学内容不变（正向 {σ₀∘s : s∈Aut}==W 成立、反向 {s∘σ₀} 不成立），G5 两方向对账活体复验、NC3 天然判别",
+   "coset_uniqueness": "mem_witness_iff_coset : σ ∈ witnessSet ↔ σ₀⁻¹∘σ ∈ ttpAut（mul 形 sigma0.symm * σ）＋witness_coset_iff : witnessPred (σ₀ * s) ↔ ttpAutPred s＋witnessSet_eq_coset : witnessSet = (fun s => σ₀ * s) '' ttpAut",
+   "lex_min": "sigma0_lex_min : ∀ σ ∈ witnessSet, σ = σ₀ ∨ lexLess σ₀ σ（经 mem_witness_iff_table 桥化为 12 显式元 {σ₀ * tau n : n : Fin 12} 逐臂 kernel decide——首差 lex 序；首差索引 n=1 在位置 1、n=2..11 在位置 0，G5 独立重算对账）",
+   "set_bridge": "mem_witness_iff_table : σ ∈ witnessSet ↔ ∃ n : Fin 12, σ = sigma0 * tau n（消费 TableB1Aut mem_iff_in_table :474 经陪集唯一性）",
+   "table_convention": "repData：第 k 项＝第 k 个 i<j lex 对的 canonicalRep 色值（feedContract.pairIndexConvention 同约定；pairIdx i j = 8i − i(i−1)/2 + (j−i−1)）；repPair a b 取 min/max 序、a=b 哑值 9 与 nodeOfN 对角约定一致；sigRow0 image-tuple 约定与 TableB1Aut tblRow 一致"
+  },
+  "cross_checks": {
+   "conditionality": "无条件组合命题（|W|=12/陪集唯一性/lex-min）＋显式假设接口消费（pattern_cons_coset 之前件 PatternCons Y z ρ σ₀、pattern_ident_lift_sigma0 之前件 hT+h1+h2+hρ+hpat——L6/pattern 类条件假设在定理前提显式命名，D92-4 口径）",
+   "coset_discriminator": "反向 {s∘σ₀ : s∈Aut} != W（交叠 1 元、集合不等——天然判别；G5/NC3 活体）",
+   "labeled_total": 30240,
+   "lean_nodeOfN_loc": "formal/lean/ThomsonN9/TableB1.lean:823（namespace ThomsonN9.TableB1；本件 open (nodeOfN nuOfN) 后裸引）",
+   "nodeofn_impl": "r15_b1_data.nodeOfN_rule（import）／r22_pattern_numeric 主件移植／r22_b9aut_gate 几何直分类／本门 gate_node_of_n（新字面）——72/72 有序对对账零 mismatch（G5 活体）",
+   "patterncons_insertion": "TableB5Chain.lean:285–288 PatternCons def／:313 pattern_ident_lift——D92 裁决 2(δ) 预留插入点自此有显式 σ₀ 通道（R22A feedContract.consumer 同源）",
+   "sigma0_witness": "rep(σ₀ i, σ₀ j)==nodeOfN(i,j) ∀36 无序对（G5 独立重算零差；canonicalRep 与 nodeOfN 直比较本就 27/36 差——对齐性只在 σ₀-重排下成立，此为 l4_orbit 代表元标号设计而非缺陷）",
+   "w_disjoint_aut": "W∩Aut==∅（陪集 σ₀·Aut 与 Aut 相交 ⟺ σ₀∈Aut；σ₀∉Aut——对齐置换是真位移，G5 活体）",
+   "witness_count": 12
+  },
+  "gates": [
+   "G0 账本自锚(seed=20261023, heavy=0, theorem_count==regex 19, axiom_policy 三标准 set 相等, 自有件 sha256 严格锚, endgame 冻结锚)",
+   "G1 所有权+冻结面(r23 家族放行层)+表 B 十二件 Lean git diff 守卫+挑战件/references 零触碰+四账本 sha256+endgame.json 86863a09…+隔离面(r23a_witness 不入 endgame.json/citedCertificates/12 分区、不作 endgame_chain.py 输入、chain-only 干跑五字段零漂移+冻结 22 叶 D84-4/D93 口径)",
+   "G2 依赖序十二连 elaboration(TableB1Data→TableB1→TableB5Data→TableB5→Core→Trace→Polar→Uncond→ChainData→Chain→TableB1Aut→TableB1Witness, 各≤600s, 零 error 零 sorry)",
+   "G3 公理直查活体(19 定理 #print axioms ⊆ 三标准零 sorryAx)",
+   "G4 语句锚(import 恰三行 ThomsonN9+接口形四件+repData 36 行全在+σ₀ 行逐位+sigma0_witness decide 臂+陪集定理双向四件+card 头条 le_antisymm+lex-min 三件+见证无关性+σ₀ 实例锚+零 sorry+零 ≥15 位字面量+非交叠)",
+   "G5 第二实现面(独立实现 nodeOfN vs r15 72/72 对账+canonicalRep sha256 亲算+Lean repData/sigRow0 逐位+σ₀ 见证 36/36 重算+全 S₉ 禁采样 |W|==12==witnesses+陪集两方向对账反向必不等+lex-min==σ₀+W∩Aut==∅+9!/12==30240)",
+   "NC1 篹 rep 单色必拦(repData[5] 4→5: Lean 编译非零退出+sigma0_witness decide 臂错误行定位+数值重算 mismatch)",
+   "NC2 篹 σ₀ 表一元必拦(前两元交换保持双射: sigma0LexMin mismatch+见证 36 对 FAIL ∉W+陪集≠W)",
+   "NC3 篹陪集方向天然判别(反向 {s∘σ₀} != W 交叠 1 元集合不等——若形式件方向篹反 G5 正向对账即拦)",
+   "NC4 账本篡改面沿 r22b NC(theorem_count+1/axiom_policy 摘 propext → G0 校验逻辑必 GateFail)"
+  ],
+  "heavy_solves": 0,
+  "lean_import_face": [
+   "import Mathlib",
+   "import ThomsonN9.TableB1",
+   "import ThomsonN9.TableB1Aut",
+   "import ThomsonN9.TableB5Chain"
+  ],
+  "lean_namespace": "ThomsonN9.TableB1Witness",
+  "theorem_note": "TableB1Witness 19 定理：(i) rep 数据层 1（sigRow0_bij＋repData/pairIdx/repPair/sigma0 defs＋sigma0_witness 81 臂 decide）＋(ii) 载体与陪集 9（witnessPred_of_inline/inline_of_witnessPred 折射桥＋witness_coset_iff/mul_coset_left/mul_coset_right/mem_witness_iff_coset/mem_witness_iff_table/sigma0_mem_witness/sigma0_mem_witnessSet/witnessSet_eq_coset＋witnessPredDecidable/decidablePredWitnessPred/witnessFintype 实例面）＋(iii) card 3（card_le_witness/card_ge_witness/card_witness_eq_12 le_antisymm）＋(iv) lex-min 2（lex_min_arm 12 臂 decide/sigma0_lex_min＋lexLess/decidableLexLess）＋(v)(vi) 2（pattern_cons_coset/pattern_ident_lift_sigma0）",
+  "theorem_count": 19
+ },
+ "files": {
+  "formal/lean/ThomsonN9/TableB1Witness.lean": "8338ced638cf9c69e6685d31ff772cd3a04ff8518dac5fc57dec538a17ed84d3",
+  "notes/decisions.md": "git-append-only（D82 裁决 5：锚定哈希＝本账本首提交时点版本，后续轮次追加由字节前缀面放行）",
+  "numerics/bounds/r23a_witness_gate.py": "5db8165edeb5008917de630e6986d04ce9cd3c04e53be23b1727fe7f7aeeaf38",
+  "numerics/bounds/results/r23a_witness_ledger.json": "self",
+  "thomson-n9/numerics/bounds/r23a_witness_gate.py": "8b98bbccee486df35d3fa64acff8a3b7b2f9182e69a6982107747d56c8e60044"
+ },
+ "files_note": "锚定时点＝提交前终版（五件＋账本 self；decisions.md 按 D82 裁决 5 自始采用 git 溯源 append-only 验证，锚定哈希＝本账本首提交时点版本，后续轮次追加由字节前缀面放行，非追加篡改仍必拦）。",
+ "frozen_readonly_anchored": {
+  "endgame_json_sha256": "86863a09bf84e950e85fc5f902bc2b4046a87f06703bd782e5148fc119afd69f",
+  "ledgers": [
+   "m9_campaign.json",
+   "m10_campaign.json",
+   "hermite_v2_campaign.json",
+   "typed_ladder.json"
+  ]
+ },
+ "heavy_solves": 0,
+ "inputs": {
+  "formal/lean/ThomsonN9/TableB1Aut.lean": {
+   "note": "ttpAutPred/ttpAut/tau 12 行表/card_ttpAut_eq_12:458/head3_inj:156/mem_iff_in_table:474——只 import 冻结件",
+   "role": "frozen_dependency"
+  },
+  "formal/lean/ThomsonN9/TableB1.lean": {
+   "note": "nodeOfN 所在（TableB1.lean:823）——冻结件零改动只 import",
+   "role": "frozen_dependency"
+  },
+  "formal/lean/ThomsonN9/TableB5Chain.lean": {
+   "note": "PatternCons:285–288/pattern_ident_lift:313/TubePremise/identNode/perm_ne——冻结件零改动只 import",
+   "role": "frozen_dependency"
+  },
+  "numerics/bounds/results/r22_pattern_numeric.json": {
+   "note": "feedContract.canonicalRep/sigma0LexMin/witnesses/canonicalRepSha256——数据层同源转录（只读；sha256 锚＋G5 逐位对账）",
+   "role": "numeric_data_source"
+  }
+ },
+ "inputs_note": "R22A feed contract（σ₀=[0,5,6,4,2,1,7,3,8]＋12 见证＋canonicalRep 36 色数据层）与 R22B TableB1Aut（|Aut|=12 形式件）自此有形式消费者——D100 ④(1)(2) 合一、D101 裁决 1/2。",
+ "isolated_from_12_partition": {
+  "endgame_json_absent": true,
+  "note": "r23a_witness 家族（形式件＋门＋账本）非证书不入 12 分区（隔离面 G1 活体：tag 零出现在 endgame.json/endgame_chain.py 文本＋chain-only 干跑五字段零漂移＋冻结 22 叶）；assembledRecord 维持 47517790735835014335570/1844674407417822803119==25.759445973097478 零提升预期（wouldBe==E*）"
+ },
+ "kind": "n9-r23-witness-ledger",
+ "provenance": {
+  "acceptanceGate": "numerics/bounds/r23a_witness_gate.py（G0–G5＋NC1–NC4，seed 20261023）",
+  "commands": [
+   "lake env lean -o .lake/build/lib/lean/ThomsonN9/TableB1Witness.olean formal/lean/ThomsonN9/TableB1Witness.lean",
+   "python3 numerics/bounds/r23a_witness_gate.py"
+  ],
+  "deps": [
+   "elan/lake 工具链（Mathlib 传递闭包 ~13 文件 elaboration）＋其余 stdlib"
+  ],
+  "direction_note": "D102 留痕：任务书预锚 mul 记号行文（(e₁*e₂) i = e₂ (e₁ i) 下 σ₀∘s 即 s * σ₀）与本工具链 Mathlib 快照（End.lean:68 mul f g := Equiv.trans g f，(e₁*e₂) i = e₁ (e₂ i)）不一致——∘ 形数学内容不变，本工具链下 σ₀∘s＝sigma0 * s（任务书 (iv) 字面与此一致）；G5 正反两方向对账＋NC3 天然判别活体复验",
+  "seed": 20261023
+ },
+ "schema": "n9-r23-witness-ledger/1",
+ "seed": 20261023,
+ "task": "r23a-pattern-witness"
+}

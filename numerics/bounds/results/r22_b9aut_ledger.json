@@ -1,0 +1,119 @@
+{
+ "axiom_policy": [
+  "Classical.choice",
+  "Quot.sound",
+  "propext"
+ ],
+ "data": {
+  "axiom_check": {
+   "allowed": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+   ],
+   "forbidden_absent": [
+    "ofReduceBool",
+    "ofReduceNat",
+    "sorryAx",
+    "trustCompiler"
+   ],
+   "live_check": "#print axioms 于 TableB1Aut 全部 21 theorem（G3 活体；axcheck 逐定理输出解析）",
+   "note": "D82-4 口径：恰三标准 set 相等、零 sorryAx；本件纯 decide/norm_num/term-mode 构造——无 L6/pattern 类条件假设（|Aut|=12 为无条件组合命题，D97 可回滚点段口径）"
+  },
+  "bridge": {
+   "headline": "card_ttpAut_eq_12 : Fintype.card {σ : Equiv.Perm (Fin 9) // ∀ i j : Fin 9, i ≠ j → nodeOfN (σ i).val (σ j).val = nodeOfN i.val j.val} = 12（le_antisymm card_le card_ge）",
+   "orbit_stab_anchor": "card_factorial_anchor : Nat.factorial 9 / card = 30240（norm_num；与 l4_orbit.json survivorSet.labeledTotal==30240 及 r22_pattern_numeric.json F4 orbitStabilizer.orbitSize==30240/index==12/stabOrder==12 对账——数值层已 9! 全集亲证 orbit==幸存集（非采样逐位集合相等），形式层交付承重稳定子数 |Stab|=12）",
+   "set_bridge": "mem_iff_in_table : σ ∈ ttpAut ↔ ∃ n : Fin 12, σ = tau n（Set 形式 ↔ 12 显式表）",
+   "table_convention": "image-tuple：第 n 行在 k 处的像＝tblRow n.val k；与生成元轮换记法 (012)(345)(678)/(01)(34)(78)/(03)(14)(25) 的 image-tuple 一致（R22A F3 口径）"
+  },
+  "cross_checks": {
+   "aut_equals_r22_pattern_elements": "待 G5 活体验证（全 S₉ 扫描==Lean 12 行表==r22_pattern elements 逐位）",
+   "conditionality": "无条件（无显式假设接口需要命名——D92-4 对应面为空）",
+   "generators_span": "g₁=[1,2,0,4,5,3,7,8,6]/k=[1,0,2,4,3,5,6,8,7]/h=[3,4,5,0,1,2,6,7,8] 张成==全群（G5 活体）",
+   "labeled_total": 30240,
+   "lean_nodeOfN_loc": "formal/lean/ThomsonN9/TableB1.lean:823（namespace ThomsonN9.TableB1；本件 open 后裸引）",
+   "nodeofn_four_impl": "r15_b1_data.nodeOfN_rule（import）／r22_pattern_numeric 主件移植／r22_pattern_gate 几何直分类／本门 gate_node_of_n（第四实现）——36/36 两两对账零 mismatch（G5 活体）",
+   "order_distribution_lex": [
+    1,
+    2,
+    2,
+    3,
+    3,
+    2,
+    2,
+    2,
+    2,
+    6,
+    6,
+    2
+   ],
+   "order_multiset": {
+    "1": 1,
+    "2": 7,
+    "3": 2,
+    "6": 2
+   }
+  },
+  "gates": [
+   "G0 账本自锚(seed=20261022, heavy=0, theorem_count==regex 21, axiom_policy 三标准 set 相等, 自有件 sha256 严格锚, endgame 冻结锚)",
+   "G1 所有权+冻结面(r22 家族放行层)+表 B 十一件 Lean git diff 守卫+挑战件/references 零触碰+四账本 sha256+endgame.json 86863a09…+隔离面(chain-only 干跑五字段零漂移+冻结 22 叶)",
+   "G2 依赖序十一连 elaboration(TableB1Data→TableB1→TableB5Data→TableB5→Core→Trace→Polar→Uncond→ChainData→Chain→TableB1Aut, 各≤600s, 零 error 零 sorry)",
+   "G3 公理直查活体(21 定理 #print axioms ⊆ 三标准零 sorryAx)",
+   "G4 语句锚(import 恰两行+接口形四件+12 行表全在+上界链十牙+头条 12+锚 30240+零 sorry+零 ≥15 位字面量+非交叠)",
+   "G5 第二实现面(独立第四实现 nodeOfN vs r15 36/36 对账+Lean 源 12 行表逐位+全 S₉ 扫描禁采样 Aut==表==r22_pattern elements+生成元张成+阶分布+9!/12==30240==labeledTotal==orbitSize)",
+   "NC1 sorry 注入必拦(tau_mem→sorryAx)",
+   "NC2 篡 nodeOfN 相关锚必拦(端口 ν₂ 残差 1→5: r15 对账 mismatch+行判定 FAIL)",
+   "NC3 篡 12 表一元必拦(行 1 交换两元: 判定 FAIL+集合不等)"
+  ],
+  "heavy_solves": 0,
+  "lean_import_face": [
+   "import Mathlib",
+   "import ThomsonN9.TableB1"
+  ],
+  "lean_namespace": "ThomsonN9.TableB1Aut",
+  "theorem_note": "TableB1Aut 21 定理：(i) 载体 4（mem_ttpAut/mem_ttpAut_pred/ttpAutPredDecidable+ttpAutFintype 实例面）＋(ii) 下界 6（tblRow_bij/tau_mem 逐元 81 臂 decide/head3_inj 144 臂/tau_injective/card_ge＋tblRow def）＋(iii) 上界 11（nodeOfN_two_caps/caps_third 3 层 decide/third_cap_unique/not_cap_of_distinct 符号提升/nu2_partner/pin5_unique/partner_other_unique/sig_values/eq_tau_of_vals/upper 12 分支树/card_le）＋(iv) 头条 2（card_ttpAut_eq_12/card_factorial_anchor）＋桥 1（mem_iff_in_table）",
+  "theorem_count": 21,
+  "upper_bound_chain": "色 2 帽-帽边唯一 {(6,7),(6,8),(7,8)}（decide）⇒ σ6/σ7/σ8 三相异帽值＋帽值覆盖（caps_third＋third_cap_unique）×色 1 帽-棱 ν₂ 伙伴面（cap 6↔{2,5}、cap 7↔{0,3}、cap 8↔{1,4}；每 cap 恰 2 条、每棱顶恰 1 条——nu2_partner/pin5_unique/partner_other_unique）⇒ σ(0) 每帽排列恰 2 候选 ⇒ 3×2×2=12 分支全表、每分支 sig_values＋字面化＋eq_tau_of_vals 收口；单列翻转非自同构由色 4 错位面排除——同步翻转为仅余自由度（pin5/partnerOther 引理形）"
+ },
+ "files": {
+  "formal/lean/ThomsonN9/TableB1Aut.lean": "70409031fd92fc2a317e7af6751407bc1ede9fe7f4cb5465b6268f77041886f6",
+  "notes/decisions.md": "git-append-only（D82 裁决 5：锚定哈希＝本账本首提交时点版本，后续轮次追加由字节前缀面放行）",
+  "numerics/bounds/r22_b9aut_gate.py": "5c92509c951d3580254e174053fff76c51ef774a1a0a1abe9bff61084a7de668",
+  "numerics/bounds/results/r22_b9aut_ledger.json": "self",
+  "thomson-n9/numerics/bounds/r22_b9aut_gate.py": "99d77e1d662fe41c7c0b52e7bee5aa51fecc92546dc353b7628c0f89950a8ba9"
+ },
+ "files_note": "锚定时点＝提交前终版（五件＋账本 self；decisions.md 按 D82 裁决 5 自始采用 git 溯源 append-only 验证，锚定哈希＝本账本首提交时点版本，后续轮次追加由字节前缀面放行，非追加篡改仍必拦）。",
+ "frozen_readonly_anchored": {
+  "endgame_json_sha256": "86863a09bf84e950e85fc5f902bc2b4046a87f06703bd782e5148fc119afd69f",
+  "ledgers": [
+   "m9_campaign.json",
+   "m10_campaign.json",
+   "hermite_v2_campaign.json",
+   "typed_ladder.json"
+  ]
+ },
+ "heavy_solves": 0,
+ "inputs": {
+  "formal/lean/ThomsonN9/TableB1.lean": {
+   "note": "nodeOfN 所在（TableB1.lean:823）——冻结件零改动只 import",
+   "role": "frozen_dependency"
+  },
+  "numerics/bounds/results/l4_orbit.json": {
+   "sha256": "ef91484186fa02c11ba88ec736745d7f46257f4c5f93fe875b2cfd25706a2dc1"
+  },
+  "numerics/bounds/results/r22_pattern_numeric.json": {
+   "sha256": "da265b57ff8eef64bee8d9bfe5dd16960fd274dd5e5044f1fd3d43790cd71b18"
+  }
+ },
+ "kind": "n9-r22-b9aut-ledger",
+ "provenance": {
+  "read_only": true,
+  "seed_note": "seed 20261022 仅声明——本件流程无随机性（l4_orbit.py/r22_pattern_numeric.py 先例）"
+ },
+ "schema": {
+  "artifact_class": "lean_audit",
+  "note": "形式件审计记录；不入 endgame.json/citedCertificates/12 分区、不作 endgame_chain.py 输入（R11C–R22 先例）"
+ },
+ "seed": 20261022,
+ "task": "r22b-b9aut-lean"
+}

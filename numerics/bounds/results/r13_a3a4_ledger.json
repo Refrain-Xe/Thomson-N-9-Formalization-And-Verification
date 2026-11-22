@@ -1,0 +1,144 @@
+{
+ "kind": "n9-r13-tablea-a3a4",
+ "task": "r13a-tablea-a3a4",
+ "round": "R13",
+ "timestamp": "2026-10-10T13:50:49+00:00",
+ "authored_against": "c08e905",
+ "seed": 20261015,
+ "heavy_solves": 0,
+ "files": {
+  "formal/lean/ThomsonN9/TableA3.lean": {
+   "sha256": "7a7ce0e6065a2bee8e961256cfb2cacac0e48964f3cd446ef440c414f8ebf942",
+   "bytes": 7585
+  },
+  "formal/lean/ThomsonN9/TableA4.lean": {
+   "sha256": "89fba5ccc2f88b032fbe18098196397339392a962c0692f019649a52ee829dc4",
+   "bytes": 6566
+  },
+  "numerics/bounds/r13_a3a4_gate.py": {
+   "sha256": "e0a698d8cccf4c822871f324675fa033c449afe11168a8c6f316d113c74c2739",
+   "bytes": 44778
+  },
+  "thomson-n9/numerics/bounds/r13_a3a4_gate.py": {
+   "sha256": "7019c25daacba72c52b194b9d316b86075a11964eeaaf094feeb8f90044430a9",
+   "bytes": 1560,
+   "note": "CWD 兼容包装器（runpy→真实门，exit code 原样传播；沿 R10A 0087eab/R12B 先例，5237fe5 教训前移随门首发）"
+  },
+  "notes/tablea-lean.md": {
+   "sha256": "517df4b296bbf33d617942bcb281ee9695536bbee124848a018d65f3ff243cd8",
+   "bytes": 33064,
+   "note": "§7 append-only 追加（A3/A4 推进留痕含证法取舍 D-r13a-1…6；§7.7 首验返工补记 D53-4）"
+  },
+  "notes/decisions.md": {
+   "sha256": "d7f012a9b6550e063d3ec2df9997c0c6e3e28176454aee74c5d1d9d64000ff6b",
+   "bytes": 288455,
+   "note": "D53 追加（append-only，r13a 三裁决＋D53-4 首验返工补记）"
+  },
+  "numerics/bounds/results/r13_a3a4_ledger.json": {
+   "note": "本件自身（自指不做 sha256，见 git 提交历史）"
+  }
+ },
+ "lean": {
+  "toolchain": "leanprover/lean4:v4.34.1",
+  "mathlib_rev": "118aa17ee84656b8bd727fef7c458ee8c833385c",
+  "single_file_elaboration": {
+   "TableA3.lean": {
+    "cmd": "lake env lean ThomsonN9/TableA3.lean（CWD=formal/lean）",
+    "exit": 0,
+    "wall_s": 4.0
+   },
+   "TableA4.lean": {
+    "cmd": "lake env lean ThomsonN9/TableA4.lean（CWD=formal/lean）",
+    "exit": 0,
+    "wall_s": 4.0
+   }
+  },
+  "olean_build": {
+   "TableA3": "lake env lean -o .lake/build/lib/lean/ThomsonN9/TableA3.olean ThomsonN9/TableA3.lean（gitignored 构建产物位）",
+   "TableA4": "lake env lean -o .lake/build/lib/lean/ThomsonN9/TableA4.olean ThomsonN9/TableA4.lean"
+  },
+  "axioms": {
+   "union": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+   ],
+   "theorem_count": 16,
+   "note": "TableA3 七定理＋TableA4 九定理全部 #print axioms 亲验 ⊆ {propext, Classical.choice, Quot.sound}；无 sorryAx/ofReduceBool/ofReduceNat/trustCompiler"
+  }
+ },
+ "tablea": {
+  "A3": {
+   "a_counts": {
+    "statement": "C(9,3)=84 三点组按类型分桶：AAA 3类×1、AAB 6类×9、ABC 1类×27；3·1+6·9+1·27=84",
+    "theorems": [
+     "card_allTriples",
+     "bucket_table",
+     "image_buckets",
+     "bucket_partition",
+     "orbit_totals",
+     "a3_typed_counting"
+    ],
+    "method": "显式枚举表＋decide（card/image/partition 配 maxRecDepth 1000000；分拆求和走 Finset.card_eq_sum_card_image）"
+   },
+   "b_l1_normalization": {
+    "statement": "3c_A+54c_B+27c_C−9·ΣF⁽⁰⁾−e == 0（ℚ 精确）",
+    "theorem": "a3_l1_normalization",
+    "constants_from": {
+     "c_A": "certificates/n9-stage-a4-typedcap-m0748_M9.json :: blocks.c_A = 0",
+     "c_B": "… :: blocks.c_B = 140609170236263/281474976710656",
+     "c_C": "… :: blocks.c_C = 20717/7599824371187712",
+     "e": "… :: blocks.e = 7250752630179179/281474976710656",
+     "sumF0": "… :: blocks.F0 9×9 全 81 元素 Fraction 重加 = 9503960072215/70368744177664"
+    },
+    "chain": "results/r9_s3_rederive.json（inputs.certificate_is_sole_derivation_input=true）→ M9 证书重读重算（门 G5）"
+   }
+  },
+  "A4": {
+   "def_Q": "Q₀=1、Q₁=t−u·v、Q_{j+2}=2(t−u·v)·Q_{j+1}−(1−u²−v²+u²v²)·Q_j",
+   "theorems": [
+    "Q_symm",
+    "Q_zero",
+    "Q_one",
+    "Q_two",
+    "Q_three",
+    "Q_four",
+    "Q_five",
+    "ycol_count",
+    "Kcol_two_three_one"
+   ],
+   "symmetry": "Nat.strongRecOn 强归纳（0/1/j+2 三态），步骤 ring",
+   "ycol_count": "∑_{k<6}(9−k)² = 81+64+49+36+25+16 = 271（decide；M=9、K=6）",
+   "stretch": "Kcol_two_three_one：非平凡列 (k,a,b)=(2,3,1) 的 K_col=−2(Y+Y^{(u,t,v)}+Y^{(v,t,u)}) 完全展开（ring）",
+   "not_in_scope": "271 列全符号装配（数值面由 r13c A1 实例＋Python 第二实现承担）"
+  }
+ },
+ "gate": {
+  "script": "numerics/bounds/r13_a3a4_gate.py",
+  "seed": 20261015,
+  "steps": {
+   "G0_ledger": true,
+   "G1_ownership": "PASS（三层放行：OWNED ∪ R13A_G1_ALLOW_FOREIGN ∪ PARALLEL_FAMILY D53-4；家族外字面拦截探针实证）",
+   "G2_elaboration": true,
+   "G3_axioms": true,
+   "G4_statement_regex": true,
+   "G5_offline_exact": true,
+   "NC1_sorry_injection_caught": true,
+   "NC2_literal_tamper_caught": true
+  },
+  "wall_s": 32.3,
+  "routes": {
+   "repo_root_real": "python3 numerics/bounds/r13_a3a4_gate.py",
+   "repo_root_wrapper": "python3 thomson-n9/numerics/bounds/r13_a3a4_gate.py（CWD=仓库根，命中包装器）",
+   "campaign_root": "python3 thomson-n9/numerics/bounds/r13_a3a4_gate.py（CWD=campaign 根，直接命中真实门）"
+  },
+  "self_run_note": "官方自跑两轮：首轮（首验前）三路由 exit 0——仓库根真实门 27.9s/包装器 26.9s/campaign 根 27.9s；首验 G1 拦 r13c 在途 TableA1.lean（设计内）后返工 D53-4（G1 增 PARALLEL_FAMILY 并行家族放行层），返工后三路由复跑 exit 0（真实门 32.3s〔/tmp/r13a_gate_fix2.log〕/campaign 根 32.3s〔fix2_campaign〕/包装器 28.4s〔fix2_wrapper〕，r13b 在途件 TableA6.lean+TableA6/+r13_a6_data.* 在场并被响亮放行）；家族外探针 aaa_zz_foreign_probe.py 实测必拦。验收运行不设 R13A_G1_ALLOW_FOREIGN（家族 pattern 已覆盖 D52 三线交付面）。"
+ },
+ "provenance": {
+  "design": "D52（commit c08e905）：r13a a3a4 合并件，与 r13b/r13c 文件面零交叠",
+  "non_interference": "两 Lean 件仅 import Mathlib；Solution.lean/ThomsonN9.lean/M1Data.lean/lakefile.toml/scripts/check.sh/TableA.lean 零 TableA3/TableA4 引用（门 G4 机器化核验）",
+  "readonly_inputs": "certificates/n9-stage-a4-typedcap-m0748_M9.json 与 results/r9_s3_rederive.json 零改动（门 G1 显式 git diff 守卫）",
+  "decisions": "decisions.md D53（三裁决）＋notes/tablea-lean.md §7.5（D-r13a-1…5 证法取舍）",
+  "no_solver": "heavySolves=0：无 LP/SDP/重求解调用；本轮 0.037 当量预算全额留作储备（D49 裁决 4 沿用）"
+ }
+}

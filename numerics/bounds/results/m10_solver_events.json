@@ -1,0 +1,52 @@
+{
+ "kind": "thomson-n9/bounds/m10-solver-events/1",
+ "note": "R7A M10 双片战役求解操作日志（执行员手工维护的运行事实：后台启动/完成/失败）。只记事实，不参与任何界值计算；m10_campaign.py 原样并入 campaign solver_events 字段。时间戳＝本机真实本地时间带 +08:00 偏移（不复刻 R8 m9_solver_events.json 的 Z 后缀笔误）。",
+ "events": [
+  {
+   "piece": "m079-m765",
+   "event": "launched",
+   "ts": "2026-10-07T14:47:54+08:00",
+   "runner": "nohup numerics/.venv/bin/python numerics/bounds/strips_final.py --strip=\"-0.79:-0.765\" --M 10 --ks 48 56 64（后台 pid 78904，日志 /tmp/r7a_s2_m079_m10.log）",
+   "sdpa_param": "默认 PARAM_SDPA（maxIter 500／betaStar 0.1／betaBar 0.3／precision 200）",
+   "detail": "export m=4104 entries=486546 blocks=43 n_lp=195；片 2（Lukács 引擎，等号形式 D21 裁决 2）；与片 3 并行，连同 R7B cap M9（pid 78833）全局恰 3 并发 SDPA＝D27 裁决 2 上限"
+  },
+  {
+   "piece": "m765-m748",
+   "event": "launched",
+   "ts": "2026-10-07T14:47:58+08:00",
+   "runner": "nohup python3 numerics/bounds/hermite_ladder.py --strip=\"-0.765:-0.748\" --M 10 --ks 48 56 64 --k-minor 48（后台 pid 78906，日志 /tmp/r7a_s3_m765_m10.log）",
+   "sdpa_param": "默认 PARAM_SDPA（maxIter 500／betaStar 0.1／betaBar 0.3／precision 200）",
+   "detail": "export m=3990 entries=481248 blocks=29 n_lp=81；片 3（a5 Hermite 固定 minorant 引擎，k_minor=48）；开工前置已按 D27 裁决 6 放宽 hermite_ladder 条带内部超时 43200→172800（a5 M9 实测 30227.0s×2.74≈23h 超旧 12h 上限）"
+  },
+  {
+   "piece": "m079-m765",
+   "event": "rss_poll",
+   "ts": "2026-10-07T15:00:00+08:00",
+   "detail": "双解并行健康：s2 sdpa_gmp（pid 78914）RSS≈1.2GB、s3 sdpa_gmp（pid 78919）RSS≈1.4-1.6GB、R7B cap M9（pid 78833）RSS≈0.94GB——全 <6GB 护栏，维持 3 并发（D27 裁决 2 轮询条款未触发回落）"
+  },
+  {
+   "piece": "m765-m748",
+   "event": "solved_blocked",
+   "ts": "2026-10-08T09:07:00+08:00",
+   "detail": "sdpa_gmp 64025.9s 后 noINFO@56 停滞（mu=3.62e-09 relgap=3.57e-07），停滞点认证通过（回读恒等式残差 R1≈1.3e-21 ≪ STALLED_R1_TOL，pdOPT 未达但解可行）；e_raw=25.759953013921908；certified(2^-48)=7250781808668634923/281474976710656000=25.759951713654896 ≤ E* ⇒ blocked（lift vs M9=+1.29496e-4 < 需 +1.643130e-4，斜率保持比 36.11% < 45.82%——M8→M9 斜率未保持）；blocked 行已由引擎自动落 hermite_strips.json"
+  },
+  {
+   "piece": "m079-m765",
+   "event": "rss_poll",
+   "ts": "2026-10-08T09:10:00+08:00",
+   "detail": "s3 完成后 s2（pid 78914）独跑，RSS≈1.4GB <6GB 护栏；全程监控 /tmp/r7a_rss_samples.log 零 GUARD 记录（5 分钟采样）"
+  },
+  {
+   "piece": "m079-m765",
+   "event": "solved_certified",
+   "ts": "2026-10-09T02:09:00+08:00",
+   "detail": "pdOPT iter=110 solve_s=121039.7（33.6h）；e_raw=25.760011263538935；certified(2^-48)=152060258133670143773900800000000000000000000000000000000000/5902963308524955309028900129512648637307845623943222995001=25.759987007553885 > E*（正裕度 +4.7655e-7——窄但精确为正）⇒ 翻正！证书 certificates/n9-stage-a4-strip-m079-m765_M10.json（回读重算逐位一致＋42 PSD 块 LDLᵀ ✓）；lift vs M9=+1.41381e-4 ≥ 需 +1.40905e-4（斜率保持比 45.624% ≥ 45.470%，勉强过阈）；认证链 4821s；行已由引擎自动落 strips.json strips[]"
+  },
+  {
+   "piece": "m079-m765",
+   "event": "rss_summary",
+   "ts": "2026-10-09T02:20:00+08:00",
+   "detail": "全程 RSS 采样收口：s2 sdpa 峰值 1.46GB、s3 峰值 1.47GB、R7B cap M9 峰值 0.89GB——零 GUARD 记录，D27 裁决 2 的 6GB 回落条款全程未触发，3 并发维持到底；战役总求解 121039.7+64025.9=185065.6s=17.136 当量 ≤19（gate ⑦）"
+  }
+ ]
+}

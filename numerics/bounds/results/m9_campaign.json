@@ -1,0 +1,399 @@
+{
+ "kind": "thomson-n9/bounds/m9-campaign/1",
+ "schema": 1,
+ "script": "numerics/bounds/m9_campaign.py",
+ "seed": 20261008,
+ "E_star": {
+  "value": "25759986531/1000000000",
+  "float": 25.759986531
+ },
+ "engine_assignment": {
+  "rule": "D19 裁决 2：按 M8 逐片最优选引擎",
+  "rows": {
+   "m082-m079": "lukacs",
+   "m079-m765": "lukacs",
+   "m765-m748": "a5-hermite",
+   "m0748": "typed"
+  }
+ },
+ "m8_baselines": {
+  "m082-m079": {
+   "engine": "lukacs",
+   "certified": "25.759782985769",
+   "certified_float": 25.759782985769,
+   "source": "GAP-REPORT.md:1313（Round 7 账面 best_certified_attempt，无存档证书）"
+  },
+  "m079-m765": {
+   "engine": "lukacs",
+   "certified": "25.759535741156",
+   "certified_float": 25.759535741156,
+   "source": "GAP-REPORT.md:1314（Round 7 账面 best_certified_attempt，无存档证书）"
+  },
+  "m765-m748": {
+   "engine": "a5-hermite",
+   "certified": "7250644412926184559/281474976710656000",
+   "certified_float": 25.759463585921285,
+   "source": "results/hermite_strips.json（M8 行，精确分数）"
+  },
+  "m0748": {
+   "engine": "typed",
+   "certified": "93712774192614269082019881043884635719865006109330352046526968479156494140625/3637978812512164763811573465387274966467532527973356366318401998010742048629",
+   "certified_float": 25.759571185600716,
+   "source": "results/typed_ladder.json（m0748 M8 行，精确分数）"
+  }
+ },
+ "canary": {
+  "piece": "m082-m079",
+  "engine": "lukacs",
+  "baseline": "25.759782985769",
+  "baseline_float": 25.759782985769,
+  "threshold": "1/10000",
+  "threshold_float": 0.0001,
+  "rule": "lift1 = certified(M9) − baseline ≥ +1/10000 ⇒ 继续；否则中止后续求解",
+  "decision": "continue",
+  "lift1": "11524663095791726091509002991659041125980165146856945767148546799041/29802333206465963156760571016297808842833755371269862617511000000000000",
+  "lift1_float": 0.0003867033837904784,
+  "certified_source": "certified"
+ },
+ "rows": [
+  {
+   "piece": "m082-m079",
+   "kind": "strip",
+   "engine": "lukacs",
+   "lo": "-41/50",
+   "hi": "-79/100",
+   "M": 9,
+   "K": 6,
+   "assertion": "certified>E*",
+   "cmd": "numerics/.venv/bin/python numerics/bounds/strips_final.py --strip=\"-0.82:-0.79\" --M 9 --ks 48 56 64",
+   "status": "certified",
+   "e_raw": 25.760180142817564,
+   "certified": "24566821136999558261408693748961695746402256190776824951171875/953674662606910821016338272521529882970680171880635603760352",
+   "certified_float": 25.76016968915279,
+   "round_bits": 48,
+   "minorant_k": null,
+   "certificate": "certificates/n9-stage-a4-strip-m082-m079_M9.json",
+   "solution": "numerics/bounds/results/strip_sol_m082-m079_M9.json",
+   "solve_s": 31536.3,
+   "sdpa": {
+    "phase_value": "pdOPT",
+    "iteration": 92,
+    "stalled_point": null,
+    "mu": 6.864634936250142e-26,
+    "relative_gap": 5.970460368309815e-79,
+    "p_feas_error": "7.6134733569131708e-31",
+    "d_feas_error": "4.1570887823051884e-41",
+    "reused": false,
+    "solve_s": 31536.3
+   },
+   "provenance": {
+    "seed": 20261008,
+    "code_version": "9ff2921-dirty",
+    "ks": [
+     48,
+     56,
+     64
+    ]
+   },
+   "margin_vs_E_star": {
+    "value": "5458540298942640927128683352454798860271725715214330817329005659/29802333206465963156760571016297808842833755371269862617511000000000",
+    "float": 0.0001831581527904784
+   },
+   "lift": {
+    "value": "11524663095791726091509002991659041125980165146856945767148546799041/29802333206465963156760571016297808842833755371269862617511000000000000",
+    "float": 0.0003867033837904784
+   },
+   "margin_vs_m8_best": {
+    "value": "11524663095791726091509002991659041125980165146856945767148546799041/29802333206465963156760571016297808842833755371269862617511000000000000",
+    "float": 0.0003867033837904784
+   }
+  },
+  {
+   "piece": "m079-m765",
+   "kind": "strip",
+   "engine": "lukacs",
+   "lo": "-79/100",
+   "hi": "-153/200",
+   "M": 9,
+   "K": 6,
+   "assertion": "certified>E*",
+   "cmd": "numerics/.venv/bin/python numerics/bounds/strips_final.py --strip=\"-0.79:-0.765\" --M 9 --ks 48 56 64",
+   "status": "blocked",
+   "solution": "numerics/bounds/results/strip_sol_m079-m765_M9.json",
+   "solve_s": 40741.8,
+   "certificate": null,
+   "sdpa": {
+    "phase_value": "pdOPT",
+    "iteration": 93,
+    "stalled_point": null,
+    "mu": 5.751558746828703e-26,
+    "relative_gap": 2.7644845724045727e-79,
+    "p_feas_error": "3.8203499686703381e-31",
+    "d_feas_error": "5.4762117312261914e-41",
+    "reused": false,
+    "solve_s": 40741.8
+   },
+   "provenance": {
+    "seed": 20261008,
+    "code_version": "43af482",
+    "ks": [
+     48,
+     56,
+     64
+    ]
+   },
+   "e_raw": 25.75986153389163,
+   "blocked_detail": {
+    "attempts": {
+     "48": {
+      "ok": true,
+      "certified": "3475642898238970185908224000000000000000000000000000000/134924834145762099104247598204368636428755477065976183",
+      "certified_float": 25.759845622520174,
+      "R1": {
+       "A": "3367953719/197032483697459200",
+       "B": "1092076433/84442493013196800",
+       "G": "2554082569/197032483697459200"
+      },
+      "R2": {
+       "A": "542446405650990533187430580455001288339461833281/944473296573929042739200000000000000000000000000000000",
+       "B": "1825965493465431155327877136765095410753430267/118059162071741130342400000000000000000000000000000000",
+       "C": "97671327667749505612738987993097393978538281187/2361183241434822606848000000000000000000000000000000000"
+      },
+      "deflation": "15713718313/14073748835532800",
+      "R2max": "542446405650990533187430580455001288339461833281/944473296573929042739200000000000000000000000000000000"
+     },
+     "56": {
+      "ok": true,
+      "certified": "24329500291131891337134080000000000000000000000000000000/944473839020334693729733187430580455001288339461833281",
+      "certified_float": 25.759845626182635,
+      "R1": {
+       "A": "30757340771/1801439850948198400",
+       "B": "34834864421/2702159776422297600",
+       "G": "162816129031/12610078956637388800"
+      },
+      "R2": {
+       "A": "542446405650990533187430580455001288339461833281/944473296573929042739200000000000000000000000000000000",
+       "B": "1381677571224547549774094752772098190158044651/590295810358705651712000000000000000000000000000000000",
+       "C": "1481552742538038220448996326895104644982973217/2361183241434822606848000000000000000000000000000000000"
+      },
+      "deflation": "100237911717/90071992547409920",
+      "R2max": "542446405650990533187430580455001288339461833281/944473296573929042739200000000000000000000000000000000"
+     },
+     "64": {
+      "ok": true,
+      "certified": "24329500291136464800016384000000000000000000000000000000/944473839020334693729733187430580455001288339461833281",
+      "certified_float": 25.759845626187477,
+      "R1": {
+       "A": "110234206337499/6456360425798343065600",
+       "B": "14268304325437/1106804644422573096960",
+       "G": "20840344599097/1614090106449585766400"
+      },
+      "R2": {
+       "A": "542446405650990533187430580455001288339461833281/944473296573929042739200000000000000000000000000000000",
+       "B": "1381677571224547549774094752772098190158044651/590295810358705651712000000000000000000000000000000000",
+       "C": "1481539248671217184087642303855104644982973217/2361183241434822606848000000000000000000000000000000000"
+      },
+      "deflation": "513215874854867/461168601842738790400",
+      "R2max": "542446405650990533187430580455001288339461833281/944473296573929042739200000000000000000000000000000000"
+     }
+    },
+    "best_certified_attempt": "24329500291136464800016384000000000000000000000000000000/944473839020334693729733187430580455001288339461833281",
+    "best_certified_attempt_float": 25.759845626187477,
+    "best_k": 64,
+    "method": "slab_band.certify_slab(E_star=0)（关正裕度断言，其余链照跑），ks=48/56/64 全算取最大，精确 Fraction"
+   },
+   "best_certified_attempt": "24329500291136464800016384000000000000000000000000000000/944473839020334693729733187430580455001288339461833281",
+   "best_certified_attempt_float": 25.759845626187477,
+   "margin_vs_E_star": {
+    "value": "-133080909219145573553062435451018345039212184181107127538211/944473839020334693729733187430580455001288339461833281000000000",
+    "float": -0.00014090481252205476
+   },
+   "lift": {
+    "value": "73169576333728053965287941568108944775066901540977935289446791/236118459755083673432433296857645113750322084865458320250000000000",
+    "float": 0.00030988503147794523
+   },
+   "margin_vs_m8_best": {
+    "value": "73169576333728053965287941568108944775066901540977935289446791/236118459755083673432433296857645113750322084865458320250000000000",
+    "float": 0.00030988503147794523
+   }
+  },
+  {
+   "piece": "m765-m748",
+   "kind": "strip",
+   "engine": "a5-hermite",
+   "lo": "-153/200",
+   "hi": "-187/250",
+   "M": 9,
+   "K": 6,
+   "assertion": "certified>E*",
+   "cmd": "python3 numerics/bounds/hermite_ladder.py --strip=\"-0.765:-0.748\" --M 9 --ks 48 56 64 --k-minor 48",
+   "status": "blocked",
+   "e_raw": 25.759823300625257,
+   "certified": "725074535887477029/28147497671065600",
+   "certified_float": 25.759822217973642,
+   "round_bits": 48,
+   "minorant_k": 48,
+   "certificate": null,
+   "solution": "numerics/bounds/results/hermite_strip_sol_m765-m748_M9.json",
+   "solve_s": 30226.8,
+   "sdpa": {
+    "phase_value": "pdOPT",
+    "iteration": 90,
+    "stalled_point": false,
+    "mu": 5.918107818748554e-25,
+    "relative_gap": 4.216802067215045e-79,
+    "p_feas_error": "9.7339040468726124e-31",
+    "d_feas_error": "1.8640355725038831e-48",
+    "reused": false,
+    "solve_s": 30226.8
+   },
+   "provenance": {
+    "seed": 20261008,
+    "code_version": "43af482-dirty",
+    "ks": [
+     48,
+     56,
+     64
+    ]
+   },
+   "best_certified_attempt": "725074535887477029/28147497671065600",
+   "best_certified_attempt_float": 25.759822217973642,
+   "margin_vs_E_star": {
+    "value": "-361328166148079487/2199023255552000000000",
+    "float": -0.00016431302635650332
+   },
+   "lift": {
+    "value": "100945948585731/281474976710656000",
+    "float": 0.0003586320523600186
+   },
+   "margin_vs_m8_best": {
+    "value": "100945948585731/281474976710656000",
+    "float": 0.0003586320523600186
+   }
+  },
+  {
+   "piece": "m0748",
+   "kind": "cap",
+   "engine": "typed",
+   "lo": "-187/250",
+   "hi": "1",
+   "M": 9,
+   "K": 6,
+   "assertion": "0<certified<=E*+1e-6",
+   "cmd": "numerics/.venv/bin/python numerics/bounds/typed_ladder.py --rung -0.748 --M 9 --ks 48 56 64",
+   "status": "not_run",
+   "e_raw": null,
+   "certified": null,
+   "certified_float": null,
+   "certificate": null,
+   "solution": null,
+   "solve_s": null,
+   "sdpa": null,
+   "provenance": {
+    "seed": 20261008,
+    "ks": [
+     48,
+     56,
+     64
+    ]
+   },
+   "reason": "前置条带未全翻正 ⇒ cap 不解（不改变拼合 min，省预算）"
+  }
+ ],
+ "record_prospective": {
+  "note": "provisional——正式 assembledRecord 由 endgame_chain.py（R8-4 收口）按证书口径重判；本字段只做战役侧前瞻，口径＝10 原子区域取 min、洞片以 M9 证书替换 HP 兜底（三片全翻时）、cap 片取 M9（已认证时）",
+  "all_three_strips_flipped": false,
+  "value": "47517790735835014335570/1844674407417822803119",
+  "float": 25.759445973097478,
+  "margin_vs_E_star": -0.0005405579025207914,
+  "bottleneck": "洞未全翻正 ⇒ 维持 HP m∈[−9/10,1]（兜底，条带受阻/未落盘）（1 片并列全局最弱）",
+  "unchanged_from_round7": true
+ },
+ "budget": {
+  "unit": "(8,6)-当量 = 10800s SDPA-GMP 求解墙钟（M8 实测 10044–11793s）",
+  "per_piece": {
+   "m082-m079": {
+    "solve_s": 31536.3,
+    "equivalents": 2.92
+   },
+   "m079-m765": {
+    "solve_s": 40741.8,
+    "equivalents": 3.772
+   },
+   "m765-m748": {
+    "solve_s": 30226.8,
+    "equivalents": 2.799
+   },
+   "m0748": {
+    "solve_s": null,
+    "equivalents": null
+   }
+  },
+  "total_solve_s": 102504.9,
+  "total_equivalents": 9.491,
+  "round_budget": "R8-1 ≤ 13 当量（D19 预算与并行）"
+ },
+ "solver_events": {
+  "m082-m079": [
+   {
+    "piece": "m082-m079",
+    "event": "launched",
+    "ts": "2026-10-06T04:26:00Z",
+    "runner": "nohup numerics/.venv/bin/python numerics/bounds/strips_final.py --strip=\"-0.82:-0.79\" --M 9 --ks 48 56 64（后台 exec id a63726f3，日志 /tmp/r81_canary_m082_m9.log）",
+    "sdpa_param": "默认 PARAM_SDPA（maxIter 500／betaStar 0.1／betaBar 0.3／precision 200）",
+    "detail": "export m=3009 entries=262280 blocks=43；canary 片（lift₁ 决定后续三解去留）"
+   },
+   {
+    "piece": "m082-m079",
+    "event": "solved",
+    "ts": "2026-10-06T13:15:00Z",
+    "detail": "pdOPT iter=92 solve_s=31536.3；e_raw=25.760180142817564；certified(k=48 首过)=25.76016968915279；lift1=+3.8670338379e-4 ≥ +1e-4 ⇒ continue"
+   }
+  ],
+  "m079-m765": [
+   {
+    "piece": "m079-m765",
+    "event": "launched",
+    "ts": "2026-10-06T13:16:00Z",
+    "runner": "nohup numerics/.venv/bin/python numerics/bounds/strips_final.py --strip=\"-0.79:-0.765\" --M 9 --ks 48 56 64（后台，日志 /tmp/r81_s2_m079_m9.log）",
+    "sdpa_param": "默认 PARAM_SDPA",
+    "detail": "canary 通过后的片 2（Lukács 引擎）"
+   },
+   {
+    "piece": "m079-m765",
+    "event": "solved_blocked",
+    "ts": "2026-10-07T01:25:00Z",
+    "detail": "pdOPT iter=93 solve_s=40742.4；e_raw=25.759861533891630；certified 尝试 k48/56/64=25.759845622520/…626183/…626187 全 ≤ E* ⇒ blocked（lift vs M8 best≈+3.10e-4，翻正需 +4.51e-4——阶梯斜率此片不足）"
+   }
+  ],
+  "m765-m748": [
+   {
+    "piece": "m765-m748",
+    "event": "launched",
+    "ts": "2026-10-07T01:26:00Z",
+    "runner": "nohup python3 numerics/bounds/hermite_ladder.py --strip=\"-0.765:-0.748\" --M 9 --ks 48 56 64 --k-minor 48（后台，日志 /tmp/r81_s3_m765_m9.log）",
+    "sdpa_param": "默认 PARAM_SDPA",
+    "detail": "片 3（a5 Hermite 固定 minorant 引擎）；片 2 blocked 不豁免本片（任务书②链仅 canary 门控；本片为 a5 引擎独立数据点＋若翻正仍为有效证书）"
+   },
+   {
+    "piece": "m765-m748",
+    "event": "solved_blocked",
+    "ts": "2026-10-07T15:15:00Z",
+    "detail": "pdOPT iter=90 solve_s=30227.0（无停滞，比 M8 的 noINFO@49 更干净）；e_raw=25.759823300625257；certified(k=48)=25.759822217974 ≤ E* ⇒ blocked（lift vs M8 a5 best=+3.5863e-4，翻正需 +5.2295e-4——斜率仍不足）"
+   }
+  ],
+  "m0748": [
+   {
+    "piece": "m0748",
+    "event": "skipped_by_clause",
+    "ts": "2026-10-07T15:16:00Z",
+    "detail": "条带未全翻正（片2/片3 blocked）⇒ 按 D19 裁决 2 条款 cap M9 不解：洞仍由 HP 兜底（25.759445973 为拼合瓶颈），cap 抬升不改变 assembledRecord min，省 ~9h/~3 当量"
+   }
+  ]
+ },
+ "assertions": {
+  "strip": "certified>E*（exclusion 片；违反＝blocked 行带 best_certified_attempt＋lift 实测）",
+  "cap": "0<certified≤E*+1e-6（TTP-covering 片）",
+  "iron": "全部 TTP-covering 下界 ≤ E*+1e-6（精确 Fraction）"
+ }
+}

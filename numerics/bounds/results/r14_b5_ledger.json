@@ -1,0 +1,90 @@
+{
+ "kind": "n9-r14-b5-ledger",
+ "task": "r14a-b5-procrustes-lean",
+ "seed": 20261016,
+ "heavy_solves": 0,
+ "files": {
+  "formal/lean/ThomsonN9/TableB5Data.lean": "76be87430682db5ea8cb6ba1d8616c2bc554d2f12977272e470ebaf1c4f61977",
+  "formal/lean/ThomsonN9/TableB5.lean": "8a74a9781323d4bc8ff9989a96385850130701a52cf75ef02b990a063041d475",
+  "numerics/bounds/r14_b5_data.py": "2568e01c59695cdc612b899d48542a1414d20fb3faf112c1b88a7480701b723d",
+  "numerics/bounds/r14_b5_gate.py": "29be15a43a51a71abd70138123cdbe5142424409083c01f1b3b88039a69b9112",
+  "thomson-n9/numerics/bounds/r14_b5_gate.py": "006752c130585d5b96c39b02ed968658fb029a515c44d0d0b510c9f5c16ba5d2",
+  "numerics/bounds/results/r14_b5_data.json": "da52b2e3e6fc3343ea7a8e3ec7e299afbf7fd6fc675d496c9bcac77f55c0d122",
+  "notes/tableb-lean.md": "498863ad7b776af7d1d94f186725103f48a31ce459e68b3d84009ee913f36b82",
+  "numerics/bounds/results/r14_b5_ledger.json": "self"
+ },
+ "files_note": "锚定时点＝提交前终版（发射器确定性重跑后逐件 sha256；TableB5Data.lean 重跑前后字节一致 76be8743…977 亲验）",
+ "data": {
+  "json": "numerics/bounds/results/r14_b5_data.json",
+  "lean_defs": 24,
+  "lean_theorems_data": 33,
+  "lean_theorems_main": 17,
+  "lean_theorems_total": 50,
+  "theorem_note": "D56 预计 18–30 定理为单主件口径；实际拆分 Data 33（生成）＋Main 17（手写）＝50，账本记锚",
+  "spot_checks": {
+   "points": 3,
+   "per_point_theorems": 2,
+   "scheme_seed": 20261016
+  },
+  "assembly_identities": 4,
+  "sqrt_bounds": 4,
+  "inputs": {
+   "l4_json": "numerics/bounds/results/l4.json（只读；sha256 见 r14_b5_data.json inputs）",
+   "local_min_json": "numerics/bounds/results/local_min.json（只读；同上）"
+  }
+ },
+ "lean": {
+  "files": [
+   "formal/lean/ThomsonN9/TableB5Data.lean",
+   "formal/lean/ThomsonN9/TableB5.lean"
+  ],
+  "elaboration_wall_s": {
+   "TableB5Data.lean": "20.9–55.6s（三路由＋自跑带内：55.6/45.8/28.8/53.4/44.7/32.2s）",
+   "TableB5.lean": "20.9–54.3s（同上带内：20.9/26.9/35.6/32.4/41.5/54.3s）",
+   "dedicated_note": "全部实测 ≤600s 界的 1/10 量级；无并行重编译争用（本轮无姊妹会话）"
+  },
+  "elaboration_limit_s_per_file": 600,
+  "theorem_count": 50,
+  "axiom_policy": "⊆ {propext, Classical.choice, Quot.sound}；零 sorryAx/ofReduceBool/ofReduceNat/trustCompiler",
+  "proof_methods": "装配/前提/抽查 norm_num（636-bit）；二次型恒等式显式 ring 证书＋mul_self_sqrt；夹逼系数证书 nlinarith；有效性 mul_le_mul/div_le_div_iff₀ 显式链（D56-3 绕行 div_le_div_of_nonneg 缺席）"
+ },
+ "gate": {
+  "script": "numerics/bounds/r14_b5_gate.py",
+  "wrapper": "thomson-n9/numerics/bounds/r14_b5_gate.py",
+  "steps": [
+   "G0 账本",
+   "G1 所有权＋l4.json/local_min.json 双只读守卫",
+   "G2 逐文件 elaboration ≤600s（依赖序，-o 出 olean）",
+   "G3 公理全 50 定理",
+   "G4 语句锚 49＋6 抽查定理＋非交叠守卫",
+   "G5 三方逐位/z 盒三方/λ 支配/sqrt 前提/S 容器/抽查 seed 复放",
+   "NC1 sorry 注入→sorryAx",
+   "NC2 篡 CInner 分子→G5 三方比对拦",
+   "NC3 篡 zHi 越隔离区间→G5 z 盒三方比对拦（首错命题断言防假拦截）"
+  ],
+  "wall_s": 141.5,
+  "selfrun_exit": 0,
+  "selfrun_log": "/tmp/r14_b5_gate_selfrun.log",
+  "selfrun_note": "预提交自跑 5 次（selfrun 168.4s＋路由 A 141.5s／B 112.4s／C 158.7s＋终版 140.8s）全 PASS exit 0；G1 自跑放行 notes/decisions.md（D57 预提交口径，R13C D-r13d-2 先例）；提交后净树验收命令复跑 PASS exit 0（148.0s，见 routes_verified.post_commit）——提交后树净 ⇒ 两层放行集皆空 ⇒ G1 等价字面严格",
+  "routes_verified": {
+   "repo_root_real": "python3 numerics/bounds/r14_b5_gate.py（CWD=thomson-n9）→ PASS exit 0（141.5s，/tmp/r14_routeA.log）",
+   "repo_root_wrapper": "python3 thomson-n9/numerics/bounds/r14_b5_gate.py（CWD=thomson-n9，runpy 重定向真实门）→ PASS exit 0（112.4s，/tmp/r14_routeB.log）",
+   "campaign_root": "python3 thomson-n9/numerics/bounds/r14_b5_gate.py（CWD=八电子在球面的分布，直接命中真实门）→ PASS exit 0（158.7s，/tmp/r14_routeC.log）",
+   "post_commit": "提交 4be81bf 后验收命令净树复跑（CWD=thomson-n9，零环境变量，G1 字面严格）→ PASS exit 0（148.0s，/tmp/r14_b5_gate_postcommit.log）——两段式回填沿 R13 7e573fb/2d9e921 先例"
+  },
+  "negative_controls": {
+   "NC1": "zLo_pos 证明注入 sorry → 编译 sorry 警告＋公理集含 sorryAx（G3 判定逻辑必 FAIL）；四路由各跑一次全检出",
+   "NC2": "CInner 分子＋1 → G5(a) 三方逐位比对检出（重算=l4.json≠篡源码）；原文件 sanity PASS",
+   "NC3": "zHi＋1/1000（预断言确越出 local_min 隔离区间——防假拦截）→ G5(b) z 盒三方比对首错即『源码 zLo/zHi ≠ local_min』；原文件 sanity PASS"
+  },
+  "dev_incident": "开发中真实缺陷捕获实录：①发射器符号引擎两 bug（ttp_rows 未参数化 z／Gram dict 键检查误用 list 比较）均发射器自检首跑拦下；②主件 h2s1up 的 show…by 内联语法错由 G2 首跑 elaboration 拦下；③夹逼系数证书 c1 首版符号错（−3(1/2−z_hi²)）被 Lean ring 正确拒绝后修正；④门 G4 首版缺 re.M／NC1 注入目标按多行 proof 假设（实际单行发射）两处门缺陷由自跑首跑拦下修正——抽查与门机制有牙实证",
+  "anchor_count_fix": "终版自跑后复核 anchors 列表实为 49 项（okmsg/账本旧值 43 系手计数错），门输出与账本同步勘正；锚面本身自始全部 49 项在场且被检查（历次 PASS 均为 49 项全过）"
+ },
+ "provenance": {
+  "l4_json": "results/l4.json（常数/区间唯一记录源；只读；sha256=9f588a3b…fb96 见 r14_b5_data.json）",
+  "local_min_json": "results/local_min.json（z 盒唯一隔离源 zStarIntervalMpmath；只读；sha256=e9cfb04b…a70d）",
+  "generator": "numerics/bounds/r14_b5_data.py（json＋TableB5Data.lean 确定性生成——重跑字节一致亲验；独立第二实现重导＋发射＋回读自检）",
+  "no_new_numerics": "零新数值证书、零 dyadic 舍入面（l4.json 常数已是精确 Fraction）、endgame.json 零改动"
+ },
+ "scope_note": "B5 常数认证层（表 B 首件）；d_P(X,Y)≤C·δ 解析本体不在件内（docstring 双侧如实）；区间 Sylvester soundness 为 stretch 非必需面（D56 裁决）"
+}

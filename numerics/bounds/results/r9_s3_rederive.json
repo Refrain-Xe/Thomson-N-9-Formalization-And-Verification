@@ -1,0 +1,273 @@
+{
+ "kind": "n9-r9-s3-rederive",
+ "script": "bounds/r9_s3_rederive.py",
+ "code_version": "31ec9d2-dirty",
+ "timestamp": "2026-10-10T00:28:13+00:00",
+ "cli": {
+  "argv": [],
+  "trials": 3,
+  "seed": 20261011,
+  "cert": "/Users/cissie/Desktop/八电子在球面的分布/thomson-n9/certificates/n9-stage-a4-typedcap-m0748_M9.json",
+  "out": "/Users/cissie/Desktop/八电子在球面的分布/thomson-n9/numerics/bounds/results/r9_s3_rederive.json"
+ },
+ "inputs": {
+  "certificate": "/Users/cissie/Desktop/八电子在球面的分布/thomson-n9/certificates/n9-stage-a4-typedcap-m0748_M9.json",
+  "certificate_is_sole_derivation_input": true,
+  "l2_rigorous": "/Users/cissie/Desktop/八电子在球面的分布/thomson-n9/numerics/bounds/results/l2_rigorous.json",
+  "l2_rigorous_role": "对账存档（验收①②④目标），不参与推导",
+  "E_star": {
+   "value": "25759986531/1000000000",
+   "caliber": "十进制 25759986531/10^9（D28 裁决 3 主口径）",
+   "semantics": "三源校验参考值，非已证最优"
+  }
+ },
+ "independence": {
+  "stdlib_only": true,
+  "forbidden_imports": [
+   "typed_ladder",
+   "QuotientMaps",
+   "thomson_certs",
+   "sdp_bound",
+   "sdp_certify",
+   "l2_rigorize"
+  ],
+  "static_scan_owner": "r9_s3_gate.py G1（AST）",
+  "runtime_modules_check": "sys.modules 根集合 ∩ 禁清单 = ∅（本文件末尾复核）",
+  "second_implementation": "多项式＝稀疏 dict {指数:Fraction}（构造端为稠密 list）；Q_k/Y_cols/gm_cols/K_cols/lam/sos_sum/minorant 全部自数学定义重写，未 import typed_ladder/QuotientMaps/thomson_certs/sdp_bound/sdp_certify/l2_rigorize 任何代码路径；单项式枚举次序取证书 Gram 块的隐式基约定（数据格式对齐，值级结果与枚举次序无关）"
+ },
+ "provenance_echo": {
+  "cert_code_version": "dc1c648-dirty",
+  "round_bits_k": 48,
+  "solution_sha256_16": "675307b7c3cb5ce1",
+  "cert_date": "2026-10-07T18:34:07+00:00",
+  "bound_formula": "certified = (e − (3R1_AAA+54R1_AAB+27R1_ABC))/(1+max(R2_AA,R2_AB))",
+  "note": "round_bits（--k）＝dyadic 舍入位数 48，由证书 provenance 回声；本验证器消费已舍入证书、不做舍入"
+ },
+ "sizes": {
+  "D": 16,
+  "nmon": 969,
+  "Y_cols": 271,
+  "sos_base_dims": {
+   "1": 165,
+   "u-lo": 120,
+   "v-lo": 120,
+   "t-lo": 120,
+   "1-u": 120,
+   "1-v": 120,
+   "1-t": 120,
+   "detG": 84
+  },
+  "deg_p": 33,
+  "w_hat": "117/125",
+  "b2": "437/500",
+  "class_counts": {
+   "AAA": "3类×1",
+   "AAB": "6类×9",
+   "ABC": "1类×27"
+  }
+ },
+ "structural_checks": {
+  "nmon_equals_C19_3": true,
+  "Y_cols_equals_271": true,
+  "Q_uv_symmetric_all_k": true,
+  "Q_degree_in_t_equals_k": true,
+  "perm_direction_t_minus_uv": true,
+  "w_hat_sq_ge_b2": true,
+  "w_hat_is_117_125": true,
+  "block_dims_match_bases": true,
+  "eval_fastpath_agrees": true
+ },
+ "normalization_residual": "0（精确：3c_A+54c_B+27c_C−9·ΣF⁽⁰⁾−e == 0）",
+ "R1_exact": {
+  "AAA": "223156339/17592186044416000",
+  "AAB": "535992193/42221246506598400",
+  "ABC": "24227508809/1899956092796928000"
+ },
+ "R1_float": {
+  "AAA": 1.2684969249221468e-08,
+  "AAB": 1.269484530534252e-08,
+  "ABC": 1.2751615103554657e-08
+ },
+ "R2_exact": {
+  "AA": "3889766608444458344585635619432645189566839438469782653261404345780899796831/222044604925031308084726333618164062500000000000000000000000000000000000000000000000",
+  "AB": "13061183578204185028042533804651605715226289625871361755884583812810354220763/444089209850062616169452667236328125000000000000000000000000000000000000000000000000"
+ },
+ "R2_float": {
+  "AA": 1.751795144834866e-08,
+  "AB": 2.9411170747909005e-08
+ },
+ "defl_exact": "75144682247/70368744177664000",
+ "defl_float": 1.0678701620321362e-06,
+ "R2max_exact": "13061183578204185028042533804651605715226289625871361755884583812810354220763/444089209850062616169452667236328125000000000000000000000000000000000000000000000000",
+ "R2max_float": 2.9411170747909005e-08,
+ "certified_recomputed": "22879340185047884591327492399406419521507688973060989923169472604058682918548583984375/888178445822492388747275390557723859303211430452579251742723511769167625620708441526",
+ "certified_float": 25.75984622533888,
+ "claimed_bound": "22879340185047884591327492399406419521507688973060989923169472604058682918548583984375/888178445822492388747275390557723859303211430452579251742723511769167625620708441526",
+ "bitwise_equal_to_claimed": true,
+ "provenance_residuals_match": {
+  "R1": {
+   "AAA": true,
+   "AAB": true,
+   "ABC": true
+  },
+  "R2": {
+   "AA": true,
+   "AB": true
+  },
+  "defl": true,
+  "R2max": true
+ },
+ "l2_rigorous_match": {
+  "eps_forcing_exact": "62308232016279826168812154155836080188260221347417966571668186047549261057992006380543153/444089209850062616169452667236328125000000000000000000000000000000000000000000000000000000000",
+  "eps_recomputed": "62308232016279826168812154155836080188260221347417966571668186047549261057992006380543153/444089209850062616169452667236328125000000000000000000000000000000000000000000000000000000000",
+  "eps_bitwise_equal": true,
+  "eps_formula": "ε_forcing == (1+R2max)·(E*−certified)（E* 十进制口径）",
+  "certificate_rebuild_three_way": true,
+  "certificate_rebuild_items": {
+   "R1": {
+    "AAA": true,
+    "AAB": true,
+    "ABC": true
+   },
+   "R2": {
+    "AA": true,
+    "AB": true
+   },
+   "defl": true,
+   "R2max": true,
+   "certified": true
+  }
+ },
+ "orbit_perm_consistency": {
+  "classes": 10,
+  "all_ok": true,
+  "details": [
+   {
+    "cls": [
+     0,
+     0,
+     0
+    ],
+    "orbit": "AAA",
+    "perm": "id",
+    "ok": true
+   },
+   {
+    "cls": [
+     0,
+     0,
+     1
+    ],
+    "orbit": "AAB",
+    "perm": "id",
+    "ok": true
+   },
+   {
+    "cls": [
+     0,
+     0,
+     2
+    ],
+    "orbit": "AAB",
+    "perm": "id",
+    "ok": true
+   },
+   {
+    "cls": [
+     0,
+     1,
+     1
+    ],
+    "orbit": "AAB",
+    "perm": "ut",
+    "ok": true
+   },
+   {
+    "cls": [
+     0,
+     1,
+     2
+    ],
+    "orbit": "ABC",
+    "perm": "id",
+    "ok": true
+   },
+   {
+    "cls": [
+     0,
+     2,
+     2
+    ],
+    "orbit": "AAB",
+    "perm": "ut",
+    "ok": true
+   },
+   {
+    "cls": [
+     1,
+     1,
+     1
+    ],
+    "orbit": "AAA",
+    "perm": "id",
+    "ok": true
+   },
+   {
+    "cls": [
+     1,
+     1,
+     2
+    ],
+    "orbit": "AAB",
+    "perm": "id",
+    "ok": true
+   },
+   {
+    "cls": [
+     1,
+     2,
+     2
+    ],
+    "orbit": "AAB",
+    "perm": "ut",
+    "ok": true
+   },
+   {
+    "cls": [
+     2,
+     2,
+     2
+    ],
+    "orbit": "AAA",
+    "perm": "id",
+    "ok": true
+   }
+  ]
+ },
+ "swap_ut_preserves_l1": true,
+ "identity": {
+  "seed": 20261011,
+  "trials_expected": 3,
+  "records": [
+   {
+    "diff": "0",
+    "sum_all_sign_ok": true,
+    "ok": true
+   },
+   {
+    "diff": "0",
+    "sum_all_sign_ok": true,
+    "ok": true
+   },
+   {
+    "diff": "0",
+    "sum_all_sign_ok": true,
+    "ok": true
+   }
+  ],
+  "residual": "0（精确，== 0 逐 trial）",
+  "statement": "Σ_84 λ_cls(x) + Σ_all(x) = ΣH(x) − e_dy，证书 dyadic 数据、随机有理构型（球极投影有理点）× 3；Σ_all ≥ 0 为引理 4.1 分型正性抽查"
+ },
+ "scope": "严格数值层（Python Fraction）；PSD/LDLᵀ 38 块判定明确不在本验证器范围——复算员 R8 ⑧ 已自写 Fractions LDLᵀ 独立过 38/38＋三负对照（GAP-REPORT Round 8 节 ⑧），本文件不重复不冒充；typed 恒等式/引理 4.1 正性/Lukács 表示为结构性定理（PAPER.md §4–6.3），本文件的机器验证为随机有理点精确实例核验＋逐系数精确等式，未过 Lean 内核",
+ "wall_s": 1.4
+}

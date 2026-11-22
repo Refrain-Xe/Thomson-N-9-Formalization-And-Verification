@@ -1,0 +1,23 @@
+{
+  "kind": "r10_stageb_env_ledger",
+  "purpose": "R10B stageb-scope 环境观察如实入账：which lake/lean/elan 三连（informational，不作任何门的 pass 判据；r10_stageb_gate.py G2 只重跑对比并打印，不 fail）",
+  "observed_at": "2026-10-10",
+  "observed_by": "执行员-R10-R10B-stageb（R10B 会话）",
+  "command": "command -v lake; command -v lean; command -v elan",
+  "which": {
+    "lake": null,
+    "lean": null,
+    "elan": null
+  },
+  "raw": {
+    "lake": "NOT FOUND",
+    "lean": "NOT FOUND",
+    "elan": "NOT FOUND"
+  },
+  "toolchain_pin": {
+    "lean": "leanprover/lean4:v4.34.1",
+    "mathlib_rev": "d13f23b723b8a846827a245b89c10fc7d3f11612",
+    "note": "formal/lean/lean-toolchain 与 lakefile.toml 亲读；check.sh 首跑前须装 elan；禁 lake update"
+  },
+  "note": "本机（darwin arm64）无 Lean 工具链 ⇒ check.sh 首跑（需 elan/网络/约 14GB RAM/约 10GB 磁盘）本轮未跑，如实记于 notes/stageb-scope.md §4"
+}

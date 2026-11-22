@@ -1,0 +1,76 @@
+{
+ "kind": "n9-r15-b1-ledger",
+ "task": "r15b-tableb-b1",
+ "seed": 20261017,
+ "heavy_solves": 0,
+ "files": {
+  "formal/lean/ThomsonN9/TableB1Data.lean": "1b87ada9d67f0debfd320e3880336edace326c93fc6d62883bc26ec788fb87ff",
+  "formal/lean/ThomsonN9/TableB1.lean": "cbd996466ab6660575c252c27f15b2ced5134f74370c99f6816103b930f6e5f8",
+  "numerics/bounds/r15_b1_data.py": "9336ccbe1f231fad3668f1e133ca4beaeff0f8f003602f343647f07c95b54679",
+  "numerics/bounds/r15_b1_gate.py": "2752ef20f05af63e2abd08b32975eed3cfc6d19d3b607717f1fb29592b93c9dd",
+  "thomson-n9/numerics/bounds/r15_b1_gate.py": "2e93d60a3ea19be33505bd651d673536c1fe0f54b1c23c0e7d17390bea9d4144",
+  "numerics/bounds/results/r15_b1_data.json": "b6c32f411835ab8a46321ed527b52c7035fd4e0ffd8c0f015fb7fa6e690ad163",
+  "notes/tableb-lean.md": "8ac41bbf2864bdb4f4e64684fbfc6b1d55dcf135f2d25ea87c7276457263e426",
+  "numerics/bounds/results/r15_b1_ledger.json": "self"
+ },
+ "files_note": "锚定时点＝提交前终版（4dc34e0 后 G1 家族层执行校准版：PARALLEL_FAMILY 增 endgame_gate.py＋decisions.md 两面——R15A 09b50c2 同式先例；r15 泛式 pattern；G2–G5 不读该两件零削弱；其余七件 sha 维持 4dc34e0 终版）",
+ "data": {
+  "json": "numerics/bounds/results/r15_b1_data.json",
+  "lean_defs": 25,
+  "lean_theorems_data": 32,
+  "lean_theorems_main": 56,
+  "theorem_note": "Data 32（端点事实/不交链/ρ 包前提/抽查 3）＋Main 56（45 逐对 Gram＋桥接＋对角 ∀ 包装＋计数 4＋轮廓 2＋Σ_y＋容器＋链＋分离）＝88",
+  "spot_checks": {
+   "points": 3,
+   "scheme_seed": 20261017
+  },
+  "certificates": 45,
+  "edge_counts": [
+   6,
+   6,
+   3,
+   3,
+   6,
+   12
+  ],
+  "inputs": {
+   "local_min_json": "numerics/bounds/results/local_min.json（只读；sha256 见 r15_b1_data.json inputs）",
+   "l4_orbit_json": "numerics/bounds/results/l4_orbit.json（只读；同上）"
+  }
+ },
+ "lean": {
+  "files": [
+   "formal/lean/ThomsonN9/TableB1Data.lean",
+   "formal/lean/ThomsonN9/TableB1.lean"
+  ],
+  "elaboration_limit_s_per_file": 600,
+  "theorem_count": 88,
+  "axiom_policy": "⊆ {propext, Classical.choice, Quot.sound}；零 sorryAx/ofReduceBool/ofReduceNat/trustCompiler",
+  "proof_methods": "模曲线 ring 证书（发射器精确生成 M1·(√3·√3−3)+M2·(ρ·ρ+z²−1)，unfold+ring，mul_self_sqrt 消零＋ring_nf＋linarith）；桥接/分离 interval_cases（吃界假设只生成合法臂）；计数 Finset.filter decide；容器 z² 单调＋Newton ρ 包（sqrt_le_sqrt＋字面 sqrt_le_iff＋sq_le 型 nlinarith）；端点 norm_num（96-bit 大分数）",
+  "emitter": "双件均由 r15_b1_data.py 确定性发射（r13_a1 emit_main_lean 先例；D61-3 勿手写证书）"
+ },
+ "gate": {
+  "script": "numerics/bounds/r15_b1_gate.py",
+  "wrapper": "thomson-n9/numerics/bounds/r15_b1_gate.py",
+  "steps": [
+   "G0 账本",
+   "G1 所有权（local_min/l4_orbit 双只读守卫＋r15 家族放行层 D61-5）",
+   "G2 逐文件 elaboration ≤600s（依赖序，-o 出 olean）",
+   "G3 公理全 88 定理",
+   "G4 语句锚 43＋抽查 3＋gram 数 46＋主件零数值字面量＋非交叠守卫",
+   "G5 离线第二实现（行表驱动渲染/证书归约再生成/分类三方/计数配平/容器三方/抽查复放）",
+   "NC1 sorry 注入",
+   "NC2 行坐标篡改（z→1）",
+   "NC3 容器端点越界（nu4Hi＋1/8）"
+  ],
+  "negative_controls": [
+   "NC1 sorryAx 必现",
+   "NC2 行定义文本+证书对账必拦",
+   "NC3 容器三方+五链不交必拦"
+  ],
+  "seed": 20261017,
+  "self_runs_s": "202.9/178.9/120.6（三趟全 PASS；与 R15A 并行编译争用带宽波动如实）",
+  "g1_calibration": "4dc34e0 后补：R15D 在途面（endgame_gate.py campaign-10 扩展＋decisions.md D64 追加）收编家族层——R15A 09b50c2 同式；零环境变量复跑 PASS 198.1s（在途五件亲见放行日志）"
+ },
+ "scope": "B1 算术层（D61-3）：(P5) 实现证书＋轨道配平＋节点分离容器；(P1)–(P4) 过滤枚举与『轨道维数/横截坐标』不在件内（docstring 双侧声明）"
+}

@@ -1,0 +1,1043 @@
+{
+  "kind": "cap_ladder",
+  "script": "cap_ladder.py",
+  "ladder": [
+    {
+      "tag": "m090",
+      "a0": -0.9,
+      "a0_exact": "-9/10",
+      "config": "midlarge",
+      "M": 8,
+      "K": 6,
+      "B": 25.752724580516784,
+      "e_raw": 25.759381941996825,
+      "gap_E_star_B": 0.007261950483215429,
+      "gap_E_star_raw": 0.0006045890031742829,
+      "deflation": 0.006657361480042431,
+      "check": {
+        "identity_residual_slack": 2.8468651804836043e-06,
+        "identity_residual_minorant": 5.200023238671747e-06,
+        "identity_l1_slack": 8.582557239850633e-05,
+        "min_eig": {
+          "B_1": -1.0483523844192026e-07,
+          "B_u-a": -5.370630427174432e-08,
+          "B_v-a": -6.336868692336054e-08,
+          "B_t-a": -4.493634162423512e-08,
+          "B_1-u": -5.1053312334410025e-08,
+          "B_1-v": -1.028372843969405e-07,
+          "B_1-t": -7.056375758316543e-08,
+          "B_detG": -7.970083078407798e-08,
+          "F0": -6.4474950389480386e-09,
+          "F1": 2.646833028149609e-06,
+          "F2": 4.238470868440918e-08,
+          "F3": 8.209396942333752e-09,
+          "F4": 2.1471779936770345e-09,
+          "F5": 3.8022155942006277e-10,
+          "sig0": -1.073491192720223e-08,
+          "sig1": -1.8926281733019568e-09,
+          "sig2": -4.204104521578009e-08,
+          "sig3": -3.349958511115551e-08
+        },
+        "slack_min_random": 4.970737851994035e-07,
+        "slack_min_boundary": 0.00033592236507146557,
+        "minorant_max_violation": 1.944598160275035e-08,
+        "n_gram_points": 137210,
+        "viol_fine": 1.956016713587062e-08,
+        "psd_deficit_sos": 9.901318571236539e-05,
+        "psd_deficit_F": 3.446830847821621e-05,
+        "deflation": 0.006657361480042431,
+        "e_safe": 25.752724580516784,
+        "accepted": false
+      },
+      "ttp": {
+        "z_star": 0.7036483959983358,
+        "E_ttp": 25.75998653126983,
+        "sumH_at_ttp": 25.759964508176534,
+        "min_inner": -0.7475605325955157,
+        "E_minus_e": 0.007261950753047586,
+        "sumH_minus_e": 0.007239927659750123,
+        "E_matches_star": true
+      },
+      "solve": {
+        "solver": "CLARABEL",
+        "status": "optimal_inaccurate",
+        "build_s": 0.03,
+        "solve_s": 220.07,
+        "wall_s": 220.2,
+        "n_scalar_vars": 60929,
+        "n_eq_rows": 710,
+        "nmon_slack": 680,
+        "F_sizes": [
+          8,
+          7,
+          6,
+          5,
+          4,
+          3
+        ],
+        "sos_block_sizes": [
+          [
+            "1",
+            120
+          ],
+          [
+            "u-a",
+            84
+          ],
+          [
+            "v-a",
+            84
+          ],
+          [
+            "t-a",
+            84
+          ],
+          [
+            "1-u",
+            84
+          ],
+          [
+            "1-v",
+            84
+          ],
+          [
+            "1-t",
+            84
+          ],
+          [
+            "detG",
+            56
+          ]
+        ],
+        "sig_sizes": [
+          15,
+          15,
+          14,
+          14
+        ]
+      },
+      "solution_file": "numerics/bounds/results/cap_solution_midlarge_m090.json",
+      "solution_sha256_16": "35efbd610a625131",
+      "run": {
+        "timestamp": "2026-10-03T07:50:05+00:00",
+        "argv": [
+          "--solve",
+          "m090"
+        ],
+        "repro": "numerics/.venv/bin/python numerics/bounds/cap_ladder.py --solve m090"
+      },
+      "bitwise_match_round1_archive": true,
+      "assert_bound_range": true
+    },
+    {
+      "tag": "m085",
+      "a0": -0.85,
+      "a0_exact": "-17/20",
+      "config": "midlarge",
+      "M": 8,
+      "K": 6,
+      "B": 25.75772365556019,
+      "e_raw": 25.759350777451832,
+      "gap_E_star_B": 0.0022628754398077433,
+      "gap_E_star_raw": 0.0006357535481669174,
+      "deflation": 0.001627121891639568,
+      "check": {
+        "identity_residual_slack": 7.592333647887806e-07,
+        "identity_residual_minorant": 3.4026521902319473e-06,
+        "identity_l1_slack": 2.2547904053030045e-05,
+        "min_eig": {
+          "B_1": -2.002441740315307e-08,
+          "B_u-a": -1.0757457153796439e-08,
+          "B_v-a": -9.229492555993809e-09,
+          "B_t-a": -5.656223338281551e-09,
+          "B_1-u": -2.4676978256005504e-08,
+          "B_1-v": -3.5464577369358505e-08,
+          "B_1-t": -1.4106003666357473e-08,
+          "B_detG": -9.183043489551768e-09,
+          "F0": -4.048802292847814e-09,
+          "F1": 1.933627457851123e-05,
+          "F2": 1.9732968036340666e-07,
+          "F3": 3.1941132063110245e-08,
+          "F4": 6.687905041053114e-09,
+          "F5": 1.0295548314051088e-09,
+          "sig0": -4.627332014172102e-09,
+          "sig1": -4.429346486214391e-09,
+          "sig2": -4.38507574888684e-09,
+          "sig3": -7.820433705033807e-10
+        },
+        "slack_min_random": 5.307001238408089e-07,
+        "slack_min_boundary": 0.0001305420834254165,
+        "minorant_max_violation": -9.117420707305257e-09,
+        "n_gram_points": 126825,
+        "viol_fine": -9.024034701083684e-09,
+        "psd_deficit_sos": 2.2616004080671807e-05,
+        "psd_deficit_F": 2.1644897057564412e-05,
+        "deflation": 0.001627121891639568,
+        "e_safe": 25.75772365556019,
+        "accepted": true
+      },
+      "ttp": {
+        "z_star": 0.7036483959983358,
+        "E_ttp": 25.75998653126983,
+        "sumH_at_ttp": 25.759939340244074,
+        "min_inner": -0.7475605325955157,
+        "E_minus_e": 0.0022628757096399,
+        "sumH_minus_e": 0.0022156846838825572,
+        "E_matches_star": true
+      },
+      "solve": {
+        "solver": "CLARABEL",
+        "status": "optimal_inaccurate",
+        "build_s": 0.04,
+        "solve_s": 217.77,
+        "wall_s": 217.9,
+        "n_scalar_vars": 60929,
+        "n_eq_rows": 710,
+        "nmon_slack": 680,
+        "F_sizes": [
+          8,
+          7,
+          6,
+          5,
+          4,
+          3
+        ],
+        "sos_block_sizes": [
+          [
+            "1",
+            120
+          ],
+          [
+            "u-a",
+            84
+          ],
+          [
+            "v-a",
+            84
+          ],
+          [
+            "t-a",
+            84
+          ],
+          [
+            "1-u",
+            84
+          ],
+          [
+            "1-v",
+            84
+          ],
+          [
+            "1-t",
+            84
+          ],
+          [
+            "detG",
+            56
+          ]
+        ],
+        "sig_sizes": [
+          15,
+          15,
+          14,
+          14
+        ]
+      },
+      "solution_file": "numerics/bounds/results/cap_solution_midlarge_m085.json",
+      "solution_sha256_16": "898367bed872e9d9",
+      "run": {
+        "timestamp": "2026-10-03T07:54:08+00:00",
+        "argv": [
+          "--solve",
+          "m085"
+        ],
+        "repro": "numerics/.venv/bin/python numerics/bounds/cap_ladder.py --solve m085"
+      },
+      "assert_bound_range": true
+    },
+    {
+      "tag": "m080",
+      "a0": -0.8,
+      "a0_exact": "-4/5",
+      "config": "midlarge",
+      "M": 8,
+      "K": 6,
+      "B": 25.743876267942703,
+      "e_raw": 25.75939367255793,
+      "gap_E_star_B": 0.016110263057296237,
+      "gap_E_star_raw": 0.0005928584420686889,
+      "deflation": 0.015517404615228896,
+      "check": {
+        "identity_residual_slack": 4.178129716037038e-06,
+        "identity_residual_minorant": 4.073907206247895e-06,
+        "identity_l1_slack": 0.00015044029581370014,
+        "min_eig": {
+          "B_1": -3.475181027591833e-07,
+          "B_u-a": -1.5826846339132148e-07,
+          "B_v-a": -1.0551283119058802e-07,
+          "B_t-a": -1.2320622595317242e-07,
+          "B_1-u": -1.6953242860286167e-07,
+          "B_1-v": -3.743638890912744e-07,
+          "B_1-t": -1.9148417738838465e-07,
+          "B_detG": -7.644698136450109e-08,
+          "F0": -7.380404708712342e-09,
+          "F1": 1.2447495791485867e-05,
+          "F2": 1.7584930786536446e-07,
+          "F3": 2.8481051568609666e-08,
+          "F4": 6.572675671579715e-09,
+          "F5": 1.1003134157692237e-09,
+          "sig0": -9.843978310029327e-09,
+          "sig1": -3.2687110433384774e-09,
+          "sig2": -3.3566284323348584e-09,
+          "sig3": -4.946180056824483e-09
+        },
+        "slack_min_random": 2.401267180846567e-07,
+        "slack_min_boundary": 3.863231421753431e-05,
+        "minorant_max_violation": -3.89214938056881e-09,
+        "n_gram_points": 116904,
+        "viol_fine": -3.796929882748973e-09,
+        "psd_deficit_sos": 0.00028052423319878535,
+        "psd_deficit_F": 3.945564357277618e-05,
+        "deflation": 0.015517404615228896,
+        "e_safe": 25.743876267942703,
+        "accepted": false
+      },
+      "ttp": {
+        "z_star": 0.7036483959983358,
+        "E_ttp": 25.75998653126983,
+        "sumH_at_ttp": 25.759950951507903,
+        "min_inner": -0.7475605325955157,
+        "E_minus_e": 0.016110263327128393,
+        "sumH_minus_e": 0.016074683565200587,
+        "E_matches_star": true
+      },
+      "solve": {
+        "solver": "CLARABEL",
+        "status": "optimal_inaccurate",
+        "build_s": 0.03,
+        "solve_s": 224.54,
+        "wall_s": 224.6,
+        "n_scalar_vars": 60929,
+        "n_eq_rows": 710,
+        "nmon_slack": 680,
+        "F_sizes": [
+          8,
+          7,
+          6,
+          5,
+          4,
+          3
+        ],
+        "sos_block_sizes": [
+          [
+            "1",
+            120
+          ],
+          [
+            "u-a",
+            84
+          ],
+          [
+            "v-a",
+            84
+          ],
+          [
+            "t-a",
+            84
+          ],
+          [
+            "1-u",
+            84
+          ],
+          [
+            "1-v",
+            84
+          ],
+          [
+            "1-t",
+            84
+          ],
+          [
+            "detG",
+            56
+          ]
+        ],
+        "sig_sizes": [
+          15,
+          15,
+          14,
+          14
+        ]
+      },
+      "solution_file": "numerics/bounds/results/cap_solution_midlarge_m080.json",
+      "solution_sha256_16": "ca8dd4b7dc252990",
+      "run": {
+        "timestamp": "2026-10-03T07:58:04+00:00",
+        "argv": [
+          "--solve",
+          "m080"
+        ],
+        "repro": "numerics/.venv/bin/python numerics/bounds/cap_ladder.py --solve m080"
+      },
+      "assert_bound_range": true
+    },
+    {
+      "tag": "m077",
+      "a0": -0.77,
+      "a0_exact": "-77/100",
+      "config": "midlarge",
+      "M": 8,
+      "K": 6,
+      "B": 25.757498235031157,
+      "e_raw": 25.75941143787054,
+      "gap_E_star_B": 0.002488295968841925,
+      "gap_E_star_raw": 0.0005750931294592476,
+      "deflation": 0.001913202839381222,
+      "check": {
+        "identity_residual_slack": 6.551596347104116e-07,
+        "identity_residual_minorant": 3.4174835832345707e-06,
+        "identity_l1_slack": 2.316488186780725e-05,
+        "min_eig": {
+          "B_1": -9.34576162700112e-09,
+          "B_u-a": -8.64118718350495e-09,
+          "B_v-a": -2.3034273738123566e-08,
+          "B_t-a": -2.4071515810789628e-08,
+          "B_1-u": -3.048993832455277e-08,
+          "B_1-v": -2.5002236849475943e-08,
+          "B_1-t": -3.296001869416523e-08,
+          "B_detG": -3.108206931600177e-08,
+          "F0": -3.2326593257783816e-09,
+          "F1": 1.135772113539786e-05,
+          "F2": 1.762615018477042e-07,
+          "F3": 2.991718757670451e-08,
+          "F4": 6.652645008996447e-09,
+          "F5": 1.1007719302865952e-09,
+          "sig0": -5.670647743429455e-09,
+          "sig1": -4.5188984701162555e-09,
+          "sig2": -5.677887179545545e-09,
+          "sig3": 2.3172551837255354e-09
+        },
+        "slack_min_random": 8.078608830175215e-07,
+        "slack_min_boundary": 1.5730100633308087e-05,
+        "minorant_max_violation": -4.369490547162513e-09,
+        "n_gram_points": 111329,
+        "viol_fine": -4.283045714504646e-09,
+        "psd_deficit_sos": 2.9949635214775298e-05,
+        "psd_deficit_F": 1.7281796755611228e-05,
+        "deflation": 0.001913202839381222,
+        "e_safe": 25.757498235031157,
+        "accepted": true
+      },
+      "ttp": {
+        "z_star": 0.7036483959983358,
+        "E_ttp": 25.75998653126983,
+        "sumH_at_ttp": 25.759959529957005,
+        "min_inner": -0.7475605325955157,
+        "E_minus_e": 0.0024882962386740815,
+        "sumH_minus_e": 0.002461294925847568,
+        "E_matches_star": true
+      },
+      "solve": {
+        "solver": "CLARABEL",
+        "status": "optimal_inaccurate",
+        "build_s": 0.03,
+        "solve_s": 218.91,
+        "wall_s": 219.0,
+        "n_scalar_vars": 60929,
+        "n_eq_rows": 710,
+        "nmon_slack": 680,
+        "F_sizes": [
+          8,
+          7,
+          6,
+          5,
+          4,
+          3
+        ],
+        "sos_block_sizes": [
+          [
+            "1",
+            120
+          ],
+          [
+            "u-a",
+            84
+          ],
+          [
+            "v-a",
+            84
+          ],
+          [
+            "t-a",
+            84
+          ],
+          [
+            "1-u",
+            84
+          ],
+          [
+            "1-v",
+            84
+          ],
+          [
+            "1-t",
+            84
+          ],
+          [
+            "detG",
+            56
+          ]
+        ],
+        "sig_sizes": [
+          15,
+          15,
+          14,
+          14
+        ]
+      },
+      "solution_file": "numerics/bounds/results/cap_solution_midlarge_m077.json",
+      "solution_sha256_16": "a648e71ee131b2cc",
+      "run": {
+        "timestamp": "2026-10-03T08:02:04+00:00",
+        "argv": [
+          "--solve",
+          "m077"
+        ],
+        "repro": "numerics/.venv/bin/python numerics/bounds/cap_ladder.py --solve m077"
+      },
+      "assert_bound_range": true
+    },
+    {
+      "tag": "m0755",
+      "a0": -0.755,
+      "a0_exact": "-151/200",
+      "config": "midlarge",
+      "M": 8,
+      "K": 6,
+      "B": 25.757892542131966,
+      "e_raw": 25.759437458037148,
+      "gap_E_star_B": 0.0020939888680331364,
+      "gap_E_star_raw": 0.000549072962851227,
+      "deflation": 0.0015449159051802537,
+      "check": {
+        "identity_residual_slack": 3.282695665157709e-07,
+        "identity_residual_minorant": 2.6208396803895084e-06,
+        "identity_l1_slack": 1.1128504996161095e-05,
+        "min_eig": {
+          "B_1": -1.9837842322904836e-08,
+          "B_u-a": -2.4432741214144585e-08,
+          "B_v-a": -5.643030965034987e-09,
+          "B_t-a": -1.8648334513855942e-08,
+          "B_1-u": -2.8458313716359894e-08,
+          "B_1-v": -5.0768791837165476e-08,
+          "B_1-t": -1.4455655114120036e-08,
+          "B_detG": -2.7364954998082036e-08,
+          "F0": -4.257016226662692e-09,
+          "F1": 1.2299833568962992e-05,
+          "F2": 1.9882713378633974e-07,
+          "F3": 3.02235048018336e-08,
+          "F4": 7.390574563359194e-09,
+          "F5": 1.2183733822330268e-09,
+          "sig0": -4.123125831583123e-09,
+          "sig1": -3.6217998970523704e-09,
+          "sig2": -3.877917851001489e-09,
+          "sig3": 1.0760415396841042e-09
+        },
+        "slack_min_random": 7.927908926343022e-07,
+        "slack_min_boundary": 3.7700736936211003e-06,
+        "minorant_max_violation": -9.726321525960202e-09,
+        "n_gram_points": 108504,
+        "viol_fine": -9.63990984773661e-09,
+        "psd_deficit_sos": 3.1750310833876744e-05,
+        "psd_deficit_F": 2.275800874773875e-05,
+        "deflation": 0.0015449159051802537,
+        "e_safe": 25.757892542131966,
+        "accepted": true
+      },
+      "ttp": {
+        "z_star": 0.7036483959983358,
+        "E_ttp": 25.75998653126983,
+        "sumH_at_ttp": 25.75995508321587,
+        "min_inner": -0.7475605325955157,
+        "E_minus_e": 0.002093989137865293,
+        "sumH_minus_e": 0.002062541083905245,
+        "E_matches_star": true
+      },
+      "solve": {
+        "solver": "CLARABEL",
+        "status": "optimal_inaccurate",
+        "build_s": 0.03,
+        "solve_s": 201.28,
+        "wall_s": 201.4,
+        "n_scalar_vars": 60929,
+        "n_eq_rows": 710,
+        "nmon_slack": 680,
+        "F_sizes": [
+          8,
+          7,
+          6,
+          5,
+          4,
+          3
+        ],
+        "sos_block_sizes": [
+          [
+            "1",
+            120
+          ],
+          [
+            "u-a",
+            84
+          ],
+          [
+            "v-a",
+            84
+          ],
+          [
+            "t-a",
+            84
+          ],
+          [
+            "1-u",
+            84
+          ],
+          [
+            "1-v",
+            84
+          ],
+          [
+            "1-t",
+            84
+          ],
+          [
+            "detG",
+            56
+          ]
+        ],
+        "sig_sizes": [
+          15,
+          15,
+          14,
+          14
+        ]
+      },
+      "solution_file": "numerics/bounds/results/cap_solution_midlarge_m0755.json",
+      "solution_sha256_16": "dd36d538d7215674",
+      "run": {
+        "timestamp": "2026-10-03T08:05:32+00:00",
+        "argv": [
+          "--solve",
+          "m0755"
+        ],
+        "repro": "numerics/.venv/bin/python numerics/bounds/cap_ladder.py --solve m0755"
+      },
+      "assert_bound_range": true
+    }
+  ],
+  "seed": 20261003,
+  "target": {
+    "N": 9,
+    "E_star": 25.759986531,
+    "source": "thomson-workflow/data/energies.json energies.9.value"
+  },
+  "reference": {
+    "lp_record_strict": 25.72949096219507,
+    "round1_sdp_esafe_m090": 25.752724580516784,
+    "m_star_ttp": -0.7475605325955157,
+    "E_star_high_precision": 25.75998653127
+  },
+  "best": {
+    "tag": "m0755",
+    "a0": -0.755,
+    "B": 25.757892542131966,
+    "e_raw": 25.759437458037148,
+    "gap_E_star": 0.0020939888680331364
+  },
+  "monotonicity": {
+    "e_raw_nondecreasing": false,
+    "e_safe_nondecreasing": false,
+    "note": "精确松弛值对 a₀ 单调非降是数学事实；False 仅指示求解器噪声"
+  },
+  "ttp_spectrum": {
+    "z_star": 0.7036483959983358,
+    "E_ttp": 25.75998653126983,
+    "min_inner": -0.7475605325955157,
+    "nodes": [
+      -0.7475605326,
+      -0.7105483339,
+      -0.5,
+      0.0097578696,
+      0.2426815978,
+      0.355274167
+    ],
+    "multiplicities": [
+      6,
+      6,
+      3,
+      3,
+      6,
+      12
+    ],
+    "min_spectral_gap": 0.03701219869999994,
+    "note": "6 节点谱 −0.7476/−0.7105/−0.5/0.0098/0.2427/0.3553，重数 6/6/3/3/6/12",
+    "method": "family.tri_cap_prism + Brent（同 sdp_bound.ttp_check 路径）"
+  },
+  "finalized": "2026-10-03T08:05:44+00:00",
+  "residual": {
+    "tag": "m0755",
+    "a0": -0.755,
+    "a0_exact": "-151/200",
+    "status": "numerical evidence（格点扫描＋采样 Hessian，非严格）",
+    "delta": 0.0020939888680331364,
+    "B": 25.757892542131966,
+    "e_raw": 25.759437458037148,
+    "slack_at_ttp": {
+      "min": 1.5153558813579945e-06,
+      "max": 1.6736108710536806e-05,
+      "mean": 4.3218661931148015e-06,
+      "dsum": 0.00217822056132986
+    },
+    "per_triple_intrinsic_gap": 1.4378477186759318e-05,
+    "n_ttp_triples_distinct": 44,
+    "min_slack_global": 4.6176856898405713e-07,
+    "grad_lipschitz_est": 4.011756447065545,
+    "grid_resolution": 0.006882352941176451,
+    "tube": {
+      "2e-05": {
+        "rho_inf": 0.2542941176470588,
+        "rho_spec": 0.07544630368235297,
+        "n_points": 114623,
+        "worst_point": [
+          -0.755,
+          -0.24570588235294122,
+          0.3048823529411765
+        ]
+      },
+      "5e-05": {
+        "rho_inf": 0.2542941176470588,
+        "rho_spec": 0.10358823529411765,
+        "n_points": 245578,
+        "worst_point": [
+          -0.755,
+          -0.24570588235294122,
+          0.28423529411764703
+        ]
+      },
+      "0.0002": {
+        "rho_inf": 0.2542941176470588,
+        "rho_spec": 0.11618330687058823,
+        "n_points": 696501,
+        "worst_point": [
+          -0.755,
+          -0.24570588235294122,
+          0.24294117647058822
+        ]
+      },
+      "0.001": {
+        "rho_inf": 0.3712941176470588,
+        "rho_spec": 0.19235294117647056,
+        "n_points": 2548040,
+        "worst_point": [
+          -0.6930588235294117,
+          -0.14247058823529413,
+          -0.12870588235294123
+        ]
+      },
+      "0.005": {
+        "rho_inf": 0.4746227744705882,
+        "rho_spec": 0.2542941176470588,
+        "n_points": 6662069,
+        "worst_point": [
+          -0.2319411764705882,
+          -0.2319411764705882,
+          -0.018588235294117683
+        ]
+      },
+      "0.02": {
+        "rho_inf": 0.4746227744705882,
+        "rho_spec": 0.3281375977058823,
+        "n_points": 8843659,
+        "worst_point": [
+          -0.2319411764705882,
+          -0.2319411764705882,
+          -0.018588235294117683
+        ]
+      }
+    },
+    "eps_forced": {
+      "band_Estar_plus_delta": 0.058577430484720416,
+      "band_Estar": 0.029261586332256506,
+      "raw_gap_contribution_14_Eminus_e": 0.007687021479917178,
+      "r1_sensitivity": {
+        "1e-06": {
+          "band_Estar_plus_delta": 0.03751238612221139,
+          "band_Estar": 0.008196541969747475
+        },
+        "1e-07": {
+          "band_Estar_plus_delta": 0.03705968612221139,
+          "band_Estar": 0.0077438419697474755
+        },
+        "1e-08": {
+          "band_Estar_plus_delta": 0.03701441612221139,
+          "band_Estar": 0.0076985719697474754
+        }
+      },
+      "derivation": "每 Gram 三点 slack ≤ 14(E_band+36w−e) + psdF/2 + 503·r1（各项 ≥ 0 ⇒ 单项 ≤ 全和，**不除 504**；由 dsum+7Σ_all = 14(ΣH−e)、ΣH ≤ E_band+36w、Σ_all ≥ −psdF/14、slack ≥ −r1）。N=7 收尾靠证书在 cap 上精确取等把全和压到 0；(8,6) 在 a₀→m* 仍有原始间隙 ~5.5e-4 ⇒ 14(E*−e) ~ 7.7e-3 地板"
+    },
+    "precision_requirements": {
+      "2e-05": {
+        "r1_needed": 0.0,
+        "currently": 4.2878815830037835e-05,
+        "feasible_now": true
+      },
+      "5e-05": {
+        "r1_needed": 0.0,
+        "currently": 4.2878815830037835e-05,
+        "feasible_now": true
+      },
+      "0.0002": {
+        "r1_needed": 0.0,
+        "currently": 4.2878815830037835e-05,
+        "feasible_now": true
+      },
+      "0.001": {
+        "r1_needed": 0.0,
+        "currently": 4.2878815830037835e-05,
+        "feasible_now": true
+      },
+      "0.005": {
+        "r1_needed": 0.0,
+        "currently": 4.2878815830037835e-05,
+        "feasible_now": true
+      },
+      "0.02": {
+        "r1_needed": 0.0,
+        "currently": 4.2878815830037835e-05,
+        "feasible_now": true
+      }
+    },
+    "two_point_tube": {
+      "sum_g_bound": 0.03049556880493043,
+      "B_LP": 25.72949096219507,
+      "deg": 40,
+      "n_grid": 400001,
+      "grid_resolution": 4.387499997537958e-06,
+      "min_g": 3.6306171402600285e-08,
+      "argmin_g": -0.5362568001246399,
+      "g_at_ttp_nodes": {
+        "-0.747561": 1.9455926592026884e-07,
+        "-0.710548": 9.509683239539157e-06,
+        "-0.500000": 4.1673010060527815e-06,
+        "0.009758": 0.0018805268155791532,
+        "0.242682": 0.0003277389753391091,
+        "0.355274": 0.0004543254904461058
+      },
+      "g_at_nodes_report": [
+        0.5348952364144728,
+        0.5406418842247328,
+        0.5773461018886198,
+        0.7087016372865241,
+        0.8122141271427957,
+        0.8801837649948221
+      ],
+      "tubes": {
+        "0.03049556880493043": {
+          "n_intervals": 1,
+          "total_measure": 1.3173863617493524,
+          "max_dist_to_ttp_nodes": 0.25487771989053,
+          "intervals_widest_first": [
+            {
+              "lo": -0.755,
+              "hi": 0.5623863617493524,
+              "width": 1.3173863617493524
+            }
+          ]
+        },
+        "0.03": {
+          "n_intervals": 1,
+          "total_measure": 1.315977974250155,
+          "max_dist_to_ttp_nodes": 0.25487771989053,
+          "intervals_widest_first": [
+            {
+              "lo": -0.755,
+              "hi": 0.5609779742501549,
+              "width": 1.315977974250155
+            }
+          ]
+        },
+        "0.01": {
+          "n_intervals": 1,
+          "total_measure": 1.233896624296925,
+          "max_dist_to_ttp_nodes": 0.25487771989053,
+          "intervals_widest_first": [
+            {
+              "lo": -0.755,
+              "hi": 0.4788966242969249,
+              "width": 1.233896624296925
+            }
+          ]
+        },
+        "0.003": {
+          "n_intervals": 1,
+          "total_measure": 1.1701243118332625,
+          "max_dist_to_ttp_nodes": 0.25487771989053,
+          "intervals_widest_first": [
+            {
+              "lo": -0.755,
+              "hi": 0.4151243118332625,
+              "width": 1.1701243118332625
+            }
+          ]
+        }
+      },
+      "derivation": "每对 g(t_ij) ≤ Σg = E−Σf ≤ E*−B_LP（Σf ≥ B_LP 对一切构型、B_LP 为 LP 精确证书界）；g 用 lp.json 精确有理系数以 float 求值（数值扫描，系数本身精确）",
+      "status": "numerical scan on exact-certificate minorant"
+    },
+    "hessian": {
+      "eigenvalues": [
+        -4.904299436388379e-10,
+        2.470154272401925e-10,
+        2.470159782770347e-10,
+        0.14393500448614235,
+        0.14393500448614344,
+        0.825977525818606,
+        0.8259775258186086,
+        1.4321220201288094,
+        2.5128480390184915,
+        3.3053708167115614,
+        3.5569797264025866,
+        3.5624216071553056,
+        3.562421607155307,
+        3.606431654888783,
+        4.431467653293524,
+        4.431467653293525,
+        5.203721216357553,
+        5.203721216357555
+      ],
+      "n_zero_modes": 3,
+      "lambda_plus": 0.14393500448614235,
+      "gradient_tangent_norm": 2.4144482028691007e-09,
+      "fd_crosscheck_max_rel_err": 2.8027609039748868e-05,
+      "second_growth_radius_sampled": 3.0,
+      "n_dirs": 48,
+      "t_grid": [
+        0.02,
+        3.0
+      ],
+      "note": "27 维嵌入 → 18 维切空间 Hessian（球面 Lagrange 修正）；≈3 个零模 = 旋转轨道方向（理论预期）；二阶增长半径为随机方向采样，非穷尽——数值证据"
+    },
+    "hessian_distance_bound": {
+      "lambda_plus": 0.14393500448614235,
+      "delta": 0.0020939888680331364,
+      "d_sqrt_4delta_over_lambda": 0.2412314721091433,
+      "within_sampled_radius": true
+    }
+  },
+  "certification": {
+    "m0755": {
+      "a0": -0.755,
+      "a0_exact": "-151/200",
+      "certified": 25.757085350766946,
+      "certified_exact": "19333491930963832960/750608683695189743",
+      "R1": 5.6999784563282045e-05,
+      "R2": 1.1651746377174366e-05,
+      "round_bits": 48,
+      "rounding_loss_vs_esafe": 0.0008071913650198326,
+      "gap_to_E_star": 0.0029011802330526177,
+      "gt_lp_record": true,
+      "scope": "min inner ≥ -151/200",
+      "certificate_file": "certificates/n9-stage-a3-cap-m0755.json",
+      "n_psd_blocks_ldlt": 18,
+      "runtime_s": 35.4
+    },
+    "m085": {
+      "a0": -0.85,
+      "a0_exact": "-17/20",
+      "certified": 25.756978334760717,
+      "certified_exact": "1933345774862040800/75061047524074859",
+      "R1": 5.5856991350269584e-05,
+      "R2": 1.4038564532090625e-05,
+      "round_bits": 48,
+      "rounding_loss_vs_esafe": 0.0007453207994743138,
+      "gap_to_E_star": 0.0030081962392816885,
+      "gt_lp_record": true,
+      "scope": "min inner ≥ -17/20",
+      "certificate_file": "certificates/n9-stage-a3-cap-m085.json",
+      "n_psd_blocks_ldlt": 18,
+      "runtime_s": 34.4
+    },
+    "m077": {
+      "a0": -0.77,
+      "a0_exact": "-77/100",
+      "certified": 25.75694473228627,
+      "certified_exact": "19333384869146925760/750608624978434371",
+      "R1": 6.02390852971229e-05,
+      "R2": 1.1573519944680033e-05,
+      "round_bits": 48,
+      "rounding_loss_vs_esafe": 0.0005535027448857477,
+      "gap_to_E_star": 0.003041798713729676,
+      "gt_lp_record": true,
+      "scope": "min inner ≥ -77/100",
+      "certificate_file": "certificates/n9-stage-a3-cap-m077.json",
+      "n_psd_blocks_ldlt": 18,
+      "runtime_s": 35.4
+    }
+  },
+  "endgameDesign": {
+    "headline": "cap 侧（min 内积 ≥ -0.755）严格界 certified = 25.757085350767（E*−cert = 0.0029012）；收尾 = 把 cap 内 E < E* 的构型逼进 TTP 管内再刚性+局部极小排除。本轮量化结论：untyped (8,6) 三点松弛在 a₀→m* 时原始间隙地板 ~5.5e-4，逐点 slack 强制含 ×504 型放大（单项 ≤ 全和），ε 地板 14(E*−e)≈7.7e-3，对应谱管宽 0.25 ≫ 需求 0.0185——**管状收尾在 (8,6) untyped 上对任意求解精度都不成立**，需要 typed / d_H=16 / 精确取等型证书（N=7 cap 是精确取等E(P)−2.3e-16 才使全和=0 消掉放大）。",
+    "components": [
+      {
+        "name": "cap 精确界（本档已严格）",
+        "status": "本轮已严格",
+        "quant": "certified(a₀=-0.755) = 25.757085350767，精确有理数证书 certificates/n9-stage-a3-cap-m0755.json；18 块 exact LDLᵀ 全正定、回读逐位重算一致；另 m077/m085 档亦已认证（25.756944732 / 25.756978335），覆盖面更大。范围：min 内积 ≥ a₀ 的构型（非全局）"
+      },
+      {
+        "name": "管宽需求（谱管）",
+        "status": "数值证据（扫描）",
+        "quant": "TTP 谱最小间隙 0.03701 ⇒ 需要 per-pair 谱管半径 ρ_spec ≤ 0.01851（否则'靠近哪个节点'不唯一，刚性论证无法定型）。当前最好强制水平：三点 ε(E≤E*) = 2.93e-02（r1→0 时地板 7.69e-03），对应 ρ_spec ≈ 0.25–0.33（tube 表）；即使取 ε = TTP 自身 slack 水平（max 1.7e-05），ρ_spec(2e-5) = 0.0754 仍超需求 4 倍——(8,6) untyped 的 slack 零集本身太胖（ε=2e-5 水平集占 Gram 域 0.94% 体积）。两点 LP 管同样失效（g≤E*−B_LP=0.0305 的水平集是一个测度 1.32/3.99 的单区间）"
+      },
+      {
+        "name": "强制机制（forcing）",
+        "status": "数值证据（公式严格、输入数值）",
+        "quant": "三点：每 Gram 三点 slack ≤ 14(E+36w−e)+psdF/2+503·r1（各项≥0 ⇒ 单项≤全和，×504 型放大；N=7 靠精确取等消掉）。两点：每对 g(t)=φ−f̂(t) ≤ E−B_LP（无放大、LP 证书精确）；LP 触点已在 TTP 三个最低节点近切（g(−0.7476)=1.9e-7、g(−0.7105)=9.5e-6、g(−0.5)=4.2e-6），但 g 缓增 ⇒ 管胖。KLT 式 6 节点 Hermite minorant（17 条件，strategy.md §0.2）能把 Σg(TTP) 压到 ~1e-5 级，但两点和界仍差 0.03 ⇒ 单点预算仍 ~8e-4——**两点信息穷尽**"
+      },
+      {
+        "name": "TTP 管内的能量-距离界（Hessian）",
+        "status": "数值证据",
+        "quant": "λ₊ = 0.143935（18 维切空间 Hessian 最小正特征值，3 零模=旋转；FD 交叉复核 2.8e-05；采样二阶增长半径 3.0）⇒ E ≤ E*+δ（δ=0.0021）⇒ 测地距离 ≤ sqrt(4δ/λ₊) = 0.2412。严格版需区间 Hessian（15 维本质空间）+ 覆盖半径论证，未开始"
+      },
+      {
+        "name": "组合刚性（邻型计数）",
+        "status": "未开始",
+        "quant": "形态（strategy.md §0.4）：全部内积 ∈ 6 节点集 ⇒ 每顶点邻型计数由幂和矩条件（i≤3，随 H 次数可到 i≤5）唯一确定 ⇒ TTP 邻型唯一 ⇒ 取等。输入前提 = ρ_spec ≤ 0.0185 的谱管（见上，当前不可得）"
+      },
+      {
+        "name": "全空间严格局部极小",
+        "status": "未开始（数值已完成，见上）",
+        "quant": "TTP 处 15 维本质空间 Hessian 正定（数值 λ₊=0.144）；严格化用区间算术（local_min.py 的一维机器可推广/重写 18 维）"
+      },
+      {
+        "name": "slab 带 [−1, a₀)",
+        "status": "未开始（另一条线）",
+        "quant": "带宽 0.245（N=7 是 0.09）；带内不含候选（TTP min 内积 -0.7475605 > -0.755）；typed 三点证书机制（N7 Case 2）"
+      },
+      {
+        "name": "拼接",
+        "status": "未开始",
+        "quant": "E ≥ E* ⟸ [cap: certified 25.757085351 于 min 内积 ≥ -0.755] + [tube forcing + 刚性 + 局部极小把 cap 内 E<E* 排除] + [slab 带证书 ≥ E*]"
+      }
+    ],
+    "quantified_gaps": {
+      "raw_gap_floor_vs_cut": "a₀ −0.90→−0.755 原始间隙 6.05e-4→5.49e-4：阶梯已到 (8,6) 的紧度地板",
+      "tube_needed_vs_available": "谱管需求 ρ_spec ≤ 0.0185；可得（零噪声极限）~0.25：差 ~14 倍；且 ε=2e-5（TTP 自身水平）仍 0.0755，结构性不足而非精度不足",
+      "precision": "求解器 r1 当前 4.3e-5（m0755，干净解）；两点/证书链无噪声需求已由精确证书满足（R1=5.70e-5 精确入账）",
+      "hessian": "λ₊ = 0.143935；sqrt(4δ/λ₊) = 0.2412 （δ=0.002094）"
+    },
+    "next_moves": [
+      "typed 三点证书原型（区分 3+3+3 轨道；N7 Case 2 机制）在 small 规模打通——管状收尾的先决条件",
+      "large=(9,6)（d_H=16=TTP 6 节点 Hermite 自然次数）对称性约化/低秩参数化重解——GAP-REPORT ③-2",
+      "全空间区间 Hessian（local_min.py 机器推广）——收尾必要件里最独立、可先做",
+      "slab 带（另一条线）与 cap 的 a₀ 必须衔接：slab 上边界 < −0.7476"
+    ]
+  }
+}

@@ -1,0 +1,96 @@
+{
+  "kind": "n9-l6-geodesic-taylor-iv",
+  "seed": 20261120,
+  "iv_dps": 50,
+  "z_star_interval": [
+    "0.703648395804131775777752332462816121248857",
+    "0.703648395804131775777752332462816121249628"
+  ],
+  "z_star_width": 7.703719777548943e-40,
+  "d2E_bracket_lo": 42.85876075264106,
+  "E_ttp_interval": [
+    "25.759986531269831564075702273760494028636",
+    "25.7599865312698315640757022737604940286479"
+  ],
+  "palais_d3h_criticality": {
+    "exact_at_z_star": true,
+    "grad_norm_over_z_iv_hi": 1.685424530931956e-38,
+    "note": "By D3h Palais symmetry, cap tangent gradients and prism azimuthal gradients are identically 0, and prism meridional gradient vanishes iff E'(z)=0; hence grad_tan E(X(z*)) = 0 identically with zero linear residual."
+  },
+  "lam_min_cert": 0.14393486122,
+  "C3_whitened_cert": 19.5350914121,
+  "rigorous_radius_chord": 0.065,
+  "mu_eff_at_r_star_lo": 0.0017865028596254448,
+  "mu_eff_at_0001_lo": 0.14297955825879677,
+  "ladder": [
+    {
+      "r_chord": "0.001",
+      "R_geo_hi": 0.001000000041666677,
+      "c3_loss_hi": 0.006511697408687449,
+      "c4_loss_hi": 0.00012535322036819074,
+      "alpha_lo": 0.9933629493709444,
+      "mu_eff_lo": 0.14297955825879677,
+      "certified": true
+    },
+    {
+      "r_chord": "0.00950125",
+      "R_geo_hi": 0.009501285738868322,
+      "c3_loss_hi": 0.061869495147091585,
+      "c4_loss_hi": 0.01140805717452696,
+      "alpha_lo": 0.9267224476783814,
+      "mu_eff_lo": 0.13338766689604656,
+      "certified": true
+    },
+    {
+      "r_chord": "0.04",
+      "R_geo_hi": 0.04000266773376017,
+      "c3_loss_hi": 0.260485256968956,
+      "c4_loss_hi": 0.2083167746388499,
+      "alpha_lo": 0.531197968392194,
+      "mu_eff_lo": 0.0764579058608764,
+      "certified": true
+    },
+    {
+      "r_chord": "0.06",
+      "R_geo_hi": 0.06000900810729657,
+      "c3_loss_hi": 0.39076048630849614,
+      "c4_loss_hi": 0.47830978598773466,
+      "alpha_lo": 0.13092972770376923,
+      "mu_eff_lo": 0.01884535218661441,
+      "certified": true
+    },
+    {
+      "r_chord": "0.064",
+      "R_geo_hi": 0.06401093386294232,
+      "c3_loss_hi": 0.4168198147954885,
+      "c4_loss_hi": 0.5464593447431102,
+      "alpha_lo": 0.03672084046140129,
+      "mu_eff_lo": 0.005285409075693555,
+      "certified": true
+    },
+    {
+      "r_chord": "0.065",
+      "R_geo_hi": 0.06501145480747372,
+      "c3_loss_hi": 0.4233349041658691,
+      "c4_loss_hi": 0.5642532114269557,
+      "alpha_lo": 0.012411884407175203,
+      "mu_eff_lo": 0.0017865028596254448,
+      "certified": true
+    },
+    {
+      "r_chord": "0.070",
+      "R_geo_hi": 0.07001430919543107,
+      "c3_loss_hi": 0.4559119767625932,
+      "c4_loss_hi": 0.6578098433807037,
+      "alpha_lo": -0.1137218201432969,
+      "mu_eff_lo": -0.01636853440001124,
+      "certified": false
+    }
+  ],
+  "negative_controls": {
+    "NC1_r0070_rejected": true,
+    "NC2_deflated_C3_rejected": true,
+    "NC3_wrong_z_bracket_rejected": true
+  },
+  "runtime_s": 1.67
+}
