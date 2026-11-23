@@ -20,7 +20,7 @@ MSC-class (2020):
 52A40, 31C20 (Primary); 90C22, 68V20, 52C17 (Secondary)
 
 Comments:
-17 pages, 3 figures, 3 tables. Complete Lean 4 formalization (Lean v4.34.1, Mathlib d13f23b7; 45 project modules, 20,327 lines, zero sorry, standard axioms only) and independent 50-digit certificate verification suite available at https://github.com/Refrain-Xe/Thomson_N-9_Campaign_Scheduling.
+17 pages, 3 figures, 3 tables. Complete Lean 4 formalization (Lean v4.34.1, Mathlib d13f23b7; 45 project modules, 20,327 lines, zero sorry, standard axioms only) and independent 50-digit certificate verification suite available at https://github.com/Refrain-Xe/Thomson-N-9-Formalization-And-Verification.
 
 Abstract (plain text / arXiv MathJax compatible, strictly <= 1,920 char limit):
 We prove that among all configurations of nine distinct points on the unit sphere $S^2 \subset \mathbb{R}^3$, the Coulomb energy $E(x) = \sum_{1 \le i < j \le 9} \|x_i - x_j\|^{-1}$ is globally minimized by the $D_{3h}$ tricapped trigonal prism $X_{\mathrm{TTP}}(z^*)$ with optimal half-height $z^* \approx 0.70364839580413177578$ and minimum energy $E(X_{\mathrm{TTP}}(z^*)) \approx 25.75998653126983156408$, and that every minimizer is obtained from $X_{\mathrm{TTP}}(z^*)$ by an orthogonal transformation of $\mathbb{R}^3$ and a relabeling.
