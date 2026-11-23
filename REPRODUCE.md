@@ -29,7 +29,7 @@ This script executes every gate in sequence and exits non-zero on any failure:
    ```
 6. Dumps all declarations of `ComparatorChallenges.ThomsonN9` and `ThomsonN9.Solution` under `pp.all` + `pp.universes` and runs `scripts/compare_statements.py` (`SKIP = set()`, zero exemptions), verifying an exact 36/36 match (`STATEMENT COMPARISON: OK`, digest `bafcdc5ef8cba6cd31268f3c91bb00bb64ee8907a4c0b58791617a864ab735c9`).
 
-*Verification boundary:* All checks above run on the reference Lean `v4.34.1` kernel (`compare_statements.py` verifies statement fidelity directly; running `Lean Comparator` and an independent second kernel such as `lean4export + nanoda` is optional future hardening).
+*Verification boundary & kernel replay:* All checks above run on the reference Lean `v4.34.1` kernel (`compare_statements.py` verifies statement fidelity directly). Additionally, `Lean.Kernel.Environment.replay` (the same kernel replay engine used by `lean4checker`) has been verified across **2,103** `ThomsonN9.*` constants (`2,101` non-slice constants through `ThomsonN9.Solution` covering all 5 main theorems, plus `2` constants in the widest slice `CapCertSosSliceM9`), with `0` forbidden axioms, opaques, quots, or unsafe/partial declarations. Replaying in an independent second kernel such as `lean4export + nanoda` is optional future hardening.
 
 ### Cold rebuild from zero `.olean` cache
 

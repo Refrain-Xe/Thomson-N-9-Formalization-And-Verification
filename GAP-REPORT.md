@@ -1,3 +1,7 @@
+> **Archival Note (Final Proof Complete — Round 25 at End of File):** This file is the chronological (oldest-first, Rounds 1–25) research gap log retained for historical provenance; early sections below (Rounds 1–23) record intermediate open gaps prior to closure. **The Thomson $N = 9$ proof is completely closed in both Stage A (Round 24) and Lean 4 Stage B (Round 25).** For the final theorem statements, kernel-checked proof, and reproduction steps, see [README.md](README.md), [REPRODUCE.md](REPRODUCE.md), [formal/lean/ThomsonN9/Solution.lean](formal/lean/ThomsonN9/Solution.lean), and [paper/main.tex](paper/main.tex) (Zenodo DOI: [10.5281/zenodo.24453172](https://doi.org/10.5281/zenodo.24453172)).
+
+---
+
 # GAP-REPORT —— N=9 下界攻坚：所得、剩余差距与下一轮清单（Round 1–5，2026-10-03/05）
 
 > 结构：**Round 1（历史存档）**＝首轮 bounds 轮次（LP/SDP 数值/z\*，数据截至

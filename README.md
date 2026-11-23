@@ -6,11 +6,16 @@ This repository contains the arXiv paper, the complete kernel-checked **Lean 4**
 
 ## Start Here
 
-- **[paper/main.tex](paper/main.tex)**: arXiv-ready LaTeX manuscript (with vector figures in `paper/figures/` and ready-to-upload archive `paper/arxiv-submission.tar.gz`; metadata in [paper/arxiv_metadata.txt](paper/arxiv_metadata.txt)).
+- **Preprint (Zenodo DOI):** [10.5281/zenodo.24453172](https://doi.org/10.5281/zenodo.24453172)
+- **[paper/main.tex](paper/main.tex)**: arXiv-ready LaTeX manuscript (with vector figures in `paper/figures/` and clean USTAR archive `paper/arxiv-submission.tar.gz`; metadata in [paper/arxiv_metadata.txt](paper/arxiv_metadata.txt)).
 - **[info/THEOREM_MAP.md](info/THEOREM_MAP.md)**: exact section-by-section map from every mathematical lemma in the paper to Lean 4 declarations and line numbers.
 - **[REPRODUCE.md](REPRODUCE.md)**: step-by-step build and verification instructions (Lean 4 + Stage A Python checks).
-- **[formal/lean/ThomsonN9/Solution.lean](formal/lean/ThomsonN9/Solution.lean)**: complete formal proofs of all four fixed challenge theorems (`thomson_nine_M0`, `thomson_nine_M1`, `thomson_nine`, `thomson_nine_unique`).
+- **[formal/lean/ThomsonN9/Solution.lean](formal/lean/ThomsonN9/Solution.lean)**: complete formal proofs of all four fixed challenge theorems (`thomson_nine_M0`, `thomson_nine_M1`, `thomson_nine`, `thomson_nine_unique`) plus `thomson_nine_main`.
 - **[formal/lean/ComparatorChallenges/ThomsonN9.lean](formal/lean/ComparatorChallenges/ThomsonN9.lean)**: unmodified fixed challenge statements (unchanged since initial commit).
+
+### Companion Repositories in This Series
+- **$N = 10$ (Complete Global Optimality & Uniqueness in Lean 4):** [Thomson-N-10-Formalization-And-Verification](https://github.com/Refrain-Xe/Thomson-N-10-Formalization-And-Verification)
+- **$N = 11$ (Certified Two-Sided Bounds in Lean 4 & Three-Point SDP Obstruction):** [Thomson-N-11-Formalization-And-Verification](https://github.com/Refrain-Xe/Thomson-N-11-Formalization-And-Verification)
 
 ## Main Theorems Proved in Lean 4
 
@@ -43,7 +48,8 @@ The proof splits at the smallest pairwise inner product $m = \min_{i < j} \langl
   - `lake build ThomsonN9 ComparatorChallenges` passes (`8,972` jobs; `4` expected `sorry`s in `ComparatorChallenges`, `0` in `Solution.lean`);
   - `#print axioms` strict whitelist confirms only `[propext, Classical.choice, Quot.sound]` for all 4 challenge theorems, `thomson_nine_main`, and both admissibility lemmas;
   - `scripts/compare_statements.py` (`SKIP = set()`) confirms **36/36** challenge constants match verbatim (`STATEMENT COMPARISON: OK`, digest `bafcdc5e...35c9`).
-  - *Scope note:* Checked on the reference Lean `v4.34.1` kernel (`compare_statements.py` plays the role of `Comparator` for statement fidelity; running `Lean Comparator` and a second kernel such as `nanoda` is planned for public release).
+  - **Independent kernel environment replay (`Lean.Kernel.Environment.replay`, Lean `v4.34.1`):** replayed **2,103** `ThomsonN9.*` constants (`2,101` non-slice constants through `ThomsonN9.Solution`, including all 5 main theorems, plus `2` constants in the widest 2D-Kronecker slice `CapCertSosSliceM9`) with `0` forbidden axioms, opaques, quots, or unsafe/partial declarations.
+  - *Scope note:* Checked on the reference Lean `v4.34.1` kernel including `Lean.Kernel.Environment.replay` (`compare_statements.py` verifies statement fidelity directly; replaying in an independent second kernel such as `lean4export + nanoda` is an optional future hardening step).
 - **`bash formal/lean/scripts/negative-control.sh`** — exits `0` (`NEGATIVE CONTROL (a) OK` against `Solution.tsv` and `NEGATIVE CONTROL (b) OK` kernel rejection of tampered `decide +kernel` certificate).
 - **Stage A independent 50-digit check (`python3 numerics/bounds/stage_a_closure.py`)** — exits `0` (`closed = true`, `uniqueness_proved = true`, 5/5 negative controls).
 
@@ -53,7 +59,7 @@ The proof splits at the smallest pairwise inner product $m = \min_{i < j} \langl
 thomson-n9/
 ├── README.md                  This overview
 ├── REPRODUCE.md               Full reproduction instructions
-├── GAP-REPORT.md, PROGRESS.md Round-by-round research and verification logs
+├── GAP-REPORT.md, PROGRESS.md Historical round-by-round campaign logs (Rounds 0–25; final closure in Round 25)
 ├── paper/                     arXiv LaTeX source (main.tex), BibTeX, figures, submission tarball
 ├── info/THEOREM_MAP.md        Paper-to-Lean theorem & line-number index
 ├── formal/lean/               Self-contained Lake package (Lean v4.34.1, Mathlib d13f23b7; 45 cone modules, 20,327 lines)

@@ -1,3 +1,7 @@
+> **Archival Note (Final Proof Complete — Round 25):** This file is the chronological (newest-first) campaign research log retained for historical provenance; earlier entries toward the bottom of this file (Rounds 0–23) describe intermediate pre-closure states. **The Thomson $N = 9$ proof is completely closed in both Stage A and Lean 4 (Stage B, Round 25).** For the final theorem statements, formal proof, and one-command verification, see [README.md](README.md), [REPRODUCE.md](REPRODUCE.md), [formal/lean/ThomsonN9/Solution.lean](formal/lean/ThomsonN9/Solution.lean), and [paper/main.tex](paper/main.tex) (Zenodo DOI: [10.5281/zenodo.24453172](https://doi.org/10.5281/zenodo.24453172)).
+
+---
+
 本文件由各次运行顺序追加（新条目置顶）。当前条目：**Round 25（终局收官，2026-11-20）：Stage A（`closed = true`）＋ Stage B（Lean 4 全 4 条挑战定理内核形式化）全面证毕！`formal/lean/ThomsonN9/Solution.lean` 正式证明 `thomson_nine_M0`、`thomson_nine_M1`、`thomson_nine`（D3h 三帽三棱柱全局最优）与 `thomson_nine_unique`（模 $O(3)\times S_9$ 刚性唯一），`bash formal/lean/scripts/check.sh` 全绿 exit 0（36/36 挑战常量逐字匹配、`skipped=[]`、0 处 `sorry`、0 禁用记号、公理仅 `[propext, Classical.choice, Quot.sound]`），`scripts/negative-control.sh` 与内核篡改负对照双过，冻结文件 `ComparatorChallenges/ThomsonN9.lean` 与 `endgame.json` 零改动。**
 
 ## Round 25（终局收官，2026-11-20）：Stage B Lean 4 全面形式化证毕（`thomson_nine` 与 `thomson_nine_unique` 全绿，公理仅三标准）
